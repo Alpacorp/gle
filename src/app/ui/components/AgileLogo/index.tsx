@@ -1,4 +1,11 @@
-export const AgileLogo = () => {
+import { FC } from "react";
+
+interface AgileLogoProps {
+  className?: string;
+  id?: string;
+}
+
+export const AgileLogo: FC<AgileLogoProps> = ({ className, id }) => {
   return (
     <svg
       width="116"
@@ -6,6 +13,8 @@ export const AgileLogo = () => {
       viewBox="0 0 116 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      id={id}
     >
       <title>Agile</title>
       <rect

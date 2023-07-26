@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "text": "Inicio",
+    "link": "/"
+  },
+  {
+    "id": 2,
+    "text": "Nosotros",
+    "link": "/nosotros"
+  },
+  {
+    "id": 3,
+    "text": "Servicios",
+    "link": "/servicios"
+  },
+  {
+    "id": 4,
+    "text": "Contacto",
+    "link": "/contacto"
+  }
+]
