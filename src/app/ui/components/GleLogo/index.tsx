@@ -1,11 +1,27 @@
-export const GleLogo = () => {
+import { FC } from "react";
+
+interface GleLogoProps {
+  height?: string;
+  width?: string;
+  className?: string;
+  id?: string;
+}
+
+export const GleLogo: FC<GleLogoProps> = ({
+  height = "42",
+  width = "170",
+  className,
+  id,
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="170"
-      height="42"
+      width={width}
+      height={height}
       viewBox="0 0 170 42"
       fill="none"
+      className={className}
+      id={id}
     >
       <title>G.L.E. - Grupo Logístico Especializado</title>
       <path

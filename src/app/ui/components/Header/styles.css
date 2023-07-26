@@ -1,0 +1,17 @@
+#agile-logo {
+  width: 115px;
+}
+
+#gle-logo {
+  width: 170px;
+}
+
+@media screen and (max-width: 500px) {
+  #agile-logo {
+    width: 76px;
+  }
+
+  #gle-logo {
+    width: 137px;
+  }
+}

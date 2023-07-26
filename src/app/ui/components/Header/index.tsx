@@ -3,34 +3,42 @@ import Link from "next/link";
 
 import { GleLogo } from "@app/ui/components/GleLogo";
 import { AgileLogo } from "@app/ui/components/AgileLogo";
+import { List } from "@app/ui/components/List";
+
+import menuOptions from "@app/ui/components/Header/menu.json";
+import "./styles.css";
 
 export const Header: FC = () => {
   return (
-    <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2">
+    <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
+      <label
+        htmlFor="hbr"
+        className="bg-main-red rounded-lg peer-checked:hamburger block z-20 p-6 cursor-pointer md:hidden lg:hidden max-[500px]:p-3"
+      >
+        <div
+          aria-hidden="true"
+          className="m-auto h-0.5 w-5 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
+        ></div>
+        <div
+          aria-hidden="true"
+          className="m-auto mt-2 h-0.5 w-5 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
+        ></div>
+      </label>
       <div>
         <Link href="/">
-          <GleLogo />
+          <GleLogo id="gle-logo" />
         </Link>
       </div>
-      <nav className="nav font-normal text-lg">
+      <nav className="nav font-normal text-lg max-[750px]:hidden">
         <ul className="flex items-center">
-          <li className="p-4 border-b-2 border-[#D81730] border-opacity-0 hover:border-opacity-100 hover:text-[#D81730] duration-200 cursor-pointer active">
-            <Link href="">Inicio</Link>
-          </li>
-          <li className="p-4 border-b-2 border-[#D81730] border-opacity-0 hover:border-opacity-100 hover:text-[#D81730] duration-200 cursor-pointer">
-            <Link href="">Nosotros</Link>
-          </li>
-          <li className="p-4 border-b-2 border-[#D81730] border-opacity-0 hover:border-opacity-100 hover:text-[#D81730] duration-200 cursor-pointer">
-            <Link href="">Servicios</Link>
-          </li>
-          <li className="p-4 border-b-2 border-[#D81730] border-opacity-0 hover:border-opacity-100 hover:text-[#D81730] duration-200 cursor-pointer">
-            <Link href="">Contacto</Link>
-          </li>
+          {menuOptions.map(({ id, text, link }) => (
+            <List key={id} text={text} link={link} />
+          ))}
         </ul>
       </nav>
       <div>
         <Link href="">
-          <AgileLogo />
+          <AgileLogo id="agile-logo" />
         </Link>
       </div>
     </header>
