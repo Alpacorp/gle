@@ -13,7 +13,7 @@ export const Header: FC = () => {
     <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
       <label
         htmlFor="hbr"
-        className="bg-main-red rounded-lg peer-checked:hamburger block z-20 p-6 cursor-pointer md:hidden lg:hidden max-[500px]:p-3"
+        className="bg-main-red rounded-lg peer-checked:hamburger z-20 p-6 cursor-pointer hidden max-[768px]:block lg:hidden max-[500px]:p-3"
       >
         <div
           aria-hidden="true"
@@ -29,7 +29,7 @@ export const Header: FC = () => {
           <GleLogo id="gle-logo" />
         </Link>
       </div>
-      <nav className="nav font-normal text-lg max-[750px]:hidden">
+      <nav className="nav font-normal text-lg max-[768px]:hidden">
         <ul className="flex items-center">
           {menuOptions.map(({ id, text, link }) => (
             <List key={id} text={text} link={link} />
@@ -37,7 +37,7 @@ export const Header: FC = () => {
         </ul>
       </nav>
       <div>
-        <Link href="">
+        <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
           <AgileLogo id="agile-logo" />
         </Link>
       </div>
