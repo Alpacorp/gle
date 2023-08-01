@@ -6,6 +6,7 @@ import { AgileLogo } from "@app/ui/components/AgileLogo";
 import { List } from "@app/ui/components/List";
 
 import menuOptions from "@app/ui/components/Header/menu.json";
+
 import "./styles.css";
 
 export const Header: FC = () => {
@@ -31,8 +32,18 @@ export const Header: FC = () => {
       </div>
       <nav className="nav font-normal text-lg max-[768px]:hidden">
         <ul className="flex items-center">
-          {menuOptions.map(({ id, text, link }) => (
-            <List key={id} text={text} link={link} />
+          {menuOptions.map(({ id, text, link, type, submenu }) => (
+            <List
+              key={id}
+              text={text}
+              link={link}
+              submenu={submenu?.map((item) => ({
+                idSub: item.idSub,
+                linkSub: item.linkSub,
+                textSub: item.textSub,
+                typeSub: item.typeSub.toString(),
+              }))}
+            />
           ))}
         </ul>
       </nav>
