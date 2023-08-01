@@ -2,21 +2,45 @@
   {
     "id": 1,
     "text": "Inicio",
-    "link": "/"
+    "link": "/",
+    "type": "link"
   },
   {
     "id": 2,
     "text": "Nosotros",
-    "link": "/nosotros"
+    "link": "/nosotros",
+    "type": "link"
   },
   {
     "id": 3,
     "text": "Servicios",
-    "link": "/servicios"
+    "link": "/servicios",
+    "type": "dropdown",
+    "submenu": [
+      {
+        "idSub": 1,
+        "textSub": "Servicio 12",
+        "linkSub": "/servicio-1",
+        "typeSub": "link"
+      },
+      {
+        "idSub": 2,
+        "textSub": "Servicio 2",
+        "linkSub": "/servicio-2",
+        "typeSub": "link"
+      },
+      {
+        "idSub": 3,
+        "textSub": "Servicio 3",
+        "linkSub": "/servicio-3",
+        "typeSub": "link"
+      }
+    ]
   },
   {
     "id": 4,
     "text": "Contacto",
-    "link": "/contacto"
+    "link": "/contacto",
+    "type": "link"
   }
 ]
