@@ -7,23 +7,7 @@ import { usePathname } from "next/navigation";
 import { ArrowDown } from "../ArrowDown";
 import { ArrowUp } from "../ArrowUp";
 import { Car, Box, World, Cart } from "@icons/index";
-
-interface SubMenuProps {
-  idSub: number;
-  linkSub: string;
-  textSub: string;
-  typeSub: string;
-}
-
-interface ListProps {
-  key: number;
-  text: string;
-  link: string;
-  submenu?: SubMenuProps[];
-  idSub?: number;
-  linkSub?: string;
-  textSub?: string;
-}
+import { ListProps } from "./interfaces/List";
 
 const iconsSubmenu = [
   {
@@ -47,8 +31,6 @@ const iconsSubmenu = [
 export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
   const activeSubmenuRef = useRef<HTMLButtonElement>(null);
   const submenuContainerRef = useRef<HTMLDivElement>(null);
-  console.log("activeSubmenuRef", activeSubmenuRef);
-  console.log("submenuContainerRef", submenuContainerRef);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -59,7 +41,6 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
 
   const handleOutsideClick = useCallback(
     (event: MouseEvent) => {
-      console.log("event", event);
       if (activeSubmenuRef?.current?.id === "arrowdown" && !isOpen) {
         setIsOpen(true);
       } else {
