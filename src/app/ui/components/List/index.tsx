@@ -1,10 +1,12 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { ArrowDown } from "../ArrowDown";
 import { ArrowUp } from "../ArrowUp";
+import { Car, Box, World, Cart } from "@icons/index";
 
 interface SubMenuProps {
   idSub: number;
@@ -23,13 +25,57 @@ interface ListProps {
   textSub?: string;
 }
 
+const iconsSubmenu = [
+  {
+    iconId: 1,
+    iconComponent: <Box />,
+  },
+  {
+    iconId: 2,
+    iconComponent: <Car />,
+  },
+  {
+    iconId: 3,
+    iconComponent: <World />,
+  },
+  {
+    iconId: 4,
+    iconComponent: <Cart />,
+  },
+];
+
 export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
+  const activeSubmenuRef = useRef<HTMLButtonElement>(null);
+  const submenuContainerRef = useRef<HTMLDivElement>(null);
+  console.log("activeSubmenuRef", activeSubmenuRef);
+  console.log("submenuContainerRef", submenuContainerRef);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     setIsOpen(!isOpen);
   };
+
+  const handleOutsideClick = useCallback(
+    (event: MouseEvent) => {
+      console.log("event", event);
+      if (activeSubmenuRef?.current?.id === "arrowdown" && !isOpen) {
+        setIsOpen(true);
+      } else {
+        setIsOpen(false);
+      }
+    },
+    [isOpen]
+  );
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [handleOutsideClick]);
 
   return (
     <li
@@ -47,7 +93,7 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
         {!isOpen && !submenu?.length ? (
           ""
         ) : isOpen && submenu?.length ? (
-          <button onClick={toggleMenu}>
+          <button onClick={toggleMenu} ref={activeSubmenuRef} id="arrowdown">
             <ArrowDown />
           </button>
         ) : !isOpen ? (
@@ -60,14 +106,33 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
       </Link>
       {isOpen && submenu?.length && (
         <div className="relative">
-          <div className="absolute w-[150px] top-10 right-0 mt-2 bg-white shadow-lg rounded-lg py-2 px-2">
+          <div
+            className="absolute w-[218px] top-10 -right-[46px] mt-2 bg-white shadow-lg rounded-lg py-6 px-4"
+            ref={submenuContainerRef}
+            id="submenu"
+          >
             {submenu.map((item: any) => (
               <Link
                 key={item.idSub}
                 href={item.linkSub}
-                className="block text-gray-800 hover:bg-blue-500 hover:text-white py-2 text-center"
+                className="leading-[22px] text-black font-normal hover:text-main-red duration-200 py-2 text-center"
+                onClick={() => setIsOpen(true)}
               >
-                {item.textSub}
+                <div className="flex items-center">
+                  <div>
+                    {
+                      iconsSubmenu.filter(
+                        (icon) => icon.iconId === item.idSub
+                      )[0].iconComponent
+                    }
+                  </div>
+                  <div className="text-left ml-[10px]">{item.textSub}</div>
+                </div>
+                {item.idSub === submenu.length ? (
+                  ""
+                ) : (
+                  <hr className="my-4 border-gray-300 border-[1.5px]" />
+                )}
               </Link>
             ))}
           </div>
