@@ -8,23 +8,12 @@ import { List } from "@app/ui/components/List";
 import menuOptions from "@app/ui/components/Header/menu.json";
 
 import "./styles.css";
+import { HamburguerMenu } from "../HamburguerMenu";
 
 export const Header: FC = () => {
   return (
     <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
-      <label
-        htmlFor="hbr"
-        className="bg-main-red rounded-lg peer-checked:hamburger z-20 p-6 cursor-pointer hidden max-[768px]:block lg:hidden max-[500px]:p-3"
-      >
-        <div
-          aria-hidden="true"
-          className="m-auto h-0.5 w-5 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
-        ></div>
-        <div
-          aria-hidden="true"
-          className="m-auto mt-2 h-0.5 w-5 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
-        ></div>
-      </label>
+      <HamburguerMenu />
       <div>
         <Link href="/">
           <GleLogo id="gle-logo" />
