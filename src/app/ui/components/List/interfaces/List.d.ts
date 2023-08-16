@@ -6,11 +6,12 @@ export interface SubMenuProps {
 }
 
 export interface ListProps {
-  key: number;
+  key: number | string;
   text: string;
   link: string;
   submenu?: SubMenuProps[];
   idSub?: number;
   linkSub?: string;
   textSub?: string;
+  isMobile?: boolean;
 }

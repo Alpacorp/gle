@@ -18,6 +18,20 @@ module.exports = {
       colors: {
         "main-red": "#D81730",
       },
+      keyframes: {
+        "slide-top": {
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "100%": {
+            transform: "translateY(8px)",
+          },
+        },
+      },
+      animation: {
+        "slide-top":
+          "slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+      },
     },
   },
   plugins: [],

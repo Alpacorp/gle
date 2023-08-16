@@ -9,10 +9,12 @@ import menuOptions from "@app/ui/components/Header/menu.json";
 
 import "./styles.css";
 import { HamburguerMenu } from "../HamburguerMenu";
+import { MenuMobile } from "../MenuMobile";
 
 export const Header: FC = () => {
   return (
     <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
+      <MenuMobile />
       <HamburguerMenu />
       <div>
         <Link href="/">
