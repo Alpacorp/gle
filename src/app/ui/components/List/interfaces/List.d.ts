@@ -6,7 +6,7 @@ export interface SubMenuProps {
 }
 
 export interface ListProps {
-  key: number | string;
+  itemKey: number | string;
   text: string;
   link: string;
   submenu?: SubMenuProps[];

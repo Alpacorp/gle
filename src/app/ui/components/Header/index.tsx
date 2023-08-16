@@ -7,13 +7,14 @@ import { List } from "@app/ui/components/List";
 
 import menuOptions from "@app/ui/components/Header/menu.json";
 
-import "./styles.css";
 import { HamburguerMenu } from "../HamburguerMenu";
 import { MenuMobile } from "../MenuMobile";
 
+import "./styles.css";
+
 export const Header: FC = () => {
   return (
-    <header className="header sticky top-0 bg-white text-black shadow-md flex items-center justify-around px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
+    <header className="header sticky top-0 bg-[#F5F5F5] text-black shadow-md flex items-center justify-between px-8 py-2 max-[450px]:px-1 max-[450px]:justify-bet">
       <MenuMobile />
       <HamburguerMenu />
       <div>
@@ -26,6 +27,7 @@ export const Header: FC = () => {
           {menuOptions.map(({ id, text, link, type, submenu }) => (
             <List
               key={id}
+              itemKey={id}
               text={text}
               link={link}
               submenu={submenu?.map((item) => ({

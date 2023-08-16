@@ -14,8 +14,6 @@ export const Context = createContext({
 export const ContextProvider = ({ children }: ContextProviderProps) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log("context showMenu", showMenu);
-
   const contextValue = useMemo(() => ({ showMenu, setShowMenu }), [showMenu]);
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
