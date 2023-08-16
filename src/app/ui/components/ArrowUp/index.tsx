@@ -18,7 +18,7 @@ export const ArrowUp: FC<ArrowProps> = ({
       height={height}
       viewBox="0 0 16 10"
       fill="none"
-      className={`ml-2 ${className}`}
+      className={`mx-1 ${className}`}
     >
       <path
         d="M2.67214 0.611324L0.984497 2.28151L8.16596 9.38867L15.3474 2.28151L13.6598 0.611324L8.16596 6.03646L2.67214 0.611324Z"

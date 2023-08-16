@@ -77,31 +77,33 @@ export const List: FC<ListProps> = ({
             "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
-      <Link
-        className={`flex items-center ${
-          isMobile
-            ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
-            : "justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
-        }`}
-        href={link}
-        onClick={isMobile ? handleClickMenuMobile : () => {}}
-      >
-        {text}
+      <div className="flex items-center">
+        <Link
+          className={`${
+            isMobile
+              ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
+              : "justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
+          }`}
+          href={link}
+          onClick={isMobile ? handleClickMenuMobile : () => {}}
+        >
+          {text}
+        </Link>
         {!isOpen && !submenu?.length ? (
           ""
         ) : (
-          <button onClick={toggleMenu} id="arrow">
+          <button onClick={toggleMenu}>
             <ArrowUp
               className={
                 isOpen
-                  ? "transform rotate-180 transition-all duration-300"
+                  ? "rotate-180 transition-all duration-300"
                   : "transition-all duration-300"
               }
               height={isMobile ? "16" : "46"}
             />
           </button>
         )}
-      </Link>
+      </div>
       {isOpen && submenu?.length && (
         <div className={`${isMobile ? "" : "relative"}`}>
           <div
