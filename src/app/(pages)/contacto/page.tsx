@@ -3,7 +3,7 @@ import { FC } from "react";
 const ContactPage: FC = () => {
   return (
     <div>
-      <h1>Contact Page</h1>
+      <h1 className="text-light-color">Contact Page</h1>
     </div>
   );
 };

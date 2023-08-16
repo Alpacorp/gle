@@ -16,7 +16,13 @@ import { ListProps } from "./interfaces/List";
 import { Context } from "@/app/context/Context";
 import { iconsSubmenu } from "./IconsSubmenu";
 
-export const List: FC<ListProps> = ({ key, text, link, submenu, isMobile }) => {
+export const List: FC<ListProps> = ({
+  itemKey,
+  text,
+  link,
+  submenu,
+  isMobile,
+}) => {
   const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +65,7 @@ export const List: FC<ListProps> = ({ key, text, link, submenu, isMobile }) => {
 
   return (
     <li
-      key={key}
+      key={itemKey}
       className={`${
         isMobile
           ? "flex-col"
@@ -100,7 +106,7 @@ export const List: FC<ListProps> = ({ key, text, link, submenu, isMobile }) => {
         <div className={`${isMobile ? "" : "relative"}`}>
           <div
             className={`animate-slide-top w-[218px] top-10 -right-[46px] px-4 py-6 ${
-              isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white"
+              isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white shadow"
             }`}
             ref={submenuContainerRef}
             id="submenu"
@@ -117,7 +123,6 @@ export const List: FC<ListProps> = ({ key, text, link, submenu, isMobile }) => {
                       }, 500)
                     : setTimeout(() => {
                         setIsOpen(false);
-                        console.log("click");
                       }, 500)
                 }
               >
