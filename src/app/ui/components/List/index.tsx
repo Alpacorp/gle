@@ -79,7 +79,7 @@ export const List: FC<ListProps> = ({
     >
       <div className="flex items-center">
         <Link
-          className={`${
+          className={`flex items-center ${
             isMobile
               ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
               : "justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
