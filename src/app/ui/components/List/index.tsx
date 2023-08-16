@@ -1,38 +1,26 @@
 "use client";
 
-import { FC, useState, useEffect, useRef, useCallback } from "react";
+import {
+  FC,
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useContext,
+} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ArrowDown } from "../ArrowDown";
 import { ArrowUp } from "../ArrowUp";
-import { Car, Box, World, Cart } from "@icons/index";
 import { ListProps } from "./interfaces/List";
+import { Context } from "@/app/context/Context";
+import { iconsSubmenu } from "./IconsSubmenu";
 
-const iconsSubmenu = [
-  {
-    iconId: 1,
-    iconComponent: <Box />,
-  },
-  {
-    iconId: 2,
-    iconComponent: <Car />,
-  },
-  {
-    iconId: 3,
-    iconComponent: <World />,
-  },
-  {
-    iconId: 4,
-    iconComponent: <Cart />,
-  },
-];
-
-export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
-  const activeSubmenuRef = useRef<HTMLButtonElement>(null);
+export const List: FC<ListProps> = ({ key, text, link, submenu, isMobile }) => {
   const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const { setShowMenu } = useContext(Context);
 
   const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -41,18 +29,29 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
 
   const handleOutsideClick = useCallback(
     (event: MouseEvent) => {
-      if (activeSubmenuRef?.current?.id === "arrowdown" && !isOpen) {
-        setIsOpen(true);
-      } else {
+      if (!submenuContainerRef.current?.contains(event.target as Node)) {
         setIsOpen(false);
+      } else {
+        setIsOpen(true);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [isOpen]
   );
 
+  const handleClickMenuMobile = () => {
+    if (link === "/servicios") {
+      setShowMenu(true);
+      setIsOpen(true);
+    } else {
+      setTimeout(() => {
+        setShowMenu(false);
+      }, 500);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
-
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
@@ -61,34 +60,48 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
   return (
     <li
       key={key}
-      className={`mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-normal hover:border-opacity-100 hover:text-main-red duration-200 ${
-        pathname === link &&
-        "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
+      className={`${
+        isMobile
+          ? "flex-col"
+          : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-normal hover:border-opacity-100 hover:text-main-red duration-200"
+      } ${
+        isMobile && pathname === link
+          ? "border-l-2 border-main-red border-opacity-100 bg-white"
+          : pathname === link &&
+            "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
       <Link
-        className="flex items-center justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
+        className={`flex items-center ${
+          isMobile
+            ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
+            : "justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
+        }`}
         href={link}
+        onClick={isMobile ? handleClickMenuMobile : () => {}}
       >
         {text}
         {!isOpen && !submenu?.length ? (
           ""
-        ) : isOpen && submenu?.length ? (
-          <button onClick={toggleMenu} ref={activeSubmenuRef} id="arrowdown">
-            <ArrowDown />
-          </button>
-        ) : !isOpen ? (
-          <button onClick={toggleMenu}>
-            <ArrowUp />
-          </button>
         ) : (
-          ""
+          <button onClick={toggleMenu} id="arrow">
+            <ArrowUp
+              className={
+                isOpen
+                  ? "transform rotate-180 transition-all duration-300"
+                  : "transition-all duration-300"
+              }
+              height={isMobile ? "16" : "46"}
+            />
+          </button>
         )}
       </Link>
       {isOpen && submenu?.length && (
-        <div className="relative">
+        <div className={`${isMobile ? "" : "relative"}`}>
           <div
-            className="absolute w-[218px] top-10 -right-[46px] mt-2 bg-white shadow-lg rounded-lg py-6 px-4"
+            className={`animate-slide-top w-[218px] top-10 -right-[46px] px-4 py-6 ${
+              isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white"
+            }`}
             ref={submenuContainerRef}
             id="submenu"
           >
@@ -97,7 +110,16 @@ export const List: FC<ListProps> = ({ key, text, link, submenu }) => {
                 key={item.idSub}
                 href={item.linkSub}
                 className="leading-[22px] text-black font-normal hover:text-main-red duration-200 py-2 text-center"
-                onClick={() => setIsOpen(true)}
+                onClick={() =>
+                  isMobile
+                    ? setTimeout(() => {
+                        setShowMenu(false);
+                      }, 500)
+                    : setTimeout(() => {
+                        setIsOpen(false);
+                        console.log("click");
+                      }, 500)
+                }
               >
                 <div className="flex items-center">
                   <div>

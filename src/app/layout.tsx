@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { Header } from "./ui/components/Header";
 
 import "./globals.css";
+import { ContextProvider } from "./context/Context";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,10 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={poppins.className} suppressHydrationWarning>
-        <Header />
-        {children}
-      </body>
+      <ContextProvider>
+        <body className={poppins.className} suppressHydrationWarning>
+          <Header />
+          {children}
+        </body>
+      </ContextProvider>
     </html>
   );
 }
