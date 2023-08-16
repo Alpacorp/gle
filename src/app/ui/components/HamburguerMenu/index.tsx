@@ -14,11 +14,9 @@ export const HamburguerMenu: FC = () => {
         setShowMenu(true);
       }}
       ref={activeSubmenuRef}
+      className="bg-main-red rounded-lg peer-checked:hamburger z-20 p-6 hidden max-[768px]:block lg:hidden max-[500px]:p-3"
     >
-      <label
-        htmlFor="hbr"
-        className="bg-main-red rounded-lg peer-checked:hamburger z-20 p-6 cursor-pointer hidden max-[768px]:block lg:hidden max-[500px]:p-3"
-      >
+      <label htmlFor="hbr">
         <div
           aria-hidden="true"
           className="m-auto h-0.5 w-5 rounded bg-gray-900 dark:bg-gray-300 transition duration-300"
