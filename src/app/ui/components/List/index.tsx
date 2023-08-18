@@ -69,7 +69,7 @@ export const List: FC<ListProps> = ({
       className={`${
         isMobile
           ? "flex-col"
-          : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-normal hover:border-opacity-100 hover:text-main-red duration-200"
+          : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200"
       } ${
         isMobile && pathname === link
           ? "border-l-2 border-main-red border-opacity-100 bg-white"
@@ -82,7 +82,7 @@ export const List: FC<ListProps> = ({
           className={`flex items-center ${
             isMobile
               ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
-              : "justify-center h-[46px] w-[116px] max-[800px]:w-[90px]"
+              : "justify-center h-[75px] w-[116px] max-[800px]:w-[90px]"
           }`}
           href={link}
           onClick={isMobile ? handleClickMenuMobile : () => {}}
@@ -99,7 +99,7 @@ export const List: FC<ListProps> = ({
                   ? "rotate-180 transition-all duration-300"
                   : "transition-all duration-300"
               }
-              height={isMobile ? "16" : "46"}
+              height={isMobile ? "16" : "75"}
             />
           </button>
         )}
@@ -107,7 +107,7 @@ export const List: FC<ListProps> = ({
       {isOpen && submenu?.length && (
         <div className={`${isMobile ? "" : "relative"}`}>
           <div
-            className={`animate-slide-top w-[218px] top-10 -right-[46px] px-4 py-6 ${
+            className={`animate-slide-top w-[218px] top-16 -right-[46px] px-4 py-6 ${
               isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white shadow"
             }`}
             ref={submenuContainerRef}
