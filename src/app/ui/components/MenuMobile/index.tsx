@@ -1,17 +1,16 @@
 "use client";
 
+import { useContext } from "react";
 import Link from "next/link";
-import { GleLogo } from "../GleLogo";
-import { Close } from "../Icons/Close";
-import { ArrowUp } from "../ArrowUp";
-import { useContext, useState } from "react";
 import { Context } from "@/app/context/Context";
-import { List } from "../List";
 
 import menuOptions from "@app/ui/components/Header/menu.json";
+import { SocialMedia } from "../SocialMedia";
+import { Close } from "../Icons/Close";
+import { GleLogo } from "../GleLogo";
+import { List } from "../List";
 
 export const MenuMobile = () => {
-  const [isOpenSubmenu, setIsOpenSubmenu] = useState(false);
   const { setShowMenu, showMenu } = useContext(Context);
 
   return (
@@ -23,7 +22,7 @@ export const MenuMobile = () => {
         ></div>
       )}
       <div
-        className={`absolute bg-white h-screen w-3/4 z-30 left-0 top-0 p-4 lg:
+        className={`absolute bg-white h-screen w-3/4 z-30 left-0 top-0 p-4
     ${
       showMenu
         ? "transform translate-x-0 transition-all duration-300"
@@ -58,6 +57,7 @@ export const MenuMobile = () => {
             ))}
           </ul>
         </nav>
+        <SocialMedia align="end" />
       </div>
     </>
   );
