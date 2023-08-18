@@ -57,7 +57,7 @@ export const MenuMobile = () => {
             ))}
           </ul>
         </nav>
-        <SocialMedia align="end" />
+        <SocialMedia align="start" />
       </div>
     </>
   );
