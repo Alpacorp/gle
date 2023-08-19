@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "url": "./assets/images/mercancias.webp",
+    "url": "/assets/images/mercancias.webp",
     "text": "Servicio personalizado para movilizar mercancías"
   },
   {
     "id": 2,
-    "url": "./assets/images/comercio.webp",
+    "url": "/assets/images/comercio.webp",
     "text": "Logística GLE"
   },
   {
     "id": 3,
-    "url": "./assets/images/logistica.webp",
+    "url": "/assets/images/logistica.webp",
     "text": "Equipo de trabajo GLE"
   }
 ]

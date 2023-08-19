@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 
 import images from "./dataSilders.json";
+import Image from "next/image";
 
 export const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,19 +19,26 @@ export const ImageSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-[565px] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       <div
         className="flex transition-transform duration-300 h-full"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image) => (
           <div key={image.id} className="w-full h-full flex-shrink-0 relative">
-            <div
-              className="bg-cover bg-no-repeat w-full h-full"
+            {/* <div
+              className="bg-cover bg-no-repeat w-full h-full bg-center"
               style={{ backgroundImage: `url(${image.url})` }}
+            /> */}
+            <Image
+              src={image.url}
+              layout="fill"
+              alt="test"
+              objectFit="cover"
+              objectPosition="center"
             />
             <div className="absolute bottom-16 right-0 p-4 text-white text-4xl font-semibold leading-10 font-poppins">
-              {image.text}
+              {image.text}I
             </div>
           </div>
         ))}
