@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-
-import images from "./dataSilders.json";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 
-export const ImageSlider = () => {
+import images from "./dataSilders.json";
+
+export const ImageSlider: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -18,10 +20,25 @@ export const ImageSlider = () => {
     );
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered && !isTransitioning) {
+        goToNextSlide();
+      }
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [isHovered, isTransitioning]);
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div
+      className="relative w-full h-screen overflow-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div
-        className="flex transition-transform duration-300 h-full"
+        className={`flex transition-transform duration-1000 h-full ${
+          isTransitioning ? "pointer-events-none" : ""
+        }`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image) => (
@@ -32,12 +49,19 @@ export const ImageSlider = () => {
             /> */}
             <Image
               src={image.url}
-              layout="fill"
+              fill
+              sizes="
+              (max-width: 640px) 100vw,
+              (max-width: 768px) 100vw,
+              (max-width: 1024px) 100vw,
+              (max-width: 1280px) 100vw,
+              (max-width: 1536px) 100vw,
+              "
+              loading="lazy"
               alt="test"
-              objectFit="cover"
-              objectPosition="center"
+              className="object-cover object-center"
             />
-            <div className="absolute bottom-16 right-0 p-4 text-white text-4xl font-semibold leading-10 font-poppins">
+            <div className="absolute animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-4xl font-semibold leading-10 font-poppins">
               {image.text}I
             </div>
           </div>
@@ -45,7 +69,11 @@ export const ImageSlider = () => {
       </div>
       <button
         className="absolute top-1/2 left-10 transform -translate-y-1/2 text-white"
-        onClick={goToPrevSlide}
+        onClick={() => {
+          setIsTransitioning(true);
+          goToPrevSlide();
+          setTimeout(() => setIsTransitioning(false), 1000);
+        }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +91,11 @@ export const ImageSlider = () => {
       </button>
       <button
         className="absolute top-1/2 right-10 transform -translate-y-1/2 text-white"
-        onClick={goToNextSlide}
+        onClick={() => {
+          setIsTransitioning(true);
+          goToNextSlide();
+          setTimeout(() => setIsTransitioning(false), 1000);
+        }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +115,8 @@ export const ImageSlider = () => {
         {images.map((image, index) => (
           <button
             key={image.id}
-            className={`w-3 h-3 rounded-full ${
-              index === currentIndex ? "bg-main-red w-10" : "bg-gray-300"
+            className={`h-3 rounded-full ${
+              index === currentIndex ? "bg-main-red w-10" : "bg-white w-3"
             }`}
             onClick={() => setCurrentIndex(index)}
           />

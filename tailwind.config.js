@@ -34,10 +34,26 @@ module.exports = {
             transform: "translateY(8px)",
           },
         },
+        "slide-in-right": {
+          "0%": { transform: "translateX(1000px)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "fade-in-bottom": {
+          "0%": {
+            transform: "translateY(50px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "slide-top":
-          "slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both",
+          "slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) ease",
+        "slide-in-right": "slide-in-right .5s ease-in-out",
+        "fade-in-bottom": "fade-in-bottom 0.8s",
       },
     },
   },
