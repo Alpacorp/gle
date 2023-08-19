@@ -1,11 +1,12 @@
 import { FC } from "react";
+import HomePage from "./(pages)/(inicio)/container";
 
-const HomePage: FC = () => {
+const HomeContainer: FC = () => {
   return (
     <main>
-      <p>contenido de la pagina</p>
+      <HomePage />
     </main>
   );
 };
 
-export default HomePage;
+export default HomeContainer;
