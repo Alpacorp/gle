@@ -61,9 +61,13 @@ export const ImageSlider: FC = () => {
               alt="test"
               className="object-cover object-center"
             />
-            <div className="absolute animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-4xl font-semibold leading-10 font-poppins">
-              {image.text}I
+            <div className="absolute z-50 animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-6xl font-semibold leading-[65px] font-poppins max-w-[800px]">
+              <h2>{image.text}</h2>
+              <p className="text-base">{image?.subtext}</p>
             </div>
+            <div className="absolute z-50 animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-lg font-semibold leading-[65px] font-poppins max-w-[800px]"></div>
+
+            <div className="absolute z-10 inset-0 bg-gradient-to-t from-black to-transparent"></div>
           </div>
         ))}
       </div>
