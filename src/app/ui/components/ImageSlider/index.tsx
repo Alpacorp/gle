@@ -66,7 +66,7 @@ export const ImageSlider: FC = () => {
         {images.map((image) => (
           <div
             key={image.id}
-            className={`w-full h-screen flex-shrink-0 relative`}
+            className={`w-full h-screen h-[100dvh] flex-shrink-0 relative`}
           >
             <Image
               src={image.url}
@@ -79,7 +79,7 @@ export const ImageSlider: FC = () => {
               (max-width: 1536px) 100vw,
               "
               loading="lazy"
-              alt="test"
+              alt={image.text}
               className="object-cover object-top"
             />
             {showText && (
