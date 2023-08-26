@@ -8,11 +8,13 @@
   {
     "id": 2,
     "url": "/assets/images/comercio.webp",
-    "text": "Logística GLE"
+    "text": "Somos tu mejor aliado en logística internacional",
+    "subtext": "todos los procedimientos aduaneros y de transporte"
   },
   {
     "id": 3,
     "url": "/assets/images/logistica.webp",
-    "text": "Equipo de trabajo GLE"
+    "text": "Contamos con el mejor talento humano",
+    "subtext": "para brindar un servicio de calidad y totalmente personalizado"
   }
 ]

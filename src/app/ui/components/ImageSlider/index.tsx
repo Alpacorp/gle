@@ -4,11 +4,19 @@ import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 
 import images from "./dataSilders.json";
+import { LeftArrow } from "../SlideArrows/LeftArrow";
+import { RightArrow } from "../SlideArrows/RightArrow";
+import { TextBanner } from "../TextBanner";
 
 export const ImageSlider: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [animateText, setAnimateText] = useState(false);
+  const [showText, setShowText] = useState(true);
+
+  const redWordsText = ["Servicio", "talento", "aliado"];
+  const redWordsSubtext = ["oportuna", "procedimientos", "calidad"];
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -20,14 +28,28 @@ export const ImageSlider: FC = () => {
     );
   };
 
+  const handleSlideTextAnimation = () => {
+    setShowText(false);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setShowText(true);
+    }, 800);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered && !isTransitioning) {
         goToNextSlide();
+        handleSlideTextAnimation();
       }
     }, 7000);
     return () => clearInterval(interval);
   }, [isHovered, isTransitioning]);
+
+  useEffect(() => {
+    setAnimateText(true);
+  }, [currentIndex]);
 
   return (
     <div
@@ -42,11 +64,10 @@ export const ImageSlider: FC = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image) => (
-          <div key={image.id} className="w-full h-full flex-shrink-0 relative">
-            {/* <div
-              className="bg-cover bg-no-repeat w-full h-full bg-center"
-              style={{ backgroundImage: `url(${image.url})` }}
-            /> */}
+          <div
+            key={image.id}
+            className={`w-full h-screen flex-shrink-0 relative`}
+          >
             <Image
               src={image.url}
               fill
@@ -59,61 +80,51 @@ export const ImageSlider: FC = () => {
               "
               loading="lazy"
               alt="test"
-              className="object-cover object-center"
+              className="object-cover object-top"
             />
-            <div className="absolute z-50 animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-6xl font-semibold leading-[65px] font-poppins max-w-[800px]">
-              <h2>{image.text}</h2>
-              <p className="text-base">{image?.subtext}</p>
-            </div>
-            <div className="absolute z-50 animate-slide-in-right delay-100 bottom-16 right-0 p-4 text-white text-lg font-semibold leading-[65px] font-poppins max-w-[800px]"></div>
-
-            <div className="absolute z-10 inset-0 bg-gradient-to-t from-black to-transparent"></div>
+            {showText && (
+              <div
+                className={`absolute z-50 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
+                  animateText ? "animate-fade-in-bottom delay-1000" : ""
+                }`}
+              >
+                <TextBanner
+                  image={image}
+                  type={"text"}
+                  redWords={redWordsText}
+                  customClass={
+                    "text-5xl mb-1 max-[380px]:text-4xl font-semibold"
+                  }
+                />
+                <TextBanner
+                  image={image}
+                  type={"subtext"}
+                  redWords={redWordsSubtext}
+                  customClass={"text-2xl max-[380px]:text-lg font-normal"}
+                />
+              </div>
+            )}
+            <div className="absolute z-10 inset-0 bg-gradient-to-t from-black to-transparent" />
           </div>
         ))}
       </div>
       <button
-        className="absolute top-1/2 left-10 transform -translate-y-1/2 text-white"
+        className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white"
         onClick={() => {
-          setIsTransitioning(true);
           goToPrevSlide();
-          setTimeout(() => setIsTransitioning(false), 1000);
+          handleSlideTextAnimation();
         }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="29"
-          height="48"
-          viewBox="0 0 29 48"
-          fill="none"
-        >
-          <path
-            d="M10.7178 23.6507L10.3768 24L10.7178 24.3493L28.3009 42.3596L23.4818 47.285L0.699515 24L23.4818 0.714952L28.3009 5.64038L10.7178 23.6507Z"
-            fill="white"
-            stroke="white"
-          />
-        </svg>
+        <LeftArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
       <button
-        className="absolute top-1/2 right-10 transform -translate-y-1/2 text-white"
+        className="absolute top-1/2 right-5 transform -translate-y-1/2 text-white"
         onClick={() => {
-          setIsTransitioning(true);
           goToNextSlide();
-          setTimeout(() => setIsTransitioning(false), 1000);
+          handleSlideTextAnimation();
         }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="29"
-          height="48"
-          viewBox="0 0 29 48"
-          fill="none"
-        >
-          <path
-            d="M18.2822 24.3493L18.6232 24L18.2822 23.6507L0.699142 5.64038L5.51822 0.714956L28.3005 24L5.51821 47.285L0.699137 42.3596L18.2822 24.3493Z"
-            fill="white"
-            stroke="white"
-          />
-        </svg>
+        <RightArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
       <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
         {images.map((image, index) => (
@@ -122,7 +133,10 @@ export const ImageSlider: FC = () => {
             className={`h-3 rounded-full ${
               index === currentIndex ? "bg-main-red w-10" : "bg-white w-3"
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => {
+              setCurrentIndex(index);
+              handleSlideTextAnimation();
+            }}
           />
         ))}
       </div>
