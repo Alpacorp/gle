@@ -14,7 +14,7 @@ import "./styles.css";
 
 export const Header: FC = () => {
   return (
-    <header className="header fixed w-full top-0 bg-[#F5F5F5] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-20">
+    <header className="header fixed w-full top-0 bg-[#f5f5f5d0] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-20">
       <MenuMobile />
       <HamburguerMenu />
       <div>
