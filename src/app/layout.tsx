@@ -16,6 +16,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "G.L.E. - Grupo Logístico Especializado",
   description: "Volamos para que llegues más rápido",
+  keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
 };
 
 export default function RootLayout({
