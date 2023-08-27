@@ -117,7 +117,7 @@ export const List: FC<ListProps> = ({
               <Link
                 key={item.idSub}
                 href={item.linkSub}
-                className="leading-[22px] text-black font-normal hover:text-main-red duration-200 py-2 text-center"
+                className="leading-[22px] text-black font-normal hover:text-main-red duration-200 text-center"
                 onClick={() =>
                   isMobile
                     ? setTimeout(() => {
