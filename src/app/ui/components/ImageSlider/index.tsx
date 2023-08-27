@@ -103,7 +103,7 @@ export const ImageSlider: FC = () => {
                 />
               </div>
             )}
-            <div className="absolute z-10 inset-0 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute z-10 inset-0 bg-gradient-to-t from-main-gray to-transparent" />
           </div>
         ))}
       </div>

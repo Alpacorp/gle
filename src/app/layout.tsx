@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 
 import { Header } from "./ui/components/Header";
 
@@ -11,6 +11,13 @@ const poppins = Poppins({
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +34,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <ContextProvider>
-        <body className={poppins.className} suppressHydrationWarning>
+        <body
+          className={`${poppins.variable} ${inter.variable}`}
+          suppressHydrationWarning
+        >
           <Header />
           {children}
         </body>

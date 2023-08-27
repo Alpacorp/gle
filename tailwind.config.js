@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       poppins: ["var(--font-poppins)"],
+      inter: ["var(--font-inter)"],
     },
     extend: {
       backgroundImage: {
@@ -24,6 +25,8 @@ module.exports = {
       },
       colors: {
         "main-red": "#D81730",
+        "secondary-red": "#AE0E22",
+        "main-gray": "#383838",
       },
       keyframes: {
         "slide-top": {

@@ -5,3 +5,4 @@ export * from "./Cart";
 export * from "./Facebook";
 export * from "./LinkedIn";
 export * from "./YouTube";
+export * from "./ArrowRight";
