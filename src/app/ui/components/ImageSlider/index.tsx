@@ -66,7 +66,7 @@ export const ImageSlider: FC = () => {
         {images.map((image) => (
           <div
             key={image.id}
-            className={`w-full h-screen h-[100dvh] flex-shrink-0 relative`}
+            className={`w-full h-[100dvh] flex-shrink-0 relative`}
           >
             <Image
               src={image.url}
@@ -93,14 +93,16 @@ export const ImageSlider: FC = () => {
                   type={"text"}
                   redWords={redWordsText}
                   customClass={
-                    "text-5xl mb-1 max-[380px]:text-4xl font-semibold"
+                    "text-5xl mb-1 font-semibold max-[744px]:text-4xl max-[380px]:text-3xl max-[320px]:text-2xl max-[380px]:leading-9 max-[320px]:leading-7"
                   }
                 />
                 <TextBanner
                   image={image}
                   type={"subtext"}
                   redWords={redWordsSubtext}
-                  customClass={"text-2xl max-[380px]:text-lg font-normal"}
+                  customClass={
+                    "text-2xl font-normal max-[380px]:text-lg max-[320px]:text-md max-[380px]:leading-6 max-[320px]:leading-5"
+                  }
                 />
               </div>
             )}
