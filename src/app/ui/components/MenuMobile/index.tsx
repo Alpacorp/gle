@@ -38,7 +38,7 @@ export const MenuMobile = () => {
         </div>
         <nav className="mt-8">
           <ul className="flex flex-col items-left justify-center space-y-3 text-black">
-            {menuOptions.map(({ id, text, link, type, submenu }) => (
+            {menuOptions.map(({ id, text, link, submenu }) => (
               <List
                 key={id}
                 itemKey={id}
