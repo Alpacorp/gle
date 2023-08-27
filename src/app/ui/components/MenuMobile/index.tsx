@@ -22,7 +22,7 @@ export const MenuMobile = () => {
         ></div>
       )}
       <div
-        className={`absolute bg-white h-screen w-3/4 z-30 left-0 top-0 p-4 ${
+        className={`absolute bg-white h-screen overflow-auto w-3/4 z-30 left-0 top-0 p-4 ${
           showMenu
             ? "transform translate-x-0 transition-all duration-300"
             : "transform -translate-x-full transition-all duration-300"
