@@ -128,7 +128,7 @@ export const List: FC<ListProps> = ({
                       }, 500)
                 }
               >
-                <div className="flex items-center">
+                <div className="flex items-center my-4">
                   <div>
                     {
                       iconsSubmenu.filter(
@@ -141,7 +141,7 @@ export const List: FC<ListProps> = ({
                 {item.idSub === submenu.length ? (
                   ""
                 ) : (
-                  <hr className="my-4 border-gray-300 border-[1.5px]" />
+                  <hr className="border-gray-300 border-[1.5px]" />
                 )}
               </Link>
             ))}
