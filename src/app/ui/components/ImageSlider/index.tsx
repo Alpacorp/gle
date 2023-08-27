@@ -53,7 +53,7 @@ export const ImageSlider: FC = () => {
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-[100dvh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -64,10 +64,7 @@ export const ImageSlider: FC = () => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((image) => (
-          <div
-            key={image.id}
-            className={`w-full h-[100dvh] flex-shrink-0 relative`}
-          >
+          <div key={image.id} className={`w-full flex-shrink-0 relative`}>
             <Image
               src={image.url}
               fill
