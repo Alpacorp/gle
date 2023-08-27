@@ -17,12 +17,12 @@ export const MenuMobile = () => {
     <>
       {showMenu && (
         <div
-          className="fixed bg-black opacity-50 h-screen w-screen top-0 left-0 z-20"
+          className="fixed bg-black opacity-50 h-screen w-screen top-0 left-0 z-40"
           onClick={() => setShowMenu(false)}
         ></div>
       )}
       <div
-        className={`absolute bg-white h-screen overflow-auto w-3/4 z-30 left-0 top-0 p-4 ${
+        className={`absolute bg-white h-[100dvh] overflow-auto w-3/4 z-50 left-0 top-0 p-4 ${
           showMenu
             ? "transform translate-x-0 transition-all duration-300"
             : "transform -translate-x-full transition-all duration-300"

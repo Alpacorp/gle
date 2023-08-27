@@ -81,7 +81,7 @@ export const ImageSlider: FC = () => {
             />
             {showText && (
               <div
-                className={`absolute z-50 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
+                className={`absolute z-40 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
                   animateText ? "animate-fade-in-bottom delay-1000" : ""
                 }`}
               >
