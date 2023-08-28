@@ -103,7 +103,7 @@ export const ImageSlider: FC = () => {
             />
             {showText && (
               <div
-                className={`absolute z-40 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
+                className={`absolute z-40 bottom-24 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
                   animateText ? "animate-fade-in-bottom delay-1000" : ""
                 }`}
               >
@@ -130,7 +130,7 @@ export const ImageSlider: FC = () => {
         ))}
       </div>
       <button
-        className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white"
+        className="absolute top-[40%] left-5 transform -translate-y-1/2 text-white"
         onClick={() => {
           goToPrevSlide();
           handleSlideTextAnimation();
@@ -139,7 +139,7 @@ export const ImageSlider: FC = () => {
         <LeftArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
       <button
-        className="absolute top-1/2 right-5 transform -translate-y-1/2 text-white"
+        className="absolute top-[40%] right-5 transform -translate-y-1/2 text-white"
         onClick={() => {
           goToNextSlide();
           handleSlideTextAnimation();
@@ -147,7 +147,7 @@ export const ImageSlider: FC = () => {
       >
         <RightArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+      <div className="absolute bottom-16 left-0 right-0 flex justify-center space-x-2">
         {images.map((image, index) => (
           <button
             key={image.id}
