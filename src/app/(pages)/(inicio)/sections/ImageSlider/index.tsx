@@ -74,35 +74,9 @@ export const ImageSlider: FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const bannerElement = bannerRef.current;
-
-    if (!bannerElement) return;
-
-    const handleIntersection = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // El banner está completamente visible
-          bannerElement.style.height = "100dvh";
-        } else {
-          // El banner ya no está completamente visible
-          bannerElement.style.height = "100vh";
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection);
-
-    observer.observe(bannerElement);
-
-    return () => {
-      observer.unobserve(bannerElement);
-    };
-  }, []);
-
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="w-full overflow-hidden h-[100svh]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       ref={bannerRef}
