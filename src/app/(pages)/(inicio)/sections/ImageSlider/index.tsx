@@ -75,7 +75,7 @@ export const ImageSlider: FC = () => {
 
   return (
     <section
-      className="relative w-full h-[100dvh] overflow-hidden"
+      className="relative w-full h-screen h-[100dvh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
