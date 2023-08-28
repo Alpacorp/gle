@@ -81,23 +81,17 @@ export const ImageSlider: FC = () => {
 
     const handleIntersection = (entries: any[]) => {
       entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          // El banner está al menos parcialmente visible
+        if (entry.isIntersecting) {
+          // El banner está completamente visible
           bannerElement.style.height = "100dvh";
         } else {
-          // El banner ya no está visible
+          // El banner ya no está completamente visible
           bannerElement.style.height = "100vh";
         }
       });
     };
 
-    const options = {
-      root: null, // Observar el viewport
-      rootMargin: "0px", // Sin margen
-      threshold: [0], // Actuar cuando el elemento sea visible parcialmente
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, options);
+    const observer = new IntersectionObserver(handleIntersection);
 
     observer.observe(bannerElement);
 
