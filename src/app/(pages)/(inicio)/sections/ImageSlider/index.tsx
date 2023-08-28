@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 import { LeftArrow } from "../../../../ui/components/SlideArrows/LeftArrow";
@@ -10,6 +10,7 @@ import { TextBanner } from "../../../../ui/components/TextBanner";
 import images from "./dataSilders.json";
 
 export const ImageSlider: FC = () => {
+  const bannerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -73,11 +74,44 @@ export const ImageSlider: FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const bannerElement = bannerRef.current;
+
+    if (!bannerElement) return;
+
+    const handleIntersection = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          // El banner está al menos parcialmente visible
+          bannerElement.style.height = "100dvh";
+        } else {
+          // El banner ya no está visible
+          bannerElement.style.height = "100vh";
+        }
+      });
+    };
+
+    const options = {
+      root: null, // Observar el viewport
+      rootMargin: "0px", // Sin margen
+      threshold: [0], // Actuar cuando el elemento sea visible parcialmente
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    observer.observe(bannerElement);
+
+    return () => {
+      observer.unobserve(bannerElement);
+    };
+  }, []);
+
   return (
     <section
-      className="relative w-full h-screen h-[100dvh] overflow-hidden"
+      className="relative w-full overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      ref={bannerRef}
     >
       <div
         className={`flex transition-transform duration-1000 h-full ${
@@ -103,7 +137,7 @@ export const ImageSlider: FC = () => {
             />
             {showText && (
               <div
-                className={`absolute z-40 bottom-24 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
+                className={`absolute z-40 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
                   animateText ? "animate-fade-in-bottom delay-1000" : ""
                 }`}
               >
@@ -130,7 +164,7 @@ export const ImageSlider: FC = () => {
         ))}
       </div>
       <button
-        className="absolute top-[40%] left-5 transform -translate-y-1/2 text-white"
+        className="absolute top-1/2 left-5 transform -translate-y-1/2 text-white"
         onClick={() => {
           goToPrevSlide();
           handleSlideTextAnimation();
@@ -139,7 +173,7 @@ export const ImageSlider: FC = () => {
         <LeftArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
       <button
-        className="absolute top-[40%] right-5 transform -translate-y-1/2 text-white"
+        className="absolute top-1/2 right-5 transform -translate-y-1/2 text-white"
         onClick={() => {
           goToNextSlide();
           handleSlideTextAnimation();
@@ -147,7 +181,7 @@ export const ImageSlider: FC = () => {
       >
         <RightArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
-      <div className="absolute bottom-16 left-0 right-0 flex justify-center space-x-2">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
         {images.map((image, index) => (
           <button
             key={image.id}
