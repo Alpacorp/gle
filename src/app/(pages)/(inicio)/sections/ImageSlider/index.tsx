@@ -3,10 +3,11 @@
 import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 
+import { LeftArrow } from "../../../../ui/components/SlideArrows/LeftArrow";
+import { RightArrow } from "../../../../ui/components/SlideArrows/RightArrow";
+import { TextBanner } from "../../../../ui/components/TextBanner";
+
 import images from "./dataSilders.json";
-import { LeftArrow } from "../SlideArrows/LeftArrow";
-import { RightArrow } from "../SlideArrows/RightArrow";
-import { TextBanner } from "../TextBanner";
 
 export const ImageSlider: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,9 +15,10 @@ export const ImageSlider: FC = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [animateText, setAnimateText] = useState(false);
   const [showText, setShowText] = useState(true);
+  const [mobileWidth, setMobileWidth] = useState(false);
 
-  const redWordsText = ["Servicio", "talento", "aliado"];
-  const redWordsSubtext = ["oportuna", "procedimientos", "calidad"];
+  const redWordsText = ["Servicio", "talento", "mejores"];
+  const redWordsSubtext = ["oportuna", "servicios", "aliados"];
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -51,8 +53,28 @@ export const ImageSlider: FC = () => {
     setAnimateText(true);
   }, [currentIndex]);
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 450) {
+        setMobileWidth(true);
+      } else {
+        setMobileWidth(false);
+      }
+    });
+
+    if (window.innerWidth < 450) {
+      setMobileWidth(true);
+    } else {
+      setMobileWidth(false);
+    }
+
+    return () => {
+      window.removeEventListener("resize", () => setMobileWidth(false));
+    };
+  }, []);
+
   return (
-    <div
+    <section
       className="relative w-full h-[100dvh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -66,16 +88,16 @@ export const ImageSlider: FC = () => {
         {images.map((image) => (
           <div key={image.id} className={`w-full flex-shrink-0 relative`}>
             <Image
-              src={image.url}
+              src={mobileWidth ? image.urlMobile : image.url}
               fill
               sizes="
-              (max-width: 640px) 100vw,
-              (max-width: 768px) 100vw,
-              (max-width: 1024px) 100vw,
-              (max-width: 1280px) 100vw,
-              (max-width: 1536px) 100vw,
+                (max-width: 640px) 100vw,
+                (max-width: 768px) 100vw,
+                (max-width: 1024px) 100vw,
+                (max-width: 1280px) 100vw,
+                (max-width: 1536px) 100vw,
               "
-              loading="lazy"
+              priority
               alt={image.text}
               className="object-cover object-top"
             />
@@ -139,6 +161,6 @@ export const ImageSlider: FC = () => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };

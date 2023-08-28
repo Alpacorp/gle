@@ -6,3 +6,7 @@ export * from "./Facebook";
 export * from "./LinkedIn";
 export * from "./YouTube";
 export * from "./ArrowRight";
+export * from "./Integration";
+export * from "./Experience";
+export * from "./Models";
+export * from "./Professionals";

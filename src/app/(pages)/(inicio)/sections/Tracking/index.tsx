@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ArrowRight } from "../Icons";
+import { ArrowRight } from "../../../../ui/components/Icons";
 
 export const Tracking: FC = () => {
   return (

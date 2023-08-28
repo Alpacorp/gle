@@ -9,7 +9,7 @@ export const ArrowRight: FC = () => {
       viewBox="0 0 13 20"
       fill="none"
     >
-      <g clip-path="url(#clip0_410_11252)">
+      <g clipPath="url(#clip0_410_11252)">
         <path
           d="M1.25977 1.0524L11.3927 10.0386L0.801758 18.9475"
           stroke="white"

@@ -141,7 +141,7 @@ export const List: FC<ListProps> = ({
                 {item.idSub === submenu.length ? (
                   ""
                 ) : (
-                  <hr className="border-gray-300 border-[1.5px]" />
+                  <hr className="border-gray-300 border-[1px]" />
                 )}
               </Link>
             ))}
