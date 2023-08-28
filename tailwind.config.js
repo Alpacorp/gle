@@ -8,12 +8,16 @@ module.exports = {
   theme: {
     fontFamily: {
       poppins: ["var(--font-poppins)"],
+      inter: ["var(--font-inter)"],
     },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gray-pattern": "url('/assets/images/background-gray.svg')",
+        "gray-pattern-mobile":
+          "url('/assets/images/background-gray-mobile.svg')",
       },
       backgroundColor: {
         "header-bg-light-color": "var(--bg-light)",
@@ -24,6 +28,8 @@ module.exports = {
       },
       colors: {
         "main-red": "#D81730",
+        "secondary-red": "#AE0E22",
+        "main-gray": "#383838",
       },
       keyframes: {
         "slide-top": {
