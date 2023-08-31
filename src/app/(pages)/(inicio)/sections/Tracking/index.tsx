@@ -14,7 +14,10 @@ export const Tracking: FC = () => {
             className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-xl lg:max-w-[250px] lg:w-full max-[380px]:w-full "
             placeholder="Número de guía"
           />
-          <button className="bg-main-red flex items-center justify-center gap-4 rounded-md py-2 px-4 text-white max-[380px]:w-full font-inter text-lg hover:shadow-[inset_13rem_0_0_0] hover:shadow-secondary-red duration-[400ms,700ms] transition-[color,box-shadow]">
+          <button
+            className="bg-main-red flex items-center justify-center gap-4 rounded-md py-2 px-4 text-white max-[380px]:w-full font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out
+          "
+          >
             <ArrowRight /> Consultar
           </button>
         </div>

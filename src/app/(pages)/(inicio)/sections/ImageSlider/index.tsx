@@ -101,7 +101,7 @@ export const ImageSlider: FC = () => {
               "
               priority
               alt={image.text}
-              className="object-cover object-top"
+              className="object-cover object-top max-[380px]:object-center"
             />
             {showText && (
               <div
