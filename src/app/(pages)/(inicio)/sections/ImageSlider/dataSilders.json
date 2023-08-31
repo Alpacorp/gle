@@ -2,21 +2,21 @@
   {
     "id": 1,
     "url": "/assets/images/mercancias.webp",
-    "urlMobile": "/assets/images/mobile.webp",
+    "urlMobile": "/assets/images/mercancias-mobile.webp",
     "text": "Servicio personalizado para movilizar mercancías",
     "subtext": "con información oportuna e indicadores de gestión"
   },
   {
     "id": 2,
     "url": "/assets/images/comercio.webp",
-    "urlMobile": "/assets/images/mobile.webp",
+    "urlMobile": "/assets/images/comercio-mobile.webp",
     "text": "Contamos con los mejores partners logísticos",
     "subtext": "para diseñar servicios a su medida"
   },
   {
     "id": 3,
     "url": "/assets/images/talento.webp",
-    "urlMobile": "/assets/images/talento.webp",
+    "urlMobile": "/assets/images/talento-mobile.webp",
     "text": "Nuestra visión, talento y servicio",
     "subtext": "hacen parte de su empresa como aliados estratégicos"
   }
