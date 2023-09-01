@@ -18,8 +18,9 @@ export const Services = () => {
             align="right"
             family={"poppins"}
             weight="semibold"
-            // showLine
+            showLine
             className="text-4xl"
+            lineColor="white"
           >
             Servicios Especializados
           </Title>
