@@ -1,6 +1,7 @@
 import { ImageSlider } from "@/app/(pages)/(inicio)/sections/ImageSlider";
 import { Tracking } from "@/app/(pages)/(inicio)/sections/Tracking";
 import { WeAreGLE } from "@/app/(pages)/(inicio)/sections/WeAreGLE";
+import { Services } from "../sections/Services";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
         <Tracking />
         <WeAreGLE />
       </div>
+      <Services />
     </>
   );
 };
