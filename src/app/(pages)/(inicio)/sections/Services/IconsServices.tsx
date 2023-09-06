@@ -1,6 +1,6 @@
 import { Car, Box, World, Cart } from "@icons/index";
 
-export const iconsSubmenu = [
+export const iconsServices = [
   {
     iconId: 1,
     iconComponent: <Box />,

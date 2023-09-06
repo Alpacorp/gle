@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Paqueteo",
+    "url": "/assets/images/services/paqueteo.webp"
+  },
+  {
+    "id": 2,
+    "name": "Carga Masiva",
+    "url": "/assets/images/services/carga-masiva.webp"
+  },
+  {
+    "id": 3,
+    "name": "G.L.E. Internacional",
+    "url": "/assets/images/services/internacional.webp"
+  },
+  {
+    "id": 4,
+    "name": "Servicios E-Commerce",
+    "url": "/assets/images/services/ecommerce.webp"
+  }
+]

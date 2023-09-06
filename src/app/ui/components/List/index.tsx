@@ -14,7 +14,7 @@ import { usePathname } from "next/navigation";
 import { ArrowUp } from "../ArrowUp";
 import { ListProps } from "./interfaces/List";
 import { Context } from "@/app/context/Context";
-import { iconsSubmenu } from "./IconsSubmenu";
+import { iconsServices } from "../../../(pages)/(inicio)/sections/Services/IconsServices";
 
 export const List: FC<ListProps> = ({
   itemKey,
@@ -131,8 +131,8 @@ export const List: FC<ListProps> = ({
                 <div className="flex items-center my-4">
                   <div>
                     {
-                      iconsSubmenu.filter(
-                        (icon) => icon.iconId === item.idSub
+                      iconsServices.filter(
+                        (icon: any) => icon.iconId === item.idSub
                       )[0].iconComponent
                     }
                   </div>

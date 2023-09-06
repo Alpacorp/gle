@@ -1,9 +1,12 @@
-export const Car = () => {
+import { FC } from "react";
+import { IconProps } from "./interfaces";
+
+export const Car: FC<IconProps> = ({ width, height }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width={width ?? "40"}
+      height={height ?? "40"}
       viewBox="0 0 41 40"
       fill="none"
     >
