@@ -32,7 +32,7 @@ export const Services = () => {
           {services.map(({ id, name, url }) => (
             <div
               key={id}
-              className="rounded-lg overflow-hidden shadow-md relative mt-10"
+              className="rounded-lg overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
             >
               <div className="relative h-[438px] w-[262px]">
                 <Image src={url} alt={name} layout="fill" objectFit="cover" />
