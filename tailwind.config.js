@@ -18,6 +18,7 @@ module.exports = {
         "gray-pattern": "url('/assets/images/background-gray.svg')",
         "gray-pattern-mobile":
           "url('/assets/images/background-gray-mobile.svg')",
+        "volamos-back": "url('/assets/images/gle/volamos.svg')",
       },
       backgroundColor: {
         "header-bg-light-color": "var(--bg-light)",

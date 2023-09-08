@@ -55,7 +55,7 @@ export const WeAreGLE = () => {
           ))}
         </div>
       </div>
-      <div className="">
+      <div>
         <ArrowGLE className="absolute left-0 pt-20" />
       </div>
     </section>
