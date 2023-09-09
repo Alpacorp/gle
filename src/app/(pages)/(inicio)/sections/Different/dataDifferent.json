@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "description": "In House en las instalaciones del cliente, cuando se requiere desde el primer día de la operación, sin costo.",
+    "color": 1
+  },
+  {
+    "id": 2,
+    "description": "Con nuestros ejecutivos de cuenta, ofrecemos servicios personalizados (seguimiento, atención de solicitudes y novedades, informes y planes de mejora continua).",
+    "color": 2
+  },
+  {
+    "id": 3,
+    "description": "Red de apoyo a nivel nacional para atender las posibles solicitudes y novedades logísticas que puedan presentar nuestros apreciados clientes y aliados.",
+    "color": 3
+  },
+  {
+    "id": 4,
+    "description": "Presentación  de informes e indicadores mensuales.",
+    "color": 1
+  },
+  {
+    "id": 5,
+    "description": "Agilidad en la respuesta de P.Q.R",
+    "color": 2
+  },
+  {
+    "id": 6,
+    "description": "Soluciones de Logística flexible, permitiendo ajustarnos a la necesidad del cliente.",
+    "color": 3
+  }
+]

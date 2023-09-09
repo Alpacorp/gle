@@ -11,7 +11,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ArrowUp } from "../ArrowUp";
+import { ArrowUp } from "../Icons/ArrowUp";
 import { ListProps } from "./interfaces/List";
 import { Context } from "@/app/context/Context";
 import { iconsServices } from "../../../(pages)/(inicio)/sections/Services/IconsServices";

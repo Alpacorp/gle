@@ -3,7 +3,7 @@ import { Title } from "@/app/ui/components/Title";
 import { iconsWeAre } from "./IconsWeAre";
 import { ArrowGLE } from "@/app/ui/components/Icons/ArrowGLE";
 
-import data from "./data.json";
+import data from "./dataWeAre.json";
 
 export const WeAreGLE = () => {
   const hightWords = [

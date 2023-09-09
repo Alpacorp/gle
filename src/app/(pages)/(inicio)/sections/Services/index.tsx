@@ -7,9 +7,7 @@ import backMobile from "@public/assets/images/services/services-mobile-backgroun
 import backServices from "@public/assets/images/services/services-background.png";
 
 import { iconsServices } from "./IconsServices";
-import { ArrowCta } from "@/app/ui/components/ArrowCta";
-import { ArrowToDown } from "@/app/ui/components/ArrowToDown";
-import { ArrowGLE } from "@/app/ui/components/Icons/ArrowGLE";
+import { ArrowCta, ArrowToDown, ArrowGLE } from "@/app/ui/components/Icons/";
 
 export const Services = () => {
   return (
@@ -86,13 +84,13 @@ export const Services = () => {
               ))}
             </div>
             <div className="relative flex items-center justify-around flex-wrap-reverse gap-5 mt-10">
-              <div className="flex flex-col items-center text-center gap-5 font-poppins text-3xl font-semibold m-auto max-w-[244px]">
-                <h3 className="max-[380px]:text-white">
+              <div className="flex flex-col items-center text-secondary-gray text-center gap-5 font-poppins text-3xl font-semibold m-auto max-w-[244px]">
+                <h3 className="max-[1115px]:text-white">
                   Conoce nuestra razón de ser
                 </h3>
-                <ArrowToDown className="max-[380px]:hidden" />
+                <ArrowToDown className="max-[1115px]:hidden" />
                 <ArrowToDown
-                  className="hidden max-[380px]:block max-[380px]:w-8"
+                  className="hidden max-[1115px]:block max-[380px]:w-8"
                   stroke="white"
                 />
               </div>
@@ -118,16 +116,16 @@ export const Services = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="mt-6">
         <div className="flex justify-between flex-wrap max-[1000px]:justify-end">
           <iframe
             width="760"
             height="315"
-            src="https://www.youtube.com/embed/fOW8Y09GVek?si=cDZQPYq_rF1tmShy"
+            src="https://www.youtube.com/embed/-kYRivzbjQc?si=S3zfctAyD9P1q_lB"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="-mt-10 ml-20 max-[1000px]:w-full max-[1000px]:ml-0"
+            className="-mt-10 ml-20 max-[1000px]:w-full max-[1000px]:ml-0 rounded-2xl"
           ></iframe>
           <div>
             <ArrowGLE className="rotate-180" />

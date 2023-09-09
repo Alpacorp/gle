@@ -2,6 +2,7 @@ import { ImageSlider } from "@/app/(pages)/(inicio)/sections/ImageSlider";
 import { Tracking } from "@/app/(pages)/(inicio)/sections/Tracking";
 import { WeAreGLE } from "@/app/(pages)/(inicio)/sections/WeAreGLE";
 import { Services } from "../sections/Services";
+import { Different } from "../sections/Different";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
         <WeAreGLE />
       </div>
       <Services />
+      <Different />
     </>
   );
 };
