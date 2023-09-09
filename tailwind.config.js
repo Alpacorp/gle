@@ -35,6 +35,8 @@ module.exports = {
         "main-red": "#D81730",
         "secondary-red": "#AE0E22",
         "main-gray": "#383838",
+        "secondary-gray": "#313131",
+        "light-gray": "#F0F0F0",
       },
       keyframes: {
         "slide-top": {
