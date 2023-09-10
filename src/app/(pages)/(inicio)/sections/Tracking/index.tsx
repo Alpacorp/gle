@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { ArrowRight } from "../../../../ui/components/Icons";
+
+import { ArrowCta } from "@/app/ui/components/Icons/";
 
 export const Tracking: FC = () => {
   return (
@@ -18,7 +19,8 @@ export const Tracking: FC = () => {
             className="bg-main-red flex items-center justify-center gap-4 rounded-md py-2 px-4 text-white max-[380px]:w-full font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out
           "
           >
-            <ArrowRight /> Consultar
+            <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
+            Consultar
           </button>
         </div>
       </div>

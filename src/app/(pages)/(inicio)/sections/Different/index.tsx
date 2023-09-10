@@ -22,7 +22,7 @@ export const Different = () => {
       >
         ¿Qué nos hace diferentes?
       </Title>
-      <div className="flex flex-wrap justify-center gap-4 m-auto mt-16">
+      <div className="flex flex-wrap justify-center gap-4 m-auto mt-16 max-[380px]:px-2">
         {data.map(({ id, description, color }) => (
           <div
             key={id}

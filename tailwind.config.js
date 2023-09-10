@@ -29,7 +29,7 @@ module.exports = {
       },
       boxShadow: {
         "header-shadow": "0px 4px 4px rgba(0, 0, 0, 0.25)",
-        "card-shadow": "0px 5px 25px rgba(159,158,158,0.25)",
+        "card-shadow": "0px 0px 10px rgba(0,0,0,0.75);",
       },
       colors: {
         "main-red": "#D81730",
