@@ -14,7 +14,6 @@ export * from "./InHouse";
 export * from "./Chat";
 export * from "./ArrowToDown";
 export * from "./ArrowUp";
-export * from "./ArrowCta";
 export * from "./ArrowGLE";
 export * from "./Kpis";
 export * from "./Velocity";

@@ -5,6 +5,7 @@ import { Header } from "./ui/components/Header";
 
 import "./globals.css";
 import { ContextProvider } from "./context/Context";
+import { Footer } from "./ui/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </body>
       </ContextProvider>
     </html>

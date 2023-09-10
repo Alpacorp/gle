@@ -7,12 +7,12 @@ import backMobile from "@public/assets/images/services/services-mobile-backgroun
 import backServices from "@public/assets/images/services/services-background.png";
 
 import { iconsServices } from "./IconsServices";
-import { ArrowCta, ArrowToDown, ArrowGLE } from "@/app/ui/components/Icons/";
+import { ArrowCta2, ArrowCta, ArrowGLE } from "@/app/ui/components/Icons/";
 
 export const Services = () => {
   return (
     <>
-      <section className="relative">
+      <section className="relative max-[620px]:bg-main-red">
         <div>
           <Image
             src={backServices}
@@ -77,7 +77,11 @@ export const Services = () => {
                       {name}
                     </h2>
                     <button className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors">
-                      <ArrowCta /> <span className="ml-3">Conoce más</span>
+                      <ArrowCta
+                        stroke="#D81730"
+                        className="-rotate-90 w-[30px] h-[27px]"
+                      />{" "}
+                      <span className="ml-3">Conoce más</span>
                     </button>
                   </div>
                 </div>
@@ -88,8 +92,8 @@ export const Services = () => {
                 <h3 className="max-[1115px]:text-white">
                   Conoce nuestra razón de ser
                 </h3>
-                <ArrowToDown className="max-[1115px]:hidden" />
-                <ArrowToDown
+                <ArrowCta className="max-[1115px]:hidden" />
+                <ArrowCta
                   className="hidden max-[1115px]:block max-[380px]:w-8"
                   stroke="white"
                 />
@@ -116,18 +120,18 @@ export const Services = () => {
           </div>
         </div>
       </section>
-      <section className="mt-6">
-        <div className="flex justify-between flex-wrap max-[1000px]:justify-end">
+      <section>
+        <div className="flex justify-between items-end flex-wrap max-[1000px]:justify-end">
           <iframe
             width="760"
-            height="315"
+            height="590"
             src="https://www.youtube.com/embed/-kYRivzbjQc?si=S3zfctAyD9P1q_lB"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="-mt-10 ml-20 max-[1000px]:w-full max-[1000px]:ml-0 rounded-2xl"
+            className="-mt-6 ml-20 max-[1000px]:w-full rounded-2xl max-[1000px]:ml-0 max-[1000px]:mt-0"
           ></iframe>
-          <div>
+          <div className="max-[1003px]:hidden">
             <ArrowGLE className="rotate-180" />
           </div>
         </div>
