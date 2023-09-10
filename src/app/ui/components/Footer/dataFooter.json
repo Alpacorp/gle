@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "city": "Bogotá",
+    "phoneText": "+601 6953631",
+    "phone": "+6016953631",
+    "type": "phone",
+    "address": "Avenida carrera 70 No. 48 - 45 Barrio Normandía",
+    "maps": "de7ypM7aDyFAfyKa7"
+  },
+  {
+    "id": 2,
+    "city": "Medellín",
+    "phoneText": "+604 4795931",
+    "phone": "+6044795931",
+    "type": "phone",
+    "address": "Calle 7d No. 43ª - 99 / Of. 1305 Edificio Almagran (El poblado)",
+    "maps": "CwfFAh4WSy5oDqEt8"
+  },
+  {
+    "id": 3,
+    "city": "Barranquilla",
+    "phoneText": "+57 3148159573",
+    "phone": "+573148159573",
+    "type": "phone",
+    "address": "Calle 74 No. 56 - 36 / Of. 601 Centro Empresarial Inverfin",
+    "maps": "a1tZLNUukXR2zzew9"
+  }
+]

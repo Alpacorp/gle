@@ -19,7 +19,7 @@ export const Certifications = () => {
         >
           Estamos certificados
         </Title>
-        <div className="flex justify-evenly gap-5 items-center flex-wrap mt-5">
+        <div className="flex justify-evenly gap-5 items-center flex-wrap mt-5 px-2">
           <Image
             src={mintrans}
             alt="certifications"

@@ -42,7 +42,10 @@ export const Header: FC = () => {
       </nav>
       <div>
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
-          <AgileLogo id="agile-logo" />
+          <AgileLogo
+            id="agile-logo"
+            className="hover:scale-105 transition-transform"
+          />
         </Link>
       </div>
     </header>

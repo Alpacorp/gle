@@ -46,7 +46,7 @@ export const Services = () => {
               {services.map(({ id, name, url }) => (
                 <div
                   key={id}
-                  className="rounded-lg overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
+                  className="rounded-2xl overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
                 >
                   <div className="relative h-[438px] w-[262px]">
                     <Image
@@ -129,7 +129,7 @@ export const Services = () => {
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="-mt-6 ml-20 max-[1000px]:w-full rounded-2xl max-[1000px]:ml-0 max-[1000px]:mt-0"
+            className="-mt-6 ml-20 max-[1000px]:w-full rounded-2xl max-[1000px]:ml-0 max-[1000px]:mt-0 max-[1000px]:rounded-none"
           ></iframe>
           <div className="max-[1003px]:hidden">
             <ArrowGLE className="rotate-180" />
