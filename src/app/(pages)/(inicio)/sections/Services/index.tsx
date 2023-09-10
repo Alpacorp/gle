@@ -7,7 +7,7 @@ import backMobile from "@public/assets/images/services/services-mobile-backgroun
 import backServices from "@public/assets/images/services/services-background.png";
 
 import { iconsServices } from "./IconsServices";
-import { ArrowCta2, ArrowCta, ArrowGLE } from "@/app/ui/components/Icons/";
+import { ArrowCta, ArrowGLE } from "@/app/ui/components/Icons/";
 
 export const Services = () => {
   return (
