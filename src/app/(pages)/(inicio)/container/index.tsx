@@ -3,6 +3,7 @@ import { Tracking } from "@/app/(pages)/(inicio)/sections/Tracking";
 import { WeAreGLE } from "@/app/(pages)/(inicio)/sections/WeAreGLE";
 import { Services } from "../sections/Services";
 import { Different } from "../sections/Different";
+import { Certifications } from "../sections/Certifications";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       </div>
       <Services />
       <Different />
+      <Certifications />
     </>
   );
 };

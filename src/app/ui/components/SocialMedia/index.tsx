@@ -9,7 +9,7 @@ interface SocialMediaProps {
 export const SocialMedia: FC<SocialMediaProps> = ({ align }) => {
   return (
     <div className={`flex flex-col items-${align} mt-16 gap-6`}>
-      <h3 className="font-semibold">Síguenos:</h3>
+      <h3 className="font-semibold font-poppins">Síguenos:</h3>
       <div className="flex flex-row gap-3">
         <Link href="https://www.facebook.com/GLEColombia" target="_blank">
           <FacebookIcon />
