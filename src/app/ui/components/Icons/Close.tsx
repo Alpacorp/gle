@@ -1,4 +1,6 @@
-export const Close = () => {
+import { FC } from "react";
+
+export const Close: FC = () => {
   return (
     <svg
       width="15"

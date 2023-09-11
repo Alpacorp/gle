@@ -1,12 +1,14 @@
+import { FC } from "react";
 import Link from "next/link";
-import { GleLogoWhite } from "../GleLogoWhite";
-import { SocialMedia } from "../SocialMedia";
-import { WhatsAppWhite } from "../Icons/WhatsAppWhite";
+
+import { GleLogoWhite } from "@app/ui/components/GleLogoWhite";
+import { SocialMedia } from "@app/ui/components/SocialMedia";
+import { WhatsAppWhite } from "@app/ui/components/Icons/";
 
 import data from "./dataFooter.json";
 import { Address } from "./Address";
 
-export const Footer = () => {
+export const Footer: FC = () => {
   return (
     <footer className="">
       <div>
@@ -28,7 +30,7 @@ export const Footer = () => {
             <Link
               href="https://api.whatsapp.com/send?phone=+573102695133&text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20acerca%20de%20sus%20servicios%20log%C3%ADsticos"
               target="_blank"
-              className="text-white font-poppins text-lg font-bold flex items-center border-main-red border-2 px-2 py-1 rounded-md hover:bg-main-red hover:text-white transition-all transition-300 "
+              className="text-white font-poppins text-lg font-bold flex items-center border-main-red border-2 px-2 py-1 rounded-md hover:bg-main-red hover:text-white transition-all transition-300"
             >
               <WhatsAppWhite className="mr-1" /> 3102695133
             </Link>

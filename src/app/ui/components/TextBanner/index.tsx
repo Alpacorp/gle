@@ -19,7 +19,7 @@ export const TextBanner: FC<TextBannerProps> = ({
   type,
 }) => {
   return (
-    <h2 className={customClass}>
+    <h2 className={`${customClass}`}>
       {type === "text"
         ? image.text.split(" ").map((word: string) => (
             <span

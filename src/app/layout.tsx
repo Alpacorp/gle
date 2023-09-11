@@ -1,11 +1,12 @@
 import { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 
-import { Header } from "./ui/components/Header";
+import { ContextProvider } from "@context/Context";
+
+import { Header } from "@app/ui/components/Header";
+import { Footer } from "@app/ui/components/Footer";
 
 import "./globals.css";
-import { ContextProvider } from "./context/Context";
-import { Footer } from "./ui/components/Footer";
 
 const poppins = Poppins({
   subsets: ["latin"],

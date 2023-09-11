@@ -1,4 +1,6 @@
-export const YouTubeIcon = () => {
+import { FC } from "react";
+
+export const YouTubeIcon: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

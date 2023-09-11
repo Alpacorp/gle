@@ -12,13 +12,10 @@ export const Tracking: FC = () => {
         <div className="flex justify-center gap-7 flex-wrap max-[380px]:gap-2">
           <input
             type="number"
-            className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-xl lg:max-w-[250px] lg:w-full max-[380px]:w-full "
+            className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-xl lg:max-w-[250px] lg:w-full max-[380px]:w-full"
             placeholder="Digite el No. de guía"
           />
-          <button
-            className="bg-main-red flex items-center justify-center gap-4 rounded-md py-2 px-4 text-white max-[380px]:w-full font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out
-          "
-          >
+          <button className="bg-main-red flex items-center justify-center gap-4 rounded-md py-2 px-4 text-white max-[380px]:w-full font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
             <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
             Consultar
           </button>

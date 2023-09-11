@@ -1,13 +1,13 @@
 import { Title } from "@/app/ui/components/Title";
 import Image from "next/image";
 
-import services from "./dataServices.json";
 import volamos from "@public/assets/images/gle/volamos.svg";
 import backMobile from "@public/assets/images/services/services-mobile-background.svg";
 import backServices from "@public/assets/images/services/services-background.png";
+import { ArrowCta, ArrowGLE } from "@/app/ui/components/Icons/";
 
 import { iconsServices } from "./IconsServices";
-import { ArrowCta, ArrowGLE } from "@/app/ui/components/Icons/";
+import services from "./dataServices.json";
 
 export const Services = () => {
   return (
@@ -42,7 +42,7 @@ export const Services = () => {
                 Servicios Especializados
               </Title>
             </div>
-            <div className="flex justify-center gap-6 items-center flex-wrap">
+            <div className="flex justify-evenly gap-6 items-center flex-wrap">
               {services.map(({ id, name, url }) => (
                 <div
                   key={id}

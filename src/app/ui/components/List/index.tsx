@@ -11,10 +11,12 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ArrowUp } from "../Icons/ArrowUp";
-import { ListProps } from "./interfaces/List";
+import { iconsServices } from "@src/app/(pages)/(inicio)/sections/Services/IconsServices";
+
+import { ArrowUp } from "@app/ui/components/Icons";
 import { Context } from "@/app/context/Context";
-import { iconsServices } from "../../../(pages)/(inicio)/sections/Services/IconsServices";
+
+import { ListProps } from "./interfaces/List";
 
 export const List: FC<ListProps> = ({
   itemKey,

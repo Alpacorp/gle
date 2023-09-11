@@ -1,4 +1,6 @@
-export const Ways = () => {
+import { FC } from "react";
+
+export const Ways: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

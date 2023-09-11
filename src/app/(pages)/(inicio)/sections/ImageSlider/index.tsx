@@ -3,9 +3,8 @@
 import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
-import { LeftArrow } from "../../../../ui/components/SlideArrows/LeftArrow";
-import { RightArrow } from "../../../../ui/components/SlideArrows/RightArrow";
-import { TextBanner } from "../../../../ui/components/TextBanner";
+import { LeftArrow, RightArrow } from "@/app/ui/components/SlideArrows";
+import { TextBanner } from "@/app/ui/components/TextBanner";
 
 import images from "./dataSilders.json";
 

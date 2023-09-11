@@ -1,4 +1,6 @@
-export const FacebookIcon = () => {
+import { FC } from "react";
+
+export const FacebookIcon: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

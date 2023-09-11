@@ -25,6 +25,8 @@
       "@app/ui/layouts/*": ["./src/app/ui/layouts/*"],
       "@icons/*": ["./src/app/ui/components/Icons/*"],
       "@public/*": ["./public/*"],
+      "@src/*": ["./src/*"],
+      "@context/*": ["./src/app/context/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,4 +1,6 @@
-export const Chat = () => {
+import { FC } from "react";
+
+export const Chat: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

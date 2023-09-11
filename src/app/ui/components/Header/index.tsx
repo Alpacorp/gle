@@ -4,12 +4,10 @@ import Link from "next/link";
 import { GleLogo } from "@app/ui/components/GleLogo";
 import { AgileLogo } from "@app/ui/components/AgileLogo";
 import { List } from "@app/ui/components/List";
+import { HamburguerMenu } from "@app/ui/components/HamburguerMenu";
+import { MenuMobile } from "@app/ui/components/MenuMobile";
 
 import menuOptions from "@app/ui/components/Header/menu.json";
-
-import { HamburguerMenu } from "../HamburguerMenu";
-import { MenuMobile } from "../MenuMobile";
-
 import "./styles.css";
 
 export const Header: FC = () => {
