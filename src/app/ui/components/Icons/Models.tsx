@@ -1,4 +1,6 @@
-export const Models = () => {
+import { FC } from "react";
+
+export const Models: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

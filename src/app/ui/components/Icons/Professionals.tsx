@@ -1,4 +1,6 @@
-export const Professionals = () => {
+import { FC } from "react";
+
+export const Professionals: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,6 @@
-export const Experience = () => {
+import { FC } from "react";
+
+export const Experience: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

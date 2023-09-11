@@ -1,14 +1,15 @@
+import { FC } from "react";
+import Image from "next/image";
+
 import { Title } from "@/app/ui/components/Title";
 import { DifferentCard } from "@/app/ui/components/DifferentCard";
-import { iconsDifferent } from "./IconsDifferent";
-
-import data from "./dataDifferent.json";
-import Image from "next/image";
-import phone1 from "@public/assets/images/phone-1.webp";
-import phone2 from "@public/assets/images/phone-2.webp";
 import { ArrowCta } from "@/app/ui/components/Icons";
+import { phone1, phone2 } from "@public/assets/images/";
 
-export const Different = () => {
+import { iconsDifferent } from "./IconsDifferent";
+import data from "./dataDifferent.json";
+
+export const Different: FC = () => {
   return (
     <section className="mt-24 py-11 bg-light-gray max-[1003px]:mt-0">
       <Title
@@ -56,7 +57,7 @@ export const Different = () => {
               weight="semibold"
               className="text-4xl max-w-[350px] w-full"
             >
-              Rasrea tu envío desde tu celular
+              Rastrea tu envío desde tu celular
             </Title>
             <ArrowCta
               stroke="#D81730"

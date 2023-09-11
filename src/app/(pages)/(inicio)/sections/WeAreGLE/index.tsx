@@ -1,11 +1,12 @@
-import { Title } from "@/app/ui/components/Title";
+import { FC } from "react";
 
-import { iconsWeAre } from "./IconsWeAre";
+import { Title } from "@/app/ui/components/Title";
 import { ArrowGLE } from "@/app/ui/components/Icons/ArrowGLE";
 
+import { iconsWeAre } from "./IconsWeAre";
 import data from "./dataWeAre.json";
 
-export const WeAreGLE = () => {
+export const WeAreGLE: FC = () => {
   const hightWords = [
     "compañía",
     "integradora",

@@ -1,4 +1,6 @@
-export const Velocity = () => {
+import { FC } from "react";
+
+export const Velocity: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

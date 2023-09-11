@@ -18,3 +18,4 @@ export * from "./Kpis";
 export * from "./Velocity";
 export * from "./Pqr";
 export * from "./Ways";
+export * from "./WhatsAppWhite";

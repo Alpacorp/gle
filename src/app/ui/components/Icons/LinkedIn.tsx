@@ -1,4 +1,6 @@
-export const LinkedInIcon = () => {
+import { FC } from "react";
+
+export const LinkedInIcon: FC = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
