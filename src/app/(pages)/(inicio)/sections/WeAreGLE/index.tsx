@@ -57,7 +57,7 @@ export const WeAreGLE: FC = () => {
         </div>
       </div>
       <div>
-        <ArrowGLE className="absolute left-0 pt-20" />
+        <ArrowGLE className="absolute left-0" />
       </div>
     </section>
   );
