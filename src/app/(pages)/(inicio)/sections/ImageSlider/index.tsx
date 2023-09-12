@@ -7,6 +7,7 @@ import { LeftArrow, RightArrow } from "@/app/ui/components/SlideArrows";
 import { TextBanner } from "@/app/ui/components/TextBanner";
 
 import images from "./dataSilders.json";
+import { Tracking } from "../Tracking";
 
 export const ImageSlider: FC = () => {
   const bannerRef = useRef<HTMLDivElement>(null);
@@ -104,7 +105,7 @@ export const ImageSlider: FC = () => {
             />
             {showText && (
               <div
-                className={`absolute z-40 bottom-16 right-0 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
+                className={`absolute z-40 bottom-32 left-9 p-4 text-white leading-tight font-poppins max-w-[54rem] ${
                   animateText ? "animate-fade-in-bottom delay-1000" : ""
                 }`}
               >
@@ -148,7 +149,7 @@ export const ImageSlider: FC = () => {
       >
         <RightArrow width={"22"} height={"48"} className="max-[380px]:w-4" />
       </button>
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+      <div className="absolute bottom-28 left-0 right-0 flex justify-center space-x-2">
         {images.map((image, index) => (
           <button
             key={image.id}
@@ -161,6 +162,9 @@ export const ImageSlider: FC = () => {
             }}
           />
         ))}
+      </div>
+      <div className="absolute bottom-1 right-0 left-0">
+        <Tracking />
       </div>
     </section>
   );

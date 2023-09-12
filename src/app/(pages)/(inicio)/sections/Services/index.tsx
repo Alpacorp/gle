@@ -12,7 +12,7 @@ import services from "./dataServices.json";
 export const Services = () => {
   return (
     <>
-      <section className="relative max-[620px]:bg-main-red">
+      <section className="relative">
         <div>
           <Image
             src={backServices}

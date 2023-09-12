@@ -8,9 +8,9 @@ import { Certifications } from "../sections/Certifications";
 const HomePage = () => {
   return (
     <>
-      <div className="bg-gray-pattern bg-top pb-80 bg-cover bg-no-repeat max-[380px]:bg-gray-pattern-mobile">
+      <div className="bg-gray-pattern bg-top pb-52 bg-cover bg-no-repeat max-[380px]:bg-gray-pattern-mobile">
         <ImageSlider />
-        <Tracking />
+        {/* <Tracking /> */}
         <WeAreGLE />
       </div>
       <Services />

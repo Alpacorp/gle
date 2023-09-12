@@ -14,12 +14,12 @@ export const Footer: FC = () => {
       <div>
         <SocialMedia align="center" />
       </div>
-      <div className="bg-secondary-gray py-9 flex flex-wrap gap-4 justify-evenly items-center text-white font-poppins mt-9">
+      <div className="bg-secondary-gray py-9 px-10 flex flex-wrap gap-4 justify-between items-center text-white font-poppins mt-9 max-[1000px]:justify-center">
         <div>
           <div className="flex mb-5 max-[990px]:justify-center">
             <GleLogoWhite />
           </div>
-          <div className="flex items-center justify-center gap-3 flex-wrap">
+          <div className="flex items-center justify-center gap-3 flex-wrap max-[500px]:flex-col">
             <Link
               href="mailto:contacto@glecolombia.com"
               target="_blank"
@@ -38,25 +38,39 @@ export const Footer: FC = () => {
         </div>
         <div className="flex gap-5 flex-wrap items-center justify-center">
           {data.map((item) => (
-            <>
-              <Address
-                key={item.id}
-                city={item.city}
-                phoneText={item.phoneText}
-                address={item.address}
-                phone={item.phone}
-                type={item.type}
-                maps={item.maps}
-              />
-              {item.id === data.length ? (
-                ""
-              ) : (
-                <hr className="border-gray-300 border-[1px] h-9 max-[442px]:hidden" />
-              )}
-            </>
+            <Address
+              key={item.id}
+              city={item.city}
+              phoneText={item.phoneText}
+              address={item.address}
+              phone={item.phone}
+              type={item.type}
+              maps={item.maps}
+            />
           ))}
         </div>
       </div>
+      <section className="flex justify-between flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10">
+        <div>
+          <h5>
+            G.L.E. {new Date().getFullYear()} | Todos los derechos reservados
+          </h5>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/politica-de-privacidad" className="hover:underline">
+            Aviso de privacidad
+          </Link>
+          <Link href="/terminos-y-condiciones" className="hover:underline">
+            Términos y condiciones
+          </Link>
+          <Link
+            href="/procedimiento-de-compensacion"
+            className="hover:underline"
+          >
+            Procedimiento de compensación
+          </Link>
+        </div>
+      </section>
     </footer>
   );
 };
