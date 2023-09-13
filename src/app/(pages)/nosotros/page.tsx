@@ -1,11 +1,8 @@
 import { FC } from "react";
+import { Ours } from "./container/Ours";
 
 const usPage: FC = () => {
-  return (
-    <div>
-      <h1>Nosotros</h1>
-    </div>
-  );
+  return <Ours />;
 };
 
 export default usPage;

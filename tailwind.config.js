@@ -19,6 +19,8 @@ module.exports = {
         "gray-pattern-mobile":
           "url('/assets/images/background-gray-mobile.svg')",
         "volamos-back": "url('/assets/images/gle/volamos.svg')",
+        "hero-linear-bg":
+          "linear-gradient(0deg, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
       },
       backgroundColor: {
         "header-bg-light-color": "var(--bg-light)",
