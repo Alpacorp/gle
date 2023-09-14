@@ -21,6 +21,7 @@ module.exports = {
         "volamos-back": "url('/assets/images/gle/volamos.svg')",
         "hero-linear-bg":
           "linear-gradient(0deg, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
+        "hero-main-red-bg": "url('/assets/images/background-nosotros.png')",
       },
       backgroundColor: {
         "header-bg-light-color": "var(--bg-light)",
@@ -39,6 +40,7 @@ module.exports = {
         "main-gray": "#383838",
         "secondary-gray": "#313131",
         "light-gray": "#F0F0F0",
+        "light-gray-2": "#D9D9D9",
       },
       keyframes: {
         "slide-top": {
