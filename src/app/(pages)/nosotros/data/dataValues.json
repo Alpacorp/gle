@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "description": "Responsabilidad",
+    "color": "gray"
+  },
+  {
+    "id": 2,
+    "description": "Honestidad",
+    "color": "gray"
+  },
+  {
+    "id": 3,
+    "description": "Confianza",
+    "color": "gray"
+  },
+  {
+    "id": 4,
+    "description": "Transparencia",
+    "color": "gray"
+  },
+  {
+    "id": 5,
+    "description": "Comunicación",
+    "color": "gray"
+  },
+  {
+    "id": 6,
+    "description": "Respeto",
+    "color": "gray"
+  }
+]

@@ -27,6 +27,7 @@
       "@public/*": ["./public/*"],
       "@src/*": ["./src/*"],
       "@context/*": ["./src/app/context/*"],
+      "@nosotros/*": ["./src/app/(pages)/nosotros/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
