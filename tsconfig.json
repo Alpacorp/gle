@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./*"],
       "@app/ui/components/*": ["./src/app/ui/components/*"],
       "@app/ui/layouts/*": ["./src/app/ui/layouts/*"],
       "@icons/*": ["./src/app/ui/components/Icons/*"],
@@ -28,6 +28,7 @@
       "@src/*": ["./src/*"],
       "@context/*": ["./src/app/context/*"],
       "@nosotros/*": ["./src/app/(pages)/nosotros/*"],
+      "@lib/*": ["./src/lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
