@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { useContext } from "react";
 
-import { Context } from "@/app/context/Context";
-
 import menuOptions from "@app/ui/components/Header/menu.json";
 import { SocialMedia } from "@app/ui/components/SocialMedia";
 import { Close } from "@app/ui/components/Icons/Close";
 import { GleLogo } from "@app/ui/components/GleLogo";
 import { List } from "@app/ui/components/List";
+import { Context } from "@/src/app/context/Context";
 
 export const MenuMobile = () => {
   const { setShowMenu, showMenu } = useContext(Context);
