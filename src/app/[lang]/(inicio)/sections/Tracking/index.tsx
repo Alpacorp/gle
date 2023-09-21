@@ -13,6 +13,8 @@ export const Tracking: FC = () => {
             type="number"
             className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm"
             placeholder="No. de guía"
+            name="tracking"
+            id="tracking"
           />
           <button className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[110px] max-[460px]:w-full max-[460px]:text-sm font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
             <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
