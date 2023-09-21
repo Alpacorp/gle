@@ -48,7 +48,7 @@ export default function RootLayout({
           className={`${poppins.variable} ${inter.variable}`}
           suppressHydrationWarning
         >
-          <Header />
+          <Header lang={params.lang} />
           {children}
           <Footer />
         </body>

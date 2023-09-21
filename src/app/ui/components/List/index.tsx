@@ -23,11 +23,15 @@ export const List: FC<ListProps> = ({
   link,
   submenu,
   isMobile,
+  lang,
 }) => {
   const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const { setShowMenu } = useContext(Context);
+
+  console.log("pathname", pathname);
+  console.log("link", link);
 
   const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -63,6 +67,18 @@ export const List: FC<ListProps> = ({
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [handleOutsideClick]);
+
+  // useEffect(
+  //   () => {
+  //     if (pathname === link) {
+  //       setIsOpen(true);
+  //     } else {
+  //       setIsOpen(false);
+  //     }
+  //   },
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   [pathname]
+  // );
 
   return (
     <li

@@ -14,4 +14,5 @@ export interface ListProps {
   linkSub?: string;
   textSub?: string;
   isMobile?: boolean;
+  lang?: string;
 }
