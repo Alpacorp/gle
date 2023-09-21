@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-
-import { Title } from "@/app/ui/components/Title";
+import { Title } from "@app/ui/components/Title";
 
 export const ServiceCard: FC = () => {
   return (
