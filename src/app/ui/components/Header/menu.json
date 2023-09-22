@@ -1,18 +1,12 @@
 [
   {
     "id": 1,
-    "text": "Inicio",
-    "link": "/",
-    "type": "link"
-  },
-  {
-    "id": 2,
     "text": "Nosotros",
     "link": "/nosotros",
     "type": "link"
   },
   {
-    "id": 3,
+    "id": 2,
     "text": "Servicios",
     "link": "/servicios",
     "type": "dropdown",
@@ -44,7 +38,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 3,
     "text": "Contacto",
     "link": "/contacto",
     "type": "link"

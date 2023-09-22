@@ -19,20 +19,24 @@ export const Certifications = () => {
         >
           Estamos certificados
         </Title>
-        <div className="flex justify-evenly gap-5 items-center flex-wrap mt-5 px-2">
+        <div className="flex justify-center gap-10 items-center flex-wrap mt-5 px-2">
           <Image
             src={mintrans}
-            alt="certifications"
-            width={313}
+            alt="Certificación del Ministerio de Transporte"
+            title="Certificación del Ministerio de Transporte"
+            width={213}
             height={108}
             priority
+            className="w-auto"
           />
           <Image
             src={berau}
-            alt="certifications"
-            width={313}
+            alt="Certificación de Berau Veritas"
+            title="Certificación de Berau Veritas"
+            width={213}
             height={108}
             priority
+            className="w-auto"
           />
         </div>
       </div>

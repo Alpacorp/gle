@@ -9,8 +9,9 @@ import { Close } from "@app/ui/components/Icons/Close";
 import { GleLogo } from "@app/ui/components/GleLogo";
 import { List } from "@app/ui/components/List";
 import { Context } from "@/src/app/context/Context";
+import { Locale } from "@/i18n.config";
 
-export const MenuMobile = () => {
+export const MenuMobile = ({ lang }: { lang: Locale }) => {
   const { setShowMenu, showMenu } = useContext(Context);
 
   return (
@@ -29,7 +30,7 @@ export const MenuMobile = () => {
         }`}
       >
         <div className="flex items-center justify-between">
-          <Link href="/">
+          <Link href={lang}>
             <GleLogo height="31" width="129" />
           </Link>
           <button onClick={() => setShowMenu(false)}>
@@ -41,9 +42,10 @@ export const MenuMobile = () => {
             {menuOptions.map(({ id, text, link, submenu }) => (
               <List
                 key={id}
+                lang={lang}
                 itemKey={id}
                 text={text}
-                link={link}
+                link={`/${lang}${link}`}
                 isMobile
                 submenu={submenu?.map((item) => ({
                   idSub: item.idSub,

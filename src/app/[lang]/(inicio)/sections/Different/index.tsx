@@ -67,17 +67,21 @@ export const Different: FC = () => {
           <div className="flex flex-wrap items-center justify-center">
             <Image
               src={phone1}
-              alt="Celular"
+              alt="Celular con la vista del home"
+              title="Celular con la vista del home"
               width={348}
               height={567}
               priority
+              className="aspect-auto"
             />
             <Image
               src={phone2}
-              alt="Celular"
+              alt="Celular con la vista de la página de rastreo"
+              title="Celular con la vista de la página de rastreo"
               width={348}
               height={567}
               priority
+              className="aspect-auto"
             />
           </div>
         </div>

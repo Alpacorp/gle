@@ -23,10 +23,12 @@ export const List: FC<ListProps> = ({
   link,
   submenu,
   isMobile,
+  lang,
 }) => {
   const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const { setShowMenu } = useContext(Context);
 
   const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -64,6 +66,16 @@ export const List: FC<ListProps> = ({
     };
   }, [handleOutsideClick]);
 
+  useEffect(() => {
+    if (pathname === link) {
+      setIsActive(true);
+    } else if (pathname.includes("/servicios") && link.includes("/servicios")) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [link, pathname]);
+
   return (
     <li
       key={itemKey}
@@ -72,9 +84,9 @@ export const List: FC<ListProps> = ({
           ? "flex-col"
           : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200"
       } ${
-        isMobile && pathname === link
+        isMobile && isActive
           ? "border-l-2 border-main-red border-opacity-100 bg-white"
-          : pathname === link &&
+          : isActive &&
             "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
@@ -85,7 +97,7 @@ export const List: FC<ListProps> = ({
               ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
               : "justify-center h-[75px] w-[116px] max-[800px]:w-[90px]"
           }`}
-          href={link}
+          href={`${link}`}
           onClick={isMobile ? handleClickMenuMobile : () => {}}
         >
           {text}
@@ -117,7 +129,7 @@ export const List: FC<ListProps> = ({
             {submenu.map((item: any) => (
               <Link
                 key={item.idSub}
-                href={item.linkSub}
+                href={`/${lang}${item.linkSub}`}
                 className="leading-[22px] text-black font-normal hover:text-main-red duration-200 text-center"
                 onClick={() =>
                   isMobile
