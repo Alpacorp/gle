@@ -6,6 +6,13 @@ const nextConfig = {
     localeDetection: true,
   },
   trailingSlash: false,
+  exportPathMap: function () {
+    return {
+      "/": { page: "/" },
+      "/nosotros": { page: "/nosotros" },
+      "/contacto": { page: "/contacto" },
+    };
+  },
 };
 
 module.exports = nextConfig;
