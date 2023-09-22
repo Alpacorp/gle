@@ -28,10 +28,8 @@ export const List: FC<ListProps> = ({
   const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const { setShowMenu } = useContext(Context);
-
-  console.log("pathname", pathname);
-  console.log("link", link);
 
   const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -68,17 +66,15 @@ export const List: FC<ListProps> = ({
     };
   }, [handleOutsideClick]);
 
-  // useEffect(
-  //   () => {
-  //     if (pathname === link) {
-  //       setIsOpen(true);
-  //     } else {
-  //       setIsOpen(false);
-  //     }
-  //   },
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   [pathname]
-  // );
+  useEffect(() => {
+    if (pathname === link) {
+      setIsActive(true);
+    } else if (pathname.includes("/servicios") && link.includes("/servicios")) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  }, [link, pathname]);
 
   return (
     <li
@@ -88,9 +84,9 @@ export const List: FC<ListProps> = ({
           ? "flex-col"
           : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200"
       } ${
-        isMobile && pathname === link
+        isMobile && isActive
           ? "border-l-2 border-main-red border-opacity-100 bg-white"
-          : pathname === link &&
+          : isActive &&
             "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
@@ -133,7 +129,7 @@ export const List: FC<ListProps> = ({
             {submenu.map((item: any) => (
               <Link
                 key={item.idSub}
-                href={item.linkSub}
+                href={`/${lang}${item.linkSub}`}
                 className="leading-[22px] text-black font-normal hover:text-main-red duration-200 text-center"
                 onClick={() =>
                   isMobile

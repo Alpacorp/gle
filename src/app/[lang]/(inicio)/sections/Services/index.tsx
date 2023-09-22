@@ -19,7 +19,7 @@ export const Services = () => {
             alt="background services"
             width={880}
             height={1980}
-            className="absolute h-full top-0 right-0 z-[-1] max-[380px]:hidden"
+            className="absolute aspect-square h-full w-auto top-0 right-0 z-[-1] max-[380px]:hidden"
           />
           <Image
             src={backMobile}
@@ -105,7 +105,7 @@ export const Services = () => {
                   title="Volamos para que llegues más rápido"
                   width={780}
                   height={1080}
-                  className="max-[380px]:hidden"
+                  className="max-[380px]:hidden h-auto"
                 />
                 <Image
                   src={volamos}
@@ -113,7 +113,7 @@ export const Services = () => {
                   title="Volamos para que llegues más rápido"
                   width={780}
                   height={1080}
-                  className="hidden max-[380px]:block"
+                  className="hidden max-[380px]:block h-auto w-full aspect-auto"
                 />
               </div>
             </div>

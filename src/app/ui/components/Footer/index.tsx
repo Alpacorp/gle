@@ -50,7 +50,7 @@ export const Footer: FC = () => {
           ))}
         </div>
       </div>
-      <section className="flex justify-between flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10">
+      <section className="flex justify-between font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10">
         <div>
           <h5>
             G.L.E. {new Date().getFullYear()} | Todos los derechos reservados

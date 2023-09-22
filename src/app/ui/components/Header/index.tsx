@@ -10,13 +10,10 @@ import { MenuMobile } from "@app/ui/components/MenuMobile";
 import { Locale } from "@/i18n.config";
 
 import menuOptions from "@app/ui/components/Header/menu.json";
+
 import "./styles.css";
-// import { getDictionary } from "@/src/lib/dictionary";
 
 export const Header = async ({ lang }: { lang: Locale }) => {
-  // const { navigation } = await getDictionary(lang);
-  console.log("lang", lang);
-
   return (
     <header className="font-poppins fixed w-full top-0 bg-[#f5f5f5d0] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-30">
       <MenuMobile lang={lang} />
