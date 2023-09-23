@@ -2,13 +2,12 @@ import { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 
 import { Locale, i18n } from "@/i18n.config";
-
 import { ContextProvider } from "@context/Context";
 
-import { Header } from "@app/ui/components/Header";
-import { Footer } from "@app/ui/components/Footer";
+import { Header } from "@ui/components/Header";
+import { Footer } from "@ui/components/Footer";
 
-import "./globals.css";
+import "@globals/globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +24,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "G.L.E. - Grupo Logístico Especializado",
+  title: "G.L.E. Grupo Logístico Especializado",
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
 };

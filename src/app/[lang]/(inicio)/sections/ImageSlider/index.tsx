@@ -3,10 +3,10 @@
 import { FC, useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
+import { Tracking } from "@inicio/sections/Tracking";
+import { TextBanner, LeftArrow, RightArrow } from "@ui/components/index";
+
 import images from "./dataSilders.json";
-import { Tracking } from "../Tracking";
-import { TextBanner } from "@/src/app/ui/components/TextBanner";
-import { LeftArrow, RightArrow } from "@/src/app/ui/components/SlideArrows";
 
 export const ImageSlider: FC = () => {
   const bannerRef = useRef<HTMLDivElement>(null);

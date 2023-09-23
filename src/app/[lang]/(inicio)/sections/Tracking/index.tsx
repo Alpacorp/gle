@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ArrowCta } from "@/src/app/ui/components/Icons";
+import { ArrowCta } from "@icons/index";
 
 export const Tracking: FC = () => {
   return (
@@ -16,7 +16,7 @@ export const Tracking: FC = () => {
             name="tracking"
             id="tracking"
           />
-          <button className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[110px] max-[460px]:w-full max-[460px]:text-sm font-inter text-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
+          <button className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[110px] max-[460px]:w-full max-[460px]:text-sm font-poppins text-lg hover:bg-opacity-80 transition duration-300 ease-in-out">
             <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
             Consultar
           </button>

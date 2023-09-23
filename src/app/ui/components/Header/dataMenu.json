@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "textEs": "Nosotros",
+    "textEn": "About Us",
+    "linkEs": "/nosotros",
+    "linkEn": "/about-us",
+    "type": "link"
+  },
+  {
+    "id": 2,
+    "textEs": "Servicios",
+    "textEn": "Services",
+    "linkEs": "/servicios",
+    "linkEn": "/services",
+    "type": "dropdown",
+    "submenu": [
+      {
+        "idSub": 1,
+        "textSubEs": "Paqueteo",
+        "textSubEn": "Packaging",
+        "linkSub": "/servicios/paqueteo",
+        "typeSub": "link"
+      },
+      {
+        "idSub": 2,
+        "textSubEs": "Carga Masiva",
+        "textSubEn": "Bulk Cargo",
+        "linkSub": "/servicios/carga-masiva",
+        "typeSub": "link"
+      },
+      {
+        "idSub": 3,
+        "textSubEs": "G.L.E. Internacional",
+        "textSubEn": "G.L.E. International",
+        "linkSub": "/servicios/gle-internacional",
+        "typeSub": "link"
+      },
+      {
+        "idSub": 4,
+        "textSubEs": "Servicios E-Commerce",
+        "textSubEn": "E-Commerce Services",
+        "linkSub": "/servicios/ecommerce",
+        "typeSub": "link"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "textEs": "Contacto",
+    "textEn": "Contact",
+    "linkEs": "/contacto",
+    "linkEn": "/contact",
+    "type": "link"
+  }
+]

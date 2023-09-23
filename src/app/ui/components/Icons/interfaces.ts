@@ -3,4 +3,5 @@ export interface IconProps {
   height?: string;
   title?: string;
   className?: string;
+  id?: string;
 }

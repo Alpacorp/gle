@@ -1,52 +1,72 @@
+"use client";
+
 import { FC } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { GleLogo } from "@app/ui/components/GleLogo";
-import { AgileLogo } from "@app/ui/components/AgileLogo";
-import { List } from "@app/ui/components/List";
-import { HamburguerMenu } from "@app/ui/components/HamburguerMenu";
-import { MenuMobile } from "@app/ui/components/MenuMobile";
+import { GleLogo, AgileLogo, En, Es } from "@icons/index";
+import { List } from "@ui/components/List";
+import { HamburguerMenu } from "@ui/components/HamburguerMenu";
+import { MenuMobile } from "@ui/components/MenuMobile";
 
-import { Locale } from "@/i18n.config";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import dataMenu from "@ui/components/Header/dataMenu.json";
 
-import menuOptions from "@app/ui/components/Header/menu.json";
+export const Header: FC<LangInterface> = ({ lang }) => {
+  const pathname = usePathname();
 
-import "./styles.css";
-
-export const Header = async ({ lang }: { lang: Locale }) => {
   return (
     <header className="font-poppins fixed w-full top-0 bg-[#f5f5f5d0] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-30">
       <MenuMobile lang={lang} />
       <HamburguerMenu />
       <div>
         <Link href={`/${lang}`}>
-          <GleLogo id="gle-logo" />
+          <GleLogo id="gle-logo" className="max-[500px]:w-[137px]" />
         </Link>
       </div>
       <nav className="nav font-normal text-lg max-[768px]:hidden">
         <ul className="flex items-center">
-          {menuOptions.map(({ id, text, link, submenu }) => (
+          {dataMenu.map(({ id, textEs, textEn, linkEs, linkEn, submenu }) => (
             <List
               key={id}
               lang={lang}
               itemKey={id}
-              text={text}
-              link={`/${lang}${link}`}
+              text={lang === "es" ? textEs ?? "" : textEn ?? ""}
+              link={
+                lang === "es"
+                  ? `/${lang}${linkEs}` ?? ""
+                  : `/${lang}${linkEn}` ?? ""
+              }
               submenu={submenu?.map((item) => ({
                 idSub: item.idSub,
                 linkSub: item.linkSub,
-                textSub: item.textSub,
+                textSub: lang === "es" ? item.textSubEs : item.textSubEn,
                 typeSub: item.typeSub.toString(),
               }))}
             />
           ))}
         </ul>
       </nav>
-      <div>
+      <div className="flex items-center gap-6">
+        <Link
+          href={
+            lang === "es"
+              ? pathname.replace("/es", "/en")
+              : pathname.replace("/en", "/es")
+          }
+          locale={lang === "es" ? "en" : "es"}
+        >
+          {lang === "es" ? (
+            <En title="Cambiar idioma a inglés" />
+          ) : (
+            <Es title="Change language to Spanish" />
+          )}
+        </Link>
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
           <AgileLogo
             id="agile-logo"
-            className="hover:scale-105 transition-transform"
+            title="Agile Platform"
+            className="hover:scale-105 transition-transform w-20 max-[500px]:w-[76px]"
           />
         </Link>
       </div>

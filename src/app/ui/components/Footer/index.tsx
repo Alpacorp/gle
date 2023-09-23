@@ -1,16 +1,15 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import { GleLogoWhite } from "@app/ui/components/GleLogoWhite";
-import { SocialMedia } from "@app/ui/components/SocialMedia";
-import { WhatsAppWhite } from "@app/ui/components/Icons/";
-
-import data from "./dataFooter.json";
+import { SocialMedia } from "@ui/components/index";
+import { GleLogoWhite, WhatsAppWhite } from "@icons/index";
 import { Address } from "./Address";
 
-export const Footer: FC = () => {
+import data from "./dataFooter.json";
+
+export const Footer: FC = ({}) => {
   return (
-    <footer className="">
+    <footer>
       <div>
         <SocialMedia align="center" />
       </div>

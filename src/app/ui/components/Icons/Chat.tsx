@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-export const Chat: FC = () => {
+export const Chat: FC<IconProps> = ({ title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +10,7 @@ export const Chat: FC = () => {
       viewBox="0 0 65 65"
       fill="none"
     >
+      <title>{title}</title>
       <g clipPath="url(#clip0_410_11543)">
         <path
           d="M63.5077 1.31616H1.65918V63.1647H63.5077V1.31616Z"

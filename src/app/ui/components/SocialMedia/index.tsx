@@ -1,11 +1,7 @@
 import { FC } from "react";
 import Link from "next/link";
 
-import {
-  FacebookIcon,
-  LinkedInIcon,
-  YouTubeIcon,
-} from "@app/ui/components/Icons";
+import { FacebookIcon, LinkedInIcon, YouTubeIcon } from "@ui/components/Icons";
 
 interface SocialMediaProps {
   align: "center" | "start" | "end";

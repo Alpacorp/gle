@@ -1,21 +1,16 @@
 "use client";
 
-import {
-  FC,
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-  useContext,
-} from "react";
+import { FC, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ArrowUp } from "@app/ui/components/Icons";
-
-import { ListProps } from "./interfaces/List";
+import { SubMenu } from "@ui/components/SubMenu";
+import { OpenSubMenu } from "@ui/components/OpenSubMenu";
 import { iconsServices } from "@/src/app/[lang]/(inicio)/sections/Services/IconsServices";
-import { Context } from "@/src/app/context/Context";
+
+import useList from "@ui/components/List/hooks/useList";
+
+import { ListProps } from "@ui/components/List/interfaces/List";
 
 export const List: FC<ListProps> = ({
   itemKey,
@@ -25,39 +20,28 @@ export const List: FC<ListProps> = ({
   isMobile,
   lang,
 }) => {
-  const submenuContainerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-  const { setShowMenu } = useContext(Context);
 
-  const toggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setIsOpen(!isOpen);
+  const isActiveLink = (
+    pathname: string | string[],
+    link: string | string[]
+  ) => {
+    return (
+      pathname === link ||
+      (pathname.includes("/servicios") && link.includes("/servicios"))
+    );
   };
 
-  const handleOutsideClick = useCallback(
-    (event: MouseEvent) => {
-      if (!submenuContainerRef.current?.contains(event.target as Node)) {
-        setIsOpen(false);
-      } else {
-        setIsOpen(true);
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isOpen]
-  );
+  const isLinkActive = isActiveLink(pathname, link);
 
-  const handleClickMenuMobile = () => {
-    if (link === "/servicios") {
-      setShowMenu(true);
-      setIsOpen(true);
-    } else {
-      setTimeout(() => {
-        setShowMenu(false);
-      }, 500);
-    }
-  };
+  const {
+    handleClickMenuMobile,
+    handleOutsideClick,
+    isOpen,
+    setIsOpen,
+    setShowMenu,
+    toggleMenu,
+  } = useList();
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
@@ -65,16 +49,6 @@ export const List: FC<ListProps> = ({
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [handleOutsideClick]);
-
-  useEffect(() => {
-    if (pathname === link) {
-      setIsActive(true);
-    } else if (pathname.includes("/servicios") && link.includes("/servicios")) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-  }, [link, pathname]);
 
   return (
     <li
@@ -84,9 +58,9 @@ export const List: FC<ListProps> = ({
           ? "flex-col"
           : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200"
       } ${
-        isMobile && isActive
+        isMobile && isLinkActive
           ? "border-l-2 border-main-red border-opacity-100 bg-white"
-          : isActive &&
+          : isLinkActive &&
             "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
@@ -98,6 +72,7 @@ export const List: FC<ListProps> = ({
               : "justify-center h-[75px] w-[116px] max-[800px]:w-[90px]"
           }`}
           href={`${link}`}
+          title={lang === "es" ? `Ir a ${text}` : `Go to ${text}`}
           onClick={isMobile ? handleClickMenuMobile : () => {}}
         >
           {text}
@@ -105,61 +80,26 @@ export const List: FC<ListProps> = ({
         {!isOpen && !submenu?.length ? (
           ""
         ) : (
-          <button onClick={toggleMenu}>
-            <ArrowUp
-              className={
-                isOpen
-                  ? "rotate-180 transition-all duration-300"
-                  : "transition-all duration-300"
-              }
-              height={isMobile ? "16" : "75"}
-            />
-          </button>
+          <OpenSubMenu
+            isMobile={!!isMobile}
+            isOpen={isOpen}
+            text={text}
+            lang={lang ?? "es"}
+            toggleMenu={toggleMenu as () => void}
+          />
         )}
       </div>
       {isOpen && submenu?.length && (
-        <div className={`${isMobile ? "" : "relative"}`}>
-          <div
-            className={`animate-slide-top w-[218px] top-16 -right-[46px] px-4 py-6 ${
-              isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white shadow"
-            }`}
-            ref={submenuContainerRef}
-            id="submenu"
-          >
-            {submenu.map((item: any) => (
-              <Link
-                key={item.idSub}
-                href={`/${lang}${item.linkSub}`}
-                className="leading-[22px] text-black font-normal hover:text-main-red duration-200 text-center"
-                onClick={() =>
-                  isMobile
-                    ? setTimeout(() => {
-                        setShowMenu(false);
-                      }, 500)
-                    : setTimeout(() => {
-                        setIsOpen(false);
-                      }, 500)
-                }
-              >
-                <div className="flex items-center my-4">
-                  <div>
-                    {
-                      iconsServices.filter(
-                        (icon: any) => icon.iconId === item.idSub
-                      )[0].iconComponent
-                    }
-                  </div>
-                  <div className="text-left ml-[10px]">{item.textSub}</div>
-                </div>
-                {item.idSub === submenu.length ? (
-                  ""
-                ) : (
-                  <hr className="border-gray-300 border-[1px]" />
-                )}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <SubMenu
+          submenu={
+            submenu ? submenu.map((sub, index) => ({ ...sub, key: index })) : []
+          }
+          lang={lang ?? "es"}
+          isMobile={!!isMobile}
+          setShowMenu={setShowMenu}
+          setIsOpen={setIsOpen}
+          iconsServices={iconsServices}
+        />
       )}
     </li>
   );

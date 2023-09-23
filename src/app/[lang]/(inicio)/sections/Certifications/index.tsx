@@ -1,10 +1,14 @@
+import { FC } from "react";
 import Image from "next/image";
 
-import berau from "@public/assets/images/berau.webp";
-import mintrans from "@public/assets/images/mintransporte.webp";
-import { Title } from "@/src/app/ui/components/Title";
+import { Title } from "@ui/components/index";
 
-export const Certifications = () => {
+import {
+  berau,
+  mintrans,
+} from "@public/assets/images/home/certifications/index";
+
+export const Certifications: FC = () => {
   return (
     <section className="my-11">
       <div>

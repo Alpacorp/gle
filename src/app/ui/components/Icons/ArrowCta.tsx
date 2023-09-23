@@ -1,17 +1,16 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
 interface ArrowCtaProps {
   stroke?: "#D81730" | "#313131" | "white";
-  className?: string;
-  width?: string;
-  height?: string;
 }
 
-export const ArrowCta: FC<ArrowCtaProps> = ({
+export const ArrowCta: FC<IconProps & ArrowCtaProps> = ({
   stroke = "#313131",
   className,
   width = "65",
   height = "39",
+  title,
 }) => {
   return (
     <svg
@@ -22,6 +21,7 @@ export const ArrowCta: FC<ArrowCtaProps> = ({
       fill="none"
       className={className}
     >
+      <title>{title}</title>
       <g clipPath="url(#clip0_410_11486)">
         <path
           d="M63.2656 3.69993L32.3672 35.9503L1.73476 2.24218"

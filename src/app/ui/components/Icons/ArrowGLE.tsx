@@ -1,10 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-interface ArrowGLEProps {
-  className?: string;
-}
-
-export const ArrowGLE: FC<ArrowGLEProps> = ({ className }) => {
+export const ArrowGLE: FC<IconProps> = ({ className, title }) => {
   return (
     <svg
       width="164"
@@ -14,6 +11,7 @@ export const ArrowGLE: FC<ArrowGLEProps> = ({ className }) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
+      <title>{title}</title>
       <path
         d="M140.236 144.222L-6.49767 278.924L-45 277.387L104.996 144.677"
         fill="#DA1730"

@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-export const LinkedInIcon: FC = () => {
+export const LinkedInIcon: FC<IconProps> = ({ title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +10,7 @@ export const LinkedInIcon: FC = () => {
       viewBox="0 0 52 52"
       fill="none"
     >
-      <title>LinkedIN</title>
+      <title>{title}</title>
       <g clipPath="url(#clip0_693_865)">
         <path
           d="M42.4517 4.54781H9.54834C6.78692 4.54781 4.54834 6.78639 4.54834 9.54781V42.4512C4.54834 45.2126 6.78691 47.4512 9.54834 47.4512H42.4517C45.2132 47.4512 47.4517 45.2126 47.4517 42.4512V9.54781C47.4517 6.78639 45.2132 4.54781 42.4517 4.54781Z"

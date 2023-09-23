@@ -1,7 +1,7 @@
 import { getDictionary } from "@/src/lib/dictionary";
+import HomePage from "./(inicio)/container";
 
 import { Locale } from "@/i18n.config";
-import HomePage from "./(inicio)/container";
 
 const HomeContainer = async ({
   params: { lang },
@@ -11,7 +11,11 @@ const HomeContainer = async ({
   const { page } = await getDictionary(lang);
   return (
     <main>
-      <HomePage />
+      <HomePage
+        params={{
+          lang,
+        }}
+      />
       <p>{page.home.description}</p>
     </main>
   );
