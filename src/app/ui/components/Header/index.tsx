@@ -31,6 +31,32 @@ export const Header: FC<LangInterface> = ({ lang }) => {
     } else {
       router.push(lang === "es" ? "/en" : "/es");
     }
+
+    const subRoute = dataMenu.find(
+      (item) =>
+        item.submenu?.find(
+          (subitem) =>
+            subitem.linkSubEs === pathname.replace(langPrefix, "") ||
+            subitem.linkSubEn === pathname.replace(langPrefix, "")
+        ) !== undefined
+    );
+
+    if (subRoute) {
+      const subRouteSubmenu = subRoute.submenu?.find(
+        (subitem) =>
+          subitem.linkSubEs === pathname.replace(langPrefix, "") ||
+          subitem.linkSubEn === pathname.replace(langPrefix, "")
+      );
+
+      if (subRouteSubmenu) {
+        const newLangPath =
+          lang === "es" ? subRouteSubmenu.linkSubEn : subRouteSubmenu.linkSubEs;
+        const newLangPrefix = lang === "es" ? "/en" : "/es";
+        router.push(`${newLangPrefix}${newLangPath}`);
+      } else {
+        router.push(lang === "es" ? "/en" : "/es");
+      }
+    }
   };
 
   return (
