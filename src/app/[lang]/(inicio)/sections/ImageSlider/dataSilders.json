@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "url": "/assets/images/slider/mercancias.webp",
-    "urlMobile": "/assets/images/slider/mercancias-mobile.webp",
+    "url": "/assets/images/home/slider/mercancias.webp",
+    "urlMobile": "/assets/images/home/slider/mercancias-mobile.webp",
     "text": "Servicio personalizado para movilizar mercancías",
     "subtext": "con información oportuna e indicadores de gestión"
   },
   {
     "id": 2,
-    "url": "/assets/images/slider/comercio.webp",
-    "urlMobile": "/assets/images/slider/comercio-mobile.webp",
+    "url": "/assets/images/home/slider/comercio.webp",
+    "urlMobile": "/assets/images/home/slider/comercio-mobile.webp",
     "text": "Contamos con los mejores partners logísticos",
     "subtext": "para diseñar servicios a su medida"
   },
   {
     "id": 3,
-    "url": "/assets/images/slider/talento.webp",
-    "urlMobile": "/assets/images/slider/talento-mobile.webp",
+    "url": "/assets/images/home/slider/talento.webp",
+    "urlMobile": "/assets/images/home/slider/talento-mobile.webp",
     "text": "Nuestra visión, talento y servicio",
     "subtext": "hacen parte de su empresa como aliados estratégicos"
   }

@@ -2,25 +2,25 @@
   {
     "id": 1,
     "name": "Paqueteo",
-    "url": "/assets/images/services/paqueteo.webp",
+    "url": "/assets/images/home/services/paqueteo.webp",
     "link": "/servicios/paqueteo"
   },
   {
     "id": 2,
     "name": "Carga Masiva",
-    "url": "/assets/images/services/carga-masiva.webp",
+    "url": "/assets/images/home/services/carga-masiva.webp",
     "link": "/servicios/carga-masiva"
   },
   {
     "id": 3,
     "name": "Internacional",
-    "url": "/assets/images/services/internacional.webp",
+    "url": "/assets/images/home/services/internacional.webp",
     "link": "/servicios/gle-internacional"
   },
   {
     "id": 4,
     "name": "E-Commerce",
-    "url": "/assets/images/services/ecommerce.webp",
+    "url": "/assets/images/home/services/ecommerce.webp",
     "link": "/servicios/ecommerce"
   }
 ]
