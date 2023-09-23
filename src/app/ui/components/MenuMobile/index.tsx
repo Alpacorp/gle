@@ -40,13 +40,17 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
         </div>
         <nav className="mt-8">
           <ul className="flex flex-col items-left justify-center space-y-3 text-black">
-            {dataMenu.map(({ id, textEs, textEn, link, submenu }) => (
+            {dataMenu.map(({ id, textEs, textEn, linkEs, linkEn, submenu }) => (
               <List
                 key={id}
                 lang={lang}
                 itemKey={id}
                 text={lang === "es" ? textEs ?? "" : textEn ?? ""}
-                link={`/${lang}${link}`}
+                link={
+                  lang === "es"
+                    ? `/${lang}${linkEs}` ?? ""
+                    : `/${lang}${linkEn}` ?? ""
+                }
                 isMobile
                 submenu={submenu?.map((item) => ({
                   idSub: item.idSub,
