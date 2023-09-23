@@ -19,28 +19,32 @@
         "idSub": 1,
         "textSubEs": "Paqueteo",
         "textSubEn": "Packaging",
-        "linkSub": "/servicios/paqueteo",
+        "linkSubEs": "/servicios/paqueteo",
+        "linkSubEn": "/services/packaging",
         "typeSub": "link"
       },
       {
         "idSub": 2,
         "textSubEs": "Carga Masiva",
         "textSubEn": "Bulk Cargo",
-        "linkSub": "/servicios/carga-masiva",
+        "linkSubEs": "/servicios/carga-masiva",
+        "linkSubEn": "/services/bulk-cargo",
         "typeSub": "link"
       },
       {
         "idSub": 3,
         "textSubEs": "G.L.E. Internacional",
         "textSubEn": "G.L.E. International",
-        "linkSub": "/servicios/gle-internacional",
+        "linkSubEs": "/servicios/gle-internacional",
+        "linkSubEn": "/services/gle-international",
         "typeSub": "link"
       },
       {
         "idSub": 4,
         "textSubEs": "Servicios E-Commerce",
         "textSubEn": "E-Commerce Services",
-        "linkSub": "/servicios/ecommerce",
+        "linkSubEs": "/servicios/ecommerce",
+        "linkSubEn": "/services/ecommerce",
         "typeSub": "link"
       }
     ]
