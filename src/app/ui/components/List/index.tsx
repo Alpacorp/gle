@@ -28,7 +28,8 @@ export const List: FC<ListProps> = ({
   ) => {
     return (
       pathname === link ||
-      (pathname.includes("/servicios") && link.includes("/servicios"))
+      (pathname.includes("/servicios") && link.includes("/servicios")) ||
+      (pathname.includes("/services") && link.includes("/services"))
     );
   };
 

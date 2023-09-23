@@ -20,7 +20,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
     <div className="relative h-[100svh]">
       <Image src={imagePath} alt={pageTitle} fill className="object-cover" />
       <div className="absolute z-10 inset-0 bg-gradient-to-t from-main-red to-transparent" />
-      <div className="absolute z-30 bottom-20 right-0 left-0 flex flex-col justify-center items-center text-white">
+      <div className="absolute z-10 bottom-20 right-0 left-0 flex flex-col justify-center items-center text-white">
         {iconPath && <Image src={iconPath} alt="Icon" width={50} height={50} />}
         <h1 className="text-[45px] font-semibold">{pageTitle}</h1>
         {arrowDown && (
