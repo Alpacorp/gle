@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { GleLogo, AgileLogo, En, Es } from "@icons/index";
 import { List } from "@ui/components/List";
@@ -14,6 +14,24 @@ import dataMenu from "@ui/components/Header/dataMenu.json";
 
 export const Header: FC<LangInterface> = ({ lang }) => {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const changeLanguage = () => {
+    const langPrefix = lang === "es" ? "/es" : "/en";
+    const route = dataMenu.find(
+      (item) =>
+        item.linkEs === pathname.replace(langPrefix, "") ||
+        item.linkEn === pathname.replace(langPrefix, "")
+    );
+
+    if (route) {
+      const newLangPath = lang === "es" ? route.linkEn : route.linkEs;
+      const newLangPrefix = lang === "es" ? "/en" : "/es";
+      router.push(`${newLangPrefix}${newLangPath}`);
+    } else {
+      router.push(lang === "es" ? "/en" : "/es");
+    }
+  };
 
   return (
     <header className="font-poppins fixed w-full top-0 bg-[#f5f5f5d0] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-30">
@@ -32,14 +50,11 @@ export const Header: FC<LangInterface> = ({ lang }) => {
               lang={lang}
               itemKey={id}
               text={lang === "es" ? textEs ?? "" : textEn ?? ""}
-              link={
-                lang === "es"
-                  ? `/${lang}${linkEs}` ?? ""
-                  : `/${lang}${linkEn}` ?? ""
-              }
+              link={lang === "es" ? `/${lang}${linkEs}` : `/${lang}${linkEn}`}
               submenu={submenu?.map((item) => ({
                 idSub: item.idSub,
-                linkSub: item.linkSub,
+                linkSub:
+                  lang === "es" ? `${item.linkSubEs}` : `${item.linkSubEn}`,
                 textSub: lang === "es" ? item.textSubEs : item.textSubEn,
                 typeSub: item.typeSub.toString(),
               }))}
@@ -48,20 +63,13 @@ export const Header: FC<LangInterface> = ({ lang }) => {
         </ul>
       </nav>
       <div className="flex items-center gap-6">
-        <Link
-          href={
-            lang === "es"
-              ? pathname.replace("/es", "/en")
-              : pathname.replace("/en", "/es")
-          }
-          locale={lang === "es" ? "en" : "es"}
-        >
+        <button onClick={changeLanguage}>
           {lang === "es" ? (
             <Es title="Cambiar idioma a inglés" />
           ) : (
             <En title="Change language to Spanish" />
           )}
-        </Link>
+        </button>
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
           <AgileLogo
             id="agile-logo"

@@ -46,15 +46,11 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
                 lang={lang}
                 itemKey={id}
                 text={lang === "es" ? textEs ?? "" : textEn ?? ""}
-                link={
-                  lang === "es"
-                    ? `/${lang}${linkEs}` ?? ""
-                    : `/${lang}${linkEn}` ?? ""
-                }
+                link={lang === "es" ? `/${lang}${linkEs}` : `/${lang}${linkEn}`}
                 isMobile
                 submenu={submenu?.map((item) => ({
                   idSub: item.idSub,
-                  linkSub: item.linkSub,
+                  linkSub: lang === "es" ? item.linkSubEs : item.linkSubEn,
                   textSub: lang === "es" ? item.textSubEs : item.textSubEn,
                   typeSub: item.typeSub.toString(),
                   key: item.idSub,
