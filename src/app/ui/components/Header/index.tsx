@@ -57,9 +57,9 @@ export const Header: FC<LangInterface> = ({ lang }) => {
           locale={lang === "es" ? "en" : "es"}
         >
           {lang === "es" ? (
-            <En title="Cambiar idioma a inglés" />
+            <Es title="Cambiar idioma a inglés" />
           ) : (
-            <Es title="Change language to Spanish" />
+            <En title="Change language to Spanish" />
           )}
         </Link>
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
