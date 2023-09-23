@@ -6,7 +6,6 @@ import { Context } from "@/src/app/context/Context";
 
 export const HamburguerMenu: FC = () => {
   const { setShowMenu } = useContext(Context);
-
   const activeSubmenuRef = useRef<HTMLButtonElement>(null);
 
   return (

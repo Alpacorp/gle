@@ -1,15 +1,21 @@
+import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-import volamos from "@public/assets/images/gle/volamos.svg";
-import backMobile from "@public/assets/images/services/services-mobile-background.svg";
-import backServices from "@public/assets/images/services/services-background.png";
+import { Title } from "@/src/app/ui/components/Title";
 
 import { iconsServices } from "./IconsServices";
-import services from "./dataServices.json";
-import { Title } from "@/src/app/ui/components/Title";
 import { ArrowCta, ArrowGLE } from "@/src/app/ui/components/Icons";
+import volamos from "@public/assets/images/gle/volamos.svg";
+import {
+  backServices,
+  backMobile,
+} from "@public/assets/images/home/services/index";
 
-export const Services = () => {
+import { LangInterface } from "@constans/interfaces/langInterface";
+import services from "./dataServices.json";
+
+export const Services: FC<LangInterface> = ({ lang }) => {
   return (
     <>
       <section className="relative">
@@ -43,7 +49,7 @@ export const Services = () => {
               </Title>
             </div>
             <div className="flex justify-evenly gap-6 items-center flex-wrap">
-              {services.map(({ id, name, url }) => (
+              {services.map(({ id, name, url, link }) => (
                 <div
                   key={id}
                   className="rounded-2xl overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
@@ -76,13 +82,16 @@ export const Services = () => {
                     <h2 className="text-2xl font-poppins font-semibold text-white mt-2">
                       {name}
                     </h2>
-                    <button className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors">
+                    <Link
+                      href={`/${lang}${link}`}
+                      className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors"
+                    >
                       <ArrowCta
                         stroke="#D81730"
                         className="-rotate-90 w-[30px] h-[27px]"
                       />{" "}
-                      <span className="ml-3">Conoce más </span>
-                    </button>
+                      <span className="ml-3">Conoce más</span>
+                    </Link>
                   </div>
                 </div>
               ))}

@@ -1,13 +1,13 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { phone1, phone2 } from "@public/assets/images/";
-
+import { Title, DifferentCard } from "@ui/components/index";
 import { iconsDifferent } from "./IconsDifferent";
+import { ArrowCta } from "@icons/index";
+
+import { phone1, phone2 } from "@public/assets/images/home/different/index";
+
 import data from "./dataDifferent.json";
-import { Title } from "@/src/app/ui/components/Title";
-import { DifferentCard } from "@/src/app/ui/components/DifferentCard";
-import { ArrowCta } from "@/src/app/ui/components/Icons";
 
 export const Different: FC = () => {
   return (

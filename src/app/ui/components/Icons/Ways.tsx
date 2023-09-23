@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-export const Ways: FC = () => {
+export const Ways: FC<IconProps> = ({ title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +10,7 @@ export const Ways: FC = () => {
       viewBox="0 0 65 66"
       fill="none"
     >
+      <title>{title}</title>
       <g clipPath="url(#clip0_410_11586)">
         <path
           d="M63.2528 2.08032H1.4043V63.9288H63.2528V2.08032Z"

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IconProps } from "./interfaces";
 
-export const Cart: FC<IconProps> = ({ width, height }) => {
+export const Cart: FC<IconProps> = ({ width, height, title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ export const Cart: FC<IconProps> = ({ width, height }) => {
       viewBox="0 0 41 40"
       fill="none"
     >
+      <title>{title}</title>
       <g clipPath="url(#clip0_587_2640)">
         <path
           d="M36.7184 3.49696H3.71094V36.5044H36.7184V3.49696Z"

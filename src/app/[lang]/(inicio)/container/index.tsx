@@ -1,18 +1,27 @@
-import { Services } from "../sections/Services";
-import { Different } from "../sections/Different";
-import { Certifications } from "../sections/Certifications";
-import { ImageSlider } from "../sections/ImageSlider";
-import { WeAreGLE } from "../sections/WeAreGLE";
+import {
+  Certifications,
+  Different,
+  ImageSlider,
+  Services,
+  WeAreGLE,
+} from "@inicio/sections/index";
 
-const HomePage = () => {
+import { Locale } from "@/i18n.config";
+
+interface HomePageProps {
+  params: {
+    lang: Locale;
+  };
+}
+
+const HomePage = ({ params: { lang } }: HomePageProps) => {
   return (
     <>
       <div className="bg-gray-pattern bg-top pb-52 bg-cover bg-no-repeat max-[380px]:bg-gray-pattern-mobile">
         <ImageSlider />
-        {/* <Tracking /> */}
         <WeAreGLE />
       </div>
-      <Services />
+      <Services lang={lang} />
       <Different />
       <Certifications />
     </>

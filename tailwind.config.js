@@ -15,13 +15,14 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "gray-pattern": "url('/assets/images/background-gray.svg')",
+        "gray-pattern": "url('/assets/images/home/body/background-gray.svg')",
         "gray-pattern-mobile":
-          "url('/assets/images/background-gray-mobile.svg')",
+          "url('/assets/images/home/body/background-gray-mobile.svg')",
         "volamos-back": "url('/assets/images/gle/volamos.svg')",
         "hero-linear-bg":
           "linear-gradient(0deg, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);",
-        "hero-main-red-bg": "url('/assets/images/background-nosotros.png')",
+        "hero-main-red-bg":
+          "url('/assets/images/about-us/background-nosotros.png')",
       },
       backgroundColor: {
         "header-bg-light-color": "var(--bg-light)",

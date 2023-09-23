@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-export const ArrowDown: FC = () => {
+export const ArrowDown: FC<IconProps> = ({ title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +12,7 @@ export const ArrowDown: FC = () => {
       transform="scale(1, -1)"
       className="ml-2"
     >
+      <title>{title}</title>
       <path
         d="M2.67214 0.611324L0.984497 2.28151L8.16596 9.38867L15.3474 2.28151L13.6598 0.611324L8.16596 6.03646L2.67214 0.611324Z"
         fill="#D81730"

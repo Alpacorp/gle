@@ -1,7 +1,12 @@
 {
-  "navigation": {
-    "home": "Home",
-    "about": "About"
+  "component": {
+    "header": {
+      "menu": {
+        "nosotros": "Nosotros",
+        "servicios": "Servicios",
+        "contacto": "Contacto"
+      }
+    }
   },
   "page": {
     "home": {

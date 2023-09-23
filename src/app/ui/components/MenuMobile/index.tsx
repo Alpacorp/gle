@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { useContext } from "react";
 
-import menuOptions from "@app/ui/components/Header/menu.json";
-import { SocialMedia } from "@app/ui/components/SocialMedia";
-import { Close } from "@app/ui/components/Icons/Close";
-import { GleLogo } from "@app/ui/components/GleLogo";
-import { List } from "@app/ui/components/List";
+import { List } from "@ui/components/List";
+import { SocialMedia } from "@ui/components/SocialMedia";
+import { Close, GleLogo } from "@ui/components/Icons/";
+
 import { Context } from "@/src/app/context/Context";
 import { Locale } from "@/i18n.config";
+
+import dataMenu from "@ui/components/Header/dataMenu.json";
 
 export const MenuMobile = ({ lang }: { lang: Locale }) => {
   const { setShowMenu, showMenu } = useContext(Context);
@@ -30,7 +31,7 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
         }`}
       >
         <div className="flex items-center justify-between">
-          <Link href={lang}>
+          <Link href={`/${lang}`}>
             <GleLogo height="31" width="129" />
           </Link>
           <button onClick={() => setShowMenu(false)}>
@@ -39,18 +40,18 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
         </div>
         <nav className="mt-8">
           <ul className="flex flex-col items-left justify-center space-y-3 text-black">
-            {menuOptions.map(({ id, text, link, submenu }) => (
+            {dataMenu.map(({ id, textEs, textEn, link, submenu }) => (
               <List
                 key={id}
                 lang={lang}
                 itemKey={id}
-                text={text}
+                text={lang === "es" ? textEs ?? "" : textEn ?? ""}
                 link={`/${lang}${link}`}
                 isMobile
                 submenu={submenu?.map((item) => ({
                   idSub: item.idSub,
                   linkSub: item.linkSub,
-                  textSub: item.textSub,
+                  textSub: lang === "es" ? item.textSubEs : item.textSubEn,
                   typeSub: item.typeSub.toString(),
                   key: item.idSub,
                 }))}

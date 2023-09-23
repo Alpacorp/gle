@@ -1,4 +1,13 @@
 {
+  "component": {
+    "header": {
+      "menu": {
+        "nosotros": "Nosotros",
+        "servicios": "Servicios",
+        "contacto": "Contacto"
+      }
+    }
+  },
   "navigation": {
     "home": "Home",
     "about": "About"

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IconProps } from "./interfaces";
 
-export const Box: FC<IconProps> = ({ width, height }) => {
+export const Box: FC<IconProps> = ({ width, height, title }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ export const Box: FC<IconProps> = ({ width, height }) => {
       viewBox="0 0 42 42"
       fill="none"
     >
+      <title>{title}</title>
       <path
         d="M38.0205 4.19339H4.40723V37.8066H38.0205V4.19339Z"
         fill="#F0F0F0"
