@@ -44,10 +44,25 @@ const StickyTracking: FC<StickyTrackingProps> = ({
     <>
       {!showTrackingIcon && (
         <section
-          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 ${
+          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 max-[400px]:bg-white max-[400px]:h-10 max-[400px]:py-6 max-[400px]:m-0 max-[400px]:rounded-none max-[400px]:w-full max-[400px]:text-center max-[400px]:flex max-[400px]:justify-center ${
             showTrackingForm && "bg-white rounded-l-none rounded-r-full pr-2"
           }`}
         >
+          {!showTrackingForm ? (
+            <button
+              className="min-[401px]:hidden font-poppins font-medium"
+              onClick={showTrackingFormHandler}
+            >
+              Rastrea tu envío
+            </button>
+          ) : (
+            <button
+              onClick={showTrackingFormHandler}
+              className="ml-2 min-[401px]:hidden"
+            >
+              X
+            </button>
+          )}
           {showTrackingForm && (
             <div className="animate-fade-in-right flex justify-evenly flex-wrap items-center gap-1 mx-2 py-2 max-w-[730px] w-full max-[640px]:p-2 max-[380px]:p-2">
               <div className="flex justify-center gap-2">
@@ -65,7 +80,10 @@ const StickyTracking: FC<StickyTrackingProps> = ({
               </div>
             </div>
           )}
-          <StickyTrack onClick={showTrackingFormHandler} />
+          <StickyTrack
+            onClick={showTrackingFormHandler}
+            className="max-[400px]:hidden"
+          />
         </section>
       )}
     </>
