@@ -44,13 +44,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
     <>
       {!showTrackingIcon && (
         <section
-          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 max-[400px]:bg-white max-[400px]:h-10 max-[400px]:py-6 max-[400px]:m-0 max-[400px]:rounded-none max-[400px]:w-full max-[400px]:text-center max-[400px]:flex max-[400px]:justify-center ${
+          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 max-[400px]:bg-white max-[400px]:h-12 max-[400px]:m-0 max-[400px]:rounded-none max-[400px]:w-full max-[400px]:text-center max-[400px]:flex max-[400px]:justify-center ${
             showTrackingForm && "bg-white rounded-l-none rounded-r-full pr-2"
           }`}
         >
           {!showTrackingForm ? (
             <button
-              className="min-[401px]:hidden font-poppins font-medium"
+              className="min-[401px]:hidden font-poppins font-medium w-full h-12"
               onClick={showTrackingFormHandler}
             >
               Rastrea tu envío
