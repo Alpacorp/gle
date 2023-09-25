@@ -3,7 +3,7 @@ import { ArrowCta } from "@icons/index";
 
 export const Tracking: FC = () => {
   return (
-    <section className="flex justify-center border-0">
+    <section id="tracking" className="flex justify-center border-0">
       <div className="flex justify-evenly flex-wrap py-5 items-center gap-1 border-2 border-main-red mx-4 rounded-xl max-w-[730px] w-full max-[640px]:p-2 max-[380px]:p-2">
         <h1 className="text-xl text-center leading-none font-semibold font-poppins text-white max-[380px]:text-lg">
           Rastree su envío

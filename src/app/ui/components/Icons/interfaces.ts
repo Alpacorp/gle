@@ -1,7 +1,8 @@
 export interface IconProps {
-  width?: string;
-  height?: string;
-  title?: string;
   className?: string;
+  height?: string;
   id?: string;
+  onClick?: () => void;
+  title?: string;
+  width?: string;
 }

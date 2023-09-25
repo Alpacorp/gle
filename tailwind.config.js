@@ -34,6 +34,7 @@ module.exports = {
       boxShadow: {
         "header-shadow": "0px 4px 4px rgba(0, 0, 0, 0.25)",
         "card-shadow": "0px 0px 10px rgba(0,0,0,0.75);",
+        "sticky-shadow": "0px 0px 10px 0px rgba(0, 0, 0, 0.75)",
       },
       colors: {
         "main-red": "#D81730",
@@ -66,12 +67,52 @@ module.exports = {
             opacity: "1",
           },
         },
+        "slide-in-blurred-bottom": {
+          "0%": {
+            transform: "translateY(1000px) scaleY(2.5) scaleX(0.2)",
+            transformOrigin: "50% 100%",
+            filter: "blur(40px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateY(0) scaleY(1) scaleX(1);",
+            transformOrigin: "50% 50%",
+            filter: "blur(0)",
+            opacity: "1",
+          },
+        },
+        "slide-out-bottom": {
+          "0%": {
+            transform: "translateY(0)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(1000px)",
+            opacity: "0",
+          },
+        },
+        "fade-in-right": {
+          "0%": {
+            transform: "translateX(50px)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "slide-top":
           "slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) ease",
         "slide-in-right": "slide-in-right .5s ease-in-out",
         "fade-in-bottom": "fade-in-bottom 0.8s",
+        "slide-in-blurred-bottom":
+          "slide-in-blurred-bottom 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both",
+        "slide-out-bottom":
+          "slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
+        "fade-in-right":
+          "fade-in-right 0.1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
       },
     },
   },

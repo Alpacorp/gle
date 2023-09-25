@@ -8,6 +8,8 @@ import {
   philosophy,
   team,
 } from "@/public/assets/images/about-us/index";
+import StickyTracking from "@/src/app/ui/components/StickyTracking";
+
 import gleWhite from "@public/assets/images/gle/gle-white.png";
 
 import dataValues from "../data/dataValues.json";
@@ -253,6 +255,7 @@ export const Ours: FC = () => {
           </form>
         </div>
       </div>
+      <StickyTracking />
     </>
   );
 };

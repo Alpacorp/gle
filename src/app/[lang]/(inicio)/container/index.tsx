@@ -7,6 +7,7 @@ import {
 } from "@inicio/sections/index";
 
 import { Locale } from "@/i18n.config";
+import StickyTracking from "@ui/components/StickyTracking";
 
 interface HomePageProps {
   params: {
@@ -24,6 +25,7 @@ const HomePage = ({ params: { lang } }: HomePageProps) => {
       <Services lang={lang} />
       <Different />
       <Certifications />
+      <StickyTracking observerActive={true} />
     </>
   );
 };
