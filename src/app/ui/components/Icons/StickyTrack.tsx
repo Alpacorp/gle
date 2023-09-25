@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IconProps } from "./interfaces";
 
-export const StickyTrack: FC<IconProps> = ({ onClick }) => {
+export const StickyTrack: FC<IconProps> = ({ onClick, className }) => {
   return (
     <svg
       width="58"
@@ -10,8 +10,7 @@ export const StickyTrack: FC<IconProps> = ({ onClick }) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
-      // hover add size icon animation
-      className="cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
+      className={`cursor-pointer hover:scale-105 transition duration-300 ease-in-out ${className}`}
     >
       <rect width="58" height="58" rx="29" fill="#D81730" />
       <path
