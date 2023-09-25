@@ -4,8 +4,7 @@ import { Poppins, Inter } from "next/font/google";
 import { Locale, i18n } from "@/i18n.config";
 import { ContextProvider } from "@context/Context";
 
-import { Header } from "@ui/components/Header";
-import { Footer } from "@ui/components/Footer";
+import { Header, Footer } from "@ui/components/";
 
 import "@globals/globals.css";
 
