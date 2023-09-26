@@ -2,7 +2,7 @@
   "component": {
     "header": {
       "menu": {
-        "nosotros": "Nosotros",
+        "ours": "Nosotros",
         "servicios": "Servicios",
         "contacto": "Contacto"
       }
@@ -12,14 +12,19 @@
     "home": "Home",
     "about": "About"
   },
-  "page": {
+  "pages": {
     "home": {
       "title": "Welcome to NextJs i18n",
       "description": "español"
     },
     "about": {
-      "title": "About Us",
-      "description": "This is the about page"
+      "title": "Nosotros",
+      "sections": {
+        "mision": {
+          "title": "Misión",
+          "description": "Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos."
+        }
+      }
     }
   }
 }

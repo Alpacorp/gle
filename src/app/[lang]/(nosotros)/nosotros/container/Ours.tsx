@@ -13,39 +13,41 @@ import StickyTracking from "@/src/app/ui/components/StickyTracking";
 
 import gleWhite from "@public/assets/images/gle/gle-white.png";
 
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { getDictionary } from "@/src/lib/dictionary";
+
 import dataValues from "../data/dataValues.json";
 
-export const Ours: FC = () => {
+export const Ours: FC<LangInterface> = async ({ lang }) => {
+  const { pages } = await getDictionary(lang);
+
   return (
     <>
       <HeroPages
         imagePath={bannerOurs}
         imagePathMobile={bannerOursMobile}
-        pageTitle="Nosotros"
+        pageTitle={pages.about.title}
         arrowDown
       />
-      <div className="">
-        <div className="absolute flex justify-center items-start px-28 bg-main-red w-full h-[380px] hero-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[620px] max-[380px]:px-6 max-[340px]:h-[700px]">
-          <div className="flex flex-col max-w-[1000px] w-full">
-            <div className="border-l-[2px] border-white my-4">
-              <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
-                Misión
-              </h2>
-            </div>
-            <div className="border border-white rounded-2xl">
-              <p className="p-5 font-poppins text-white">
-                Somos una empresa dedicada a la comercialización de servicios
-                logísticos, que orienta sus esfuerzos a cumplir los acuerdos
-                comerciales, satisfaciendo los requisitos y expectativas de
-                nuestros clientes y partes interesadas, con talento humano
-                competente y diligente enfocado en la gestión del riesgo, la
-                innovación y el mejoramiento continuo de nuestros procesos.
-              </p>
+      <div>
+        <div className="relative">
+          <div className="flex justify-center items-start px-28 bg-main-red w-full h-[380px] hero-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[675px] max-[380px]:px-6 max-[340px]:h-[700px]">
+            <div className="flex flex-col max-w-[1000px] w-full">
+              <div className="border-l-[2px] border-white my-4">
+                <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
+                  {pages.about.sections.mision.title}
+                </h2>
+              </div>
+              <div className="border border-white rounded-2xl">
+                <p className="p-5 font-poppins text-white">
+                  {pages.about.sections.mision.description}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <ArrowGLE className="relative bottom-0 left-0 h-40 w-auto" />
+          <div className="absolute z-20 bottom-0 left-0">
+            <ArrowGLE className="h-40 w-auto max-[480px]:h-44" />
+          </div>
         </div>
         <div className="px-[120px] flex flex-col max-w-[1000px] w-full m-auto ml-0 pt-10 max-[550px]:px-5 max-[380px]:px-[24px]">
           <div className="border-l-[2px] border-main-red my-4">
@@ -72,7 +74,7 @@ export const Ours: FC = () => {
               width={450}
               height={637}
               priority
-              className="aspect-auto rounded-2xl"
+              className="aspect-auto rounded-2xl max-w-[550px] w-full"
             />
           </div>
           <div className="flex flex-col gap-10">
@@ -158,7 +160,7 @@ export const Ours: FC = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="text-base font-poppins text-secondary-gray"
+                    className="text-base font-poppins text-secondary-gray leading-none"
                   >
                     Correo:
                   </label>
@@ -211,7 +213,7 @@ export const Ours: FC = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="text-base font-poppins text-secondary-gray"
+                    className="text-base font-poppins text-secondary-gray leading-none"
                   >
                     Ciudad:
                   </label>
