@@ -1,10 +1,11 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { HeroPages } from "@ui/components/index";
+import { ArrowGLE, HeroPages } from "@ui/components/index";
 import { ValuesText } from "../components/ValuesText";
 import {
   bannerOurs,
+  bannerOursMobile,
   philosophy,
   team,
 } from "@/public/assets/images/about-us/index";
@@ -17,12 +18,17 @@ import dataValues from "../data/dataValues.json";
 export const Ours: FC = () => {
   return (
     <>
-      <HeroPages imagePath={bannerOurs} pageTitle="Nosotros" arrowDown />
+      <HeroPages
+        imagePath={bannerOurs}
+        imagePathMobile={bannerOursMobile}
+        pageTitle="Nosotros"
+        arrowDown
+      />
       <div className="">
-        <div className="px-[120px] bg-hero-main-red-bg w-full bg-cover bg-no-repeat pb-10 max-[550px]:px-5 max-[380px]:px-[24px]">
-          <div className="flex flex-col max-w-[1000px] w-full m-auto mr-0">
+        <div className="absolute flex justify-center items-start px-28 bg-main-red w-full h-[380px] hero-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[620px] max-[380px]:px-6 max-[340px]:h-[700px]">
+          <div className="flex flex-col max-w-[1000px] w-full">
             <div className="border-l-[2px] border-white my-4">
-              <h2 className="ml-3 text-4xl font-poppins font-semibold text-white">
+              <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
                 Misión
               </h2>
             </div>
@@ -38,9 +44,12 @@ export const Ours: FC = () => {
             </div>
           </div>
         </div>
+        <div>
+          <ArrowGLE className="relative bottom-0 left-0 h-40 w-auto" />
+        </div>
         <div className="px-[120px] flex flex-col max-w-[1000px] w-full m-auto ml-0 pt-10 max-[550px]:px-5 max-[380px]:px-[24px]">
           <div className="border-l-[2px] border-main-red my-4">
-            <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray">
+            <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
               Visión
             </h2>
           </div>
@@ -69,7 +78,7 @@ export const Ours: FC = () => {
           <div className="flex flex-col gap-10">
             <div>
               <div className="border-l-[2px] border-main-red my-4">
-                <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray">
+                <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
                   Filosofía
                 </h2>
               </div>
@@ -84,7 +93,7 @@ export const Ours: FC = () => {
             </div>
             <div>
               <div className="border-l-[2px] border-main-red my-4">
-                <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray">
+                <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
                   Política de Servicio
                 </h2>
               </div>
@@ -141,11 +150,11 @@ export const Ours: FC = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col flex-wrap justify-center items-center">
           <h3 className="font-poppins">Únete a nuestra gran familia G.L.E.</h3>
-          <form className="flex gap-4 mt-11">
-            <div className="flex flex-col">
-              <div className="flex">
+          <form className="flex flex-wrap gap-4 mt-11">
+            <div className="flex flex-col flex-wrap">
+              <div className="flex flex-wrap">
                 <div>
                   <label
                     htmlFor="email"
@@ -198,7 +207,7 @@ export const Ours: FC = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <div>
                   <label
                     htmlFor="email"
