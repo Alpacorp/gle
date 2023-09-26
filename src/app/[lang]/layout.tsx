@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 
-import { Locale, i18n } from "@/i18n.config";
-import { ContextProvider } from "@context/Context";
-
 import { Header, Footer } from "@ui/components/";
+
+import { Locale } from "@/i18n.config";
+import { ContextProvider } from "@context/Context";
 
 import "@globals/globals.css";
 
@@ -27,10 +27,6 @@ export const metadata: Metadata = {
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
 };
-
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }));
-}
 
 export default function RootLayout({
   children,
