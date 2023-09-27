@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { StickyTrack } from "@icons/index";
+import { Close, StickyTrack } from "@icons/index";
 import { ArrowCta } from "..";
 
 interface StickyTrackingProps {
@@ -50,9 +50,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
         >
           {!showTrackingForm ? (
             <button
-              className="min-[401px]:hidden font-poppins font-medium w-full h-12"
+              className="flex items-center justify-center gap-3 min-[401px]:hidden font-poppins font-medium w-full h-12"
               onClick={showTrackingFormHandler}
             >
+              <ArrowCta
+                stroke="#D81730"
+                className="transform -rotate-90 w-7 h-5"
+              />
               Rastrea tu envío
             </button>
           ) : (
@@ -60,7 +64,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
               onClick={showTrackingFormHandler}
               className="ml-2 min-[401px]:hidden"
             >
-              X
+              <Close className="w-6 h-6 bg-main-red" />
             </button>
           )}
           {showTrackingForm && (

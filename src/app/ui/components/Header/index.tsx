@@ -8,10 +8,10 @@ import { GleLogo, AgileLogo, En, Es } from "@icons/index";
 import { List } from "@ui/components/List";
 import { HamburguerMenu } from "@ui/components/HamburguerMenu";
 import { MenuMobile } from "@ui/components/MenuMobile";
+import { Toggle } from "@ui/components/Toggle";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
 import dataMenu from "@ui/components/Header/dataMenu.json";
-import { Toggle } from "../Toggle";
 
 export const Header: FC<LangInterface> = ({ lang }) => {
   const pathname = usePathname();
@@ -89,14 +89,7 @@ export const Header: FC<LangInterface> = ({ lang }) => {
           ))}
         </ul>
       </nav>
-      <div className="flex items-center gap-6">
-        <button onClick={changeLanguage}>
-          {lang === "es" ? (
-            <Es title="Cambiar idioma a inglés" />
-          ) : (
-            <En title="Change language to Spanish" />
-          )}
-        </button>
+      <div className="flex items-center gap-4">
         <Toggle onChange={changeLanguage} lang={lang} />
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
           <AgileLogo
