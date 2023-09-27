@@ -106,7 +106,7 @@ module.exports = {
             transform: "translateX(0) scale(1)",
           },
           "50%": {
-            transform: "translateX(10px) scale(1.2)",
+            transform: "translateX(10px) scale(1)",
           },
           "100%": {
             transform: "translateX(20px) scale(1)",
@@ -117,7 +117,7 @@ module.exports = {
             transform: "translateX(20px) scale(1)",
           },
           "50%": {
-            transform: "translateX(10px) scale(1.2)",
+            transform: "translateX(10px) scale(1)",
           },
           "100%": {
             transform: "translateX(0) scale(1)",

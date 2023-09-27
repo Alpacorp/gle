@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IconProps } from "./interfaces";
 
-export const Close: FC<IconProps> = ({ title }) => {
+export const Close: FC<IconProps> = ({ title, className }) => {
   return (
     <svg
       width="15"
@@ -9,7 +9,7 @@ export const Close: FC<IconProps> = ({ title }) => {
       viewBox="0 0 15 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="bg-black w-9 h-9 p-2 flex justify-center items-center"
+      className={`w-9 h-9 p-2 flex justify-center items-center ${className}`}
     >
       <title>{title}</title>
       <path

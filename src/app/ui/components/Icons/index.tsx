@@ -17,6 +17,7 @@ export * from "./InHouse";
 export * from "./Integration";
 export * from "./Kpis";
 export * from "./LinkedIn";
+export * from "./MiddleWorld";
 export * from "./Models";
 export * from "./Pqr";
 export * from "./Professionals";

@@ -1,4 +1,7 @@
+"use client";
+
 import { FC, useState } from "react";
+import { MiddleWorld } from "..";
 
 interface ToggleProps {
   onChange: Function;
@@ -22,14 +25,29 @@ export const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
         checked={isChecked}
         onChange={handleToggleChange}
       />
+      <div>
+        <MiddleWorld />
+      </div>
       <label
         htmlFor="language"
-        className="relative bg-gray-300 rounded-full cursor-pointer inline-block mx-4 w-10 h-5 transition-all duration-300"
+        className={`relative flex items-center rounded-full cursor-pointer border-2 border-main-red mx-4 w-[42px] h-[22px] transition-all duration-300 ${
+          lang === "en" ? "bg-white" : "bg-main-red"
+        }`}
       >
-        {/* {lang === "es" && <span className="text-gray-800">ES</span>}{" "} */}
+        {lang === "en" ? (
+          <span className="absolute left-0 ml-[3px] text-main-red text-xs font-medium font-poppins">
+            EN
+          </span>
+        ) : (
+          <span className="absolute right-0 mr-1 text-white text-xs font-medium font-poppins">
+            ES
+          </span>
+        )}{" "}
         <div
-          className={`bg-white w-5 h-5 rounded-full absolute top-0 left-0 flex items-center justify-center ${
-            lang === "es" ? "animate-slide-on" : "animate-slide-off"
+          className={`w-4 h-4 rounded-full absolute top-[1px] left-0 flex items-center justify-center ${
+            lang === "en"
+              ? "animate-slide-on bg-main-red"
+              : "animate-slide-off bg-white"
           } transition-transform duration-300`}
         />
       </label>

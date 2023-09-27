@@ -35,7 +35,7 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
             <GleLogo height="31" width="129" />
           </Link>
           <button onClick={() => setShowMenu(false)}>
-            <Close />
+            <Close className="bg-black" />
           </button>
         </div>
         <nav className="mt-8">
