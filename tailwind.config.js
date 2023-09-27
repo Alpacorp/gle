@@ -101,6 +101,28 @@ module.exports = {
             opacity: "1",
           },
         },
+        "slide-on": {
+          "0%": {
+            transform: "translateX(0) scale(1)",
+          },
+          "50%": {
+            transform: "translateX(10px) scale(1.2)",
+          },
+          "100%": {
+            transform: "translateX(20px) scale(1)",
+          },
+        },
+        "slide-off": {
+          "0%": {
+            transform: "translateX(20px) scale(1)",
+          },
+          "50%": {
+            transform: "translateX(10px) scale(1.2)",
+          },
+          "100%": {
+            transform: "translateX(0) scale(1)",
+          },
+        },
       },
       animation: {
         "slide-top":
@@ -113,6 +135,8 @@ module.exports = {
           "slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both",
         "fade-in-right":
           "fade-in-right 0.1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
+        "slide-on": "slide-on 0.3s linear forwards",
+        "slide-off": "slide-off 0.3s linear forwards",
       },
     },
   },

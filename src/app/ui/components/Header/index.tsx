@@ -11,6 +11,7 @@ import { MenuMobile } from "@ui/components/MenuMobile";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
 import dataMenu from "@ui/components/Header/dataMenu.json";
+import { Toggle } from "../Toggle";
 
 export const Header: FC<LangInterface> = ({ lang }) => {
   const pathname = usePathname();
@@ -96,6 +97,7 @@ export const Header: FC<LangInterface> = ({ lang }) => {
             <En title="Change language to Spanish" />
           )}
         </button>
+        <Toggle onChange={changeLanguage} lang={lang} />
         <Link href="https://agile.glecolombia.com/GLEWeb" target="_blank">
           <AgileLogo
             id="agile-logo"
