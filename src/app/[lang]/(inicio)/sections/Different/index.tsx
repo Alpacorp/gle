@@ -7,9 +7,10 @@ import { ArrowCta } from "@icons/index";
 
 import { phone1, phone2 } from "@public/assets/images/home/different/index";
 
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import data from "./dataDifferent.json";
 
-export const Different: FC = () => {
+export const Different: FC<LangInterface> = ({ lang }) => {
   return (
     <section className="mt-24 py-11 bg-light-gray max-[1003px]:mt-0">
       <Title
@@ -21,10 +22,12 @@ export const Different: FC = () => {
         lineColor="main-red"
         className="text-4xl"
       >
-        ¿Qué nos hace diferentes?
+        {lang === "es"
+          ? "¿Qué nos hace diferentes?"
+          : "What Makes us different?"}
       </Title>
       <div className="flex flex-wrap justify-center gap-4 m-auto mt-16 max-[380px]:px-2">
-        {data.map(({ id, description, color }) => (
+        {data.map(({ id, descriptionEs, descriptionEn, color }) => (
           <div
             key={id}
             className="flex flex-row justify-left items-start max-w-[400px] w-full gap-1"
@@ -35,7 +38,7 @@ export const Different: FC = () => {
             }
             <DifferentCard
               key={id}
-              description={description}
+              description={lang === "es" ? descriptionEs : descriptionEn}
               backgroundColor={
                 color === 1
                   ? "secondary-gray"
@@ -57,7 +60,9 @@ export const Different: FC = () => {
               weight="semibold"
               className="text-4xl max-w-[350px] w-full"
             >
-              Rastrea tu envío desde tu celular
+              {lang === "es"
+                ? "Rastrea tu envío desde tu celular"
+                : "Track your shipment from your smartphone"}
             </Title>
             <ArrowCta
               stroke="#D81730"

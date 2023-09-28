@@ -34,7 +34,7 @@ export const TextBanner: FC<TextBannerProps> = ({
       {type === "text"
         ? text?.split(" ").map((word: string) => (
             <span
-              key={`${content?.id || content?.idSubtext}-${word}`}
+              key={`word-${content.id}-${Math.random()}}`}
               className={redWords.includes(word) ? "text-red-500" : ""}
             >
               {word}{" "}
@@ -42,7 +42,7 @@ export const TextBanner: FC<TextBannerProps> = ({
           ))
         : subtext?.split(" ").map((word: string) => (
             <span
-              key={`${content?.idSubtext}-${word}`}
+              key={`word-${content.idSubtext}-${Math.random()}}`}
               className={redWords.includes(word) ? "text-red-500" : ""}
             >
               {word}{" "}

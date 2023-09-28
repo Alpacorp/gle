@@ -4,9 +4,10 @@ import { Title } from "@ui/components/index";
 import { ArrowGLE } from "@icons/index";
 import { iconsWeAre } from "./IconsWeAre";
 
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import data from "./dataWeAre.json";
 
-export const WeAreGLE: FC = () => {
+export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
   const hightWords = [
     "compañía",
     "integradora",
@@ -31,26 +32,35 @@ export const WeAreGLE: FC = () => {
           showLine
           className="text-4xl"
         >
-          Somos G.L.E.
+          {lang === "es" ? "Somos G.L.E." : "We are G.L.E."}
         </Title>
       </div>
       <div>
         <div className="flex flex-wrap items-center justify-evenly gap-4">
-          {data.map(({ id, description }) => (
+          {data.map(({ id, descriptionEs, descriptionEn }) => (
             <div
               key={id}
               className="flex flex-col justify-center items-center gap-4"
             >
               {iconsWeAre.filter((icon) => icon.iconId === id)[0].iconComponent}
               <p className="text-white text-center text-base font-poppins max-w-[300px] w-full">
-                {description.split(" ").map((word: string) => (
-                  <span
-                    key={`word-${id}-${Math.random()}}`}
-                    className={hightWords.includes(word) ? "font-bold" : ""}
-                  >
-                    {word}{" "}
-                  </span>
-                ))}
+                {lang === "es"
+                  ? descriptionEs.split(" ").map((word: string) => (
+                      <span
+                        key={`word-${id}-${Math.random()}}`}
+                        className={hightWords.includes(word) ? "font-bold" : ""}
+                      >
+                        {word}{" "}
+                      </span>
+                    ))
+                  : descriptionEn.split(" ").map((word: string) => (
+                      <span
+                        key={`word-${id}-${Math.random()}}`}
+                        className={hightWords.includes(word) ? "font-bold" : ""}
+                      >
+                        {word}{" "}
+                      </span>
+                    ))}
               </p>
             </div>
           ))}

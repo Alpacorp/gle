@@ -1,32 +1,38 @@
 [
   {
     "id": 1,
-    "description": "In House en las instalaciones del cliente, cuando se requiere desde el primer día de la operación, sin costo.",
+    "descriptionEs": "In House en las instalaciones del cliente, cuando se requiere desde el primer día de la operación, sin costo.",
+    "descriptionEn": "In House operation at our client's facilities from the first day, when required. Free of charge",
     "color": 1
   },
   {
     "id": 2,
-    "description": "Con nuestros ejecutivos de cuenta, ofrecemos servicios personalizados (seguimiento, atención de solicitudes y novedades, informes y planes de mejora continua).",
+    "descriptionEs": "Con nuestros ejecutivos de cuenta, ofrecemos servicios personalizados (seguimiento, atención de solicitudes y novedades, informes y planes de mejora continua).",
+    "descriptionEn": "We offer personalized services (tracking, managing and handling of requests, updates, reports, and continuous improvement plans).",
     "color": 2
   },
   {
     "id": 3,
-    "description": "Red de apoyo a nivel nacional para atender las posibles solicitudes y novedades logísticas que puedan presentar nuestros apreciados clientes y aliados.",
+    "descriptionEs": "Red de apoyo a nivel nacional para atender las posibles solicitudes y novedades logísticas que puedan presentar nuestros apreciados clientes y aliados.",
+    "descriptionEn": "A national support network in order to address any possible requests and logistical updates from our valued clients and partners.",
     "color": 3
   },
   {
     "id": 4,
-    "description": "Presentación  de informes e indicadores mensuales.",
+    "descriptionEs": "Presentación  de informes e indicadores mensuales.",
+    "descriptionEn": "Monthly presentations with reports and key indicators.",
     "color": 1
   },
   {
     "id": 5,
-    "description": "Agilidad en la respuesta de P.Q.R, con el fin de dar solución a las necesidades de nuestros clientes.",
+    "descriptionEs": "Agilidad en la respuesta de P.Q.R, con el fin de dar solución a las necesidades de nuestros clientes.",
+    "descriptionEn": "Quick response to all petitions, complaints and/or grievances.",
     "color": 2
   },
   {
     "id": 6,
-    "description": "Soluciones de Logística flexible, permitiendo ajustarnos a la necesidad del cliente.",
+    "descriptionEs": "Soluciones de Logística flexible, permitiendo ajustarnos a la necesidad del cliente.",
+    "descriptionEn": "Flexible logistics solutions which allow us to meet and satisfy our customer's needs.",
     "color": 3
   }
 ]
