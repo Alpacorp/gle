@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 
-import { Header, Footer } from "@ui/components/";
+import Header from "@ui/components/Header";
+import { Footer } from "@ui/components/";
 
 import { Locale } from "@/i18n.config";
 import { ContextProvider } from "@context/Context";

@@ -21,6 +21,10 @@
           "description": "We are a company committed to the marketing of high-quality logistical services, directing our efforts to fulfill commercial agreements, meeting the requirements and expectations of our clients and stakeholders, relying on our team of skillful and diligent  professionals which focus on risk management, innovation, and continuous improvement of our processes."
         }
       }
+    },
+    "tracking": {
+      "title": "Tracking",
+      "button": "Track"
     }
   }
 }

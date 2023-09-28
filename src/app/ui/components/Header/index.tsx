@@ -4,16 +4,16 @@ import { FC } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-import { GleLogo, AgileLogo, En, Es } from "@icons/index";
+import { GleLogo, AgileLogo } from "@icons/index";
 import { List } from "@ui/components/List";
 import { HamburguerMenu } from "@ui/components/HamburguerMenu";
 import { MenuMobile } from "@ui/components/MenuMobile";
-import { Toggle } from "@ui/components/Toggle";
+import Toggle from "@ui/components/Toggle";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
 import dataMenu from "@ui/components/Header/dataMenu.json";
 
-export const Header: FC<LangInterface> = ({ lang }) => {
+const Header: FC<LangInterface> = ({ lang }) => {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -102,3 +102,5 @@ export const Header: FC<LangInterface> = ({ lang }) => {
     </header>
   );
 };
+
+export default Header;

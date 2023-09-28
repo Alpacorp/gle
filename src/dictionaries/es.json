@@ -25,6 +25,10 @@
           "description": "Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos."
         }
       }
+    },
+    "tracking": {
+      "title": "Rastree su envío",
+      "button": "Tracking"
     }
   }
 }

@@ -1,23 +1,32 @@
 [
   {
     "id": 1,
+    "idSubtext": 1,
     "url": "/assets/images/home/slider/mercancias.webp",
     "urlMobile": "/assets/images/home/slider/mercancias-mobile.webp",
-    "text": "Servicio personalizado para movilizar mercancías",
-    "subtext": "con información oportuna e indicadores de gestión"
+    "textEs": "Servicio personalizado para movilizar mercancías",
+    "textEn": "We offer a customized service so you can transport your merchandise",
+    "subtextEs": "con información oportuna e indicadores de gestión",
+    "subtextEn": "providing timely information and management indicators"
   },
   {
     "id": 2,
+    "idSubtext": 2,
     "url": "/assets/images/home/slider/comercio.webp",
     "urlMobile": "/assets/images/home/slider/comercio-mobile.webp",
-    "text": "Contamos con los mejores partners logísticos",
-    "subtext": "para diseñar servicios a su medida"
+    "textEs": "Contamos con los mejores partners logísticos",
+    "textEn": "We have alliances with the most important logistical partners",
+    "subtextEs": "para diseñar servicios a su medida",
+    "subtextEn": "in order to design services tailored to meet your specific needs"
   },
   {
     "id": 3,
+    "idSubtext": 3,
     "url": "/assets/images/home/slider/talento.webp",
     "urlMobile": "/assets/images/home/slider/talento-mobile.webp",
-    "text": "Nuestra visión, talento y servicio",
-    "subtext": "hacen parte de su empresa como aliados estratégicos"
+    "textEs": "Nuestra visión, talento y servicio",
+    "textEn": "Our vision, talent and high-quality service",
+    "subtextEs": "hacen parte de su empresa como aliados estratégicos",
+    "subtextEn": "can become part of your company through a strategic alliance"
   }
 ]
