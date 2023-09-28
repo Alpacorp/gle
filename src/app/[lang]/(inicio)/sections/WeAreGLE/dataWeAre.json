@@ -1,18 +1,22 @@
 [
   {
     "id": 1,
-    "description": "Una compañía integradora de servicios logísticos."
+    "descriptionEs": "Una compañía integradora de servicios logísticos.",
+    "descriptionEn": "A logistics services integration company."
   },
   {
     "id": 2,
-    "description": "Más de 10 años de experiencia en el mercado."
+    "descriptionEs": "Más de 10 años de experiencia en el mercado.",
+    "descriptionEn": "More than 10 years of experience and leadership in the market."
   },
   {
     "id": 3,
-    "description": "Diseñamos modelos operativos innovadores."
+    "descriptionEs": "Diseñamos modelos operativos innovadores.",
+    "descriptionEn": "We design innovative operational models."
   },
   {
     "id": 4,
-    "description": "Contamos con una estructura de profesionales competentes."
+    "descriptionEs": "Contamos con una estructura de profesionales competentes.",
+    "descriptionEn": "We have built a company structure team composed of experienced and talented professionals."
   }
 ]

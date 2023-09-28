@@ -6,10 +6,12 @@ import { ArrowCta } from "..";
 
 interface StickyTrackingProps {
   observerActive?: boolean;
+  lang?: string;
 }
 
 const StickyTracking: FC<StickyTrackingProps> = ({
   observerActive = false,
+  lang,
 }) => {
   const [showTrackingIcon, setShowTrackingIcon] = useState(observerActive);
   const [showTrackingForm, setShowTrackingForm] = useState(false);
@@ -57,7 +59,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                 stroke="#D81730"
                 className="transform -rotate-90 w-7 h-5"
               />
-              Rastrea tu envío
+              {lang === "es" ? "Rastrea tu envío" : "Track your shipment"}
             </button>
           ) : (
             <button
@@ -73,13 +75,15 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                 <input
                   type="number"
                   className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm"
-                  placeholder="No. de guía"
+                  placeholder={
+                    lang === "es" ? "Número de guía" : "Tracking number"
+                  }
                   name="tracking"
                   id="tracking"
                 />
                 <button className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[110px] max-[460px]:w-full max-[460px]:text-sm font-poppins text-lg hover:bg-slate-600 transition duration-300 ease-in-out">
                   <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
-                  Consultar
+                  {lang === "es" ? "Rastrear" : "Track"}
                 </button>
               </div>
             </div>

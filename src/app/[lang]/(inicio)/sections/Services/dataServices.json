@@ -1,26 +1,34 @@
 [
   {
     "id": 1,
-    "name": "Paqueteo",
+    "nameEs": "Paqueteo",
+    "nameEn": "Packaging",
     "url": "/assets/images/home/services/paqueteo.webp",
-    "link": "/servicios/paqueteo"
+    "linkEs": "/servicios/paqueteo",
+    "linkEn": "/services/packaging"
   },
   {
     "id": 2,
-    "name": "Carga Masiva",
+    "nameEs": "Carga Masiva",
+    "nameEn": "Bulk Cargo",
     "url": "/assets/images/home/services/carga-masiva.webp",
-    "link": "/servicios/carga-masiva"
+    "linkEs": "/servicios/carga-masiva",
+    "linkEn": "/services/bulk-cargo"
   },
   {
     "id": 3,
-    "name": "Internacional",
+    "nameEs": "Internacional",
+    "nameEn": "International",
     "url": "/assets/images/home/services/internacional.webp",
-    "link": "/servicios/gle-internacional"
+    "linkEs": "/servicios/gle-internacional",
+    "linkEn": "/services/gle-international"
   },
   {
     "id": 4,
-    "name": "E-Commerce",
+    "nameEs": "E-Commerce",
+    "nameEn": "E-Commerce",
     "url": "/assets/images/home/services/ecommerce.webp",
-    "link": "/servicios/ecommerce"
+    "linkEs": "/servicios/ecommerce",
+    "linkEn": "/services/ecommerce"
   }
 ]

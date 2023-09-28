@@ -45,11 +45,13 @@ export const Services: FC<LangInterface> = ({ lang }) => {
                 className="text-4xl max-w-xs w-full"
                 lineColor="white"
               >
-                Servicios Especializados
+                {lang === "es"
+                  ? "Servicios Especializados"
+                  : "Specialized Services"}
               </Title>
             </div>
             <div className="flex justify-evenly gap-6 items-center flex-wrap">
-              {services.map(({ id, name, url, link }) => (
+              {services.map(({ id, nameEs, nameEn, url, linkEs, linkEn }) => (
                 <div
                   key={id}
                   className="rounded-2xl overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
@@ -57,15 +59,15 @@ export const Services: FC<LangInterface> = ({ lang }) => {
                   <div className="relative h-[438px] w-[262px]">
                     <Image
                       src={url}
-                      alt={name}
+                      alt={lang === "es" ? nameEs : nameEn}
                       fill
                       sizes="
-                    (max-width: 640px) 100vw,
-                    (max-width: 768px) 100vw,
-                    (max-width: 1024px) 100vw,
-                    (max-width: 1280px) 100vw,
-                    (max-width: 1536px) 100vw,
-                  "
+                        (max-width: 640px) 100vw,
+                        (max-width: 768px) 100vw,
+                        (max-width: 1024px) 100vw,
+                        (max-width: 1280px) 100vw,
+                        (max-width: 1536px) 100vw,
+                      "
                       priority
                       className="object-cover"
                     />
@@ -80,17 +82,19 @@ export const Services: FC<LangInterface> = ({ lang }) => {
                       }
                     </div>
                     <h2 className="text-2xl font-poppins font-semibold text-white mt-2">
-                      {name}
+                      {lang === "es" ? nameEs : nameEn}
                     </h2>
                     <Link
-                      href={`/${lang}${link}`}
+                      href={`/${lang}${lang === "es" ? linkEs : linkEn}`}
                       className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors"
                     >
                       <ArrowCta
                         stroke="#D81730"
                         className="-rotate-90 w-[30px] h-[27px]"
                       />{" "}
-                      <span className="ml-3">Conoce más</span>
+                      <span className="ml-3">
+                        {lang === "es" ? "Conoce más" : "Learn more"}
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -99,7 +103,9 @@ export const Services: FC<LangInterface> = ({ lang }) => {
             <div className="relative flex items-center justify-around flex-wrap-reverse gap-5 mt-10">
               <div className="flex flex-col items-center text-secondary-gray text-center gap-5 font-poppins text-3xl font-semibold m-auto max-w-[244px]">
                 <h3 className="max-[1115px]:text-white">
-                  Conoce nuestra razón de ser
+                  {lang === "es"
+                    ? "Conoce nuestra razón de ser"
+                    : "Discover our main purpose"}
                 </h3>
                 <ArrowCta className="max-[1115px]:hidden" />
                 <ArrowCta
