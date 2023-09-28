@@ -6,9 +6,22 @@ import Image from "next/image";
 import { Tracking } from "@inicio/sections/Tracking";
 import { TextBanner, LeftArrow, RightArrow } from "@ui/components/index";
 
-import images from "./dataSilders.json";
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 
-export const ImageSlider: FC = () => {
+import images from "./dataSilders.json";
+interface ImageData {
+  id: number;
+  idSubtext: number;
+  url: string;
+  urlMobile: string;
+  textEs: string;
+  textEn: string;
+  subtextEs?: string;
+  subtextEn?: string;
+  subtext?: string;
+}
+
+export const ImageSlider: FC<LangInterface> = ({ lang }) => {
   const bannerRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
@@ -17,8 +30,22 @@ export const ImageSlider: FC = () => {
   const [showText, setShowText] = useState(true);
   const [mobileWidth, setMobileWidth] = useState(false);
 
-  const redWordsText = ["Servicio", "talento", "mejores"];
-  const redWordsSubtext = ["oportuna", "servicios", "aliados"];
+  const redWordsText = [
+    "Servicio",
+    "talento",
+    "mejores",
+    "customized",
+    "partners",
+    "talent",
+  ];
+  const redWordsSubtext = [
+    "oportuna",
+    "servicios",
+    "aliados",
+    "indicators",
+    "design",
+    "strategic",
+  ];
 
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -86,10 +113,10 @@ export const ImageSlider: FC = () => {
         }`}
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
-        {images.map((image) => (
-          <div key={image.id} className={`w-full flex-shrink-0 relative`}>
+        {images.map((data: ImageData) => (
+          <div key={data.id} className={`w-full flex-shrink-0 relative`}>
             <Image
-              src={mobileWidth ? image.urlMobile : image.url}
+              src={mobileWidth ? data.urlMobile : data.url}
               fill
               sizes="
                 (max-width: 640px) 100vw,
@@ -99,7 +126,7 @@ export const ImageSlider: FC = () => {
                 (max-width: 1536px) 100vw,
               "
               priority
-              alt={image.text}
+              alt={lang === "es" ? data.textEs : data.textEn}
               className="object-cover object-top max-[380px]:object-center"
             />
             {showText && (
@@ -109,7 +136,15 @@ export const ImageSlider: FC = () => {
                 }`}
               >
                 <TextBanner
-                  image={image}
+                  content={{
+                    id: data.id,
+                    textEs: data.textEs,
+                    textEn: data.textEn,
+                    subtextEs: data.subtextEs ?? "",
+                    subtextEn: data.subtextEn ?? "",
+                    url: data.url,
+                  }}
+                  lang={lang}
                   type={"text"}
                   redWords={redWordsText}
                   customClass={
@@ -117,7 +152,15 @@ export const ImageSlider: FC = () => {
                   }
                 />
                 <TextBanner
-                  image={image}
+                  content={{
+                    id: data.idSubtext,
+                    textEs: data.textEs,
+                    textEn: data.textEn,
+                    subtextEs: data.subtextEs ?? "",
+                    subtextEn: data.subtextEn ?? "",
+                    url: data.url,
+                  }}
+                  lang={lang}
                   type={"subtext"}
                   redWords={redWordsSubtext}
                   customClass={
@@ -163,7 +206,7 @@ export const ImageSlider: FC = () => {
         ))}
       </div>
       <div className="absolute bottom-1 right-0 left-0">
-        <Tracking />
+        <Tracking lang={lang} />
       </div>
     </section>
   );

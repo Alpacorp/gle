@@ -8,7 +8,7 @@ interface ToggleProps {
   lang: string;
 }
 
-export const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
+const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggleChange = () => {
@@ -55,3 +55,5 @@ export const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
     </div>
   );
 };
+
+export default Toggle;

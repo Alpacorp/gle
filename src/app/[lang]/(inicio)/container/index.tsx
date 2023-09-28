@@ -19,7 +19,7 @@ const HomePage = ({ params: { lang } }: HomePageProps) => {
   return (
     <>
       <div className="bg-gray-pattern bg-top pb-52 bg-cover bg-no-repeat max-[380px]:bg-gray-pattern-mobile">
-        <ImageSlider />
+        <ImageSlider lang={lang} />
         <WeAreGLE />
       </div>
       <Services lang={lang} />

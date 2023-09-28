@@ -1,37 +1,48 @@
 import { FC } from "react";
 
 interface TextBannerProps {
-  image: {
+  content: {
     id: number;
-    text: string;
-    subtext: string;
+    idSubtext?: number;
+    textEs: string;
+    textEn: string;
+    subtextEs: string;
+    subtextEn: string;
     url: string;
   };
+  lang: string;
   redWords: string[];
   customClass?: string;
   type: "text" | "subtext";
 }
 
 export const TextBanner: FC<TextBannerProps> = ({
-  image,
+  content,
+  lang,
   redWords,
   customClass,
   type,
 }) => {
+  const text = content[`text${lang === "es" ? "Es" : "En"}`];
+  const subtext = content[`subtext${lang === "es" ? "Es" : "En"}`];
+
   return (
-    <h2 className={`${customClass}`}>
+    <h2
+      className={`${customClass}`}
+      key={type === "text" ? `${content.id}` : `${content.idSubtext}`}
+    >
       {type === "text"
-        ? image.text.split(" ").map((word: string) => (
+        ? text?.split(" ").map((word: string) => (
             <span
-              key={`${image.id}-${word}`}
+              key={`${content?.id || content?.idSubtext}-${word}`}
               className={redWords.includes(word) ? "text-red-500" : ""}
             >
               {word}{" "}
             </span>
           ))
-        : image.subtext.split(" ").map((word: string) => (
+        : subtext?.split(" ").map((word: string) => (
             <span
-              key={`${image.id}-${word}`}
+              key={`${content?.idSubtext}-${word}`}
               className={redWords.includes(word) ? "text-red-500" : ""}
             >
               {word}{" "}
