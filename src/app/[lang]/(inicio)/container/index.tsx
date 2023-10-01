@@ -18,13 +18,11 @@ interface HomePageProps {
 const HomePage = ({ params: { lang } }: HomePageProps) => {
   return (
     <>
-      <div className="bg-gray-pattern bg-top pb-52 bg-cover bg-no-repeat max-[380px]:bg-gray-pattern-mobile">
-        <ImageSlider lang={lang} />
-        <WeAreGLE lang={lang} />
-      </div>
+      <ImageSlider lang={lang} />
+      <WeAreGLE lang={lang} />
       <Services lang={lang} />
       <Different lang={lang} />
-      <Certifications />
+      <Certifications lang={lang} />
       <StickyTracking observerActive={true} lang={lang} />
     </>
   );
