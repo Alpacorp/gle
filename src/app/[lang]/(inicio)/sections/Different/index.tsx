@@ -12,7 +12,7 @@ import data from "./dataDifferent.json";
 
 export const Different: FC<LangInterface> = ({ lang }) => {
   return (
-    <section className="mt-24 py-11 bg-light-gray max-[1003px]:mt-0">
+    <section className="mt-24 py-11 bg-light-gray-2 back-clip-path max-[1003px]:mt-0 pb-48">
       <Title
         color="secondary-gray"
         align="center"

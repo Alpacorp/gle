@@ -32,7 +32,7 @@ export const Services: FC<LangInterface> = ({ lang }) => {
             alt="background services mobile"
             width={880}
             height={1780}
-            className="absolute h-[2850px] object-cover top-0 right-0 max-[380px]:block mt-[-380px] min-[381px]:hidden"
+            className="absolute h-[2850px] object-cover mt-[-380px] top-0 right-0 max-[380px]:block min-[381px]:hidden"
           />
           <div className="mx-9 pt-14 pb-10">
             <div className="flex justify-end">

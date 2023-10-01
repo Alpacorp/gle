@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { ArrowGLE, HeroPages } from "@ui/components/index";
+import { ArrowCta, ArrowGLE, HeroPages } from "@ui/components/index";
 import { ValuesText } from "../components/ValuesText";
 import {
   bannerOurs,
@@ -31,7 +31,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
       />
       <div>
         <div className="relative">
-          <div className="flex justify-center items-start px-28 bg-main-red border-t border-t-main-red w-full h-[380px] back-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[675px] max-[380px]:px-6 max-[340px]:h-[700px]">
+          <div className="flex justify-center items-start px-28 bg-main-red w-full h-[380px] back-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[675px] max-[380px]:px-6 max-[340px]:h-[700px]">
             <div className="flex flex-col max-w-[1000px] w-full">
               <div className="border-l-[2px] border-white my-4">
                 <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
@@ -56,7 +56,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
             </h2>
           </div>
           <div>
-            <p className="p-5 font-poppins text-black rounded-2xl bg-[#d817300d]">
+            <p className="p-5 font-poppins text-black rounded-2xl bg-red-200">
               Somos una empresa dedicada a la comercialización de servicios
               logísticos, que orienta sus esfuerzos a cumplir los acuerdos
               comerciales, satisfaciendo los requisitos y expectativas de
@@ -67,15 +67,17 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
           </div>
         </div>
         <div className="flex gap-8 items-center px-[120px] mt-14 max-[1000px]:flex-wrap max-[550px]:px-5 max-[380px]:px-[24px]">
-          <div className="w-full">
+          <div className="w-full relative">
             <Image
               src={philosophy}
               alt="valores"
+              title="valores G.L.E."
               width={450}
               height={637}
               priority
               className="aspect-auto rounded-2xl max-w-[550px] w-full"
             />
+            <div className="absolute z-20 inset-0 bottom-0 top-0 bg-gradient-to-t from-white to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat" />
           </div>
           <div className="flex flex-col gap-10">
             <div>
@@ -100,7 +102,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                 </h2>
               </div>
               <div>
-                <p className="p-5 font-poppins text-black rounded-2xl bg-[#d817300d]">
+                <p className="p-5 font-poppins text-black rounded-2xl bg-red-200">
                   En GLE COLOMBIA nos comprometemos a prestar servicios
                   logísticos innovadores, personalizados, oportunos y
                   confiables, que satisfagan los requisitos y expectativas de
@@ -131,7 +133,8 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
           <div className="text-center m-auto">
             <Image
               src={team}
-              alt="Equipo de trabajo"
+              alt="Equipo de trabajo G.L.E."
+              title="Equipo de trabajo G.L.E."
               width={1200}
               height={410}
               priority
@@ -154,9 +157,9 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
         </div>
         <div className="flex flex-col flex-wrap justify-center items-center">
           <h3 className="font-poppins">Únete a nuestra gran familia G.L.E.</h3>
-          <form className="flex flex-wrap gap-4 mt-11">
-            <div className="flex flex-col flex-wrap">
-              <div className="flex flex-wrap">
+          <form className="flex flex-col flex-wrap gap-4 mt-11">
+            <div className="flex flex-col flex-wrap gap-5">
+              <div className="flex flex-wrap gap-5">
                 <div>
                   <label
                     htmlFor="email"
@@ -209,7 +212,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap gap-5">
                 <div>
                   <label
                     htmlFor="email"
@@ -262,6 +265,15 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="m-auto">
+              <button
+                className="flex border-2 border-secondary-gray rounded-lg px-10 py-2 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out
+              "
+              >
+                <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
+                Enviar
+              </button>
             </div>
           </form>
         </div>
