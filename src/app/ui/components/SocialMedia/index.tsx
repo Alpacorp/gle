@@ -5,33 +5,36 @@ import { FacebookIcon, LinkedInIcon, YouTubeIcon } from "@ui/components/Icons";
 
 interface SocialMediaProps {
   align: "center" | "start" | "end";
+  lang?: string;
 }
 
-export const SocialMedia: FC<SocialMediaProps> = ({ align }) => {
+export const SocialMedia: FC<SocialMediaProps> = ({ align, lang }) => {
   return (
     <div className={`flex flex-col items-${align} mt-16 gap-6`}>
-      <h3 className="font-semibold font-poppins">Síguenos:</h3>
+      <h3 className="font-semibold font-poppins">
+        {lang === "es" ? "Síguenos" : "Follow us"}
+      </h3>
       <div className="flex flex-row gap-4">
         <Link
           href="https://www.facebook.com/GLEColombia"
           target="_blank"
           className="hover:scale-105 transition-transform"
         >
-          <FacebookIcon />
+          <FacebookIcon title="Facebook" />
         </Link>
         <Link
           href="https://www.youtube.com/"
           target="_blank"
           className="hover:scale-105 transition-transform"
         >
-          <YouTubeIcon />
+          <YouTubeIcon title="YouTube" />
         </Link>
         <Link
           href="https://linkedin.com/"
           target="_blank"
           className="hover:scale-105 transition-transform"
         >
-          <LinkedInIcon />
+          <LinkedInIcon title="LinkedIn" />
         </Link>
       </div>
     </div>

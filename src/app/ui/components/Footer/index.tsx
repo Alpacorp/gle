@@ -5,13 +5,14 @@ import { SocialMedia } from "@ui/components/index";
 import { GleLogoWhite, WhatsAppWhite } from "@icons/index";
 import { Address } from "./Address";
 
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import data from "./dataFooter.json";
 
-export const Footer: FC = () => {
+export const Footer: FC<LangInterface> = ({ lang }) => {
   return (
     <footer>
       <div>
-        <SocialMedia align="center" />
+        <SocialMedia lang={lang} align="center" />
       </div>
       <div className="bg-secondary-gray py-9 px-10 flex flex-wrap gap-4 justify-between items-center text-white font-poppins mt-9 max-[1000px]:justify-center">
         <div>
@@ -52,21 +53,26 @@ export const Footer: FC = () => {
       <section className="flex justify-around font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start max-[400px]:pb-20">
         <div>
           <h5>
-            G.L.E. {new Date().getFullYear()} | Todos los derechos reservados
+            G.L.E. {new Date().getFullYear()} |{" "}
+            {lang === "es"
+              ? "Todos los derechos reservados"
+              : "All rights reserved"}
           </h5>
         </div>
         <div className="flex flex-wrap gap-3">
           <Link href="/politica-de-privacidad" className="hover:underline">
-            Aviso de privacidad
+            {lang === "es" ? "Aviso de privacidad" : "Privacy policy"}
           </Link>
           <Link href="/terminos-y-condiciones" className="hover:underline">
-            Términos y condiciones
+            {lang === "es" ? "Términos y condiciones" : "Terms and conditions"}
           </Link>
           <Link
             href="/procedimiento-de-compensacion"
             className="hover:underline"
           >
-            Procedimiento de compensación
+            {lang === "es"
+              ? "Procedimiento de compensación"
+              : "Compensation procedure"}
           </Link>
         </div>
       </section>

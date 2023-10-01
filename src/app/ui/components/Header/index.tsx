@@ -6,8 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import { GleLogo, AgileLogo } from "@icons/index";
 import { List } from "@ui/components/List";
-import { HamburguerMenu } from "@ui/components/HamburguerMenu";
-import { MenuMobile } from "@ui/components/MenuMobile";
+import { HamburguerMenu, MenuMobile } from "@ui/components/";
 import Toggle from "@ui/components/Toggle";
 
 import { LangInterface } from "@constans/interfaces/langInterface";

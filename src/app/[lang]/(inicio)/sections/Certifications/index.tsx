@@ -7,8 +7,9 @@ import {
   berau,
   mintrans,
 } from "@public/assets/images/home/certifications/index";
+import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 
-export const Certifications: FC = () => {
+export const Certifications: FC<LangInterface> = ({ lang }) => {
   return (
     <section className="my-11">
       <div>
@@ -21,7 +22,7 @@ export const Certifications: FC = () => {
           showLine
           lineColor="main-red"
         >
-          Estamos certificados
+          {lang === "es" ? "Estamos certificados" : "We are certified"}
         </Title>
         <div className="flex justify-center gap-10 items-center flex-wrap mt-5 px-2">
           <Image

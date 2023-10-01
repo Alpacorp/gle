@@ -22,8 +22,8 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
   ];
 
   return (
-    <section className="m-auto max-w-[1300px] w-full">
-      <div className="my-14">
+    <section className="bg-gradient-to-b from-main-gray to-main-gray m-auto py-14 back-clip-path relative w-full h-[600px] max-[620px]:h-[900px] max-[480px]:h-[1100px]">
+      <div>
         <Title
           color="white"
           align="center"
@@ -35,7 +35,7 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
           {lang === "es" ? "Somos G.L.E." : "We are G.L.E."}
         </Title>
       </div>
-      <div>
+      <div className="my-10">
         <div className="flex flex-wrap items-center justify-evenly gap-4">
           {data.map(({ id, descriptionEs, descriptionEn }) => (
             <div
@@ -66,8 +66,8 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
           ))}
         </div>
       </div>
-      <div>
-        <ArrowGLE className="absolute left-0" />
+      <div className="absolute z-20 bottom-0 left-0">
+        <ArrowGLE className="h-40 w-auto max-[480px]:h-44" />
       </div>
     </section>
   );

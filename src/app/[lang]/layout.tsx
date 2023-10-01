@@ -45,7 +45,7 @@ export default function RootLayout({
         >
           <Header lang={params.lang} />
           {children}
-          <Footer />
+          <Footer lang={params.lang} />
         </body>
       </ContextProvider>
     </html>

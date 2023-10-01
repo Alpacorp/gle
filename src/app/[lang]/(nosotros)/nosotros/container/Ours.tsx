@@ -31,7 +31,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
       />
       <div>
         <div className="relative">
-          <div className="flex justify-center items-start px-28 bg-main-red w-full h-[380px] hero-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[675px] max-[380px]:px-6 max-[340px]:h-[700px]">
+          <div className="flex justify-center items-start px-28 bg-main-red border-t border-t-main-red w-full h-[380px] back-clip-path max-[744px]:px-14 max-[550px]:px-5 max-[610px]:h-[420px] max-[480px]:h-[675px] max-[380px]:px-6 max-[340px]:h-[700px]">
             <div className="flex flex-col max-w-[1000px] w-full">
               <div className="border-l-[2px] border-white my-4">
                 <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
