@@ -1,11 +1,8 @@
 import { FC } from "react";
+import { Package } from "./container/Package";
 
 const PackagePage: FC = () => {
-  return (
-    <div>
-      <h1>Package Page</h1>
-    </div>
-  );
+  return <Package />;
 };
 
 export default PackagePage;
