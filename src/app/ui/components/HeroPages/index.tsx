@@ -4,6 +4,7 @@ import type { StaticImageData } from "next/image";
 import { ArrowCta } from "../Icons";
 
 interface HeroPagesProps {
+  color?: "red" | "white";
   iconPath?: string | StaticImageData;
   imagePath: string | StaticImageData;
   imagePathMobile?: string | StaticImageData;
@@ -12,6 +13,7 @@ interface HeroPagesProps {
 }
 
 export const HeroPages: FC<HeroPagesProps> = ({
+  color,
   imagePath,
   imagePathMobile = imagePath as StaticImageData,
   pageTitle,
@@ -36,10 +38,18 @@ export const HeroPages: FC<HeroPagesProps> = ({
         priority
         className="object-contain w-full h-full aspect-auto min-[401px]:hidden"
       />
-      <div className="absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t from-main-red to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat" />
+      <div
+        className={`absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t ${
+          color === "white" ? "from-white" : "from-main-red"
+        } to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat`}
+      />
       <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
         {iconPath && <Image src={iconPath} alt="Icon" width={50} height={50} />}
-        <h1 className="text-[40px] font-semibold max-[680px]:text-3xl">
+        <h1
+          className={`text-[40px] font-semibold max-[680px]:text-3xl ${
+            color === "white" ? "text-black" : "text-white"
+          }`}
+        >
           {pageTitle}
         </h1>
         {arrowDown && (
