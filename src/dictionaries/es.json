@@ -23,6 +23,36 @@
         "mision": {
           "title": "Misión",
           "description": "Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos."
+        },
+        "vision": {
+          "title": "Visión",
+          "description": "G.L.E COLOMBIA será reconocida en el mercado nacional e internacional como una empresa de servicios logísticos innovadores, que satisface los requisitos y las expectativas de nuestros clientes y partes interesadas; a través del fortalecimiento de alianzas perdurables con proveedores confiables, talento humano comprometido y competente, con enfoque en la gestión del riesgo, tecnología adecuada y mejoramiento continuo de los procesos."
+        },
+        "philosophy": {
+          "title": "Filosofía",
+          "description": "Hacer negocios serios, en donde todas las partes interesadas salgan beneficiadas, con un enfoque de alto nivel de satisfacción de nuestros clientes y por supuesto siempre con negocios transparentes."
+        },
+        "policy": {
+          "title": "Política de Servicio",
+          "description": {
+            "1": "En GLE COLOMBIA nos comprometemos a prestar servicios logísticos innovadores, personalizados, oportunos y confiables, que satisfagan los requisitos y expectativas de nuestras partes interesadas.",
+            "2": "Contamos con un enfoque a la gestión del riesgo, fortaleciendo continuamente las competencias del talento humano, con tecnología confiable y mejorando continuamente los procesos."
+          }
+        },
+        "values": {
+          "title": "Valores",
+          "description": {
+            "1": "Responsabilidad",
+            "2": "Honestidad",
+            "3": "Confianza",
+            "4": "Transparencia",
+            "5": "Comunicación",
+            "6": "Respeto"
+          }
+        },
+        "work": {
+          "title": "Trabaje con Nosotros",
+          "titleForm": "Únete a nuestra gran familia G.L.E."
         }
       }
     },

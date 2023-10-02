@@ -37,7 +37,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         className="object-contain w-full h-full aspect-auto min-[401px]:hidden"
       />
       <div className="absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t from-main-red to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat" />
-      <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white">
+      <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
         {iconPath && <Image src={iconPath} alt="Icon" width={50} height={50} />}
         <h1 className="text-[40px] font-semibold max-[680px]:text-3xl">
           {pageTitle}
