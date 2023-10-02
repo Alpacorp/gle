@@ -36,7 +36,6 @@ export const Package: FC = () => {
             height={390}
             priority
             className="aspect-auto rounded-2xl"
-            packaging
           />
           <div>Contamos con servicios integrales de paqueteo</div>
         </div>
