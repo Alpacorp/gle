@@ -1,32 +1,38 @@
 [
   {
     "id": 1,
-    "description": "Responsabilidad",
+    "descriptionEs": "Responsabilidad",
+    "descriptionEn": "Responsibility",
     "color": "gray"
   },
   {
     "id": 2,
-    "description": "Honestidad",
+    "descriptionEs": "Honestidad",
+    "descriptionEn": "Honesty",
     "color": "gray"
   },
   {
     "id": 3,
-    "description": "Confianza",
+    "descriptionEs": "Confianza",
+    "descriptionEn": "Trust",
     "color": "gray"
   },
   {
     "id": 4,
-    "description": "Transparencia",
+    "descriptionEs": "Transparencia",
+    "descriptionEn": "Transparency",
     "color": "gray"
   },
   {
     "id": 5,
-    "description": "Comunicación",
+    "descriptionEs": "Comunicación",
+    "descriptionEn": "Communication",
     "color": "gray"
   },
   {
     "id": 6,
-    "description": "Respeto",
+    "descriptionEs": "Respeto",
+    "descriptionEn": "Respect",
     "color": "gray"
   }
 ]
