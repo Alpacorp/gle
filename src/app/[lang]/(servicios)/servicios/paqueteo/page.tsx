@@ -1,8 +1,9 @@
-import { FC } from "react";
 import { Package } from "./container/Package";
 
-const PackagePage: FC = () => {
-  return <Package />;
+import { Locale } from "@/i18n.config";
+
+const PackagePage = async ({ params }: { params: { lang: Locale } }) => {
+  return <Package lang={params.lang} />;
 };
 
 export default PackagePage;
