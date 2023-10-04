@@ -267,7 +267,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
           </form>
         </div>
       </div>
-      <StickyTracking />
+      <StickyTracking lang={lang} />
     </>
   );
 };

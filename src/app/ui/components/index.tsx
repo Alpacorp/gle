@@ -12,5 +12,4 @@ export * from "./SocialMedia";
 export * from "./SubMenu";
 export * from "./TextBanner";
 export * from "./Title";
-// export * from "./Toggle";
-// export * from "./StickyTracking";
+export * from "./BodyServices";

@@ -26,4 +26,5 @@ export * from "./Ways";
 export * from "./WhatsAppWhite";
 export * from "./World";
 export * from "./YouTube";
-export * from "./StickyTrack";
+export * from "./StickyTrackEn";
+export * from "./StickyTrackEs";

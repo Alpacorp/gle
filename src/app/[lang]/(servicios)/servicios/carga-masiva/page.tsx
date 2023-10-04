@@ -1,11 +1,8 @@
-import { FC } from "react";
+import { BulkCargo } from "./container/BulkCargo";
+import { Locale } from "@/i18n.config";
 
-const BulkLoadPage: FC = () => {
-  return (
-    <div>
-      <h1>BulkLoad Page</h1>
-    </div>
-  );
+const BulkLoadPage = async ({ params }: { params: { lang: Locale } }) => {
+  return <BulkCargo lang={params.lang} />;
 };
 
 export default BulkLoadPage;
