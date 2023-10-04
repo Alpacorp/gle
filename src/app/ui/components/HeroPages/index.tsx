@@ -46,7 +46,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
       <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
         {iconPath && <Image src={iconPath} alt="Icon" width={50} height={50} />}
         <h1
-          className={`text-[40px] font-semibold max-[680px]:text-3xl ${
+          className={`text-[40px] font-semibold font-poppins max-[680px]:text-3xl ${
             color === "white" ? "text-black" : "text-white"
           }`}
         >
