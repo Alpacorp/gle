@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IconProps } from "./interfaces";
 
-export const StickyTrack: FC<IconProps> = ({ onClick, className }) => {
+export const StickyTrackEs: FC<IconProps> = ({ onClick, className }) => {
   return (
     <svg
       width="58"

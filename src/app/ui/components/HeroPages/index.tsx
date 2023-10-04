@@ -28,7 +28,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         height={800}
         width={1200}
         priority
-        className="object-contain w-full h-full aspect-auto max-[400px]:hidden"
+        className="object-contain w-full h-full aspect-auto max-[500px]:hidden"
       />
       <Image
         src={imagePathMobile}
@@ -36,7 +36,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         height={500}
         width={400}
         priority
-        className="object-contain w-full h-full aspect-auto min-[401px]:hidden"
+        className="object-contain w-full h-full aspect-auto min-[501px]:hidden"
       />
       <div
         className={`absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t ${

@@ -26,7 +26,7 @@ export const Different: FC<LangInterface> = ({ lang }) => {
           ? "¿Qué nos hace diferentes?"
           : "What Makes us different?"}
       </Title>
-      <div className="flex flex-wrap justify-center gap-4 m-auto mt-16 max-[380px]:px-2">
+      <div className="flex flex-wrap justify-center gap-4 m-auto mt-16 max-[380px]:px-6">
         {data.map(({ id, descriptionEs, descriptionEn, color }) => (
           <div
             key={id}

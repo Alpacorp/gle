@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-import { Close, StickyTrack } from "@icons/index";
+import { Close, StickyTrackEs, StickyTrackEn } from "@icons/index";
 import { ArrowCta } from "..";
 
 interface StickyTrackingProps {
@@ -88,10 +88,17 @@ const StickyTracking: FC<StickyTrackingProps> = ({
               </div>
             </div>
           )}
-          <StickyTrack
-            onClick={showTrackingFormHandler}
-            className="max-[400px]:hidden"
-          />
+          {lang === "es" ? (
+            <StickyTrackEs
+              onClick={showTrackingFormHandler}
+              className="max-[400px]:hidden"
+            />
+          ) : (
+            <StickyTrackEn
+              onClick={showTrackingFormHandler}
+              className="max-[400px]:hidden"
+            />
+          )}
         </section>
       )}
     </>

@@ -59,6 +59,34 @@
     "tracking": {
       "title": "Rastree su envío",
       "button": "Tracking"
+    },
+    "services": {
+      "packaging": {
+        "title": "Paqueteo",
+        "mainDescription": {
+          "1": "Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.",
+          "2": "Cubrimos todo el territorio nacional."
+        },
+        "sideTextTitle": "Contamos con servicios integrales de paqueteo",
+        "additionDescription": {
+          "1": "Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.",
+          "2": "Cubrimos todo el territorio nacional.",
+          "3": "Pendiente de más contenido ..."
+        }
+      },
+      "bulkCargo": {
+        "title": "Carga Masiva",
+        "mainDescription": {
+          "1": "Movilización de vehículos dedicados tipo turbo, sencillo, doble troque, patineta y tractomula con cupos completos punto a punto.",
+          "2": "Carga seca, contenedores llenos o vacíos, Maquinaria y equipo.",
+          "3": "Licencia del Ministerio de Transporte resolución número 975 de 2018."
+        },
+        "sideTextTitle": "Contamos con vehículos dedicados para movilizacion de mercancías",
+        "additionDescription": {
+          "1": "Pendiente información ..."
+        }
+      }
     }
+
   }
 }
