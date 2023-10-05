@@ -21,14 +21,14 @@ export const HeroPages: FC<HeroPagesProps> = ({
   arrowDown,
 }) => {
   return (
-    <div className="relative">
+    <div className="relative h-auto">
       <Image
         src={imagePath}
         alt={pageTitle}
         height={800}
         width={1200}
         priority
-        className="object-contain w-full h-full aspect-auto max-[500px]:hidden"
+        className="object-contain w-full max-[500px]:hidden"
       />
       <Image
         src={imagePathMobile}
@@ -36,7 +36,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         height={500}
         width={400}
         priority
-        className="object-contain w-full h-full aspect-auto min-[501px]:hidden"
+        className="object-contain w-full min-[501px]:hidden"
       />
       <div
         className={`absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t ${
@@ -44,7 +44,16 @@ export const HeroPages: FC<HeroPagesProps> = ({
         } to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat`}
       />
       <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
-        {iconPath && <Image src={iconPath} alt="Icon" width={50} height={50} />}
+        {iconPath && (
+          <Image
+            src={iconPath}
+            alt={pageTitle}
+            width={50}
+            height={50}
+            priority
+            className="w-[50px] h-[50px]"
+          />
+        )}
         <h1
           className={`text-[40px] font-semibold font-poppins max-[680px]:text-3xl ${
             color === "white" ? "text-black" : "text-white"

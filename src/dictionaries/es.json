@@ -68,6 +68,7 @@
           "2": "Cubrimos todo el territorio nacional."
         },
         "sideTextTitle": "Contamos con servicios integrales de paqueteo",
+        "imageInfo": "Operario logístico en bodega",
         "additionDescription": {
           "1": "Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.",
           "2": "Cubrimos todo el territorio nacional.",
@@ -82,8 +83,23 @@
           "3": "Licencia del Ministerio de Transporte resolución número 975 de 2018."
         },
         "sideTextTitle": "Contamos con vehículos dedicados para movilizacion de mercancías",
+        "imageInfo": "Operarios logísticos en coordinación de carga",
         "additionDescription": {
           "1": "Pendiente información ..."
+        }
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "sideTextTitle": "Somos el mejor aliado para su E-commerce, hacemos entregas nacionales e internacionales",
+        "imageInfo": "Servicios logísticos de E-commerce",
+        "additionDescription": {
+          "1": "A nivel nacional e internacional.",
+          "2": "Administración de Inventarios. Recolección. (Vendedor, Marketplace, Acopio).",
+          "3": "Entregas con recaudo de producto.",
+          "4":  "Entrega en domicilio.",
+          "5":  "Cobertura nacional e internacional.",
+          "6":  "Fulfillment.",
+          "7": "Pendiente de más contenido ..."
         }
       }
     }

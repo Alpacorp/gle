@@ -64,6 +64,7 @@
           "2": "We cover the entire national territory."
         },
         "sideTextTitle": "We have comprehensive packaging services",
+        "imageInfo": "Logistics operator in warehouse",
         "additionDescription": {
           "1": "Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.",
           "2": "We cover the entire national territory.",
@@ -78,8 +79,23 @@
           "3": "License from the Ministry of Transportation, resolution number 975 of 2018."
         },
         "sideTextTitle": "We have vehicles dedicated for mobilization of goods",
+        "imageInfo": "Logistics operators coordinating cargo",
         "additionDescription": {
           "1": "Pending info..."
+        }
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "sideTextTitle": "We are the best ally for your E-commerce, we make national and international deliveries",
+        "imageInfo": "E-commerce logistics services",
+        "additionDescription": {
+          "1": "Domestic and international.",
+          "2": "Inventory management. Collection. (Seller, Marketplace, Collection Point).",
+          "3": "Shipping with cash on delivery collection.",
+          "4": "Home delivery.",
+          "5": "Domestic and International Shipping.",
+          "6": "Fulfillment.",
+          "7": "Pending info..."
         }
       }
     }

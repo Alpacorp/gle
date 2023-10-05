@@ -33,6 +33,7 @@ export const Package: FC<LangInterface> = async ({ lang }) => {
           </>
         }
         imageService={packageImage}
+        imageInfo={pages.services.packaging.imageInfo}
         sideTextTitle={pages.services.packaging.sideTextTitle}
         additionDescription={
           <>

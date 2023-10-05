@@ -1,11 +1,8 @@
-import { FC } from "react";
+import { Ecommerce } from "../../servicios/ecommerce/container/Ecommerce";
+import { Locale } from "@/i18n.config";
 
-const EcommercePage: FC = () => {
-  return (
-    <div>
-      <h1>Ecommerce Page</h1>
-    </div>
-  );
+const EcommercePage = async ({ params }: { params: { lang: Locale } }) => {
+  return <Ecommerce lang={params.lang} />;
 };
 
 export default EcommercePage;
