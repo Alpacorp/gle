@@ -28,3 +28,7 @@ export * from "./World";
 export * from "./YouTube";
 export * from "./StickyTrackEn";
 export * from "./StickyTrackEs";
+export * from "./ImportExportIcon";
+export * from "./PapersIcon";
+export * from "./CourierIcon";
+export * from "./InternationalIcon";

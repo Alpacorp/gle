@@ -4,7 +4,7 @@ import "@globals/globals.css";
 
 export const metadata: Metadata = {
   title: "G.L.E. - Internacional",
-  description: "Volamos para que llegues más rápido",
+  description: "Te asesoramos en todo el proceso de entregas internacionales",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
 };
 

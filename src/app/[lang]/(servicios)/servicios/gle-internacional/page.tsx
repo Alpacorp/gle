@@ -1,11 +1,9 @@
-import { FC } from "react";
+import { International } from "./container/International";
 
-const InternationalPage: FC = () => {
-  return (
-    <div>
-      <h1>InternationalPage Page</h1>
-    </div>
-  );
+import { Locale } from "@/i18n.config";
+
+const InternationalPage = async ({ params }: { params: { lang: Locale } }) => {
+  return <International lang={params.lang} />;
 };
 
 export default InternationalPage;
