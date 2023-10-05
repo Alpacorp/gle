@@ -5,14 +5,16 @@ import { ArrowCta, ArrowGLE } from "..";
 
 interface BodyServicesProps {
   buttonText: string;
+  imageInfo: string;
   imageService: StaticImageData;
-  mainDescription: React.ReactNode;
-  additionDescription: React.ReactNode;
+  mainDescription?: React.ReactNode;
+  additionDescription: React.ReactNode | string | any;
   sideTextTitle: string;
 }
 
 export const BodyServices: FC<BodyServicesProps> = ({
   buttonText,
+  imageInfo,
   imageService,
   mainDescription,
   additionDescription,
@@ -25,8 +27,8 @@ export const BodyServices: FC<BodyServicesProps> = ({
         <div className="flex justify-center items-center w-full my-20 flex-wrap gap-12 max-[400px]:my-10">
           <Image
             src={imageService}
-            alt="Paqueteo"
-            title="Paqueteo"
+            alt={imageInfo}
+            title={imageInfo}
             width={411}
             height={390}
             priority
@@ -40,7 +42,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
         <div className="absolute z-auto top-44 left-0 max-[600px]:hidden">
           <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
         </div>
-        <button className="flex border-2 border-secondary-gray rounded-lg px-10 py-2 my-20 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out">
+        <button className="flex border-2 bg-white border-secondary-gray rounded-lg px-10 py-2 my-20 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out">
           <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
           {buttonText}
         </button>
