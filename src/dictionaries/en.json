@@ -97,6 +97,30 @@
           "6": "Fulfillment.",
           "7": "Pending info..."
         }
+      },
+      "international": {
+        "title": "G.L.E. International",
+        "sideTextTitle": "We advise you throughout the international delivery process",
+        "imageInfo": "Logistics operator in warehouse",
+        "additionDescription": [
+          {
+            "title": "International E-commerce:",
+            "description1": "We provide logistics and transportation services for companies selling products globally through e-commerce platforms.",
+            "description2": "Additionally, we have a warehouse in the United States to centralize and consolidate urgent shipments, offer courier services, and manage regular imports and exports."
+          },
+          {
+            "title": "Delivery of printed materials and publications:",
+            "description1": "We deliver publications and documents internationally, with the best quality and compliance."
+          },
+          {
+            "title": "Courier Shipments:",
+            "description1": "Express delivery of documents and packages internationally. Our service is door-to-door to and from over 190 countries. It includes pickup, packaging, customs clearance, and fast and secure delivery."
+          },
+          {
+            "title": "Import and Export of Goods:",
+            "description1": "Comprehensive logistics and transportation services for your goods internationally. We take care of all necessary aspects, such as customs clearance, coordination of different modes of transportation (maritime, air, land), and safe and timely delivery of goods to their final destination."
+          }
+        ]
       }
     }
   }

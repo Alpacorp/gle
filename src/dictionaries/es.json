@@ -101,8 +101,31 @@
           "6":  "Fulfillment.",
           "7": "Pendiente de más contenido ..."
         }
+      },
+      "international": {
+        "title": "G.L.E. Internacional",
+        "sideTextTitle": "Te asesoramos en todo el proceso de entregas internacionales",
+        "imageInfo": "Operario logístico en bodega",
+        "additionDescription": [
+          {
+            "title": "Ecommerce internacional:",
+            "description1": "brindamos servicios de logística y transporte para empresas que venden productos a nivel global a través de plataformas de comercio electrónico.",
+            "description2": "Adicionalmente, contamos con una bodega en Estados Unidos para centralizar y consolidar envíos de urgencia, así como ofrecer servicios de Courier y gestionar importaciones y exportaciones regulares."
+          },
+          {
+            "title": "Entrega de impresos y publicaciones:",
+            "description1": "entregamos publicaciones y documentos a nivel internacional, con la mejor calidad y cumplimiento."
+          },
+          {
+            "title": "Envíos Courier:",
+            "description1": "envío express de documentos y paquetes a nivel internacional. Nuestro servicio es puerta a puerta desde y hacia más de 190 países. Incluye recogida, embalaje, gestión aduanera y una entrega rápida y segura."
+          },
+          {
+            "title": "Importación y exportación de mercancías:",
+            "description1": "servicios de logística y transporte integral para sus mercancías a nivel internacional. Nos encargamos de gestionar todos los aspectos necesarios, como la gestión aduanera, la coordinación de diferentes modos de transporte (marítimo, aéreo, terrestre), la entrega segura y oportuna de las mercancías en su destino final."
+          }
+        ]
       }
     }
-
   }
 }
