@@ -57,6 +57,7 @@
       "button": "Track"
     },
     "services": {
+      "prohibitedTransport": "See prohibited shipments",
       "packaging": {
         "title": "Packaging",
         "mainDescription": {

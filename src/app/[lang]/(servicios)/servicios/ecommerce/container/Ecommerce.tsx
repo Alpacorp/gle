@@ -26,6 +26,7 @@ export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <BodyServices
+        lang={lang}
         imageService={ecommerceImage}
         imageInfo={pages.services.ecommerce.imageInfo}
         sideTextTitle={pages.services.ecommerce.sideTextTitle}

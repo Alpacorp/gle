@@ -61,6 +61,7 @@
       "button": "Tracking"
     },
     "services": {
+      "prohibitedTransport": "Ver envíos de prohibido transporte",
       "packaging": {
         "title": "Paqueteo",
         "mainDescription": {

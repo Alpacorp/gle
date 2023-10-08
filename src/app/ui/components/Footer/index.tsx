@@ -7,6 +7,9 @@ import { Address } from "./Address";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import data from "./dataFooter.json";
+import Image from "next/image";
+import { Mintic, Sic, SuperTransporte } from "@/public/assets/images/footer";
+import { TextInfo } from "./components/TextInfo";
 
 export const Footer: FC<LangInterface> = ({ lang }) => {
   return (
@@ -50,30 +53,86 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
           ))}
         </div>
       </div>
-      <section className="flex justify-around font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start max-[400px]:pb-20">
-        <div>
-          <h5>
-            G.L.E. {new Date().getFullYear()} |{" "}
-            {lang === "es"
-              ? "Todos los derechos reservados"
-              : "All rights reserved"}
-          </h5>
-        </div>
+      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start max-[400px]:pb-20">
         <div className="flex flex-wrap gap-3">
-          <Link href="/politica-de-privacidad" className="hover:underline">
+          <Link
+            href="/politica-de-privacidad"
+            className="hover:underline hover:underline-offset-8"
+          >
             {lang === "es" ? "Aviso de privacidad" : "Privacy policy"}
           </Link>
-          <Link href="/terminos-y-condiciones" className="hover:underline">
+          <Link
+            href="/terminos-y-condiciones"
+            className="hover:underline hover:underline-offset-8"
+          >
             {lang === "es" ? "Términos y condiciones" : "Terms and conditions"}
           </Link>
           <Link
             href="/procedimiento-de-compensacion"
-            className="hover:underline"
+            className="hover:underline hover:underline-offset-8"
           >
             {lang === "es"
               ? "Procedimiento de compensación"
               : "Compensation procedure"}
           </Link>
+        </div>
+        <div className="flex gap-5 flex-wrap">
+          <div>
+            <div>
+              <Image
+                alt="SuperTransporte"
+                title="SuperTransporte"
+                src={SuperTransporte}
+                width={140}
+                height={40}
+                className="aspect-video"
+              />
+              <TextInfo>Correo:</TextInfo>
+              <TextInfo>Contacto:</TextInfo>
+              <TextInfo>Teléfono SuperTransporte:</TextInfo>
+            </div>
+          </div>
+          <div>
+            <div>
+              <Image
+                alt="Mintic"
+                title="Mintic"
+                src={Mintic}
+                width={140}
+                height={40}
+                className="aspect-video"
+              />
+              <TextInfo>Correo:</TextInfo>
+              <TextInfo>Contacto:</TextInfo>
+              <TextInfo>Teléfono SuperTransporte:</TextInfo>
+            </div>
+          </div>
+          <div>
+            <div>
+              <Image
+                alt="Sic"
+                title="Sic"
+                src={Sic}
+                width={140}
+                height={40}
+                className="aspect-video"
+              />
+              <TextInfo>Carrera 13 No. 27 - 00, Pisos 1 y 3</TextInfo>
+              <TextInfo>Contact center+57 (601) 592 0400 Bogotá</TextInfo>
+              <TextInfo>Línea Gratuita Nacional: 01 8000 910165</TextInfo>
+              <TextInfo>Correo Institucional: contactenos@sic.gov.co</TextInfo>
+            </div>
+          </div>
+        </div>
+        <div className="pt-4">
+          {/* set width to hr */}
+          <hr className="m-auto border-white w-1/3" />
+          <h5 className="pt-4">
+            G.L.E. {new Date().getFullYear()} |{" "}
+            {lang === "es"
+              ? "Todos los derechos reservados"
+              : "All rights reserved"}
+          </h5>
         </div>
       </section>
     </footer>
