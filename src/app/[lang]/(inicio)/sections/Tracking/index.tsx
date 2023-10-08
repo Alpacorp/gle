@@ -6,9 +6,11 @@ import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 export const Tracking: FC<LangInterface> = ({ lang }) => {
   return (
     <section id="tracking" className="flex justify-center border-0">
-      <div className="flex justify-center flex-wrap py-2 items-center gap-x-2 border-2 border-main-red mx-4 rounded-xl max-w-[730px] w-full max-[640px]:p-2 max-[600px]:py-[2px] max-[380px]:py-1">
-        <h2 className="text-xl text-center leading-none font-semibold font-poppins text-white max-[650px]:text-xs max-[380px]:text-xs">
-          {lang === "es" ? "Rastrea tu envío" : "Track your shipment"}
+      <div className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]">
+        <h2 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
+          {lang === "es"
+            ? "Realice aquí el seguimiento de sus envíos nacionales"
+            : "Track your national shipments here"}
         </h2>
         <div className="flex justify-center gap-2">
           <input
@@ -27,11 +29,11 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             {lang === "es" ? "Consultar" : "Track"}
           </button>
         </div>
-        <p className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
+        {/* <p className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
           {lang === "es"
             ? "Realice aquí el seguimiento de sus envíos nacionales"
             : "Track your national shipments here"}
-        </p>
+        </p> */}
       </div>
     </section>
   );
