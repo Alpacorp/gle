@@ -53,8 +53,8 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
           ))}
         </div>
       </div>
-      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start max-[400px]:pb-20">
-        <div className="flex flex-wrap gap-3">
+      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start">
+        <div className="flex flex-wrap gap-3 max-[400px]:flex-col">
           <Link
             href="/politica-de-privacidad"
             className="hover:underline hover:underline-offset-8"
@@ -124,8 +124,9 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
             </div>
           </div>
         </div>
+      </section>
+      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-center max-[400px]:pb-20">
         <div className="pt-4">
-          {/* set width to hr */}
           <hr className="m-auto border-white w-1/3" />
           <h5 className="pt-4">
             G.L.E. {new Date().getFullYear()} |{" "}
