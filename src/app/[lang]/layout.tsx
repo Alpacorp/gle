@@ -3,11 +3,13 @@ import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
 import { Footer } from "@ui/components/";
+import { GlobalScripts } from "../scripts/GlobalScripts";
 
 import { Locale } from "@/i18n.config";
 import { ContextProvider } from "@context/Context";
 
 import "@globals/globals.css";
+import { GtmBodyScript } from "../scripts/GtmBodyScript";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,11 +40,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
+      <GlobalScripts />
       <ContextProvider>
         <body
           className={`${poppins.variable} ${inter.variable}`}
           suppressHydrationWarning
         >
+          <GtmBodyScript />
           <Header lang={params.lang} />
           {children}
           <Footer lang={params.lang} />
