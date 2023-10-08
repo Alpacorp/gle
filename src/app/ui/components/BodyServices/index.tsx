@@ -2,17 +2,20 @@ import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import { ArrowCta, ArrowGLE } from "..";
+import { ProhibitedTransport } from "../ProhibitedTransport";
 
 interface BodyServicesProps {
+  lang?: string;
   buttonText: string;
   imageInfo: string;
   imageService: StaticImageData;
   mainDescription?: React.ReactNode;
-  additionDescription: React.ReactNode | string | any;
+  additionDescription: React.ReactNode | string;
   sideTextTitle: string;
 }
 
 export const BodyServices: FC<BodyServicesProps> = ({
+  lang = "es",
   buttonText,
   imageInfo,
   imageService,
@@ -46,6 +49,11 @@ export const BodyServices: FC<BodyServicesProps> = ({
           <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
           {buttonText}
         </button>
+        <ProhibitedTransport>
+          {lang === "es"
+            ? "Ver envíos de prohibido transporte"
+            : "See prohibited transport shipments"}
+        </ProhibitedTransport>
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
     </div>

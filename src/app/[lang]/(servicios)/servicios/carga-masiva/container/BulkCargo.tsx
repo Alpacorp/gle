@@ -26,6 +26,7 @@ export const BulkCargo: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <BodyServices
+        lang={lang}
         mainDescription={
           <>
             <p>{pages.services.bulkCargo.mainDescription[1]}</p>

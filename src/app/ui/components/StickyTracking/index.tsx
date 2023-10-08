@@ -74,9 +74,11 @@ const StickyTracking: FC<StickyTrackingProps> = ({
               <div className="flex justify-center gap-2">
                 <input
                   type="number"
-                  className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm"
+                  className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm"
                   placeholder={
-                    lang === "es" ? "Número de guía" : "Tracking number"
+                    lang === "es"
+                      ? "Ingrese su número de guía"
+                      : "Enter your tracking number"
                   }
                   name="tracking"
                   id="tracking"
@@ -92,11 +94,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
             <StickyTrackEs
               onClick={showTrackingFormHandler}
               className="max-[400px]:hidden"
+              title="Realice aquí el seguimiento de sus envíos nacionales"
             />
           ) : (
             <StickyTrackEn
               onClick={showTrackingFormHandler}
               className="max-[400px]:hidden"
+              title="Track your national shipments here"
             />
           )}
         </section>

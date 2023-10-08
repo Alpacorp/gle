@@ -25,6 +25,7 @@ export const Package: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <BodyServices
+        lang={lang}
         mainDescription={
           <>
             <p>{pages.services.packaging.mainDescription[1]}</p>

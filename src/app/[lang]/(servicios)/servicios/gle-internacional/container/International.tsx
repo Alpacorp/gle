@@ -32,6 +32,7 @@ export const International: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <BodyServices
+        lang={lang}
         imageService={internationalImage}
         imageInfo={pages.services.international.imageInfo}
         sideTextTitle={pages.services.international.sideTextTitle}

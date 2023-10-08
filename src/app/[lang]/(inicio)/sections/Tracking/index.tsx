@@ -6,15 +6,19 @@ import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 export const Tracking: FC<LangInterface> = ({ lang }) => {
   return (
     <section id="tracking" className="flex justify-center border-0">
-      <div className="flex justify-evenly flex-wrap py-5 items-center gap-1 border-2 border-main-red mx-4 rounded-xl max-w-[730px] w-full max-[640px]:p-2 max-[380px]:p-2">
-        <h2 className="text-xl text-center leading-none font-semibold font-poppins text-white max-[380px]:text-lg">
+      <div className="flex justify-center flex-wrap py-2 items-center gap-x-2 border-2 border-main-red mx-4 rounded-xl max-w-[730px] w-full max-[640px]:p-2 max-[600px]:py-[2px] max-[380px]:py-1">
+        <h2 className="text-xl text-center leading-none font-semibold font-poppins text-white max-[650px]:text-xs max-[380px]:text-xs">
           {lang === "es" ? "Rastrea tu envío" : "Track your shipment"}
         </h2>
         <div className="flex justify-center gap-2">
           <input
             type="number"
-            className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm"
-            placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
+            className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm"
+            placeholder={
+              lang === "es"
+                ? "Ingrese su número de guía"
+                : "Enter your tracking number"
+            }
             name="tracking"
             id="tracking"
           />
@@ -23,6 +27,11 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             {lang === "es" ? "Consultar" : "Track"}
           </button>
         </div>
+        <p className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
+          {lang === "es"
+            ? "Realice aquí el seguimiento de sus envíos nacionales"
+            : "Track your national shipments here"}
+        </p>
       </div>
     </section>
   );
