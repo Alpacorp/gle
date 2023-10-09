@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Head from "next/head";
 import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
@@ -10,7 +11,6 @@ import { ContextProvider } from "@context/Context";
 
 import "@globals/globals.css";
 import { GtmBodyScript } from "../scripts/GtmBodyScript";
-import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],

@@ -6,14 +6,16 @@ import { ArrowCta } from "../Icons";
 interface HeroPagesProps {
   color?: "red" | "white";
   iconPath?: string | StaticImageData;
-  imagePath: string | StaticImageData;
+  imagePath?: string | StaticImageData;
   imagePathMobile?: string | StaticImageData;
   pageTitle: string;
   arrowDown?: boolean;
+  arrowColor?: "red" | "white";
 }
 
 export const HeroPages: FC<HeroPagesProps> = ({
   color,
+  arrowColor = "white",
   imagePath,
   imagePathMobile = imagePath as StaticImageData,
   pageTitle,
@@ -22,27 +24,39 @@ export const HeroPages: FC<HeroPagesProps> = ({
 }) => {
   return (
     <div className="relative h-auto">
-      <Image
-        src={imagePath}
-        alt={pageTitle}
-        height={800}
-        width={1200}
-        priority
-        className="object-contain w-full max-[500px]:hidden"
-      />
-      <Image
-        src={imagePathMobile}
-        alt={pageTitle}
-        height={500}
-        width={400}
-        priority
-        className="object-contain w-full min-[501px]:hidden"
-      />
-      <div
-        className={`absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t ${
-          color === "white" ? "from-white" : "from-main-red"
-        } to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat`}
-      />
+      {imagePath ? (
+        <Image
+          src={imagePath}
+          alt={pageTitle}
+          height={800}
+          width={1200}
+          priority
+          className="object-contain w-full max-[500px]:hidden"
+        />
+      ) : (
+        <div
+          className={`h-[300px] w-full ${
+            color === "white" ? "from-white" : "from-main-red"
+          }`}
+        ></div>
+      )}
+      {imagePathMobile && (
+        <Image
+          src={imagePathMobile}
+          alt={pageTitle}
+          height={500}
+          width={400}
+          priority
+          className="object-contain w-full min-[501px]:hidden"
+        />
+      )}
+      {(imagePath || imagePathMobile) && (
+        <div
+          className={`absolute z-10 inset-0 bottom-0 top-0 bg-gradient-to-t ${
+            color === "white" ? "from-white" : "from-main-red"
+          } to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat`}
+        />
+      )}
       <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
         {iconPath && (
           <Image
@@ -64,7 +78,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         {arrowDown && (
           <div>
             <ArrowCta
-              stroke="white"
+              stroke={arrowColor === "white" ? "white" : "#D81730"}
               className="w-10 max-[680px]:w-8 max-[680px]:h-3"
             />
           </div>
