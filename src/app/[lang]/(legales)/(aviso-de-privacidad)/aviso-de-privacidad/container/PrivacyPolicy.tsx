@@ -13,18 +13,12 @@ import StickyTracking from "@/src/app/ui/components/StickyTracking";
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import { getDictionary } from "@/src/lib/dictionary";
 
-export const BulkCargo: FC<LangInterface> = async ({ lang }) => {
+export const PrivacyPolicy: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (
     <section>
-      <HeroPages
-        imagePath={bannerBulkCargo}
-        imagePathMobile={bannerBulkCargoMobile}
-        iconPath={bulkCargoIcon}
-        pageTitle={pages.services.bulkCargo.title}
-        color="white"
-      />
+      <HeroPages arrowDown arrowColor="red" pageTitle={"test"} color="white" />
       <BodyServices
         lang={lang}
         mainDescription={

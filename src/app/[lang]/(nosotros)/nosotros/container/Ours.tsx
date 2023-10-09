@@ -28,6 +28,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
         imagePathMobile={bannerOursMobile}
         pageTitle={pages.about.title}
         arrowDown
+        arrowColor="white"
       />
       <div>
         <div className="relative">
