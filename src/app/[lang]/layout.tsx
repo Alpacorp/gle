@@ -10,6 +10,7 @@ import { ContextProvider } from "@context/Context";
 
 import "@globals/globals.css";
 import { GtmBodyScript } from "../scripts/GtmBodyScript";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,7 +41,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <GlobalScripts />
+      <Head>
+        <GlobalScripts />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+      </Head>
       <ContextProvider>
         <body
           className={`${poppins.variable} ${inter.variable}`}
