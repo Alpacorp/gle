@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "linkEs": "/nosotros",
+    "linkEn": "/about-us"
+  },
+  {
+    "id": 2,
+    "linkEs": "/servicios",
+    "linkEn": "/services",
+    "submenu": [
+      {
+        "idSub": 1,
+        "linkSubEs": "/servicios/paqueteo",
+        "linkSubEn": "/services/packaging"
+      },
+      {
+        "idSub": 2,
+        "linkSubEs": "/servicios/carga-masiva",
+        "linkSubEn": "/services/bulk-cargo"
+      },
+      {
+        "idSub": 3,
+        "linkSubEs": "/servicios/gle-internacional",
+        "linkSubEn": "/services/gle-international"
+      },
+      {
+        "idSub": 4,
+        "linkSubEs": "/servicios/ecommerce",
+        "linkSubEn": "/services/ecommerce"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "linkEs": "/contacto",
+    "linkEn": "/contact"
+  },
+  {
+    "id": 4,
+    "linkEs": "/aviso-de-privacidad",
+    "linkEn": "/privacy-policy"
+  },
+  {
+    "id": 5,
+    "linkEs": "/terminos-y-condiciones",
+    "linkEn": "/terms-and-conditions"
+  },
+  {
+    "id": 6,
+    "linkEs": "/compensacion",
+    "linkEn": "/compensation"
+  },
+  {
+    "id": 7,
+    "linkEs": "/pqrs",
+    "linkEn": "/pqrs"
+  }
+]

@@ -51,7 +51,6 @@ const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
           } transition-transform duration-300`}
         />
       </label>
-      {/* <span className="text-gray-800">{lang === "es" ? "ES" : "EN"}</span> */}
     </div>
   );
 };
