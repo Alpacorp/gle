@@ -2,7 +2,6 @@
 
 import { FC } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 
 import { GleLogo, AgileLogo } from "@icons/index";
 import { List } from "@ui/components/List";
@@ -10,54 +9,13 @@ import { HamburguerMenu, MenuMobile } from "@ui/components/";
 import Toggle from "@ui/components/Toggle";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
+
+import useChangeLanguageRoutes from "@/src/app/hooks/useChangeLanguage";
+
 import dataMenu from "@ui/components/Header/dataMenu.json";
 
 const Header: FC<LangInterface> = ({ lang }) => {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const changeLanguage = () => {
-    const langPrefix = lang === "es" ? "/es" : "/en";
-    const route = dataMenu.find(
-      (item) =>
-        item.linkEs === pathname.replace(langPrefix, "") ||
-        item.linkEn === pathname.replace(langPrefix, "")
-    );
-
-    if (route) {
-      const newLangPath = lang === "es" ? route.linkEn : route.linkEs;
-      const newLangPrefix = lang === "es" ? "/en" : "/es";
-      router.push(`${newLangPrefix}${newLangPath}`);
-    } else {
-      router.push(lang === "es" ? "/en" : "/es");
-    }
-
-    const subRoute = dataMenu.find(
-      (item) =>
-        item.submenu?.find(
-          (subitem) =>
-            subitem.linkSubEs === pathname.replace(langPrefix, "") ||
-            subitem.linkSubEn === pathname.replace(langPrefix, "")
-        ) !== undefined
-    );
-
-    if (subRoute) {
-      const subRouteSubmenu = subRoute.submenu?.find(
-        (subitem) =>
-          subitem.linkSubEs === pathname.replace(langPrefix, "") ||
-          subitem.linkSubEn === pathname.replace(langPrefix, "")
-      );
-
-      if (subRouteSubmenu) {
-        const newLangPath =
-          lang === "es" ? subRouteSubmenu.linkSubEn : subRouteSubmenu.linkSubEs;
-        const newLangPrefix = lang === "es" ? "/en" : "/es";
-        router.push(`${newLangPrefix}${newLangPath}`);
-      } else {
-        router.push(lang === "es" ? "/en" : "/es");
-      }
-    }
-  };
+  const { changeLanguage } = useChangeLanguageRoutes({ lang });
 
   return (
     <header className="font-poppins fixed w-full top-0 bg-[#f5f5f5d0] text-black shadow-md flex items-center justify-between px-8 max-[450px]:px-1 max-[450px]:justify-bet z-30">

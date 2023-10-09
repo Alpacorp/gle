@@ -1,15 +1,16 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { SocialMedia } from "@ui/components/index";
 import { GleLogoWhite, WhatsAppWhite } from "@icons/index";
+import { TextInfo } from "./components/TextInfo";
 import { Address } from "./Address";
+
+import { Mintic, Sic, SuperTransporte } from "@/public/assets/images/footer";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import data from "./dataFooter.json";
-import Image from "next/image";
-import { Mintic, Sic, SuperTransporte } from "@/public/assets/images/footer";
-import { TextInfo } from "./components/TextInfo";
 
 export const Footer: FC<LangInterface> = ({ lang }) => {
   return (
@@ -54,9 +55,13 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
         </div>
       </div>
       <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-start">
-        <div className="flex flex-wrap gap-3 max-[400px]:flex-col">
+        <div className="flex flex-wrap gap-3 flex-col">
           <Link
-            href="/politica-de-privacidad"
+            href={
+              lang === "es"
+                ? `/${lang}/aviso-de-privacidad`
+                : `/${lang}/privacy-policy`
+            }
             className="hover:underline hover:underline-offset-8"
           >
             {lang === "es" ? "Aviso de privacidad" : "Privacy policy"}
@@ -75,8 +80,16 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
               ? "Procedimiento de compensación"
               : "Compensation procedure"}
           </Link>
+          <Link
+            href="/pqrs"
+            className="hover:underline hover:underline-offset-8"
+          >
+            {lang === "es"
+              ? "Proceso PQR’S e Indemnizaciones"
+              : "PQR’S and Compensation process"}
+          </Link>
         </div>
-        <div className="flex gap-5 flex-wrap">
+        <div className="flex gap-3 flex-wrap">
           <div>
             <div>
               <Image

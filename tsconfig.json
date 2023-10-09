@@ -33,6 +33,7 @@
       "@servicios/*": ["./src/app/[lang]/(servicios)/*"],
       "@globals/*": ["./src/app/[lang]/globals.css"],
       "@hooks/*": ["./src/app/hooks/*"],
+      "@routes/*": ["./src/routes/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
