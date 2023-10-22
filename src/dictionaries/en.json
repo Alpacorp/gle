@@ -56,6 +56,12 @@
       "title": "Tracking",
       "button": "Track"
     },
+    "prohibitedTransport": {
+      "title": "Prohibited Transportation Shipments",
+      "description": "Objects that, due to their nature or packaging, endanger postal services employees or the general public, or that may dirty or damage other postal objects, or the operator's equipment.",
+      "lastText": "AND OTHER ELEMENTS CONTEMPLATED IN THE LAW",
+      "additionalDescription": "The above prohibitions will be applied in accordance with current Colombian regulations and with those regulated by the Universal Postal Union and in accordance with the exceptions proposed therein."
+    },
     "services": {
       "prohibitedTransport": "See prohibited shipments",
       "packaging": {

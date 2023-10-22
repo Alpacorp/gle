@@ -34,11 +34,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
           className="object-contain w-full max-[500px]:hidden"
         />
       ) : (
-        <div
-          className={`h-[300px] w-full ${
-            color === "white" ? "from-white" : "from-main-red"
-          }`}
-        ></div>
+        <div className={`h-[250px] w-full max-[400px]:h-[150px]`} />
       )}
       {imagePathMobile && (
         <Image
@@ -57,7 +53,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
           } to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat`}
         />
       )}
-      <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white max-[400px]:bottom-24">
+      <div className="absolute z-10 bottom-0 right-0 left-0 flex flex-col justify-center items-center text-white">
         {iconPath && (
           <Image
             src={iconPath}
@@ -69,7 +65,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
           />
         )}
         <h1
-          className={`text-[40px] font-semibold font-poppins max-[680px]:text-3xl ${
+          className={`text-[40px] text-center font-semibold font-poppins max-[680px]:text-3xl max-[400px]:text-2xl max-[400px]:leading-6 ${
             color === "white" ? "text-black" : "text-white"
           }`}
         >
@@ -79,7 +75,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
           <div>
             <ArrowCta
               stroke={arrowColor === "white" ? "white" : "#D81730"}
-              className="w-10 max-[680px]:w-8 max-[680px]:h-3"
+              className="w-10 max-[680px]:w-7 max-[680px]:h-7 max-[680px]:mt-1"
             />
           </div>
         )}

@@ -55,5 +55,10 @@
     "id": 7,
     "linkEs": "/pqrs",
     "linkEn": "/pqrs"
+  },
+  {
+    "id": 8,
+    "linkEs": "/prohibido-transporte",
+    "linkEn": "/transportation-prohibited"
   }
 ]
