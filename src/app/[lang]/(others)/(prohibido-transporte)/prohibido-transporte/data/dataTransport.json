@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "textEs": "Piedras preciosas, joyas platino, oro, plata, entre otros.",
+    "textEn": "Precious stones, platinum jewelry, gold, silver, among others."
+  },
+  {
+    "id": 2,
+    "textEs": "Armas y/o municiones.",
+    "textEn": "Weapons and/or ammunition."
+  },
+  {
+    "id": 3,
+    "textEs": "Papel moneda, títulos valores de cualquier tipo pagaderos al portador, dinero en efectivo y otros títulos valores de similar naturaleza, establecidos en el código de comercio Articulo 619.",
+    "textEn": "Paper money, securities of any kind payable to the bearer, cash and other securities of a similar nature, established in the Commercial Code Article 619."
+  },
+  {
+    "id": 4,
+    "textEs": "Estupefacientes y alucinógenos.",
+    "textEn": "Narcotics and hallucinogens."
+  },
+  {
+    "id": 5,
+    "textEs": "Animales vivos o muertos que no estén disecados.",
+    "textEn": "Live or dead animals that are not stuffed."
+  },
+  {
+    "id": 6,
+    "textEs": "Extintores y cilindros de gas.",
+    "textEn": "Fire extinguishers and gas cylinders."
+  },
+  {
+    "id": 7,
+    "textEs": "Material explosivo, inflamable o peligroso.",
+    "textEn": "Explosive, flammable or dangerous material."
+  }
+]

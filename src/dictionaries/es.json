@@ -60,6 +60,12 @@
       "title": "Rastree su envío",
       "button": "Tracking"
     },
+    "prohibitedTransport": {
+      "title": "Envíos de Prohibido Transporte",
+      "description": "Objetos que por su naturaleza o embalaje pongan en peligro a los empleados de los servicios postales o al público en general, o que puedan ensuciar o dañar otros objetos postales, o los equipos del operador.",
+      "lastText": "Y DEMÁS ELEMENTOS CONTEMPLADOS EN LA LEY",
+      "additionalDescription": "Las anteriores prohibiciones se aplicarán en concordancia con la normatividad vigente colombiana y con reglamentado por la Unión Postal Universal y conforme a las excepciones allí propuestas."
+    },
     "services": {
       "prohibitedTransport": "Ver envíos de prohibido transporte",
       "packaging": {
