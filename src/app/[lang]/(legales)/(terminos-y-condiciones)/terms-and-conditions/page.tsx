@@ -1,8 +1,8 @@
-import { PrivacyPolicy } from "../aviso-de-privacidad/container/PrivacyPolicy";
+import { TermsConditions } from "../terminos-y-condiciones/container/TermsConditions";
 import { Locale } from "@/i18n.config";
 
 const BulkLoadPage = async ({ params }: { params: { lang: Locale } }) => {
-  return <PrivacyPolicy lang={params.lang} />;
+  return <TermsConditions lang={params.lang} />;
 };
 
 export default BulkLoadPage;

@@ -67,13 +67,21 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
             {lang === "es" ? "Aviso de privacidad" : "Privacy policy"}
           </Link>
           <Link
-            href="/terminos-y-condiciones"
+            href={
+              lang === "es"
+                ? `/${lang}/terminos-y-condiciones`
+                : `/${lang}/terms-and-conditions`
+            }
             className="hover:underline hover:underline-offset-8"
           >
             {lang === "es" ? "Términos y condiciones" : "Terms and conditions"}
           </Link>
           <Link
-            href="/procedimiento-de-compensacion"
+            href={
+              lang === "es"
+                ? `/${lang}/compensaciones`
+                : `/${lang}/compensations`
+            }
             className="hover:underline hover:underline-offset-8"
           >
             {lang === "es"
@@ -81,7 +89,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
               : "Compensation procedure"}
           </Link>
           <Link
-            href="/pqrs"
+            href={`/${lang}/pqrs`}
             className="hover:underline hover:underline-offset-8"
           >
             {lang === "es"

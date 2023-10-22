@@ -66,6 +66,39 @@
       "lastText": "Y DEMÁS ELEMENTOS CONTEMPLADOS EN LA LEY",
       "additionalDescription": "Las anteriores prohibiciones se aplicarán en concordancia con la normatividad vigente colombiana y con reglamentado por la Unión Postal Universal y conforme a las excepciones allí propuestas."
     },
+    "privacy-policy": {
+      "title": "Aviso de Privacidad Protección de Datos Personales",
+      "law": "(Ley 1581 de 2012 y Decreto Reglamentario 1377 de 2013)",
+      "content": [
+        "GRUPO LOGÍSTICO ESPECIALIZADO S.A.S. se permite informar: Que en cumplimiento de la Ley Estatutaria 1581 del 2012, por la cual se estable el 'Régimen General de Protección de Datos' y el Decreto Reglamentario 1377 del 2013, demanda respetuosamente su autorización para que de manera libre, previa, clara, expresa, voluntaria y debidamente informada, permita a la empresa recolectar, almacenar, usar, procesar, compilar, intercambiar, dar tratamiento, actualizar y disponer de los datos personales y/o información comercial que han sido suministrados y que se han incorporado en nuestras bases de datos.",
+        "Esta información es y será utilizada en el desarrollo de las funciones propias de la Empresa. Los titulares de los datos personales (colaboradores, proveedores, prestadores de servicios, clientes, personas naturales y/o jurídicas y contratistas) autorizan de manera expresa e inequívoca a GRUPO LOGÍSTICO ESPECIALIZADO S.A.S para mantener y manejar toda su información a no ser que manifieste lo contrario de manera directa, expresa, inequívoca y por escrito dentro de los treinta (30) días hábiles contados a partir de la recepción de la presente comunicación a las siguiente cuenta de correo electrónico:",
+        "contacto@glecolombia.com.",
+        "Le recordamos que usted tiene la posibilidad de acceder, actualizar y suprimir en cualquier momento y el derecho de solicitar expresamente la corrección, en los términos establecidos por la ley, dirigiendo una comunicación escrita al correo electrónico:",
+        "contacto@glecolombia.com o comunicándose al TEL 6953631."
+      ]
+    },
+    "terms-&-conditions": {
+      "title": "Términos y Condiciones",
+      "content": [
+        "Al acceder a este sitio, el usuario acepta las siguientes condiciones y políticas de uso.",
+        "Acerca del contenido",
+        "GLE COLOMBIA no se hace responsables del uso, entendimiento e interpretación que los usuarios hagan del contenido presentado en www. El contenido de estos sitios es desarrollado por GLE COLOMBIA, o un tercero autorizado, sin comprometer el pensamiento o la opinión de sus anunciantes o sitios vinculados. GLE COLOMBIA se reservan la facultad de modificar el contenido, la presentación, la configuración y/o los servicios ofrecidos por sí mismos o mediante un tercero autorizado, sin notificar previamente al usuario.",
+        "Límite de responsabilidad",
+        "El Usuario asume que ningún tercero es responsable por los perjuicios que se deriven directa o indirectamente de la existencia, uso, acceso, imposibilidad de uso o imposibilidad de acceso a la presente página o a cualquiera de sus vínculos o enlaces.",
+        "GLE COLOMBIA y/o sus proveedores no ofrecen garantía sobre la exactitud e integridad de la información, el software, los productos y los servicios presentados en este sitio.",
+        "Consecuentemente, el usuario acepta que él es el único responsable por las decisiones que adopte con base en la información o en los materiales de esta página o de sus vínculos o enlaces. El usuario responderá por los daños y perjuicios de toda naturaleza que GLE COLOMBIA puedan sufrir, directa o indirectamente, como consecuencia del incumplimiento de cualquiera de las obligaciones derivadas de las Condiciones de Uso y de las que la Ley establece con relación a la utilización de este sitio web.",
+        "GLE COLOMBIA no asumen responsabilidad alguna por los daños y perjuicios que pudieran derivarse de la utilización de los servicios y de los contenidos, y tampoco de los que puedan derivarse de la falta de veracidad, vigencia, exhaustividad y/o autenticidad de la información que el usuario proporcione acerca de sí mismo.",
+        "En particular, aunque no de forma exclusiva, GLE COLOMBIA tampoco se hace responsable por los daños y perjuicios de toda naturaleza que pueda provocar la suplantación de la personalidad de un tercero, efectuada por un usuario en cualquier clase de comunicación realizada a través de este sitio Web.",
+        "Asimismo, los daños que se ocasionen por la presencia de virus y otros elementos lesivos en los servicios prestados por terceros y, en general, cualquier consecuencia negativa que pueda causar la prestación de dichos servicios a través de este sitio web, tampoco son responsabilidad de GLE COLOMBIA",
+        "Vínculos con otros sitios en Internet",
+        "La inclusión de vínculos a otros sitios a través de www.glecolombia.com no implica ninguna relación diferente al «vínculo» mismo. Todas las transacciones realizadas en dichos vínculos son responsabilidad exclusiva del usuario y de la entidad relacionada.Derecho de propiedad industrial o comercial El usuario reconoce que el contenido (texto, software, música, fotografías, vídeo, gráficos u otro material) que forme parte, bien sea de la publicidad de los anunciantes o de la información producida comercialmente y distribuida de forma electrónica y presentada al usuario por GLE COLOMBIA, está protegido por derechos de autor, marcas, patentes y, en general, por las diferentes formas del derecho de propiedad. El usuario podrá hacer copia de este contenido sólo para su uso personal, siempre y cuando se mantengan intactos todos los avisos de derechos de autor y se cite la fuente respectiva.",
+        "El usuario no podrá modificar, copiar, reproducir, cargar, exponer, transmitir o distribuir el contenido disponible a través de GLE COLOMBIA y los sitios vinculados, incluidos el código fuente y el software, so pena de incurrir en responsabilidad civil y responsabilidad penal, según las normas vigentes."
+      ]
+    },
+    "compensations": {
+      "title": "Procedimiento de Compensaciones",
+      "text": "Documento de proceso de compensaciones"
+    },
     "services": {
       "prohibitedTransport": "Ver envíos de prohibido transporte",
       "packaging": {

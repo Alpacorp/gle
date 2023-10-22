@@ -5,6 +5,7 @@ import { ArrowCta } from "../Icons";
 
 interface HeroPagesProps {
   color?: "red" | "white";
+  className?: string;
   iconPath?: string | StaticImageData;
   imagePath?: string | StaticImageData;
   imagePathMobile?: string | StaticImageData;
@@ -15,6 +16,7 @@ interface HeroPagesProps {
 
 export const HeroPages: FC<HeroPagesProps> = ({
   color,
+  className,
   arrowColor = "white",
   imagePath,
   imagePathMobile = imagePath as StaticImageData,
@@ -67,7 +69,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
         <h1
           className={`text-[40px] text-center font-semibold font-poppins max-[680px]:text-3xl max-[400px]:text-2xl max-[400px]:leading-6 ${
             color === "white" ? "text-black" : "text-white"
-          }`}
+          } ${className}`}
         >
           {pageTitle}
         </h1>
