@@ -39,3 +39,4 @@ export * from "./Drugs";
 export * from "./Extinguisher";
 export * from "./PaperMoney";
 export * from "./Warning";
+export * from "./Download";

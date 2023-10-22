@@ -1,12 +1,6 @@
 import { FC } from "react";
 
-import { BodyServices, HeroPages } from "@ui/components/index";
-import {
-  bannerBulkCargo,
-  bannerBulkCargoMobile,
-  bulkCargoIcon,
-  bulkCargoImage,
-} from "@/public/assets/images/bulkCargo";
+import { ContainerContent, HeroPages } from "@ui/components/index";
 
 import StickyTracking from "@/src/app/ui/components/StickyTracking";
 
@@ -18,28 +12,25 @@ export const PrivacyPolicy: FC<LangInterface> = async ({ lang }) => {
 
   return (
     <section>
-      <HeroPages arrowDown arrowColor="red" pageTitle={"test"} color="white" />
-      <BodyServices
-        lang={lang}
-        mainDescription={
-          <>
-            <p>{pages.services.bulkCargo.mainDescription[1]}</p>
-            <br />
-            <p>{pages.services.bulkCargo.mainDescription[2]}</p>
-            <br />
-            <p>{pages.services.bulkCargo.mainDescription[3]}</p>
-          </>
-        }
-        imageService={bulkCargoImage}
-        imageInfo={pages.services.bulkCargo.imageInfo}
-        sideTextTitle={pages.services.bulkCargo.sideTextTitle}
-        additionDescription={
-          <>
-            <p>{pages.services.bulkCargo.additionDescription[1]}</p>
-          </>
-        }
-        buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
-      />
+      <ContainerContent>
+        <HeroPages
+          arrowDown
+          arrowColor="red"
+          pageTitle={pages["privacy-policy"].title}
+          color="white"
+          className="leading-none"
+        />
+      </ContainerContent>
+      <ContainerContent>
+        <div className="flex flex-col gap-3 font-poppins">
+          <p className="text-main-red">{pages["privacy-policy"].law}</p>
+          <p>{pages["privacy-policy"].content[0]}</p>
+          <p>{pages["privacy-policy"].content[1]}</p>
+          <p>{pages["privacy-policy"].content[2]}</p>
+          <p>{pages["privacy-policy"].content[3]}</p>
+          <p>{pages["privacy-policy"].content[4]}</p>
+        </div>
+      </ContainerContent>
       <StickyTracking lang={lang} />
     </section>
   );

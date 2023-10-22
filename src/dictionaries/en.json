@@ -62,6 +62,39 @@
       "lastText": "AND OTHER ELEMENTS CONTEMPLATED IN THE LAW",
       "additionalDescription": "The above prohibitions will be applied in accordance with current Colombian regulations and with those regulated by the Universal Postal Union and in accordance with the exceptions proposed therein."
     },
+    "privacy-policy": {
+      "title": "Privacy Notice for Personal Data Protection",
+      "law": "(Law 1581 of 2012 and Regulatory Decree 1377 of 2013)",
+      "content": [
+        "GRUPO LOGÍSTICO ESPECIALIZADO S.A.S. wishes to inform: That in compliance with Statutory Law 1581 of 2012, which establishes the 'General Data Protection Regime' and the Regulatory Decree 1377 of 2013, it respectfully requests your authorization so that in a free, prior, clear, express, voluntary, and duly informed manner, you allow the company to collect, store, use, process, compile, exchange, treat, update, and dispose of the personal data and/or commercial information that have been provided and incorporated into our databases.",
+        "This information is and will be used in the development of the company’s role. Holders of personal data (employees, suppliers, service providers, clients, natural and/or legal persons, and contractors) expressly and unequivocally authorize GRUPO LOGÍSTICO ESPECIALIZADO S.A.S to maintain and manage all their information unless they indicate otherwise directly, expressly, unequivocally, and in writing within thirty (30) business days from the receipt of this communication, to the following email address:",
+        "contacto@glecolombia.com.",
+        "We remind you that you have the possibility to access, update, and delete your data at any time, and you also have the right to expressly request a correction, under the terms established by law, by sending a written communication to the email:",
+        "contacto@glecolombia.com or by calling 601 6953631."
+      ]
+    },
+    "terms-&-conditions": {
+      "title": "Terms & Conditions",
+      "content": [
+        "By accessing this site, the user agrees to the following terms and use policies.",
+        "Regarding the content.",
+        "GLE COLOMBIA is not responsible for the use, understanding, and interpretation that users make of the content presented on www.glecolombia.com The content of these sites is developed by GLE COLOMBIA, or by an authorized third party, without compromising the thoughts or opinions of its advertisers or linked sites. GLE COLOMBIA reserves the right to modify the content, presentation, configuration, and/or services offered by itself or by an authorized third party, without prior notification to the user.",
+        "Liability Limit",
+        "The user assumes that no third party is responsible for any damages arising directly or indirectly from the existence, use, access, inability to use and/or to access this page or any of its links or connections.",
+        "GLE COLOMBIA and/or its suppliers do not warrant the accuracy or integrity of the information, software, products, and services presented on this site.",
+        "Consequently, the user agrees that they are solely responsible for the decisions made based on the information or materials found on this page or its links or connections.",
+        "GLE COLOMBIA assumes no responsibility for any damages that may arise from the use of its services and content, nor those that may arise from the lack of truthfulness, validity, thoroughness and/or authenticity of the information that the user provides about themselves.",
+        "Particularly, but not exclusively, GLE COLOMBIA is not responsible for any damages caused by an user involved in third-party impersonation, in any type of communication made through this website.",
+        "Similarly, damages caused by the presence of computer viruses and other harmful elements found in services provided by third parties and, in general, any negative consequence that may be caused by the provision of such services through this website are not the responsibility of GLE COLOMBIA.",
+        "Links to other sites on the Internet",
+        "The inclusion of links to other sites through www.glecolombia.com does not imply any relationship other than the 'link' itself. All transactions made on such links are the exclusive responsibility of the user and the related entity. Industrial or commercial property right: The user acknowledges that the content (text, software, music, photographs, video, graphics, or other material) that is part of the communications made by advertisers, or the information that is commercially produced and electronically distributed and presented to the user by GLE COLOMBIA, is protected by copyrights, trademarks, patents, and, in general, by various forms of property rights. The user may produce a copy of this content for personal use only, as long as all copyright notices are kept intact as well as the respective source is cited.",
+        "The user may not modify, copy, reproduce, upload, display, transmit, or distribute the content available through GLE COLOMBIA and its linked sites, including the source code and software, under penalty of incurring in civil and criminal liability, according to current regulations."
+      ]
+    },
+    "compensations": {
+      "title": "Compensation Procedure",
+      "text": "Compensation Process Document"
+    },
     "services": {
       "prohibitedTransport": "See prohibited shipments",
       "packaging": {
