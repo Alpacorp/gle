@@ -42,7 +42,7 @@ export const ProhibitedTransportShipments: FC<LangInterface> = async ({
               </p>
             </div>
           ))}
-          <div className="text-center bg-main-red text-white font-poppins p-2 rounded-xl">
+          <div className="text-center bg-main-red text-white font-poppins p-2 rounded-xl max-[400px]:text-sm max-[320px]:text-xs">
             <h3>{pages.prohibitedTransport.lastText}</h3>
           </div>
         </div>

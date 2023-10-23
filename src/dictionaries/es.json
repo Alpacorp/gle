@@ -99,8 +99,19 @@
       "title": "Procedimiento de Compensaciones",
       "text": "Documento de proceso de compensaciones"
     },
+    "pqrs": {
+      "title": "PQRS",
+      "locations": "Sedes",
+      "content": [
+        "GRUPO LOGISTICO ESPECIALIZADO S.A.S tiene a disposición de sus clientes el proceso de servicio al cliente que dispone de todos los medios requeridos para atender en forma integral sus peticiones, quejas, reclamos, recursos y solicitudes de indemnización.",
+        "Para tramitar una queja o reclamo el cliente debe suministrar los siguientes datos: el número de la guía, la fecha de imposición, la calidad de usuario (remitente o destinatario), el número del documento de identificación, la dirección y número telefónico y la descripción de los hechos.",
+        "A partir de la fecha de radicación GLE cuenta con 15 días hábiles para dar la respuesta, la cual será enviada a la dirección o mail suministrados por el cliente.",
+        "Cuando su requerimiento no pueda ser atendido en forma definitiva por nuestro servicio al cliente, dentro de los 15 días hábiles, este término podrá ampliarse cuando se requieran pruebas adicionales, lo cual le será comunicado por escrito, indicándole la nueva fecha en que se dará respuesta.",
+        "De conformidad con el Código Contencioso Administrativo y la Resolución 3038/10 de la CRC, Servientrega S.A., dispondrá de quince (15) días hábiles para notificar personalmente la respuesta, sobre la cual proceden los recursos de reposición y apelación."
+      ]
+    },
     "services": {
-      "prohibitedTransport": "Ver envíos de prohibido transporte",
+      "prohibitedTransport": "Ver envíos de prohibido transporte 1",
       "packaging": {
         "title": "Paqueteo",
         "mainDescription": {
@@ -130,7 +141,8 @@
       },
       "ecommerce": {
         "title": "E-Commerce",
-        "sideTextTitle": "Somos el mejor aliado para su E-commerce, hacemos entregas nacionales e internacionales",
+        "mainDescription": "Tenemos las mejores soluciones en cuanto a logística para e-commerce, si quieres potenciar tu negocio digital, esta es la mejor opción.",
+        "sideTextTitle": "Mensajería Expresa",
         "imageInfo": "Servicios logísticos de E-commerce",
         "additionDescription": {
           "1": "A nivel nacional e internacional.",
@@ -139,8 +151,12 @@
           "4":  "Entrega en domicilio.",
           "5":  "Cobertura nacional e internacional.",
           "6":  "Fulfillment.",
-          "7": "Pendiente de más contenido ..."
-        }
+          "7": "Nos especializamos en recoger documentos y paquetes hasta 5 kilos de peso físico o volumétrico."
+        },
+        "links": [
+          "Ver tarifas mensajería especializada",
+          "Ver envíos de prohibido transporte"
+        ]
       },
       "international": {
         "title": "G.L.E. Internacional",

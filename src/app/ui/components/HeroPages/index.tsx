@@ -36,7 +36,7 @@ export const HeroPages: FC<HeroPagesProps> = ({
           className="object-contain w-full max-[500px]:hidden"
         />
       ) : (
-        <div className={`h-[250px] w-full max-[400px]:h-[150px]`} />
+        <div className={`h-[250px] w-full max-[400px]:h-[170px]`} />
       )}
       {imagePathMobile && (
         <Image
@@ -63,11 +63,11 @@ export const HeroPages: FC<HeroPagesProps> = ({
             width={50}
             height={50}
             priority
-            className="w-[50px] h-[50px]"
+            className="w-[50px] h-[50px] mb-3"
           />
         )}
         <h1
-          className={`text-[40px] text-center font-semibold font-poppins max-[680px]:text-3xl max-[400px]:text-2xl max-[400px]:leading-6 ${
+          className={`text-[40px] text-center mx-2 font-semibold font-poppins max-[680px]:text-3xl max-[400px]:text-3xl max-[400px]:leading-7 ${
             color === "white" ? "text-black" : "text-white"
           } ${className}`}
         >

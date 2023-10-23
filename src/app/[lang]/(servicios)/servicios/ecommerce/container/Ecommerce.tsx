@@ -12,6 +12,7 @@ import StickyTracking from "@/src/app/ui/components/StickyTracking";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import { getDictionary } from "@/src/lib/dictionary";
+import Link from "next/link";
 
 export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -27,36 +28,27 @@ export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
       />
       <BodyServices
         lang={lang}
+        mainDescription={
+          <>
+            <p>{pages.services.ecommerce.mainDescription}</p>
+            <ul className="list-disc mt-5 ml-10">
+              <li>{pages.services.ecommerce.additionDescription[1]}</li>
+              <li>{pages.services.ecommerce.additionDescription[2]}</li>
+              <li>{pages.services.ecommerce.additionDescription[3]}</li>
+              <li>{pages.services.ecommerce.additionDescription[4]}</li>
+              <li>{pages.services.ecommerce.additionDescription[5]}</li>
+              <li>{pages.services.ecommerce.additionDescription[6]}</li>
+            </ul>
+          </>
+        }
         imageService={ecommerceImage}
         imageInfo={pages.services.ecommerce.imageInfo}
         sideTextTitle={pages.services.ecommerce.sideTextTitle}
         additionDescription={
-          <>
-            <ul>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[1]}</p>
-              </li>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[2]}</p>
-              </li>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[3]}</p>
-              </li>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[4]}</p>
-              </li>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[5]}</p>
-              </li>
-              <li>
-                <p>{pages.services.ecommerce.additionDescription[6]}</p>
-              </li>
-            </ul>
-            <br />
-            <p>{pages.services.ecommerce.additionDescription[7]}</p>
-          </>
+          <p>{pages.services.ecommerce.additionDescription[7]}</p>
         }
         buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
+        showRates
       />
       <StickyTracking lang={lang} />
     </section>

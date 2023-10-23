@@ -30,7 +30,7 @@ export const Different: FC<LangInterface> = ({ lang }) => {
         {data.map(({ id, descriptionEs, descriptionEn, color }) => (
           <div
             key={id}
-            className="flex flex-row justify-left items-start max-w-[400px] w-full gap-1"
+            className="flex flex-row justify-center items-start max-w-[400px] w-full gap-1"
           >
             {
               iconsDifferent.filter((icon) => icon.iconId === id)[0]
