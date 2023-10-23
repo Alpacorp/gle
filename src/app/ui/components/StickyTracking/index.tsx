@@ -8,7 +8,7 @@ import useTracking from "@/src/app/hooks/useTracking";
 
 interface StickyTrackingProps {
   observerActive?: boolean;
-  lang?: string;
+  lang: string;
 }
 
 const StickyTracking: FC<StickyTrackingProps> = ({

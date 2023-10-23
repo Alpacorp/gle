@@ -111,7 +111,7 @@ export const International: FC<LangInterface> = async ({ lang }) => {
             </div>
           </>
         }
-        buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
+        service={pages.services.international.title}
       />
       <StickyTracking lang={lang} />
     </section>

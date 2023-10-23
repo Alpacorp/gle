@@ -12,7 +12,6 @@ import StickyTracking from "@/src/app/ui/components/StickyTracking";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import { getDictionary } from "@/src/lib/dictionary";
-import Link from "next/link";
 
 export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -47,8 +46,8 @@ export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
         additionDescription={
           <p>{pages.services.ecommerce.additionDescription[7]}</p>
         }
-        buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
         showRates
+        service={pages.services.ecommerce.title}
       />
       <StickyTracking lang={lang} />
     </section>

@@ -35,6 +35,7 @@
       "@hooks/*": ["./src/app/hooks/*"],
       "@routes/*": ["./src/routes/*"],
       "@others/*": ["./src/app/[lang]/(others)/*"],
+      "@legales/*": ["./src/app/[lang]/(legales)/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

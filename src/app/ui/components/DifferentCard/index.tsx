@@ -18,7 +18,7 @@ export const DifferentCard: FC<DifferentCardProps> = ({
           backgroundColor === "white" && "bg-white text-black"
         } rounded-md`}
       >
-        <p>{description}</p>
+        <p className="font-poppins">{description}</p>
       </div>
     </div>
   );

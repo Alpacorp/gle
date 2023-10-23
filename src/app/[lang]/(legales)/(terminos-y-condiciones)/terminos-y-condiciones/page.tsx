@@ -1,7 +1,7 @@
 import { TermsConditions } from "./container/TermsConditions";
 import { Locale } from "@/i18n.config";
 
-const ProhibitedTransportPage = async ({
+const TermsConditionsPage = async ({
   params,
 }: {
   params: { lang: Locale };
@@ -9,4 +9,4 @@ const ProhibitedTransportPage = async ({
   return <TermsConditions lang={params.lang} />;
 };
 
-export default ProhibitedTransportPage;
+export default TermsConditionsPage;

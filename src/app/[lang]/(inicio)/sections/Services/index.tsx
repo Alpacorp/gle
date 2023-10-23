@@ -4,7 +4,7 @@ import Link from "next/link";
 
 import { Title } from "@/src/app/ui/components/Title";
 
-import { iconsServices } from "./IconsServices";
+import { iconsServices } from "@inicio/sections/Services/IconsServices";
 import { ArrowCta, ArrowGLE } from "@/src/app/ui/components/Icons";
 import volamos from "@public/assets/images/gle/volamos.svg";
 import {
@@ -13,7 +13,8 @@ import {
 } from "@public/assets/images/home/services/index";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
-import services from "./dataServices.json";
+
+import services from "@inicio/sections/Services/dataServices.json";
 
 export const Services: FC<LangInterface> = ({ lang }) => {
   return (
@@ -52,52 +53,54 @@ export const Services: FC<LangInterface> = ({ lang }) => {
             </div>
             <div className="flex justify-evenly gap-6 items-center flex-wrap">
               {services.map(({ id, nameEs, nameEn, url, linkEs, linkEn }) => (
-                <div
+                <Link
                   key={id}
-                  className="rounded-2xl overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
+                  href={`/${lang}${lang === "es" ? linkEs : linkEn}`}
                 >
-                  <div className="relative h-[438px] w-[262px]">
-                    <Image
-                      src={url}
-                      alt={lang === "es" ? nameEs : nameEn}
-                      fill
-                      sizes="
+                  <div
+                    key={id}
+                    className="rounded-2xl overflow-hidden shadow-card-shadow relative mt-10 hover:scale-105 transition-transform"
+                  >
+                    <div className="relative h-[438px] w-[262px]">
+                      <Image
+                        src={url}
+                        alt={lang === "es" ? nameEs : nameEn}
+                        fill
+                        sizes="
                         (max-width: 640px) 100vw,
                         (max-width: 768px) 100vw,
                         (max-width: 1024px) 100vw,
                         (max-width: 1280px) 100vw,
                         (max-width: 1536px) 100vw,
                       "
-                      priority
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-                  </div>
-                  <div className="flex flex-col justify-center items-center p-4 absolute bottom-0 left-0 w-full text-white text-center">
-                    <div>
-                      {
-                        iconsServices.filter(
-                          (icon: any) => icon.iconId === id
-                        )[0].iconComponentService
-                      }
+                        priority
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                     </div>
-                    <h2 className="text-2xl font-poppins font-semibold text-white mt-2">
-                      {lang === "es" ? nameEs : nameEn}
-                    </h2>
-                    <Link
-                      href={`/${lang}${lang === "es" ? linkEs : linkEn}`}
-                      className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors"
-                    >
-                      <ArrowCta
-                        stroke="#D81730"
-                        className="-rotate-90 w-[30px] h-[27px]"
-                      />{" "}
-                      <span className="ml-3">
-                        {lang === "es" ? "Conoce más" : "Learn more"}
-                      </span>
-                    </Link>
+                    <div className="flex flex-col justify-center items-center p-4 absolute bottom-0 left-0 w-full text-white text-center">
+                      <div>
+                        {
+                          iconsServices.filter(
+                            (icon: any) => icon.iconId === id
+                          )[0].iconComponentService
+                        }
+                      </div>
+                      <h2 className="text-2xl font-poppins font-semibold text-white mt-2">
+                        {lang === "es" ? nameEs : nameEn}
+                      </h2>
+                      <div className="flex items-center justify-between text-main-red font-poppins text-xl font-normal px-4 py-2 mt-4 hover:text-white transition-colors">
+                        <ArrowCta
+                          stroke="#D81730"
+                          className="-rotate-90 w-[30px] h-[27px]"
+                        />{" "}
+                        <span className="ml-3">
+                          {lang === "es" ? "Conoce más" : "Learn more"}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             <div className="relative flex items-center justify-around flex-wrap-reverse gap-5 mt-10">

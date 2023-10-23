@@ -1,8 +1,8 @@
-import { Compensations } from "../compensaciones/container/Compensations";
+import { Compensations } from "@legales/(compensaciones)/compensaciones/container/Compensations";
 import { Locale } from "@/i18n.config";
 
-const BulkLoadPage = async ({ params }: { params: { lang: Locale } }) => {
+const CompensationsPage = async ({ params }: { params: { lang: Locale } }) => {
   return <Compensations lang={params.lang} />;
 };
 
-export default BulkLoadPage;
+export default CompensationsPage;

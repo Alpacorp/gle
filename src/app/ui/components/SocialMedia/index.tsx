@@ -5,12 +5,12 @@ import { FacebookIcon, LinkedInIcon, YouTubeIcon } from "@ui/components/Icons";
 
 interface SocialMediaProps {
   align: "center" | "start" | "end";
-  lang?: string;
+  lang: string;
 }
 
 export const SocialMedia: FC<SocialMediaProps> = ({ align, lang }) => {
   return (
-    <div className={`flex flex-col items-${align} mt-16 gap-6`}>
+    <div className={`flex flex-col items-${align} mt-8 gap-6`}>
       <h3 className="font-semibold font-poppins">
         {lang === "es" ? "Síguenos" : "Follow us"}
       </h3>

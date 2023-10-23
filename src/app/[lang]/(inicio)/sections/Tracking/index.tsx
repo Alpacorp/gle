@@ -5,8 +5,7 @@ import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import useTracking from "@hooks/useTracking";
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
-  const [handleInputChange, handleTracking, trackingNumber, setTrackingNumber] =
-    useTracking(lang);
+  const [handleInputChange, handleTracking, trackingNumber] = useTracking(lang);
 
   return (
     <section id="tracking" className="flex justify-center border-0">
@@ -21,26 +20,13 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             <input
               type="number"
               className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm"
-              placeholder={
-                lang === "es"
-                  ? "Ingrese su número de guía"
-                  : "Enter your tracking number"
-              }
+              placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
               name="tracking-input"
               id="tracking-input"
               value={trackingNumber}
               onChange={handleInputChange}
               required
             />
-            {trackingNumber && (
-              <button
-                className="absolute left-1 top-[10px] cursor-pointer flex items-center justify-center text-white bg-main-gray p-1 text-xl font-poppins rounded-sm leading-[1]"
-                onClick={() => setTrackingNumber("")}
-                title={lang === "es" ? "Limpiar" : "Clear"}
-              >
-                X
-              </button>
-            )}
           </div>
           <button
             onClick={() => handleTracking("tracking")}

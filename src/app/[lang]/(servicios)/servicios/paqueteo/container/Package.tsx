@@ -45,7 +45,7 @@ export const Package: FC<LangInterface> = async ({ lang }) => {
             <p>{pages.services.packaging.additionDescription[3]}</p>
           </>
         }
-        buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
+        service={pages.services.packaging.title}
       />
       <StickyTracking lang={lang} />
     </section>
