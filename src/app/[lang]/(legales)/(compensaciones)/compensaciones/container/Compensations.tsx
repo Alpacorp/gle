@@ -29,7 +29,7 @@ export const Compensations: FC<LangInterface> = async ({ lang }) => {
           allowFullScreen
           className="w-full"
         ></iframe>
-        <div className="flex justify-center font-poppins my-5">
+        <div className="flex justify-center text-center font-poppins my-5">
           <Link
             href="/assets/images/compensations/document.pdf"
             target="_blank"

@@ -89,12 +89,24 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
               : "Compensation procedure"}
           </Link>
           <Link
-            href={`/${lang}/pqrs`}
+            href={lang === "es" ? `/${lang}/pqrs` : `/${lang}/claims`}
             className="hover:underline hover:underline-offset-8"
           >
             {lang === "es"
               ? "Proceso PQR’S e Indemnizaciones"
               : "PQR’S and Compensation process"}
+          </Link>
+          <Link
+            href={
+              lang === "es"
+                ? `/${lang}/prohibido-transporte`
+                : `/${lang}/transportation-prohibited`
+            }
+            className="hover:underline hover:underline-offset-8"
+          >
+            {lang === "es"
+              ? "Envíos de prohibido transporte"
+              : "Prohibited transport shipments"}
           </Link>
         </div>
         <div className="flex gap-3 flex-wrap">
@@ -108,9 +120,12 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 height={40}
                 className="aspect-video"
               />
-              <TextInfo>Correo:</TextInfo>
-              <TextInfo>Contacto:</TextInfo>
-              <TextInfo>Teléfono SuperTransporte:</TextInfo>
+              <TextInfo>
+                Diagonal 26 G # 95 A - 85 Torre 3 Piso 1, Bogotá
+              </TextInfo>
+              <TextInfo>+57 (601) 352 6700</TextInfo>
+              <TextInfo>01 8000 915615</TextInfo>
+              <TextInfo>atencionciudadano@supertransporte.gov.co</TextInfo>
             </div>
           </div>
           <div>
@@ -123,9 +138,10 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 height={40}
                 className="aspect-video"
               />
-              <TextInfo>Correo:</TextInfo>
-              <TextInfo>Contacto:</TextInfo>
-              <TextInfo>Teléfono SuperTransporte:</TextInfo>
+              <TextInfo>Cra. 8a entre calles 12 A y 12 B, Bogotá</TextInfo>
+              <TextInfo>+57 (601) 344 3460</TextInfo>
+              <TextInfo>01 8000 914014</TextInfo>
+              <TextInfo>minticresponde@mintic.gov.co</TextInfo>
             </div>
           </div>
           <div>
@@ -138,10 +154,10 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 height={40}
                 className="aspect-video"
               />
-              <TextInfo>Carrera 13 No. 27 - 00, Pisos 1 y 3</TextInfo>
-              <TextInfo>Contact center+57 (601) 592 0400 Bogotá</TextInfo>
-              <TextInfo>Línea Gratuita Nacional: 01 8000 910165</TextInfo>
-              <TextInfo>Correo Institucional: contactenos@sic.gov.co</TextInfo>
+              <TextInfo>Carrera 13 No. 27 - 00, Pisos 1 y 3, Bogotá</TextInfo>
+              <TextInfo>+57 (601) 592 0400</TextInfo>
+              <TextInfo>01 8000 910165</TextInfo>
+              <TextInfo>contactenos@sic.gov.co</TextInfo>
             </div>
           </div>
         </div>

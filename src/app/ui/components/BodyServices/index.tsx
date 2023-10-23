@@ -2,10 +2,11 @@ import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
 import { ArrowCta, ArrowGLE } from "..";
-import { ProhibitedTransport } from "../ProhibitedTransport";
+import { AttachedLinks } from "../AttachedLinks";
 
 interface BodyServicesProps {
   lang?: string;
+  showRates?: boolean;
   buttonText: string;
   imageInfo: string;
   imageService: StaticImageData;
@@ -22,6 +23,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
   mainDescription,
   additionDescription,
   sideTextTitle,
+  showRates = false,
 }) => {
   return (
     <div className="relative z-20">
@@ -49,11 +51,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
           <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
           {buttonText}
         </button>
-        <ProhibitedTransport>
-          {lang === "es"
-            ? "Ver envíos de prohibido transporte"
-            : "See prohibited transport shipments"}
-        </ProhibitedTransport>
+        <AttachedLinks lang={lang} showRates={showRates} />
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
     </div>
