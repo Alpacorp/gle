@@ -8,7 +8,7 @@ import { TextBanner, LeftArrow, RightArrow } from "@ui/components/index";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 
-import images from "./dataSilders.json";
+import images from "@inicio/sections/ImageSlider/dataSilders.json";
 
 interface ImageData {
   id: number;

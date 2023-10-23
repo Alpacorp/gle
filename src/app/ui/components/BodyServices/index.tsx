@@ -1,13 +1,14 @@
 import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
-import { ArrowCta, ArrowGLE } from "..";
+import { ArrowGLE } from "..";
 import { AttachedLinks } from "../AttachedLinks";
+import { ButtonQuote } from "../ButtonQuote";
 
 interface BodyServicesProps {
-  lang?: string;
+  lang: string;
   showRates?: boolean;
-  buttonText: string;
+  service: string;
   imageInfo: string;
   imageService: StaticImageData;
   mainDescription?: React.ReactNode;
@@ -17,12 +18,12 @@ interface BodyServicesProps {
 
 export const BodyServices: FC<BodyServicesProps> = ({
   lang = "es",
-  buttonText,
   imageInfo,
   imageService,
   mainDescription,
   additionDescription,
   sideTextTitle,
+  service,
   showRates = false,
 }) => {
   return (
@@ -47,10 +48,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
         <div className="absolute z-auto top-44 left-0 max-[600px]:hidden">
           <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
         </div>
-        <button className="flex border-2 bg-white border-secondary-gray rounded-lg px-10 py-2 my-20 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out">
-          <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
-          {buttonText}
-        </button>
+        <ButtonQuote service={service} lang={lang} />
         <AttachedLinks lang={lang} showRates={showRates} />
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />

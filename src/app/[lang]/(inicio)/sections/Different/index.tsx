@@ -2,13 +2,13 @@ import { FC } from "react";
 import Image from "next/image";
 
 import { Title, DifferentCard } from "@ui/components/index";
-import { iconsDifferent } from "./IconsDifferent";
+import { iconsDifferent } from "@inicio/sections/Different/IconsDifferent";
 import { ArrowCta } from "@icons/index";
 
 import { phone1, phone2 } from "@public/assets/images/home/different/index";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import data from "./dataDifferent.json";
+import data from "@inicio/sections/Different/dataDifferent.json";
 
 export const Different: FC<LangInterface> = ({ lang }) => {
   return (

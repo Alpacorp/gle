@@ -44,7 +44,7 @@ export const BulkCargo: FC<LangInterface> = async ({ lang }) => {
             <p>{pages.services.bulkCargo.additionDescription[1]}</p>
           </>
         }
-        buttonText={lang === "es" ? "Cotización Servicio" : "Service Quote"}
+        service={pages.services.bulkCargo.title}
       />
       <StickyTracking lang={lang} />
     </section>

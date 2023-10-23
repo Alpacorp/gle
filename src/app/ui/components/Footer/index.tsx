@@ -18,7 +18,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
       <div>
         <SocialMedia lang={lang} align="center" />
       </div>
-      <div className="bg-secondary-gray py-9 px-10 flex flex-wrap gap-4 justify-between items-center text-white font-poppins mt-9 max-[1000px]:justify-center">
+      <div className="bg-secondary-gray py-9 px-10 flex flex-wrap gap-4 justify-around items-center text-white font-poppins mt-9 max-[1000px]:justify-center">
         <div>
           <div className="flex mb-5 max-[990px]:justify-center">
             <GleLogoWhite />
@@ -109,7 +109,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
               : "Prohibited transport shipments"}
           </Link>
         </div>
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap max-[400px]:mt-4">
           <div>
             <div>
               <Image
@@ -118,7 +118,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 src={SuperTransporte}
                 width={140}
                 height={40}
-                className="aspect-video"
+                className="aspect-auto mb-4"
               />
               <TextInfo>
                 Diagonal 26 G # 95 A - 85 Torre 3 Piso 1, Bogotá
@@ -136,7 +136,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 src={Mintic}
                 width={140}
                 height={40}
-                className="aspect-video"
+                className="aspect-auto mb-4"
               />
               <TextInfo>Cra. 8a entre calles 12 A y 12 B, Bogotá</TextInfo>
               <TextInfo>+57 (601) 344 3460</TextInfo>
@@ -152,7 +152,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
                 src={Sic}
                 width={140}
                 height={40}
-                className="aspect-video"
+                className="aspect-auto mb-4"
               />
               <TextInfo>Carrera 13 No. 27 - 00, Pisos 1 y 3, Bogotá</TextInfo>
               <TextInfo>+57 (601) 592 0400</TextInfo>
@@ -162,7 +162,7 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
           </div>
         </div>
       </section>
-      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm py-6 px-10 max-[400px]:justify-center max-[400px]:pb-20">
+      <section className="flex justify-around items-center font-inter flex-wrap gap-3 bg-main-red text-white text-sm pb-6 px-10 max-[400px]:justify-center max-[400px]:pb-20">
         <div className="pt-4">
           <hr className="m-auto border-white w-1/3" />
           <h5 className="pt-4">

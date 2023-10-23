@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { Title } from "@ui/components/index";
 import { ArrowGLE } from "@icons/index";
-import { iconsWeAre } from "./IconsWeAre";
+import { iconsWeAre } from "@inicio/sections/WeAreGLE/IconsWeAre";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import data from "./dataWeAre.json";
+import data from "@inicio/sections/WeAreGLE/dataWeAre.json";
 
 export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
   const hightWords = [

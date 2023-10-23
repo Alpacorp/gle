@@ -1,4 +1,4 @@
-import { Compensations } from "./container/Compensations";
+import { Compensations } from "@legales/(compensaciones)/compensaciones/container/Compensations";
 import { Locale } from "@/i18n.config";
 
 const ProhibitedTransportPage = async ({

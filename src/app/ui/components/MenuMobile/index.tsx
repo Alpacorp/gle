@@ -59,7 +59,7 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
             ))}
           </ul>
         </nav>
-        <SocialMedia align="start" />
+        <SocialMedia align="start" lang={lang} />
       </div>
     </>
   );

@@ -1,8 +1,8 @@
-import { Pqrs } from "../pqrs/container/Pqrs";
+import { Pqrs } from "@legales/(pqrs)/pqrs/container/Pqrs";
 import { Locale } from "@/i18n.config";
 
-const BulkLoadPage = async ({ params }: { params: { lang: Locale } }) => {
+const PqrsPage = async ({ params }: { params: { lang: Locale } }) => {
   return <Pqrs lang={params.lang} />;
 };
 
-export default BulkLoadPage;
+export default PqrsPage;
