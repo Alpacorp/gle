@@ -18,8 +18,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
   const [showTrackingIcon, showTrackingForm, showTrackingFormHandler] =
     useObserverTracking(observerActive);
 
-  const [handleInputChange, handleTracking, trackingNumber, setTrackingNumber] =
-    useTracking(lang);
+  const [handleInputChange, handleTracking, trackingNumber] = useTracking(lang);
 
   return (
     <>
@@ -66,15 +65,6 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                     onChange={handleInputChange}
                     required
                   />
-                  {trackingNumber && (
-                    <button
-                      className="absolute left-[10px] top-[18px] cursor-pointer flex items-center justify-center text-white bg-main-gray p-1 text-xl font-poppins rounded-sm leading-[1]"
-                      onClick={() => setTrackingNumber("")}
-                      title={lang === "es" ? "Limpiar" : "Clear"}
-                    >
-                      X
-                    </button>
-                  )}
                 </div>
                 <button
                   onClick={() => handleTracking("sticky-tracking")}
