@@ -30,6 +30,39 @@ export const metadata: Metadata = {
   title: "G.L.E. Grupo Logístico Especializado",
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
+  viewport:
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+  openGraph: {
+    type: "website",
+    locale: "es_CO",
+    url: "https://www.glecolombia.com/",
+    siteName: "G.L.E. Grupo Logístico Especializado",
+    title: "G.L.E. Grupo Logístico Especializado",
+    description: "Volamos para que llegues más rápido",
+    images: [
+      {
+        url: "/public/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "G.L.E. Grupo Logístico Especializado",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    site: "@glecolombia",
+    creator: "@glecolombia",
+    title: "G.L.E. Grupo Logístico Especializado",
+    description: "Volamos para que llegues más rápido",
+    images: [
+      {
+        url: "/public/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "G.L.E. Grupo Logístico Especializado",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -41,13 +74,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <Head>
-        <GlobalScripts />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-      </Head>
+      <GlobalScripts />
       <ContextProvider>
         <body
           className={`${poppins.variable} ${inter.variable}`}
