@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Head from "next/head";
 import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
     description: "Volamos para que llegues más rápido",
     images: [
       {
-        url: "/public/favicon.ico",
+        url: "/favicon.ico",
         width: 1200,
         height: 630,
         alt: "G.L.E. Grupo Logístico Especializado",
@@ -54,14 +53,7 @@ export const metadata: Metadata = {
     creator: "@glecolombia",
     title: "G.L.E. Grupo Logístico Especializado",
     description: "Volamos para que llegues más rápido",
-    images: [
-      {
-        url: "/public/favicon.ico",
-        width: 1200,
-        height: 630,
-        alt: "G.L.E. Grupo Logístico Especializado",
-      },
-    ],
+    images: ["/favicon.ico"],
   },
 };
 
@@ -74,7 +66,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <GlobalScripts />
+      <head>
+        <GlobalScripts />
+      </head>
       <ContextProvider>
         <body
           className={`${poppins.variable} ${inter.variable}`}
