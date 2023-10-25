@@ -6,7 +6,7 @@
     "phone": "+6016953631",
     "type": "phone",
     "address": "Avenida carrera 70 No. 48 - 45 Barrio Normandía",
-    "maps": "de7ypM7aDyFAfyKa7"
+    "maps": "https://maps.app.goo.gl/Tm9nyVR9ea3pQ6vD9"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "phone": "+6044795931",
     "type": "phone",
     "address": "Calle 7d No. 43ª - 99 / Of. 1305 Edificio Almagran (El Poblado)",
-    "maps": "CwfFAh4WSy5oDqEt8"
+    "maps": "https://maps.app.goo.gl/vKVvVkV5XWKYfVo5A"
   },
   {
     "id": 3,
@@ -24,6 +24,15 @@
     "phone": "+573148159573",
     "type": "phone",
     "address": "Calle 74 No. 56 - 36 / Of. 601 Centro Empresarial Inverfin",
-    "maps": "a1tZLNUukXR2zzew9"
+    "maps": "https://maps.app.goo.gl/2ddCgycSePqeFLJV9"
+  },
+  {
+    "id": 4,
+    "city": "Cali",
+    "phoneText": "+57 3160185734",
+    "phone": "+573160185734",
+    "type": "phone",
+    "address": "Avenida 6A Bis # 35N - 100 Centro Empresarial Chipichape Oficina 615",
+    "maps": "https://maps.app.goo.gl/2Ljzj5dXWoJRTfow5"
   }
 ]

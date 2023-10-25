@@ -7,7 +7,7 @@ interface AddressProps {
   city: string;
   phone: string;
   phoneText?: string;
-  maps: string | null;
+  maps: string;
   type: string;
 }
 
@@ -35,11 +35,7 @@ export const Address: FC<AddressProps> = ({
         {phoneText}
       </Link>
       <br />
-      <Link
-        href={`https://goo.gl/maps/${maps}`}
-        target="_blank"
-        className="hover:text-orange-400"
-      >
+      <Link href={maps} target="_blank" className="hover:text-orange-400">
         {address}
       </Link>
     </div>
