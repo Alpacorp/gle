@@ -59,12 +59,14 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
           <Link
             href={
               lang === "es"
-                ? `/${lang}/aviso-de-privacidad`
-                : `/${lang}/privacy-policy`
+                ? `/${lang}/proteccion-datos-personales`
+                : `/${lang}/personal-data-protection`
             }
             className="hover:underline hover:underline-offset-8"
           >
-            {lang === "es" ? "Aviso de privacidad" : "Privacy policy"}
+            {lang === "es"
+              ? "Protección de datos personales"
+              : "Personal data protection"}
           </Link>
           <Link
             href={
@@ -74,7 +76,9 @@ export const Footer: FC<LangInterface> = ({ lang }) => {
             }
             className="hover:underline hover:underline-offset-8"
           >
-            {lang === "es" ? "Términos y condiciones" : "Terms and conditions"}
+            {lang === "es"
+              ? "Términos y condiciones de servicio"
+              : "Terms of service"}
           </Link>
           <Link
             href={

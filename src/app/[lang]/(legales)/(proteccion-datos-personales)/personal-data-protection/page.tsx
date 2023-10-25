@@ -1,4 +1,4 @@
-import { PrivacyPolicy } from "@legales/(aviso-de-privacidad)/aviso-de-privacidad/container/PrivacyPolicy";
+import { PrivacyPolicy } from "@legales/(proteccion-datos-personales)/proteccion-datos-personales/container/PrivacyPolicy";
 import { Locale } from "@/i18n.config";
 
 const PrivacyPolicyPage = async ({ params }: { params: { lang: Locale } }) => {

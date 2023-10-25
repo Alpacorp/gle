@@ -51,8 +51,8 @@
   },
   {
     "id": 3,
-    "textEs": "Contacto",
-    "textEn": "Contact",
+    "textEs": "Contáctanos",
+    "textEn": "Contact Us",
     "linkEs": "/contacto",
     "linkEn": "/contact",
     "type": "link"
