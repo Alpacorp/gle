@@ -93,7 +93,7 @@ export const International: FC<LangInterface> = async ({ lang }) => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mt-10">
+            <div className="flex flex-wrap justify-center gap-4 my-10">
               <ImportExportIcon className="flex-none" />
               <div className="flex justify-center flex-col">
                 <div>

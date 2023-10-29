@@ -36,15 +36,6 @@ export const Package: FC<LangInterface> = async ({ lang }) => {
         imageService={packageImage}
         imageInfo={pages.services.packaging.imageInfo}
         sideTextTitle={pages.services.packaging.sideTextTitle}
-        additionDescription={
-          <>
-            <p>{pages.services.packaging.additionDescription[1]}</p>
-            <br />
-            <p>{pages.services.packaging.additionDescription[2]}</p>
-            <br />
-            <p>{pages.services.packaging.additionDescription[3]}</p>
-          </>
-        }
         service={pages.services.packaging.title}
       />
       <StickyTracking lang={lang} />

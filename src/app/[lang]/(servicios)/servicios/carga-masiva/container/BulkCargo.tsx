@@ -39,11 +39,6 @@ export const BulkCargo: FC<LangInterface> = async ({ lang }) => {
         imageService={bulkCargoImage}
         imageInfo={pages.services.bulkCargo.imageInfo}
         sideTextTitle={pages.services.bulkCargo.sideTextTitle}
-        additionDescription={
-          <>
-            <p>{pages.services.bulkCargo.additionDescription[1]}</p>
-          </>
-        }
         service={pages.services.bulkCargo.title}
       />
       <StickyTracking lang={lang} />

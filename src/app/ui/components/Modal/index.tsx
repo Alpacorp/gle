@@ -30,7 +30,7 @@ export const Modal: FC<LangInterface> = ({ lang }) => {
             </h2>
             <div className="flex justify-center gap-3 items-center mb-3 max-[550px]:flex-col-reverse">
               <ArrowCta stroke="#D81730" className="w-6 h-4" />
-              <h3 className="text-xl text-center font-semibold !leading-5 font-poppins max-[480px]:text-lg">
+              <h3 className="text-xl text-center font-semibold !leading-5 px-5 font-poppins max-[480px]:text-lg">
                 {lang === "es"
                   ? "Te invitamos a conocer nuestra razón de ser"
                   : "We invite you to know our reason for being"}

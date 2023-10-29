@@ -18,7 +18,7 @@ export const ButtonQuote: FC<ButtonQuoteProps> = ({ lang, service }) => {
             `"${service}"`)
       }
       target="_blank"
-      className="flex border-2 bg-white border-secondary-gray rounded-lg px-10 py-2 my-20 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out"
+      className="flex border-2 bg-white border-secondary-gray rounded-lg px-10 py-2 my-5 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out"
     >
       <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
       {lang === "es" ? "Cotiza este Servicio" : "Quote this Service"}
