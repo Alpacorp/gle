@@ -122,8 +122,7 @@
         "imageInfo": "Operario logístico en bodega",
         "additionDescription": {
           "1": "Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.",
-          "2": "Cubrimos todo el territorio nacional.",
-          "3": "Pendiente de más contenido ..."
+          "2": "Cubrimos todo el territorio nacional."
         }
       },
       "bulkCargo": {
@@ -135,9 +134,7 @@
         },
         "sideTextTitle": "Contamos con vehículos dedicados para movilizacion de mercancías",
         "imageInfo": "Operarios logísticos en coordinación de carga",
-        "additionDescription": {
-          "1": "Pendiente información ..."
-        }
+        "additionDescription": {}
       },
       "ecommerce": {
         "title": "E-Commerce",

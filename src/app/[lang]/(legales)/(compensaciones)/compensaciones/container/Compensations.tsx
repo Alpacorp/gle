@@ -31,7 +31,7 @@ export const Compensations: FC<LangInterface> = async ({ lang }) => {
         ></iframe>
         <div className="flex justify-center text-center font-poppins my-5">
           <Link
-            href="/assets/images/compensations/document.pdf"
+            href="/assets/images/compensations/proceso-de-compensaciones-Gle-Colombia.pdf"
             target="_blank"
             className="flex justify-center items-center max-w-[400px] w-full text-white bg-main-gray rounded-xl px-4 py-2 gap-2"
           >

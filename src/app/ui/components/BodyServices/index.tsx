@@ -12,7 +12,7 @@ interface BodyServicesProps {
   imageInfo: string;
   imageService: StaticImageData;
   mainDescription?: React.ReactNode;
-  additionDescription: React.ReactNode | string;
+  additionDescription?: React.ReactNode | string;
   sideTextTitle: string;
 }
 
@@ -27,7 +27,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
   showRates = false,
 }) => {
   return (
-    <div className="relative z-20">
+    <div className="relative z-20 mb-32">
       <div className="flex flex-col mt-14 px-6 max-w-[896px] w-full m-auto justify-center font-poppins items-center max-[400px]:mt-5">
         <div className="text-xl max-[400px]:text-lg">{mainDescription}</div>
         <div className="flex justify-center items-center w-full my-20 flex-wrap gap-12 max-[400px]:my-10">

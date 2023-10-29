@@ -118,8 +118,7 @@
         "imageInfo": "Logistics operator in warehouse",
         "additionDescription": {
           "1": "Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.",
-          "2": "We cover the entire national territory.",
-          "3": "Pending more content..."
+          "2": "We cover the entire national territory."
         }
       },
       "bulkCargo": {
@@ -131,9 +130,7 @@
         },
         "sideTextTitle": "We have vehicles dedicated for mobilization of goods",
         "imageInfo": "Logistics operators coordinating cargo",
-        "additionDescription": {
-          "1": "Pending info..."
-        }
+        "additionDescription": {}
       },
       "ecommerce": {
         "title": "E-Commerce",
