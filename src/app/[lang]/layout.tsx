@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
-import { Footer } from "@ui/components/";
+import { Footer, Modal } from "@ui/components/";
 import { GlobalScripts } from "../scripts/GlobalScripts";
 
 import { Locale } from "@/i18n.config";
@@ -75,6 +75,7 @@ export default function RootLayout({
           suppressHydrationWarning
         >
           <GtmBodyScript />
+          <Modal lang={params.lang} />
           <Header lang={params.lang} />
           {children}
           <Footer lang={params.lang} />
