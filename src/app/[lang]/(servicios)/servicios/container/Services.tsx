@@ -1,11 +1,15 @@
 import { FC } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+import { ArrowCta, HeroPages } from "@/src/app/ui/components";
+import { Check } from "@/src/app/ui/components/Icons/Check";
+import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
+import { operate } from "@/public/assets/images/services";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import { getDictionary } from "@/src/lib/dictionary";
-import { HeroPages } from "@/src/app/ui/components";
-import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
-import Image from "next/image";
-import { operate } from "@/public/assets/images/services";
+import { Contract } from "@/src/app/ui/components/Icons/Contract";
 
 export const Services: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -27,20 +31,49 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
         <br />
         <p className="font-bold">{pages.services.description[1]}</p>
       </div>
-      <div className="relative">
-        <Image
-          src={operate}
-          alt="valores"
-          title="valores G.L.E."
-          width={450}
-          height={637}
-          priority
-          className="aspect-auto rounded-2xl max-w-[430px] w-full"
-        />
-        <div
-          title="Valores G.L.E."
-          className="absolute z-20 inset-0 bottom-0 top-0 bg-gradient-to-t from-white to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat"
-        />
+      <div className="flex gap-8 justify-center items-center px-[120px] mt-14 max-[1000px]:flex-wrap max-[550px]:px-5 max-[380px]:px-[24px]">
+        <div className="relative flex flex-1 justify-center max-w-[300px] w-full max-[720px]:flex-auto max-[720px]:flex-grow-0">
+          <Image
+            src={operate}
+            alt="valores"
+            title="valores G.L.E."
+            width={300}
+            height={637}
+            priority
+            className="aspect-auto rounded-2xl"
+          />
+        </div>
+        <div className="flex flex-wrap flex-1 gap-5 items-start justify-center px-5 max-[720px]:flex-auto max-[720px]:mt-5">
+          {pages.services["how-operate"].map((item: string) => (
+            <div
+              key={item}
+              className="flex flex-col justify-center items-center max-w-[300px] w-full gap-2 px-4 py-2"
+            >
+              <Check
+                fill={
+                  pages.services["how-operate"].indexOf(item) % 2 === 0
+                    ? "#D81730"
+                    : "#313131"
+                }
+                className="w-9"
+              />
+              <p className="text-base font-poppins font-normal max-w-[300px]">
+                {item}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center text-center font-poppins my-20 px-5">
+        <Link
+          href="/assets/images/services/contrato-prestacion-servicios-postales.pdf"
+          target="_blank"
+          className="flex text-sm justify-center items-center max-w-[650px] w-full text-white bg-main-gray rounded-xl px-4 py-2 gap-2"
+        >
+          <Contract />
+          <ArrowCta className="w-7 h-7 -rotate-90" stroke="#D81730" />
+          {pages.services.contract}
+        </Link>
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
     </section>

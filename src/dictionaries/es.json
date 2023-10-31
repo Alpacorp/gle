@@ -112,7 +112,9 @@
     },
     "services": {
       "title": "Servicios Especializados",
-      "description": ["Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.", "Cubrimos todo el territorio nacional."],
+      "description": ["Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.", "Cubrimos todo el territorio nacional"],
+      "how-operate": ["Generamos acuerdos operativos que permiten definir los compromisos entre las partes.", "Recolección de paquetes y mercancías en las bodegas de nuestros clientes (tanto para paqueteo como vehículos dedicados).", "Distribución y entrega de los productos de nuestros clientes en diferentes destinos a nivel nacional e internacional.", "Generación de guías y manifiestos de acuerdo con las necesidades logísticas.", "Logística Inversa.", "Contamos con un sistema de integración aGILE que le permite a nuestros clientes tener  trazabilidad de la información en línea."],
+      "contract": "VER CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ENVÍOS",
       "packaging": {
         "title": "Paqueteo",
         "mainDescription": {
