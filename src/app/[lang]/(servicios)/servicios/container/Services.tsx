@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowCta, HeroPages } from "@/src/app/ui/components";
 import { Check } from "@/src/app/ui/components/Icons/Check";
 import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
+import StickyTracking from "@/src/app/ui/components/StickyTracking";
 import { operate } from "@/public/assets/images/services";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
@@ -26,7 +27,7 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
       <div className="flex justify-evenly gap-6 items-center flex-wrap">
         <ServicesContainer lang={lang} />
       </div>
-      <div className="max-w-xl mx-auto my-20 text-center text-xl font-poppins font-normal">
+      <div className="max-w-xl mx-auto my-20 px-5 text-center text-xl font-poppins font-normal">
         <p>{pages.services.description[0]}</p>
         <br />
         <p className="font-bold">{pages.services.description[1]}</p>
@@ -76,6 +77,7 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
         </Link>
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
+      <StickyTracking lang={lang} />
     </section>
   );
 };
