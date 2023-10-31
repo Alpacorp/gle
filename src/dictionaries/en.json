@@ -108,7 +108,9 @@
     },
     "services": {
       "title": "Specialized services",
-      "description": ["Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.", "We cover the entire national territory."],
+      "description": ["Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.", "We cover the entire national territory"],
+      "how-operate": ["We generate operating agreements that allow us to define the commitments between the parties.", "Collection of packages and merchandise from our clients' warehouses (both for packaging and dedicated vehicles).", "Distribution and delivery of our clients' products in different destinations nationally and internationally.", "Generation of guides and manifests according to logistical needs.", "Reverse Logistics.", "We have an aGILE integration system that allows our clients to have online information traceability."],
+      "contract": "SEE CONTRACT FOR THE PROVISION OF SHIPPING TRANSPORTATION SERVICES",
       "packaging": {
         "title": "Packaging",
         "mainDescription": {
