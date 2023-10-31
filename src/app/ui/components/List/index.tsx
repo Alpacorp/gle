@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import { SubMenu } from "@ui/components/SubMenu";
 import { OpenSubMenu } from "@ui/components/OpenSubMenu";
-import { iconsServices } from "@/src/app/[lang]/(inicio)/sections/Services/IconsServices";
+import { iconsServices } from "@/src/app/ui/components/ServicesContainer/IconsServices";
 
 import useList from "@ui/components/List/hooks/useList";
 

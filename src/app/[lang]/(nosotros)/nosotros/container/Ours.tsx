@@ -8,13 +8,13 @@ import {
   bannerOursMobile,
   philosophy,
   team,
-} from "@/public/assets/images/about-us/index";
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+} from "@public/assets/images/about-us/index";
+import StickyTracking from "@src/app/ui/components/StickyTracking";
 
 import gleWhite from "@public/assets/images/gle/gle-white.png";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
+import { LangInterface } from "@src/app/constans/interfaces/langInterface";
+import { getDictionary } from "@src/lib/dictionary";
 
 import dataValues from "../data/dataValues.json";
 
@@ -73,7 +73,10 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
               priority
               className="aspect-auto rounded-2xl max-w-[550px] w-full"
             />
-            <div className="absolute z-20 inset-0 bottom-0 top-0 bg-gradient-to-t from-white to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat" />
+            <div
+              title="Valores G.L.E."
+              className="absolute z-20 inset-0 bottom-0 top-0 bg-gradient-to-t from-white to-transparent bg-[length:100%_50%] bg-[center_bottom] bg-no-repeat"
+            />
           </div>
           <div className="flex flex-col gap-10">
             <div>

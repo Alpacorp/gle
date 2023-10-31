@@ -111,7 +111,8 @@
       ]
     },
     "services": {
-      "prohibitedTransport": "Ver envíos de prohibido transporte 1",
+      "title": "Servicios Especializados",
+      "description": ["Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.", "Cubrimos todo el territorio nacional."],
       "packaging": {
         "title": "Paqueteo",
         "mainDescription": {
