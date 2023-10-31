@@ -107,7 +107,8 @@
       ]
     },
     "services": {
-      "prohibitedTransport": "See prohibited shipments",
+      "title": "Specialized services",
+      "description": ["Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.", "We cover the entire national territory."],
       "packaging": {
         "title": "Packaging",
         "mainDescription": {
