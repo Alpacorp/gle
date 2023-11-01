@@ -69,7 +69,7 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
         <Link
           href="/assets/images/services/contrato-prestacion-servicios-postales.pdf"
           target="_blank"
-          className="flex text-sm justify-center items-center max-w-[650px] w-full text-white bg-main-gray rounded-xl px-4 py-2 gap-2"
+          className="flex text-sm justify-center items-center max-w-[650px] w-full text-white bg-main-gray rounded-xl hover:scale-105 duration-75 px-4 py-2 gap-2"
         >
           <Contract />
           <ArrowCta className="w-7 h-7 -rotate-90" stroke="#D81730" />

@@ -43,19 +43,26 @@ export const Contact: FC<LangInterface> = async ({ lang }) => {
           </div>
         </div>
         <div className="flex flex-col justify-center gap-3 items-center font-poppins">
-          <h3 className="text-lg font-normal text-main-red uppercase">
+          <h3 className="text-lg font-normal text-main-red uppercase mt-2">
             {pages.contact["data-contact"][0]["web-page"]}
           </h3>
-          <h4 className="text-base font-medium font-inter border border-third-gray rounded-md max-w-[300px] w-full">
+          <Link
+            href="https://www.glecolombia.com/"
+            target="_blank"
+            className="text-base font-medium font-inter border hover:scale-105 duration-100 border-third-gray rounded-md max-w-[300px] w-full"
+          >
             {pages.contact["data-contact"][0]["content-page"]}
-          </h4>
-          <h3 className="text-lg font-normal text-main-red uppercase">
+          </Link>
+          <h3 className="text-lg font-normal text-main-red uppercase mt-2">
             {pages.contact["data-contact"][1]["email"]}
           </h3>
-          <h4 className="text-base font-medium font-inter border border-third-gray rounded-md max-w-[300px] w-full">
+          <Link
+            href="mailto:contactenos@glecolombia.com"
+            className="text-base font-medium font-inter border hover:scale-105 duration-100 border-third-gray rounded-md max-w-[300px] w-full"
+          >
             {pages.contact["data-contact"][1]["content-email"]}
-          </h4>
-          <h3 className="text-lg font-normal text-main-red uppercase">
+          </Link>
+          <h3 className="text-lg font-normal text-main-red uppercase mt-2">
             {pages.contact["data-contact"][2]["address"]}
           </h3>
         </div>
