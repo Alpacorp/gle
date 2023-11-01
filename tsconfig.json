@@ -29,6 +29,7 @@
       "@lib/*": ["./src/lib/*"],
       "@ui/*": ["./src/app/ui/*"],
       "@inicio/*": ["./src/app/[lang]/(inicio)/*"],
+      "@contacto/*": ["./src/app/[lang]/(contacto)/*"],
       "@nosotros/*": ["./src/app/[lang]/(nosotros)/*"],
       "@servicios/*": ["./src/app/[lang]/(servicios)/*"],
       "@globals/*": ["./src/app/[lang]/globals.css"],

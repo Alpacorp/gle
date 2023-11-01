@@ -5,5 +5,5 @@ export interface IconProps {
   onClick?: () => void;
   title?: string;
   width?: string;
-  fill?: "#D81730" | "#313131";
+  fill?: "#D81730" | "#313131" | "#00000" | "#FFFFFF";
 }

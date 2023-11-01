@@ -2,7 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ArrowCta, HeroPages } from "@/src/app/ui/components";
+import { ArrowCta, ArrowGLE, HeroPages } from "@/src/app/ui/components";
 import { Check } from "@/src/app/ui/components/Icons/Check";
 import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
 import StickyTracking from "@/src/app/ui/components/StickyTracking";
@@ -75,6 +75,9 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
           <ArrowCta className="w-7 h-7 -rotate-90" stroke="#D81730" />
           {pages.services.contract}
         </Link>
+      </div>
+      <div className="absolute z-auto top-1/2 left-0 max-[600px]:hidden">
+        <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
       <StickyTracking lang={lang} />
