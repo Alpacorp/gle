@@ -1,11 +1,8 @@
-import { FC } from "react";
+import { Contact } from "@contacto/contacto/container/Contact";
+import { Locale } from "@/i18n.config";
 
-const ContactPage: FC = () => {
-  return (
-    <div>
-      <h1 className="text-light-color">Contact Page</h1>
-    </div>
-  );
+const ContactPage = async ({ params }: { params: { lang: Locale } }) => {
+  return <Contact lang={params.lang} />;
 };
 
 export default ContactPage;

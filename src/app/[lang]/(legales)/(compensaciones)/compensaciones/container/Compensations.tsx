@@ -20,16 +20,13 @@ export const Compensations: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <ContainerContent>
-        <iframe
-          width="760"
-          height="590"
-          src="https://www.youtube.com/embed/-kYRivzbjQc?si=S3zfctAyD9P1q_lB"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          className="w-full"
-        ></iframe>
-        <div className="flex justify-center text-center font-poppins my-5">
+        <video controls autoPlay className="rounded-md w-full aspect-video">
+          <source
+            src="https://upaledigital.com/GLE/proceso-compensaciones-gle.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="flex justify-center text-center font-poppins my-10">
           <Link
             href="/assets/images/compensations/proceso-de-compensaciones-Gle-Colombia.pdf"
             target="_blank"

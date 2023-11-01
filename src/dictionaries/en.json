@@ -106,6 +106,26 @@
         "In accordance with the Contentious Administrative Code and Resolution 3038/10 of the CRC, Servientrega S.A. will have fifteen (15) business days to personally notify the response, on which the resources for reconsideration and appeal proceed."
       ]
     },
+    "contact": {
+      "title": "Contact Us",
+      "title-channels": "Contact Channels",
+      "customer-service": ["CUSTOMER SERVICE", "please call:"],
+      "attention-schedule:": "Attention Schedule:",
+      "schedules": "Monday to Friday: 8.00 a.m. to 6:00 p.m. / Saturdays from 8:00 a.m. to 12:00 p.m.",
+      "data-contact": [
+        {
+          "web-page": "Web Page",
+          "content-page": "www.glecolombia.com"
+        },
+        {
+          "email": "Email",
+          "content-email": "contactenos@glecolombia.com"
+        },
+        {
+          "address": "Locations"
+        }
+      ]
+    },
     "services": {
       "title": "Specialized services",
       "description": ["Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.", "We cover the entire national territory"],

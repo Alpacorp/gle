@@ -110,6 +110,26 @@
         "De conformidad con el Código Contencioso Administrativo y la Resolución 3038/10 de la CRC, Servientrega S.A., dispondrá de quince (15) días hábiles para notificar personalmente la respuesta, sobre la cual proceden los recursos de reposición y apelación."
       ]
     },
+    "contact": {
+      "title": "Contáctanos",
+      "title-channels": "Canales de Atención",
+      "customer-service": ["LÍNEA DE ATENCIÓN SERVICIO AL CLIENTE", "por favor comuníquese al teléfono:"],
+      "attention-schedule:": "Horarios de atención:",
+      "schedules": "Lunes a viernes: de 8.00 a.m. a 6:00 p.m / Sábados de 8:00 a.m. a 12:00 p.m.",
+      "data-contact": [
+        {
+          "web-page": "Página Web",
+          "content-page": "www.glecolombia.com"
+        },
+        {
+          "email": "Correo Electrónico",
+          "content-email": "contactenos@glecolombia.com"
+        },
+        {
+          "address": "Nuestras Sedes"
+        }
+      ]
+    },
     "services": {
       "title": "Servicios Especializados",
       "description": ["Servicio de recolección, transporte, distribución y entrega puerta a puerta de paquetes y mercancías por unidad de empaque.", "Cubrimos todo el territorio nacional"],
