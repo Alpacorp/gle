@@ -11,7 +11,7 @@ export async function GET() {
       from: "onboarding@resend.dev",
       to: "alejandro.palacios88@gmail.com",
       subject: "Hello world",
-      react: "alejo palacios arevalo prod",
+      react: "alejo palacios arevalo prod test",
     });
 
     return NextResponse.json(data);
