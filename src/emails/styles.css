@@ -1,0 +1,18 @@
+.container {
+  font-family: var(--font-poppins);
+  color: #000;
+  margin-top: 20px;
+}
+
+.containerBody {
+  padding-top: 10px;
+}
+
+.list {
+  list-style-type: disc;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 14px;
+}
