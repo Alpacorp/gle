@@ -13,34 +13,10 @@
     "about": "About"
   },
   "pages": {
-    "home": {
-      "title": "Welcome to NextJs i18n",
-      "description": "español"
-    },
     "about": {
       "title": "Nosotros",
       "sections": {
-        "mision": {
-          "title": "Misión",
-          "description": "Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos."
-        },
-        "vision": {
-          "title": "Visión",
-          "description": "G.L.E COLOMBIA será reconocida en el mercado nacional e internacional como una empresa de servicios logísticos innovadores, que satisface los requisitos y las expectativas de nuestros clientes y partes interesadas; a través del fortalecimiento de alianzas perdurables con proveedores confiables, talento humano comprometido y competente, con enfoque en la gestión del riesgo, tecnología adecuada y mejoramiento continuo de los procesos."
-        },
-        "philosophy": {
-          "title": "Filosofía",
-          "description": "Hacer negocios serios, en donde todas las partes interesadas salgan beneficiadas, con un enfoque de alto nivel de satisfacción de nuestros clientes y por supuesto siempre con negocios transparentes."
-        },
-        "policy": {
-          "title": "Política de Servicio",
-          "description": {
-            "1": "En GLE COLOMBIA nos comprometemos a prestar servicios logísticos innovadores, personalizados, oportunos y confiables, que satisfagan los requisitos y expectativas de nuestras partes interesadas.",
-            "2": "Contamos con un enfoque a la gestión del riesgo, fortaleciendo continuamente las competencias del talento humano, con tecnología confiable y mejorando continuamente los procesos."
-          }
-        },
         "values": {
-          "title": "Valores",
           "description": {
             "1": "Responsabilidad",
             "2": "Honestidad",
@@ -49,10 +25,6 @@
             "5": "Comunicación",
             "6": "Respeto"
           }
-        },
-        "work": {
-          "title": "Trabaje con Nosotros",
-          "titleForm": "Únete a nuestra gran familia G.L.E."
         }
       }
     },
@@ -109,47 +81,6 @@
         "Cuando su requerimiento no pueda ser atendido en forma definitiva por nuestro servicio al cliente, dentro de los 15 días hábiles, este término podrá ampliarse cuando se requieran pruebas adicionales, lo cual le será comunicado por escrito, indicándole la nueva fecha en que se dará respuesta.",
         "De conformidad con el Código Contencioso Administrativo y la Resolución 3038/10 de la CRC, Servientrega S.A., dispondrá de quince (15) días hábiles para notificar personalmente la respuesta, sobre la cual proceden los recursos de reposición y apelación."
       ]
-    },
-    "contact": {
-      "title": "Contáctanos",
-      "title-channels": "Canales de Atención",
-      "customer-service": ["LÍNEA DE ATENCIÓN SERVICIO AL CLIENTE", "por favor comuníquese al teléfono:"],
-      "attention-schedule:": "Horarios de atención:",
-      "schedules": "Lunes a viernes: de 8.00 a.m. a 6:00 p.m / Sábados de 8:00 a.m. a 12:00 p.m.",
-      "data-contact": [
-        {
-          "web-page": "Página Web",
-          "content-page": "www.glecolombia.com"
-        },
-        {
-          "email": "Correo Electrónico",
-          "content-email": "contactenos@glecolombia.com"
-        },
-        {
-          "address": "Nuestras Sedes"
-        }
-      ],
-      "form": {
-        "title": "Escríbenos",
-        "name": "Nombre Completo:",
-        "email": "Correo Electrónico:",
-        "subject": {
-          "title": "Asunto:",
-          "options": {
-            "0": "Seleccione",
-            "1": "Queja",
-            "2": "Solicitud",
-            "3": "Reclamo",
-            "4": "Denuncias",
-            "5": "Felicitaciones",
-            "6": "Asesoria Comercial"
-          }
-        },
-        "message": "Mensaje:",
-        "button": "Enviar",
-        "terms": ["Con el diligenciamiento del formulario Usted autoriza el tratamiento de datos personales de acuerdo con la ley Estatutaria 1581, puede consultar aquí:", "https://www.glecolombia.com/proteccion_de_datos"],
-        "compensations": ["Conoce el procedimiento de Compensaciones", "aquí"]
-      }
     },
     "services": {
       "title": "Servicios Especializados",

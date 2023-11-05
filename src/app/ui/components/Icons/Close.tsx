@@ -9,7 +9,7 @@ export const Close: FC<IconProps> = ({ title, className }) => {
       viewBox="0 0 15 15"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`w-9 h-9 p-2 flex justify-center items-center ${className}`}
+      className={`w-5 h-5 p-1 flex justify-center items-center ${className}`}
     >
       <title>{title}</title>
       <path

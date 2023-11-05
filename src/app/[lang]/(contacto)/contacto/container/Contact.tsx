@@ -33,17 +33,17 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatusLoading(true);
-    sendEmail("admin");
+    sendEmail("admin", "contact");
     setTimeout(() => {
-      sendEmail("user");
+      sendEmail("user", "contact");
     }, 5000);
     reset();
   };
 
-  const sendEmail = async (destination: string) => {
+  const sendEmail = async (destination: string, origin: string) => {
     const send = await fetch("/api/send", {
       method: "POST",
-      body: JSON.stringify({ ...formValues, lang, destination }),
+      body: JSON.stringify({ ...formValues, lang, destination, origin }),
       headers: {
         "Content-type": "application/json",
       },

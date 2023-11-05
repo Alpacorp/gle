@@ -2,7 +2,6 @@ import { FC } from "react";
 
 interface ValuesTextProps {
   text: string;
-  key: number;
   index: number;
 }
 

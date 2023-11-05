@@ -35,7 +35,6 @@
       "@globals/*": ["./src/app/[lang]/globals.css"],
       "@hooks/*": ["./src/app/hooks/*"],
       "@routes/*": ["./src/routes/*"],
-      "@others/*": ["./src/app/[lang]/(others)/*"],
       "@legales/*": ["./src/app/[lang]/(legales)/*"],
       "@emails/*": ["./src/emails/*"],
     }

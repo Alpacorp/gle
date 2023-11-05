@@ -3,10 +3,10 @@ import { Metadata } from "next";
 import "@globals/globals.css";
 
 export const metadata: Metadata = {
-  title: "G.L.E. - Contact Us | Let's Talk!",
-  description:
-    "Contact us for info on transport and logistics. We help you get there fast and efficiently.",
-  keywords: "contact, cargo transportation, logistics, parcel service",
+  title: "G.L.E. - Tracking | Package and Messaging Tracking",
+  description: "G.L.E. is a logistics company that offers logist",
+  keywords:
+    "logistics company, tracking, logistics services, mission, vision, values",
 };
 
 export default function RootLayout({
