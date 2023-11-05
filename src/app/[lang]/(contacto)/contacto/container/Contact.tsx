@@ -16,13 +16,10 @@ import { Address } from "@/src/app/ui/components/Footer/Address";
 import data from "@ui/components/Footer/dataFooter.json";
 import { useForm } from "@/src/app/hooks/useForm";
 import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import { Loading } from "@/src/app/ui/components/Loading";
 
 export const Contact: FC<LangInterface> = ({ lang }) => {
-  const [statusAdminEmail, setStatusAdminEmail] = useState(false);
-  const [statusUserEmail, setStatusUserEmail] = useState(false);
-
-  console.log("statusAdminEmail", statusAdminEmail);
-  console.log("statusUserEmail", statusUserEmail);
+  const [statusLoading, setStatusLoading] = useState(false);
 
   const [formValues, handleInputChange, reset] = useForm({
     fullname: "",
@@ -35,7 +32,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formValues);
+    setStatusLoading(true);
     sendEmail("admin");
     setTimeout(() => {
       sendEmail("user");
@@ -52,9 +49,23 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
       },
     });
     const response = await send.json();
-    console.log("response admin", response);
 
-    if (response.error === null) setStatusAdminEmail(true);
+    if (destination === "admin" && response.error === null) {
+      alert(
+        lang === "es"
+          ? "Registro enviado con éxito, recibirá un correo de confirmación"
+          : "Registration sent successfully, you will receive a confirmation email"
+      );
+
+      setStatusLoading(false);
+    } else if (destination === "admin" && response.error !== null) {
+      alert(
+        lang === "es"
+          ? "Error al enviar el registro, por favor intente nuevamente"
+          : "Error sending the registration, please try again"
+      );
+      setStatusLoading(false);
+    }
   };
 
   return (
@@ -87,7 +98,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
         >
           <WhatsAppWhite fill="#00000" className="mr-1" /> 3102695133
         </Link>
-        <div className="flex justify-center my-8">
+        <div className="flex justify-center my-8 mx-2">
           <div className="bg-third-gray max-w-[600px] w-full p-3 rounded-md font-poppins text-sm">
             <p className="font-bold">
               {lang === "es" ? "Horario de atención" : "Attention schedule"}
@@ -222,19 +233,36 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
                     <option value="" className="text-black">
                       {lang === "es" ? "Selecciona" : "Select a subject"}
                     </option>
-                    <option value="Complaint" className="text-black">
+                    <option
+                      value={lang === "es" ? "Queja" : "Complaint"}
+                      className="text-black"
+                    >
                       {lang === "es" ? "Queja" : "Complaint"}
                     </option>
-                    <option value="Application" className="text-black">
+                    <option
+                      value={lang === "es" ? "Solicitud" : "Application"}
+                      className="text-black"
+                    >
                       {lang === "es" ? "Solicitud" : "Application"}
                     </option>
-                    <option value="Claim" className="text-black">
+                    <option
+                      value={lang === "es" ? "Reclamo" : "Claim"}
+                      className="text-black"
+                    >
                       {lang === "es" ? "Reclamo" : "Claim"}
                     </option>
-                    <option value="Congratulations" className="text-black">
+                    <option
+                      value={
+                        lang === "es" ? "Felicitaciones" : "Congratulations"
+                      }
+                      className="text-black"
+                    >
                       {lang === "es" ? "Felicitaciones" : "Congratulations"}
                     </option>
-                    <option value="Business" className="text-black">
+                    <option
+                      value={lang === "es" ? "Asesoria Comercial" : "Business"}
+                      className="text-black"
+                    >
                       {lang === "es" ? "Asesoria Comercial" : "Business"}
                     </option>
                   </select>
@@ -272,7 +300,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
                 : "With the completion of the form you authorize the processing of personal data in accordance with Statutory Law 1581, you can check here:"}{" "}
               <Link
                 href="https://www.glecolombia.com/proteccion_de_datos"
-                className="text-main-red hover:underline"
+                className="text-gray-400 hover:underline"
                 target="_blank"
               >
                 https://www.glecolombia.com/proteccion_de_datos
@@ -288,7 +316,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
                     ? `/${lang}/compensaciones`
                     : `/${lang}/compensations`
                 }
-                className="text-main-red hover:underline"
+                className="text-gray-400 hover:underline"
               >
                 {lang === "es" ? "aquí" : "here"}
               </Link>
@@ -296,7 +324,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
           </div>
           <div className="m-auto mt-5">
             <button
-              className="bg-main-red flex border-2 border-secondary-gray rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed"
+              className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed"
               disabled={
                 fullname === "" ||
                 email === "" ||
@@ -304,8 +332,16 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
                 message === ""
               }
             >
-              <ArrowCta className="h-6 w-6 -rotate-90" stroke="white" />
-              {lang === "es" ? "Enviar" : "Send"}
+              {statusLoading ? (
+                <div className="w-[67px] h-6 flex justify-center">
+                  <Loading open={statusLoading} />
+                </div>
+              ) : (
+                <>
+                  <ArrowCta className="h-6 w-6 -rotate-90" stroke="white" />
+                  {lang === "es" ? "Enviar" : "Send"}{" "}
+                </>
+              )}
             </button>
           </div>
         </form>

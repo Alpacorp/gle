@@ -125,6 +125,14 @@ module.exports = {
             transform: "translateX(0) scale(1)",
           },
         },
+        "spinner-forward": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
         "slide-top":
@@ -139,6 +147,7 @@ module.exports = {
           "fade-in-right 0.1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both",
         "slide-on": "slide-on 0.3s linear forwards",
         "slide-off": "slide-off 0.3s linear forwards",
+        "spinner-forward": "spinner-forward 2s linear infinite",
       },
     },
   },

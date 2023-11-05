@@ -14,20 +14,19 @@ export async function POST(request: Request) {
     if (destination === "admin") {
       return adminEmail;
     } else {
-      return adminEmail + "," + email;
+      return [adminEmail, email];
     }
   };
 
   try {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: [validateDestination()],
+      to: validateDestination(),
       subject:
-        lang === "es"
+        (lang === "es"
           ? "Correo de notificación de registro | Formulario de Contacto | Motivo: "
-          : "Notification email from registration | Contact Form | Reason: " +
-            subject,
-      text: "Hello world",
+          : "Notification email from registration | Contact Form | Reason: ") +
+        subject,
       react: ContactEmail({
         fullname,
         destination,
