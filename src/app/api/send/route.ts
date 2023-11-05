@@ -4,20 +4,37 @@ import { ContactEmail } from "@/src/emails/ContactEmail";
 import { CreateEmailOptions } from "resend/build/src/emails/interfaces";
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL || "";
 
-export async function GET() {
+export async function POST(request: Request) {
+  const { fullname, email, subject, message, lang, destination } =
+    await request.json();
+
+  const validateDestination = () => {
+    if (destination === "admin") {
+      return adminEmail;
+    } else {
+      return adminEmail + "," + email;
+    }
+  };
+
   try {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: ["alejandro.palacios88@gmail.com"],
-      subject: "Hello world",
+      to: [validateDestination()],
+      subject:
+        lang === "es"
+          ? "Correo de notificación de registro | Formulario de Contacto | Motivo: "
+          : "Notification email from registration | Contact Form | Reason: " +
+            subject,
       text: "Hello world",
       react: ContactEmail({
-        fullName: "Alejandro Palacios Arévalo",
-        email: "alejo@gmail.com",
-        subject: "Solicitud",
-        message: "Este es un mensaje de prueba",
-        lang: "es",
+        fullname,
+        destination,
+        email,
+        subject,
+        message,
+        lang,
       }),
     } as CreateEmailOptions);
 

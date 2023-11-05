@@ -41,3 +41,4 @@ export * from "./PaperMoney";
 export * from "./Warning";
 export * from "./Download";
 export * from "./Play";
+export * from "./Location";
