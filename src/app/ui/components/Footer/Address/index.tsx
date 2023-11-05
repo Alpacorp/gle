@@ -4,6 +4,7 @@ import { FC } from "react";
 interface AddressProps {
   address: string;
   className?: string;
+  classNameContainer?: string;
   city: string;
   phone: string;
   phoneText?: string;
@@ -14,6 +15,7 @@ interface AddressProps {
 export const Address: FC<AddressProps> = ({
   address,
   className,
+  classNameContainer,
   city,
   phone,
   phoneText,
@@ -29,7 +31,7 @@ export const Address: FC<AddressProps> = ({
   };
 
   return (
-    <div className="text-xs max-w-[200px] w-full">
+    <div className={`text-xs max-w-[200px] w-full ${classNameContainer}`}>
       <h4 className={`uppercase font-semibold ${className}`}>{city}</h4>
       <Link href={phoneLink()} target="_blank" className="hover:text-rose-400">
         {phoneText}

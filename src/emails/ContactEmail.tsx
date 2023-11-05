@@ -3,7 +3,8 @@ import { FC } from "react";
 
 interface ContactEmailProps {
   lang: string;
-  fullName?: string;
+  destination: string;
+  fullname?: string;
   email?: string;
   subject?: string;
   message?: string;
@@ -13,7 +14,8 @@ import "./styles.css";
 
 export const ContactEmail: FC<ContactEmailProps> = ({
   lang,
-  fullName,
+  destination,
+  fullname,
   email,
   subject,
   message,
@@ -39,7 +41,7 @@ export const ContactEmail: FC<ContactEmailProps> = ({
         </p>
         <ul className="list">
           <li>
-            {lang === "es" ? "Nombre completo" : "Full name"}: {fullName}
+            {lang === "es" ? "Nombre completo" : "Full name"}: {fullname}
           </li>
           <li>
             {lang === "es" ? "Correo electrónico" : "Email address"}: {email}
@@ -52,6 +54,7 @@ export const ContactEmail: FC<ContactEmailProps> = ({
           </li>
         </ul>
       </div>
+      {destination === "admin" ? "TEXT ADMIN" : "TEXT USER"}
       <div className="footer">
         © {new Date().getFullYear()}. G.L.E. Grupo Logístico Especializado,
         Bogotá, Colombia.

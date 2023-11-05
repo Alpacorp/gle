@@ -124,7 +124,28 @@
         {
           "address": "Locations"
         }
-      ]
+      ],
+      "form": {
+        "title": "Write to us",
+        "name": "Full Name:",
+        "email": "Email:",
+        "subject": {
+          "title": "Subject:",
+          "options": {
+            "0": "Select an option",
+            "1": "Complaint",
+            "2": "Application",
+            "3": "Claim",
+            "4": "Complaints",
+            "5": "Congratulations",
+            "6": "Business Consulting"
+          }
+        },
+        "message": "Message:",
+        "button": "Send",
+        "terms": ["By completing the form you authorize the processing of personal data in accordance with Statutory Law 1581, you can consult here:", "https://www.glecolombia.com/proteccion_de_datos"],
+        "compensations": ["Learn about the Compensation procedure", "here"]
+      }
     },
     "services": {
       "title": "Specialized services",
