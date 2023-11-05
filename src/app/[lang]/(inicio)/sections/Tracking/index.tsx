@@ -1,52 +1,95 @@
+"use client";
+
 import { FC } from "react";
-import { ArrowCta } from "@icons/index";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import useTracking from "@hooks/useTracking";
+import useTracking from "@/src/app/hooks/useTracking";
+import { useForm } from "@/src/app/hooks/useForm";
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
-  const [handleInputChange, handleTracking, trackingNumber] = useTracking(lang);
+  const [formValues, handleInputChange, reset] = useForm({
+    trackingNumber: "" as string,
+    trackingType: "",
+  });
+
+  const { trackingNumber, trackingType } = formValues;
+  const [handleTracking] = useTracking({ lang, origin: "tracking" });
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleTracking({
+      trackingNumber,
+      trackingType,
+      origin,
+    });
+    reset();
+  };
 
   return (
     <section id="tracking" className="flex justify-center border-0">
-      <div className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]">
+      <form
+        onSubmit={handleSubmit}
+        className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]"
+      >
         <h2 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
           {lang === "es"
             ? "Realice aquí el seguimiento de sus envíos nacionales"
             : "Track your national shipments here"}
         </h2>
         <div className="flex justify-center gap-2">
-          <div className="relative">
+          <div className="relative flex gap-2">
             <input
+              id="trackingNumber"
+              name="trackingNumber"
               type="number"
-              className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm"
-              placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
-              name="tracking-input"
-              id="tracking-input"
               value={trackingNumber}
               onChange={handleInputChange}
+              className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:placeholder:text-xs max-[320px]:text-xs max-[320px]:max-w-[120px] max-[320px]:w-full"
+              placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
               required
             />
+            <select
+              id="trackingType"
+              name="trackingType"
+              value={trackingType}
+              onChange={handleInputChange}
+              className="p-2 px-1 text-base text-center font-normal font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:max-w-[100px] max-[400px]:w-full max-[320px]:text-xs max-[320px]:max-w-[80px] max-[320px]:w-full"
+              required
+            >
+              <option value="">
+                {lang === "es" ? "Seleccione" : "Select"}
+              </option>
+              <option value="packaging">
+                {lang === "es" ? "Paquetería" : "Packaging"}
+              </option>
+              <option value="messaging">
+                {lang === "es" ? "Mensajería" : "Messaging"}
+              </option>
+            </select>
           </div>
           <button
-            onClick={() => handleTracking("tracking")}
-            className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[110px] max-[460px]:w-full max-[460px]:text-sm font-poppins text-lg hover:bg-opacity-80 transition duration-300 ease-in-out hover:bg-slate-600  disabled:bg-opacity-50 disabled:cursor-not-allowed disabled:text-gray-400"
+            className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[75px] max-[460px]:w-full max-[460px]:text-sm font-poppins text-lg hover:bg-opacity-80 transition duration-300 ease-in-out hover:bg-slate-600  disabled:bg-opacity-50 disabled:cursor-not-allowed disabled:text-gray-400"
+            type="submit"
             disabled={
-              !!(trackingNumber.length < 10 || trackingNumber.length > 12)
+              trackingNumber.length < 10 ||
+              trackingNumber.length > 12 ||
+              trackingNumber === "" ||
+              trackingType === ""
             }
             title={
-              trackingNumber.length < 1 || trackingNumber.length > 10
+              trackingNumber.length < 1 ||
+              trackingNumber.length > 10 ||
+              trackingType === ""
                 ? lang === "es"
-                  ? "Ingrese un número de guía válido"
-                  : "Enter a valid tracking number"
+                  ? "Complete los campos"
+                  : "Fill the fields"
                 : ""
             }
           >
-            <ArrowCta stroke="white" className="-rotate-90 w-5 h-5" />
             {lang === "es" ? "Consultar" : "Track"}
           </button>
         </div>
-      </div>
+      </form>
     </section>
   );
 };

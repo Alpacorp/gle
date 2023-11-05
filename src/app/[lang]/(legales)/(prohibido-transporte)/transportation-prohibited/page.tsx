@@ -1,5 +1,5 @@
-import { ProhibitedTransportShipments } from "@others/(prohibido-transporte)/prohibido-transporte/container/ProhibitedTransportShipments";
 import { Locale } from "@/i18n.config";
+import { ProhibitedTransportShipments } from "@legales/(prohibido-transporte)/prohibido-transporte/container/ProhibitedTransportShipments";
 
 const ProhibitedTransportPage = async ({
   params,

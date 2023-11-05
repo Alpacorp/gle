@@ -1,8 +1,9 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useState } from "react";
 import Image from "next/image";
 
 import { ArrowCta, ArrowGLE, HeroPages } from "@ui/components/index";
-import { ValuesText } from "../components/ValuesText";
 import {
   bannerOurs,
   bannerOursMobile,
@@ -14,19 +15,74 @@ import StickyTracking from "@src/app/ui/components/StickyTracking";
 import gleWhite from "@public/assets/images/gle/gle-white.png";
 
 import { LangInterface } from "@src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@src/lib/dictionary";
 
 import dataValues from "../data/dataValues.json";
+import { ValuesText } from "@/src/app/ui/components/ValuesText";
+import { useForm } from "@/src/app/hooks/useForm";
+import { Loading } from "@/src/app/ui/components/Loading";
 
-export const Ours: FC<LangInterface> = async ({ lang }) => {
-  const { pages } = await getDictionary(lang);
+export const Ours: FC<LangInterface> = ({ lang }) => {
+  const [statusLoading, setStatusLoading] = useState(false);
+
+  const [formValues, handleInputChange, reset] = useForm({
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    phone: "",
+    department: "",
+    cv: "",
+  });
+
+  const { name, email, address, city, phone, department, cv } = formValues;
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatusLoading(true);
+    sendEmail("admin", "ours");
+    reset();
+  };
+
+  const sendEmail = async (destination: string, origin?: string) => {
+    const send = await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify({
+        ...formValues,
+        lang,
+        destination,
+        origin,
+        subject: lang === "es" ? "Formulario Vacantes" : "Vacancies Form",
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const response = await send.json();
+
+    if (destination === "admin" && response.error === null) {
+      alert(
+        lang === "es"
+          ? "Registro enviado con éxito, en caso de ser seleccionado(a) nos comunicaremos contigo. Gracias."
+          : "Registration sent successfully, in case of being selected we will contact you. Thank you."
+      );
+
+      setStatusLoading(false);
+    } else if (destination === "admin" && response.error !== null) {
+      alert(
+        lang === "es"
+          ? "Error al enviar el registro, por favor intente nuevamente"
+          : "Error sending the registration, please try again"
+      );
+      setStatusLoading(false);
+    }
+  };
 
   return (
     <>
       <HeroPages
         imagePath={bannerOurs}
         imagePathMobile={bannerOursMobile}
-        pageTitle={pages.about.title}
+        pageTitle={lang === "es" ? "Nosotros" : "About us"}
         arrowDown
         arrowColor="white"
       />
@@ -36,12 +92,14 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
             <div className="flex flex-col max-w-[1000px] w-full">
               <div className="border-l-[2px] border-white my-4">
                 <h2 className="ml-3 text-4xl font-poppins font-semibold text-white max-[480px]:text-2xl">
-                  {pages.about.sections.mision.title}
+                  {lang === "es" ? "Misión" : "Mission"}
                 </h2>
               </div>
               <div className="border border-white rounded-2xl">
                 <p className="p-5 font-poppins text-white">
-                  {pages.about.sections.mision.description}
+                  {lang === "es"
+                    ? "Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos."
+                    : "We are a company committed to the marketing of high-quality logistical services, directing our efforts to fulfill commercial agreements, meeting the requirements and expectations of our clients and stakeholders, relying on our team of skillful and diligent  professionals which focus on risk management, innovation, and continuous improvement of our processes."}
                 </p>
               </div>
             </div>
@@ -53,12 +111,14 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
         <div className="px-[120px] flex flex-col max-w-[1000px] w-full m-auto ml-0 pt-10 max-[550px]:px-5 max-[380px]:px-[24px]">
           <div className="border-l-[2px] border-main-red my-4">
             <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
-              {pages.about.sections.vision.title}
+              {lang === "es" ? "Visión" : "Vision"}
             </h2>
           </div>
           <div>
             <p className="p-5 font-poppins text-black rounded-2xl bg-red-200">
-              {pages.about.sections.vision.description}
+              {lang === "es"
+                ? "G.L.E COLOMBIA será reconocida en el mercado nacional e internacional como una empresa de servicios logísticos innovadores, que satisface los requisitos y las expectativas de nuestros clientes y partes interesadas; a través del fortalecimiento de alianzas perdurables con proveedores confiables, talento humano comprometido y competente, con enfoque en la gestión del riesgo, tecnología adecuada y mejoramiento continuo de los procesos."
+                : "G.L.E COLOMBIA will be recognized in the national and international market as an innovative logistics services company that meets the requirements and expectations of our clients and stakeholders; through the strengthening of enduring alliances with reliable suppliers, a committed and proficient team of professionals, focusing on risk  management, appropriate technology, and continuous process improvement."}
             </p>
           </div>
         </div>
@@ -82,27 +142,33 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
             <div>
               <div className="border-l-[2px] border-main-red my-4">
                 <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
-                  {pages.about.sections.philosophy.title}
+                  {lang === "es" ? "Filosofía" : "Philosophy"}
                 </h2>
               </div>
               <div>
                 <p className="p-5 font-poppins text-white rounded-2xl bg-secondary-gray">
-                  {pages.about.sections.philosophy.description}
+                  {lang === "es"
+                    ? "Hacer negocios serios, en donde todas las partes interesadas salgan beneficiadas, con un enfoque de alto nivel de satisfacción de nuestros clientes y por supuesto siempre con negocios transparentes."
+                    : "To build trustworthy and prosperous businesses where all stakeholders can benefit from, focusing on high levels of customer satisfaction and, of course, conducting all deals in the most transparent manner."}
                 </p>
               </div>
             </div>
             <div>
               <div className="border-l-[2px] border-main-red my-4">
                 <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray max-[480px]:text-2xl">
-                  {pages.about.sections.policy.title}
+                  {lang === "es" ? "Política de Servicio" : "Service Policy"}
                 </h2>
               </div>
               <div>
                 <p className="p-5 font-poppins text-black rounded-2xl bg-red-200">
-                  {pages.about.sections.policy.description[1]}
+                  {lang === "es"
+                    ? "En GLE COLOMBIA nos comprometemos a prestar servicios logísticos innovadores, personalizados, oportunos y confiables, que satisfagan los requisitos y expectativas de nuestras partes interesadas."
+                    : "At GLE COLOMBIA, we are committed to providing innovative, personalized, timely, and reliable logistical services that meet the requirements and expectations of our stakeholders."}
                   <br />
                   <br />
-                  {pages.about.sections.policy.description[2]}
+                  {lang === "es"
+                    ? "Contamos con un enfoque a la gestión del riesgo, fortaleciendo continuamente las competencias del talento humano, con tecnología confiable y mejorando continuamente los procesos."
+                    : "We focus on risk management, continuously strengthening the competencies of our talented personnel, always relying on cutting edge technology and constantly improving our business processes."}
                 </p>
               </div>
             </div>
@@ -111,7 +177,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
         <div className="px-[120px] mt-10 max-[550px]:px-5">
           <div className="border-l-[2px] border-main-red my-4">
             <h2 className="ml-3 text-4xl font-poppins font-semibold text-secondary-gray">
-              {pages.about.sections.values.title}
+              {lang === "es" ? "Valores Corporativos" : "Corporate Values"}
             </h2>
           </div>
           <div className="flex flex-wrap justify-around items-center gap-6 mt-11 max-[550px]:justify-start">
@@ -137,7 +203,7 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
             />
             <div className="bg-main-red py-6">
               <h2 className="text-4xl font-poppins font-semibold ml-3 text-white max-[550px]:text-xl">
-                {pages.about.sections.work.title}
+                {lang === "es" ? "Trabaje con Nosotros" : "Work with us"}
               </h2>
             </div>
             <Image
@@ -152,9 +218,14 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
         </div>
         <div className="flex flex-col flex-wrap justify-center items-center">
           <h3 className="font-poppins">
-            {pages.about.sections.work.titleForm}
+            {lang === "es"
+              ? "Únete a nuestra gran familia G.L.E."
+              : "Join our great G.L.E. family"}
           </h3>
-          <form className="flex flex-col flex-wrap gap-4 mt-11">
+          <form
+            className="flex flex-col flex-wrap gap-4 mt-11"
+            onSubmit={handleSubmit}
+          >
             <div className="flex flex-col flex-wrap gap-5">
               <div className="flex flex-wrap gap-5 justify-center">
                 <div>
@@ -168,8 +239,11 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                     <input
                       id="email"
                       name="email"
+                      value={email}
+                      onChange={handleInputChange}
                       type="email"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-main-gray"
+                      required
                     />
                   </div>
                 </div>
@@ -186,8 +260,11 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                     <input
                       id="name"
                       name="name"
-                      type="name"
+                      value={name}
+                      onChange={handleInputChange}
+                      type="text"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      required
                     />
                   </div>
                 </div>
@@ -202,8 +279,11 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
                     <input
                       id="address"
                       name="address"
-                      type="address"
+                      value={address}
+                      onChange={handleInputChange}
+                      type="text"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      required
                     />
                   </div>
                 </div>
@@ -211,61 +291,106 @@ export const Ours: FC<LangInterface> = async ({ lang }) => {
               <div className="flex flex-wrap gap-5 justify-center">
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="city"
                     className="text-base font-poppins text-secondary-gray leading-none"
                   >
                     {lang === "es" ? "Ciudad:" : "City:"}
                   </label>
                   <div className="mt-1">
                     <input
-                      id="email"
-                      name="email"
-                      type="email"
+                      id="city"
+                      name="city"
+                      value={city}
+                      onChange={handleInputChange}
+                      type="text"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      required
                     />
                   </div>
                 </div>
                 <div className="flex flex-col">
                   <label
-                    htmlFor="name"
+                    htmlFor="phone"
                     className="text-base font-poppins text-secondary-gray"
                   >
                     {lang === "es" ? "Teléfono:" : "Phone:"}
                   </label>
                   <div className="mt-1">
                     <input
-                      id="name"
-                      name="name"
-                      type="name"
+                      id="phone"
+                      name="phone"
+                      value={phone}
+                      onChange={handleInputChange}
+                      type="number"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      required
                     />
                   </div>
                 </div>
                 <div className="flex flex-col">
                   <label
-                    htmlFor="address"
+                    htmlFor="department"
                     className="text-base font-poppins text-secondary-gray"
                   >
                     {lang === "es" ? "Proceso:" : "Department:"}
                   </label>
                   <div className="mt-1">
                     <input
-                      id="address"
-                      name="address"
-                      type="address"
+                      id="department"
+                      name="department"
+                      value={department}
+                      onChange={handleInputChange}
+                      type="text"
                       className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      required
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="m-auto">
-              <button
-                className="flex border-2 border-secondary-gray rounded-lg px-10 py-2 text-main-red hover:bg-light-gray-2 hover:text-black transition duration-300 ease-in-out
-              "
+            <div className="flex flex-col mx-auto">
+              <label
+                htmlFor="cv"
+                className="text-base font-poppins text-secondary-gray"
               >
-                <ArrowCta className="h-6 w-6 -rotate-90" stroke="#D81730" />
-                {lang === "es" ? "Enviar" : "Send"}
+                {lang === "es" ? "Link de tu CV:" : "Link to your CV:"}
+              </label>
+              <div className="mt-1">
+                <input
+                  id="cv"
+                  name="cv"
+                  value={cv}
+                  onChange={handleInputChange}
+                  type="url"
+                  className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                  required
+                />
+              </div>
+            </div>
+            <div className="m-auto mt-5">
+              <button
+                className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed"
+                disabled={
+                  name === "" ||
+                  email === "" ||
+                  address === "" ||
+                  city === "" ||
+                  phone === "" ||
+                  department === "" ||
+                  cv === ""
+                }
+                type="submit"
+              >
+                {statusLoading ? (
+                  <div className="w-[67px] h-6 flex justify-center">
+                    <Loading open={statusLoading} />
+                  </div>
+                ) : (
+                  <>
+                    <ArrowCta className="h-6 w-6 -rotate-90" stroke="white" />
+                    {lang === "es" ? "Enviar" : "Send"}{" "}
+                  </>
+                )}
               </button>
             </div>
           </form>

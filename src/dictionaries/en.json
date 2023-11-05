@@ -9,34 +9,10 @@
     }
   },
   "pages": {
-    "home": {
-      "title": "Welcome to NextJs i18n",
-      "description": "inglés"
-    },
     "about": {
       "title": "About Us",
       "sections": {
-        "mision": {
-          "title": "Mission",
-          "description": "We are a company committed to the marketing of high-quality logistical services, directing our efforts to fulfill commercial agreements, meeting the requirements and expectations of our clients and stakeholders, relying on our team of skillful and diligent  professionals which focus on risk management, innovation, and continuous improvement of our processes."
-        },
-        "vision": {
-          "title": "Vision",
-          "description": "G.L.E COLOMBIA will be recognized in the national and international market as an innovative logistics services company that meets the requirements and expectations of our clients and stakeholders; through the strengthening of enduring alliances with reliable suppliers, a committed and proficient team of professionals, focusing on risk  management, appropriate technology, and continuous process improvement."
-        },
-        "philosophy": {
-          "title": "Philosophy",
-          "description": "To build trustworthy and prosperous businesses where all stakeholders can benefit from, focusing on high levels of customer satisfaction and, of course, conducting all deals in the most transparent manner."
-        },
-        "policy": {
-          "title": "Service Policy",
-          "description": {
-            "1": "At GLE COLOMBIA, we are committed to providing innovative, personalized, timely, and reliable logistical services that meet the requirements and expectations of our stakeholders.",
-            "2": "We focus on risk management, continuously strengthening the competencies of our talented personnel, always relying on cutting edge technology and constantly improving our business processes."
-          }
-        },
         "values": {
-          "title": "Values",
           "description": {
             "1": "Responsibility",
             "2": "Honesty",
@@ -45,10 +21,6 @@
             "5": "Communication",
             "6": "Respect"
           }
-        },
-        "work": {
-          "title": "Work with Us",
-          "titleForm": "Join our wonderful G.L.E. family"
         }
       }
     },
@@ -105,47 +77,6 @@
         "When your request cannot be definitively addressed by our customer service, within 15 business days, this term may be extended when additional evidence is required, which will be communicated to you in writing, indicating the new date on which a response will be given.",
         "In accordance with the Contentious Administrative Code and Resolution 3038/10 of the CRC, Servientrega S.A. will have fifteen (15) business days to personally notify the response, on which the resources for reconsideration and appeal proceed."
       ]
-    },
-    "contact": {
-      "title": "Contact Us",
-      "title-channels": "Contact Channels",
-      "customer-service": ["CUSTOMER SERVICE", "please call:"],
-      "attention-schedule:": "Attention Schedule:",
-      "schedules": "Monday to Friday: 8.00 a.m. to 6:00 p.m. / Saturdays from 8:00 a.m. to 12:00 p.m.",
-      "data-contact": [
-        {
-          "web-page": "Web Page",
-          "content-page": "www.glecolombia.com"
-        },
-        {
-          "email": "Email",
-          "content-email": "contactenos@glecolombia.com"
-        },
-        {
-          "address": "Locations"
-        }
-      ],
-      "form": {
-        "title": "Write to us",
-        "name": "Full Name:",
-        "email": "Email:",
-        "subject": {
-          "title": "Subject:",
-          "options": {
-            "0": "Select an option",
-            "1": "Complaint",
-            "2": "Application",
-            "3": "Claim",
-            "4": "Complaints",
-            "5": "Congratulations",
-            "6": "Business Consulting"
-          }
-        },
-        "message": "Message:",
-        "button": "Send",
-        "terms": ["By completing the form you authorize the processing of personal data in accordance with Statutory Law 1581, you can consult here:", "https://www.glecolombia.com/proteccion_de_datos"],
-        "compensations": ["Learn about the Compensation procedure", "here"]
-      }
     },
     "services": {
       "title": "Specialized services",
