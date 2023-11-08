@@ -77,9 +77,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
               trackingType === ""
             }
             title={
-              trackingNumber.length < 1 ||
-              trackingNumber.length > 10 ||
-              trackingType === ""
+              trackingNumber.length < 5 || trackingType === ""
                 ? lang === "es"
                   ? "Complete los campos"
                   : "Fill the fields"
