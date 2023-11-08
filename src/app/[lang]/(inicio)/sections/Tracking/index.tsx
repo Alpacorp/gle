@@ -41,11 +41,12 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             <input
               id="trackingNumber"
               name="trackingNumber"
-              type="number"
+              type="text"
               value={trackingNumber}
               onChange={handleInputChange}
               className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:placeholder:text-xs max-[320px]:text-xs max-[320px]:max-w-[120px] max-[320px]:w-full"
               placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
+              maxLength={12}
               required
             />
             <select
@@ -71,8 +72,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             className="bg-main-red flex items-center justify-center rounded-sm py-2 px-4 text-white max-[460px]:max-w-[75px] max-[460px]:w-full max-[460px]:text-sm font-poppins text-lg hover:bg-opacity-80 transition duration-300 ease-in-out hover:bg-slate-600  disabled:bg-opacity-50 disabled:cursor-not-allowed disabled:text-gray-400"
             type="submit"
             disabled={
-              trackingNumber.length < 10 ||
-              trackingNumber.length > 12 ||
+              trackingNumber.length < 5 ||
               trackingNumber === "" ||
               trackingType === ""
             }
