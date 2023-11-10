@@ -73,9 +73,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                       type="text"
                       className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:placeholder:text-xs max-[320px]:text-xs max-[320px]:max-w-[120px] max-[320px]:w-full"
                       placeholder={
-                        lang === "es"
-                          ? "Ingrese su número de guía"
-                          : "Enter your tracking number"
+                        lang === "es" ? "Número de guía" : "Tracking number"
                       }
                       name="trackingNumber"
                       id="trackingNumber"
@@ -93,7 +91,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                       required
                     >
                       <option value="">
-                        {lang === "es" ? "Seleccione" : "Select"}
+                        {lang === "es" ? "Selecciona" : "Select"}
                       </option>
                       <option value="packaging">
                         {lang === "es" ? "Paquetería" : "Packaging"}
@@ -119,7 +117,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                         : ""
                     }
                   >
-                    {lang === "es" ? "Rastrear" : "Track"}
+                    {lang === "es" ? "Consultar" : "Track"}
                   </button>
                 </div>
               </form>
@@ -129,7 +127,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
             <StickyTrackEs
               onClick={showTrackingFormHandler}
               className="max-[400px]:hidden"
-              title="Realice aquí el seguimiento de sus envíos nacionales"
+              title="Realiza aquí el seguimiento de tus envíos nacionales"
             />
           ) : (
             <StickyTrackEn

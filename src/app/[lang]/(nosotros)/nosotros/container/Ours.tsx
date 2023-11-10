@@ -203,7 +203,7 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
             />
             <div className="bg-main-red py-6">
               <h2 className="text-4xl font-poppins font-semibold ml-3 text-white max-[550px]:text-xl">
-                {lang === "es" ? "Trabaje con Nosotros" : "Work with us"}
+                {lang === "es" ? "Trabaja con Nosotros" : "Work with us"}
               </h2>
             </div>
             <Image

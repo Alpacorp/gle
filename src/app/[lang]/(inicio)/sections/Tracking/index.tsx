@@ -33,7 +33,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
       >
         <h2 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
           {lang === "es"
-            ? "Realice aquí el seguimiento de sus envíos nacionales"
+            ? "Realiza aquí el seguimiento de tus envíos nacionales"
             : "Track your national shipments here"}
         </h2>
         <div className="flex justify-center gap-2">
@@ -58,7 +58,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
               required
             >
               <option value="">
-                {lang === "es" ? "Seleccione" : "Select"}
+                {lang === "es" ? "Selecciona" : "Select"}
               </option>
               <option value="packaging">
                 {lang === "es" ? "Paquetería" : "Packaging"}
