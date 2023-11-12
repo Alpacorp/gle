@@ -30,7 +30,7 @@ export const SocialMedia: FC<SocialMediaProps> = ({ align, lang }) => {
           <YouTubeIcon title="YouTube" />
         </Link>
         <Link
-          href="https://linkedin.com/"
+          href="https://www.linkedin.com/company/gle-colombia/"
           target="_blank"
           className="hover:scale-105 transition-transform"
         >
