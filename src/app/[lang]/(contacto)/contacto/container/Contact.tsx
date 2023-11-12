@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import Link from "next/link";
+import { default as ReCAPTCHA } from "react-google-recaptcha";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 import {
@@ -20,6 +21,9 @@ import { Loading } from "@/src/app/ui/components/Loading";
 
 export const Contact: FC<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
+  const [reCaptchaToken, setReCaptchaToken] = useState("");
+
+  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
 
   const [formValues, handleInputChange, reset] = useForm({
     fullname: "",
@@ -32,12 +36,17 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatusLoading(true);
-    sendEmail("admin", "contact");
-    setTimeout(() => {
-      sendEmail("user", "contact");
-    }, 5000);
-    reset();
+    if (reCaptchaToken) {
+      setStatusLoading(true);
+      console.log("reCaptchaToken", reCaptchaToken);
+      sendEmail("admin", "contact");
+      setTimeout(() => {
+        sendEmail("user", "contact");
+      }, 5000);
+      reset();
+    } else {
+      alert(`Por favor verifica ✅ el código captcha para continuar.`);
+    }
   };
 
   const sendEmail = async (destination: string, origin: string) => {
@@ -328,6 +337,15 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
               </Link>
             </p>
           </div>
+          <div className="mx-auto h-[136px]">
+            <ReCAPTCHA
+              sitekey={RECAPTCHA_SITE_KEY}
+              onChange={(token: string | null) =>
+                setReCaptchaToken(token ?? "")
+              }
+              size="compact"
+            />
+          </div>
           <div className="m-auto mt-5">
             <button
               className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed"
@@ -339,7 +357,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
               }
             >
               {statusLoading ? (
-                <div className="w-[67px] h-6 flex justify-center">
+                <div className="w-[67px] flex justify-center">
                   <Loading open={statusLoading} />
                 </div>
               ) : (
@@ -354,7 +372,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
         <div className="absolute z-auto top-0 left-0 max-[600px]:hidden">
           <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
         </div>
-        <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-secondary-gray h-full z-[-1] left-0 right-0" />
+        <div className="absolute bottom-0 back-clip-path-inverse-bottom-form bg-secondary-gray h-full z-[-1] left-0 right-0" />
       </div>
       <StickyTracking lang={lang} />
     </section>

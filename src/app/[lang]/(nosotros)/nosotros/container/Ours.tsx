@@ -20,9 +20,13 @@ import dataValues from "../data/dataValues.json";
 import { ValuesText } from "@/src/app/ui/components/ValuesText";
 import { useForm } from "@/src/app/hooks/useForm";
 import { Loading } from "@/src/app/ui/components/Loading";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Ours: FC<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
+  const [reCaptchaToken, setReCaptchaToken] = useState("");
+
+  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
 
   const [formValues, handleInputChange, reset] = useForm({
     name: "",
@@ -38,9 +42,13 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setStatusLoading(true);
-    sendEmail("admin", "ours");
-    reset();
+    if (reCaptchaToken) {
+      setStatusLoading(true);
+      sendEmail("admin", "ours");
+      reset();
+    } else {
+      alert(`Por favor verifica ✅ el código captcha para continuar.`);
+    }
   };
 
   const sendEmail = async (destination: string, origin?: string) => {
@@ -335,15 +343,58 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
                     {lang === "es" ? "Proceso:" : "Department:"}
                   </label>
                   <div className="mt-1">
-                    <input
+                    <select
                       id="department"
                       name="department"
                       value={department}
                       onChange={handleInputChange}
-                      type="text"
-                      className="border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
+                      className="border w-full border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray"
                       required
-                    />
+                    >
+                      <option value="" className="text-black">
+                        {lang === "es" ? "Selecciona" : "Select a subject"}
+                      </option>
+                      <option
+                        value={lang === "es" ? "Operaciones" : "Operations"}
+                        className="text-black"
+                      >
+                        {lang === "es" ? "Operaciones" : "Operations"}
+                      </option>
+                      <option
+                        value={
+                          lang === "es"
+                            ? "Servicio al cliente"
+                            : "Customer service"
+                        }
+                        className="text-black"
+                      >
+                        {lang === "es"
+                          ? "Servicio al cliente"
+                          : "Customer service"}
+                      </option>
+                      <option
+                        value={lang === "es" ? "Comercial" : "Commercial"}
+                        className="text-black"
+                      >
+                        {lang === "es" ? "Comercial" : "Commercial"}
+                      </option>
+                      <option
+                        value={
+                          lang === "es" ? "RRHH y Calidad" : "HR and Quality"
+                        }
+                        className="text-black"
+                      >
+                        {lang === "es" ? "RRHH y Calidad" : "HR and Quality"}
+                      </option>
+                      <option
+                        value={
+                          lang === "es" ? "Administrativo" : "Administrative"
+                        }
+                        className="text-black"
+                      >
+                        {lang === "es" ? "Administrativo" : "Administrative"}
+                      </option>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -367,6 +418,15 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
                 />
               </div>
             </div>
+            <div className="mx-auto h-[136px]">
+              <ReCAPTCHA
+                sitekey={RECAPTCHA_SITE_KEY}
+                onChange={(token: string | null) =>
+                  setReCaptchaToken(token ?? "")
+                }
+                size="compact"
+              />
+            </div>
             <div className="m-auto mt-5">
               <button
                 className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed"
@@ -382,7 +442,7 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
                 type="submit"
               >
                 {statusLoading ? (
-                  <div className="w-[67px] h-6 flex justify-center">
+                  <div className="w-[67px] flex justify-center">
                     <Loading open={statusLoading} />
                   </div>
                 ) : (

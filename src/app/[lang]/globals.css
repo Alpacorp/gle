@@ -15,6 +15,10 @@
     clip-path: polygon(100% 0%, 100% 0, 100% 100%, -100% 80%);
   }
 
+  .back-clip-path-inverse-bottom-form {
+    clip-path: polygon(100% 0%, 100% 0, 100% 100%, -180% 80%);
+  }
+
   @media screen and (max-width: 768px) {
     .back-clip-path {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 15vw));
@@ -36,6 +40,10 @@
 
     .back-clip-path-inverse-bottom {
       clip-path: polygon(100% 0%, 100% 0, 100% 100%, -160% 80%);
+    }
+
+    .back-clip-path-inverse-bottom-form {
+      clip-path: polygon(100% 0%, 100% 0, 100% 100%, -350% 80%);
     }
   }
 }
