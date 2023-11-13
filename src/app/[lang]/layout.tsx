@@ -3,13 +3,12 @@ import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
 import { Footer, Modal } from "@ui/components/";
-import { GlobalScripts } from "../scripts/GlobalScripts";
+import { GlobalScripts, GtmBodyScript } from "@scripts/index";
 
 import { Locale } from "@/i18n.config";
 import { ContextProvider } from "@context/Context";
 
 import "@globals/globals.css";
-import { GtmBodyScript } from "../scripts/GtmBodyScript";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -60,10 +59,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
   params,
-}: {
-  children: React.ReactNode;
+}: Readonly<{
+  readonly children: React.ReactNode;
   params: { lang: Locale };
-}) {
+}>) {
   return (
     <html lang={params.lang}>
       <head>

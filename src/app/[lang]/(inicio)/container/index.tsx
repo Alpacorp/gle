@@ -6,14 +6,9 @@ import {
   WeAreGLE,
 } from "@inicio/sections/index";
 
-import { Locale } from "@/i18n.config";
 import StickyTracking from "@ui/components/StickyTracking";
 
-interface HomePageProps {
-  params: {
-    lang: Locale;
-  };
-}
+import { HomePageProps } from "@inicio/container/interfaces/homePage";
 
 const HomePage = ({ params: { lang } }: HomePageProps) => {
   return (

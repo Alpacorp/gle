@@ -3,9 +3,9 @@
 import { FC } from "react";
 import { Close, StickyTrackEs, StickyTrackEn } from "@icons/index";
 import { ArrowCta } from "..";
-import useObserverTracking from "./hooks/useObserverTracking";
-import useTracking from "@/src/app/hooks/useTracking";
-import { useForm } from "@/src/app/hooks/useForm";
+
+import useObserverTracking from "@ui/components/StickyTracking/hooks/useObserverTracking";
+import { useTracking, useForm } from "@/src/app/hooks/";
 
 interface StickyTrackingProps {
   observerActive?: boolean;

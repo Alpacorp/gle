@@ -2,13 +2,13 @@ import { FC } from "react";
 
 import { HeroPages, ContainerContent } from "@ui/components/index";
 
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import StickyTracking from "@ui/components/StickyTracking";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { getDictionary } from "@lib/dictionary";
 
-import data from "../data/dataTransport.json";
-import { IconsTransport } from "../IconsTransport";
+import data from "@legales/(prohibido-transporte)/prohibido-transporte/data/dataTransport.json";
+import { IconsTransport } from "@legales/(prohibido-transporte)/prohibido-transporte/data/IconsTransport";
 
 export const ProhibitedTransportShipments: FC<LangInterface> = async ({
   lang,
@@ -18,18 +18,18 @@ export const ProhibitedTransportShipments: FC<LangInterface> = async ({
   return (
     <section>
       <HeroPages
-        arrowDown
         arrowColor="red"
-        pageTitle={pages.prohibitedTransport.title}
+        arrowDown
         color="white"
+        pageTitle={pages.prohibitedTransport.title}
       />
       <ContainerContent>
         <p className="font-poppins">{pages.prohibitedTransport.description}</p>
         <div className="flex flex-col justify-center gap-2 mx-auto my-5 max-w-[592px] w-full">
           {data.map(({ id, textEs, textEn }) => (
             <div
-              key={id}
               className="flex items-center border border-main-red rounded-xl p-2"
+              key={id}
             >
               <div className="w-14 h-14 mr-4 flex items-center justify-center">
                 {
