@@ -10,7 +10,8 @@ import { Address } from "./Address";
 import { Mintic, Sic, SuperTransporte } from "@/public/assets/images/footer";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import data from "./dataFooter.json";
+
+import data from "@ui/components/Footer/data/dataFooter.json";
 
 export const Footer: FC<LangInterface> = ({ lang }) => {
   return (

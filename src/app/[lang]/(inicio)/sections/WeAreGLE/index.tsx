@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import { Title } from "@ui/components/index";
 import { ArrowGLE } from "@icons/index";
-import { iconsWeAre } from "@inicio/sections/WeAreGLE/IconsWeAre";
+import { iconsWeAre } from "@/src/app/[lang]/(inicio)/sections/WeAreGLE/data/IconsWeAre";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import data from "@inicio/sections/WeAreGLE/dataWeAre.json";
+import data from "@inicio/sections/WeAreGLE/data/dataWeAre.json";
 
 export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
   const hightWords = [
@@ -45,7 +45,7 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
                 {lang === "es"
                   ? descriptionEs.split(" ").map((word: string) => (
                       <span
-                        key={`word-${id}-${Math.random()}}`}
+                        key={`wordEs-${id}-${Math.random()}`}
                         className={hightWords.includes(word) ? "font-bold" : ""}
                       >
                         {word}{" "}
@@ -53,7 +53,7 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
                     ))
                   : descriptionEn.split(" ").map((word: string) => (
                       <span
-                        key={`word-${id}-${Math.random()}}`}
+                        key={`wordEn-${id}-${Math.random()}`}
                         className={hightWords.includes(word) ? "font-bold" : ""}
                       >
                         {word}{" "}

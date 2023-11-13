@@ -37,6 +37,7 @@
       "@routes/*": ["./src/routes/*"],
       "@legales/*": ["./src/app/[lang]/(legales)/*"],
       "@emails/*": ["./src/emails/*"],
+      "@scripts/*": ["./src/app/scripts/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

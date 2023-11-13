@@ -14,7 +14,7 @@ import {
 } from "@ui/components";
 import { Address } from "@/src/app/ui/components/Footer/Address";
 
-import data from "@ui/components/Footer/dataFooter.json";
+import data from "@ui/components/Footer/data/dataFooter.json";
 import { useForm } from "@/src/app/hooks/useForm";
 import StickyTracking from "@/src/app/ui/components/StickyTracking";
 import { Loading } from "@/src/app/ui/components/Loading";
@@ -38,7 +38,6 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
     event.preventDefault();
     if (reCaptchaToken) {
       setStatusLoading(true);
-      console.log("reCaptchaToken", reCaptchaToken);
       sendEmail("admin", "contact");
       setTimeout(() => {
         sendEmail("user", "contact");

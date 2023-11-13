@@ -1,10 +1,8 @@
-"use client";
-
 import { FC } from "react";
 
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import useTracking from "@/src/app/hooks/useTracking";
-import { useForm } from "@/src/app/hooks/useForm";
+
+import { useForm, useTracking } from "@/src/app/hooks/";
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
   const [formValues, handleInputChange, reset] = useForm({
@@ -26,7 +24,10 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
   };
 
   return (
-    <section id="tracking" className="flex justify-center border-0">
+    <section
+      id="tracking"
+      className="flex justify-center border-0 absolute bottom-1 right-0 left-0"
+    >
       <form
         onSubmit={handleSubmit}
         className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]"

@@ -1,4 +1,4 @@
-export * from "./DifferentCard";
+export * from "./InfoCard";
 export * from "./Footer";
 export * from "./HamburguerMenu";
 export * from "./Header";

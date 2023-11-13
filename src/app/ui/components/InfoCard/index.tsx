@@ -1,11 +1,11 @@
 import { FC } from "react";
 
-interface DifferentCardProps {
+interface InfoCardProps {
   description: string;
   backgroundColor: "secondary-gray" | "main-red" | "white";
 }
 
-export const DifferentCard: FC<DifferentCardProps> = ({
+export const InfoCard: FC<InfoCardProps> = ({
   description,
   backgroundColor,
 }) => {

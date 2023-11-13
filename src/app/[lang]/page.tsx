@@ -1,4 +1,4 @@
-import HomePage from "./(inicio)/container";
+import HomePage from "@inicio/container";
 
 import { Locale } from "@/i18n.config";
 

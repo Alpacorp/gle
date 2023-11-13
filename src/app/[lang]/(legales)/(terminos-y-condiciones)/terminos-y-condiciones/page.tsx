@@ -1,4 +1,4 @@
-import { TermsConditions } from "./container/TermsConditions";
+import { TermsConditions } from "@legales/(terminos-y-condiciones)/terminos-y-condiciones/container/TermsConditions";
 import { Locale } from "@/i18n.config";
 
 const TermsConditionsPage = async ({

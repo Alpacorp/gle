@@ -7,6 +7,7 @@ import {
   berau,
   mintrans,
 } from "@public/assets/images/home/certifications/index";
+
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 
 export const Certifications: FC<LangInterface> = ({ lang }) => {
@@ -14,34 +15,34 @@ export const Certifications: FC<LangInterface> = ({ lang }) => {
     <section className="my-11">
       <div>
         <Title
-          color="black"
           align="center"
-          family="poppins"
-          weight="semibold"
           className="text-4xl"
-          showLine
+          color="black"
+          family="poppins"
           lineColor="main-red"
+          showLine
+          weight="semibold"
         >
           {lang === "es" ? "Estamos certificados" : "We are certified"}
         </Title>
         <div className="flex justify-center gap-10 items-center flex-wrap mt-5 px-2">
           <Image
-            src={mintrans}
             alt="Certificación del Ministerio de Transporte"
+            className="w-auto"
+            height={108}
+            priority
+            src={mintrans}
             title="Certificación del Ministerio de Transporte"
             width={213}
-            height={108}
-            priority
-            className="w-auto"
           />
           <Image
-            src={berau}
             alt="Certificación de Berau Veritas"
-            title="Certificación de Berau Veritas"
-            width={213}
+            className="w-auto"
             height={108}
             priority
-            className="w-auto"
+            src={berau}
+            title="Certificación de Berau Veritas"
+            width={213}
           />
         </div>
       </div>

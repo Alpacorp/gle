@@ -2,13 +2,13 @@ import { FC } from "react";
 
 import { HeroPages, ContainerContent } from "@ui/components/index";
 
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import StickyTracking from "@ui/components/StickyTracking";
+import { Address } from "@ui/components/Footer/Address";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { getDictionary } from "@lib/dictionary";
 
-import data from "@ui/components/Footer/dataFooter.json";
-import { Address } from "@/src/app/ui/components/Footer/Address";
+import data from "@ui/components/Footer/data/dataFooter.json";
 
 export const Pqrs: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);

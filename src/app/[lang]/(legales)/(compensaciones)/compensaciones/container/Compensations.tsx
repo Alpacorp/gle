@@ -1,12 +1,12 @@
 import { FC } from "react";
+import Link from "next/link";
 
 import { HeroPages, ContainerContent, Download } from "@ui/components/index";
 
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import StickyTracking from "@ui/components/StickyTracking";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
-import Link from "next/link";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { getDictionary } from "@lib/dictionary";
 
 export const Compensations: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -20,7 +20,7 @@ export const Compensations: FC<LangInterface> = async ({ lang }) => {
         color="white"
       />
       <ContainerContent>
-        <video controls autoPlay className="rounded-md w-full aspect-video">
+        <video controls className="rounded-md w-full aspect-video">
           <source
             src="https://upaledigital.com/GLE/proceso-compensaciones-gle.mp4"
             type="video/mp4"
