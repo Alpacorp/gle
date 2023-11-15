@@ -38,6 +38,7 @@
       "@legales/*": ["./src/app/[lang]/(legales)/*"],
       "@emails/*": ["./src/emails/*"],
       "@scripts/*": ["./src/app/scripts/*"],
+      "@utils/*": ["./src/utils/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

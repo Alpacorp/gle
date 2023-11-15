@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 
 import Header from "@ui/components/Header";
@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   title: "G.L.E. Grupo Logístico Especializado",
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
-  viewport:
-    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   openGraph: {
     type: "website",
     locale: "es_CO",
@@ -54,6 +52,13 @@ export const metadata: Metadata = {
     description: "Volamos para que llegues más rápido",
     images: ["/favicon.ico"],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
 };
 
 export default function RootLayout({
