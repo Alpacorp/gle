@@ -1,27 +1,36 @@
 "use client";
 
-import React, { FC } from "react";
-import { ArrowCta, Play } from "..";
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { useModal } from "./hooks/useModal";
+import React, { FC, KeyboardEventHandler } from "react";
+import { ArrowCta, Play } from "@icons/index";
+
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { useModal } from "@ui/components/Modal/hooks/useModal";
 
 export const Modal: FC<LangInterface> = ({ lang }) => {
   const {
-    showModal,
     closeModal,
     handleBackdropClick,
-    playVideo,
-    pauseVideo,
-    videoRef,
     isVideoPlaying,
+    pauseVideo,
+    playVideo,
+    showModal,
+    videoRef,
   } = useModal();
+
+  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  };
 
   return (
     <>
       {showModal && (
         <div
-          className="fixed top-0 left-0 w-full h-full flex items-center cursor-crosshair justify-center bg-gray-200 bg-opacity-70 z-50"
+          className="fixed top-0 left-0 w-full h-full flex items-center cursor-crosshair justify-center bg-gray-200 bg-opacity-90 z-50"
           onClick={handleBackdropClick}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
         >
           <div className="cursor-auto">
             <h2 className="text-3xl font-semibold !leading-7 mb-2 text-center font-poppins max-[480px]:text-2xl">
@@ -38,12 +47,12 @@ export const Modal: FC<LangInterface> = ({ lang }) => {
             </div>
             <div>
               <video
-                ref={videoRef}
-                controls
                 autoPlay
                 className="rounded-md w-full aspect-video"
-                onPlay={playVideo}
+                controls
                 onPause={pauseVideo}
+                onPlay={playVideo}
+                ref={videoRef}
               >
                 <source
                   src="https://upaledigital.com/GLE/GrupoLogisticoEspecializado.mp4"

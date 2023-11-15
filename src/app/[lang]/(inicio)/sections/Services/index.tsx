@@ -6,12 +6,12 @@ import {
   GleVideo,
   ReasonToBe,
 } from "@inicio/sections/Services/innerSections";
-import { Title } from "@/src/app/ui/components/Title";
+import { Title } from "@ui/components/Title";
 import {
   backMobile,
   backServices,
 } from "@public/assets/images/home/services/index";
-import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
+import { ServicesContainer } from "@ui/components/ServicesContainer";
 import volamos from "@public/assets/images/gle/volamos.svg";
 
 import { LangInterface } from "@constans/interfaces/langInterface";

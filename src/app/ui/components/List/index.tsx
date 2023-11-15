@@ -4,9 +4,8 @@ import { FC, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { SubMenu } from "@ui/components/SubMenu";
-import { OpenSubMenu } from "@ui/components/OpenSubMenu";
-import { iconsServices } from "@/src/app/ui/components/ServicesContainer/IconsServices";
+import { SubMenu, OpenSubMenu } from "@ui/components/";
+import { iconsServices } from "@ui/components/ServicesContainer/IconsServices";
 
 import useList from "@ui/components/List/hooks/useList";
 
@@ -65,7 +64,7 @@ export const List: FC<ListProps> = ({
             "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
       }`}
     >
-      <div className="flex items-center">
+      <div className="flex items-center px-2 max-[400px]:px-0">
         <Link
           className={`flex items-center ${
             isMobile

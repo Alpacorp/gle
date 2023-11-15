@@ -1,4 +1,4 @@
-import { Services } from "./container/Services";
+import { Services } from "@servicios/servicios/container/Services";
 import { Locale } from "@/i18n.config";
 
 const servicesPage = async ({ params }: { params: { lang: Locale } }) => {

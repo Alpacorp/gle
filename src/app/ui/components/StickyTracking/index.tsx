@@ -1,8 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { Close, StickyTrackEs, StickyTrackEn } from "@icons/index";
-import { ArrowCta } from "..";
+import { Close, StickyTrackEs, StickyTrackEn, ArrowCta } from "@icons/index";
 
 import useObserverTracking from "@ui/components/StickyTracking/hooks/useObserverTracking";
 import { useTracking, useForm } from "@/src/app/hooks/";
@@ -25,14 +24,14 @@ const StickyTracking: FC<StickyTrackingProps> = ({
   });
 
   const { trackingNumber, trackingType } = formValues;
-  const [handleTracking] = useTracking({ lang, origin: "tracking" });
+  const { handleTracking } = useTracking({ lang });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleTracking({
       trackingNumber,
       trackingType,
-      origin,
+      origin: "sticky-tracking",
     });
     reset();
   };

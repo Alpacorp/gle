@@ -1,25 +1,25 @@
-import Link from "next/link";
 import { FC } from "react";
+import Link from "next/link";
 
 interface AddressProps {
   address: string;
+  city: string;
   className?: string;
   classNameContainer?: string;
-  city: string;
+  maps: string;
   phone: string;
   phoneText?: string;
-  maps: string;
   type: string;
 }
 
 export const Address: FC<AddressProps> = ({
   address,
+  city,
   className,
   classNameContainer,
-  city,
+  maps,
   phone,
   phoneText,
-  maps,
   type,
 }) => {
   const phoneLink = () => {

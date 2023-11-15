@@ -1,5 +1,14 @@
-import { FC } from "react";
-import { SelectPropsInterface } from "@ui/components/Select/interfaces/selectPropsInterface";
+import { FC, ReactNode } from "react";
+interface SelectPropsInterface {
+  handleInputChange: (e: any) => void;
+  subject: string;
+  name: string;
+  id: string;
+  className?: string;
+  placeholder?: string;
+  required?: boolean;
+  children: ReactNode;
+}
 
 export const Select: FC<SelectPropsInterface> = ({
   handleInputChange,

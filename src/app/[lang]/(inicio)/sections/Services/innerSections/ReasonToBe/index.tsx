@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import { ArrowCta } from "@/src/app/ui/components";
+import { ArrowCta } from "@ui/components";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 export const ReasonToBe: FC<LangInterface> = ({ lang }) => {
   return (

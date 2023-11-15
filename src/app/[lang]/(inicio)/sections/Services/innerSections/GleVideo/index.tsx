@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { ArrowGLE } from "@/src/app/ui/components";
+import { ArrowGLE } from "@ui/components";
 
 export const GleVideo: FC = () => {
   return (

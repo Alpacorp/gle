@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useContext } from "react";
 
-import { List } from "@ui/components/List";
-import { SocialMedia } from "@ui/components/SocialMedia";
-import { Close, GleLogo } from "@ui/components/Icons/";
+import { List, SocialMedia } from "@ui/components/";
+import { Close, GleLogo } from "@icons/index";
 
-import { Context } from "@/src/app/context/Context";
+import { Context } from "@context/Context";
+
 import { Locale } from "@/i18n.config";
 
 import dataMenu from "@ui/components/Header/dataMenu.json";
@@ -21,7 +21,13 @@ export const MenuMobile = ({ lang }: { lang: Locale }) => {
         <div
           className="fixed bg-black opacity-50 h-screen w-screen top-0 left-0 z-40"
           onClick={() => setShowMenu(false)}
-        ></div>
+          onKeyDown={(event: React.KeyboardEvent<HTMLDivElement>) => {
+            if (event.key === "Enter" || event.key === " ") {
+              setShowMenu(false);
+            }
+          }}
+          tabIndex={0}
+        />
       )}
       <div
         className={`absolute bg-white h-[100dvh] overflow-auto w-3/4 z-50 left-0 top-0 p-4 ${

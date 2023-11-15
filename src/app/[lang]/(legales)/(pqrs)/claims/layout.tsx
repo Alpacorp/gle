@@ -5,7 +5,7 @@ import "@globals/globals.css";
 export const metadata: Metadata = {
   title: "G.L.E. - Claims",
   description:
-    "By accessing this site, the user accepts the following conditions and policies of use.",
+    "GRUPO LOGISTICO ESPECIALIZADO S.A.S has a customer service process available to its clients that has all the means required to comprehensively address their requests, complaints, claims, resources and requests for compensation.",
   keywords: "transport, cargo, logistics, air, land, sea, mass cargo",
 };
 

@@ -4,7 +4,7 @@ import { Title } from "@ui/components/index";
 import { ArrowGLE } from "@icons/index";
 import { iconsWeAre } from "@/src/app/[lang]/(inicio)/sections/WeAreGLE/data/IconsWeAre";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 import data from "@inicio/sections/WeAreGLE/data/dataWeAre.json";
 
 export const WeAreGLE: FC<LangInterface> = ({ lang }) => {

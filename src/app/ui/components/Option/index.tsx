@@ -1,5 +1,9 @@
-import { FC } from "react";
-import { OptionPropsInterface } from "@ui/components/Option/interfaces/optionPropsInterface";
+import { FC, ReactNode } from "react";
+interface OptionPropsInterface {
+  children: ReactNode;
+  className?: string;
+  value: string;
+}
 
 export const Option: FC<OptionPropsInterface> = ({
   children,

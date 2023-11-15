@@ -4,13 +4,11 @@ import { FC } from "react";
 import Link from "next/link";
 
 import { GleLogo, AgileLogo } from "@icons/index";
-import { List } from "@ui/components/List";
-import { HamburguerMenu, MenuMobile } from "@ui/components/";
-import Toggle from "@ui/components/Toggle";
+import { HamburguerMenu, MenuMobile, List, Toggle } from "@ui/components/";
+
+import useChangeLanguageRoutes from "@hooks/useChangeLanguage";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
-
-import useChangeLanguageRoutes from "@/src/app/hooks/useChangeLanguage";
 
 import dataMenu from "@ui/components/Header/dataMenu.json";
 

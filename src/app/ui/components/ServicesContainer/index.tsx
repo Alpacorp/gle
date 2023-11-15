@@ -1,10 +1,12 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowCta } from "..";
+
+import { ArrowCta } from "@icons/index";
 import { iconsServices } from "@ui/components/ServicesContainer/IconsServices";
 
-import services from "@ui/components/ServicesContainer/dataServices.json";
+import services from "@ui/components/ServicesContainer/data/dataServices.json";
+
 import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
 
 export const ServicesContainer: FC<LangInterface> = ({ lang }) => {
@@ -21,13 +23,7 @@ export const ServicesContainer: FC<LangInterface> = ({ lang }) => {
                 src={url}
                 alt={lang === "es" ? nameEs : nameEn}
                 fill
-                sizes="
-              (max-width: 640px) 100vw,
-              (max-width: 768px) 100vw,
-              (max-width: 1024px) 100vw,
-              (max-width: 1280px) 100vw,
-              (max-width: 1536px) 100vw,
-            "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, (max-width: 1280px) 100vw, (max-width: 1536px) 100vw,"
                 priority
                 className="object-cover"
               />

@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
-import { useForm, useTracking } from "@/src/app/hooks/";
+import { useForm, useTracking } from "@hooks/index";
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
   const [formValues, handleInputChange, reset] = useForm({
@@ -11,14 +11,14 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
   });
 
   const { trackingNumber, trackingType } = formValues;
-  const [handleTracking] = useTracking({ lang, origin: "tracking" });
+  const { handleTracking } = useTracking({ lang });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     handleTracking({
       trackingNumber,
       trackingType,
-      origin,
+      origin: "tracking",
     });
     reset();
   };

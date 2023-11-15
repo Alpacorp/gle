@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ArrowCta } from "..";
+import { ArrowCta } from "@icons/index";
 
 interface ButtonQuoteProps {
   lang: string;

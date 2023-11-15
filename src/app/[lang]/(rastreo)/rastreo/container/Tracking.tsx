@@ -1,21 +1,20 @@
 "use client";
 
 import { FC, useEffect, useState } from "react";
-
-import StickyTracking from "@src/app/ui/components/StickyTracking";
-
-import { LangInterface } from "@src/app/constans/interfaces/langInterface";
 import { useSearchParams } from "next/navigation";
-import { HeroPages } from "@/src/app/ui/components";
+
+import StickyTracking from "@ui/components/StickyTracking";
+
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { HeroPages } from "@ui/components";
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
+  const searchParams = useSearchParams();
+  const trackingId = searchParams.get("tracking-id");
+
   const [dataTracking, setDataTracking] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  const searchParams = useSearchParams();
-
-  const trackingId = searchParams.get("tracking-id");
 
   const getTracking = async () => {
     const trackingNumber = trackingId?.slice(0, 10);

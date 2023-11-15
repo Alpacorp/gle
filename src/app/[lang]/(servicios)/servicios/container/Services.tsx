@@ -2,15 +2,18 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ArrowCta, ArrowGLE, HeroPages } from "@/src/app/ui/components";
-import { Check } from "@/src/app/ui/components/Icons/Check";
-import { ServicesContainer } from "@/src/app/ui/components/ServicesContainer";
+import {
+  ArrowCta,
+  ArrowGLE,
+  HeroPages,
+  ServicesContainer,
+} from "@ui/components";
+import { Check, Contract } from "@icons/index";
 import StickyTracking from "@/src/app/ui/components/StickyTracking";
 import { operate } from "@/public/assets/images/services";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
-import { Contract } from "@/src/app/ui/components/Icons/Contract";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { getDictionary } from "@lib/dictionary";
 
 export const Services: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);

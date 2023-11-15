@@ -1,4 +1,4 @@
-import { Tracking } from "../rastreo/container/Tracking";
+import { Tracking } from "@rastreo/rastreo/container/Tracking";
 import { Locale } from "@/i18n.config";
 
 const trackingPage = async ({ params }: { params: { lang: Locale } }) => {

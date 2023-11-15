@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import "@globals/globals.css";
 
 export const metadata: Metadata = {
-  title: "G.L.E. - Carga Masiva",
+  title: "G.L.E. - Envíos Prohibido Transporte",
   description:
-    "Movilización de vehículos dedicados tipo turbo, sencillo, doble troque, patineta y tractomula punto a punto.",
+    "Objetos que por su naturaleza o embalaje pongan en peligro a los empleados de los servicios postales o al público en general, o que puedan ensuciar o dañar otros objetos postales, o los equipos del operador.",
   keywords:
     "transporte, carga, logística, aéreo, terrestre, marítimo, carga masiva",
 };

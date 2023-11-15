@@ -70,7 +70,7 @@ export const SubMenu: FC<SubMenuProps> = ({
             {item.idSub === submenu.length ? (
               ""
             ) : (
-              <hr className="border-gray-300 border-[1px]" />
+              <hr className="border-gray-300 border" />
             )}
           </Link>
         ))}

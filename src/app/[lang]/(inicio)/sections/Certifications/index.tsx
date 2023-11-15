@@ -8,7 +8,7 @@ import {
   mintrans,
 } from "@public/assets/images/home/certifications/index";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 export const Certifications: FC<LangInterface> = ({ lang }) => {
   return (

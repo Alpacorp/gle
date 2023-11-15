@@ -2,19 +2,28 @@ import { FC } from "react";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
 
-import { ArrowCta } from "../Icons";
+import { ArrowCta } from "@icons/index";
 
-import { HeroPagesPropsInterface } from "@ui/components/HeroPages/interfaces/heroPagesPropsInterface";
+interface HeroPagesPropsInterface {
+  arrowColor?: "red" | "white";
+  arrowDown?: boolean;
+  className?: string;
+  color?: "red" | "white";
+  iconPath?: string | StaticImageData;
+  imagePath?: string | StaticImageData;
+  imagePathMobile?: string | StaticImageData;
+  pageTitle: string;
+}
 
 export const HeroPages: FC<HeroPagesPropsInterface> = ({
-  color,
-  className,
   arrowColor = "white",
+  arrowDown,
+  className,
+  color,
+  iconPath,
   imagePath,
   imagePathMobile = imagePath as StaticImageData,
   pageTitle,
-  iconPath,
-  arrowDown,
 }) => {
   return (
     <div className="relative h-auto">

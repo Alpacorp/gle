@@ -1,5 +1,6 @@
 {
   "rewrites":  [
-    
+    {"source": "/es(.*)", "destination": "/es"},
+    {"source": "/en(.*)", "destination": "/en"}
   ]
 }

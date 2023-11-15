@@ -7,10 +7,10 @@ import {
   packageIcon,
   packageImage,
 } from "@/public/assets/images/package";
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import StickyTracking from "@ui/components/StickyTracking";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
-import { getDictionary } from "@/src/lib/dictionary";
+import { LangInterface } from "@constans/interfaces/langInterface";
+import { getDictionary } from "@lib/dictionary";
 
 export const Package: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
