@@ -4,8 +4,7 @@ import "@globals/globals.css";
 
 export const metadata: Metadata = {
   title: "G.L.E. - Procedimiento de Compensaciones",
-  description:
-    "Al acceder a este sitio, el usuario acepta las siguientes condiciones y políticas de uso.",
+  description: "Descripción del procedimiento de compensaciones",
   keywords:
     "transporte, carga, logística, aéreo, terrestre, marítimo, carga masiva",
 };

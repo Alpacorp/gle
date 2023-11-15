@@ -15,3 +15,7 @@ export * from "./Title";
 export * from "./BodyServices";
 export * from "./ContainerContent";
 export * from "./Modal";
+export * from "./Input";
+export * from "./Select";
+export * from "./Option";
+export * from "./Loading";

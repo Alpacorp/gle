@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "valueEs": "Seleeciona",
+    "valueEn": "Select"
+  },
+  {
+    "id": 2,
+    "valueEs": "Queja",
+    "valueEn": "Complaint"
+  },
+  {
+    "id": 3,
+    "valueEs": "Solicitud",
+    "valueEn": "Application"
+  },
+  {
+    "id": 4,
+    "valueEs": "Reclamo",
+    "valueEn": "Claim"
+  },
+  {
+    "id": 5,
+    "valueEs": "Felicitaciones",
+    "valueEn": "Congratulations"
+  },
+  {
+    "id": 6,
+    "valueEs": "Asesoria Comercial",
+    "valueEn": "Commercial Advice"
+  }
+]

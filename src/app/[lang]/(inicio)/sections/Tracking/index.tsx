@@ -32,11 +32,11 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
         onSubmit={handleSubmit}
         className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]"
       >
-        <h2 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
+        <h1 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
           {lang === "es"
             ? "Realiza aquí el seguimiento de tus envíos nacionales"
             : "Track your national shipments here"}
-        </h2>
+        </h1>
         <div className="flex justify-center gap-2">
           <div className="relative flex gap-2">
             <input
