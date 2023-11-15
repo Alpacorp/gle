@@ -4,7 +4,7 @@ import "@globals/globals.css";
 
 export const metadata: Metadata = {
   title: "G.L.E. - Compensation Procedure",
-  description: "Description of the compensation procedure",
+  description: "Compensation Procedure",
   keywords: "transport, cargo, logistics, air, land, sea, mass cargo",
 };
 

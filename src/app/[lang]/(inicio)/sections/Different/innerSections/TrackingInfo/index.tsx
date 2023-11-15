@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { ArrowCta, Title } from "@/src/app/ui/components";
+import { ArrowCta, Title } from "@ui/components";
 import { phone1, phone2 } from "@public/assets/images/home/different/index";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 export const TrackingInfo: FC<LangInterface> = ({ lang }) => {
   return (

@@ -25,6 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.glecolombia.com/"),
   title: "G.L.E. Grupo Logístico Especializado",
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
@@ -35,14 +36,7 @@ export const metadata: Metadata = {
     siteName: "G.L.E. Grupo Logístico Especializado",
     title: "G.L.E. Grupo Logístico Especializado",
     description: "Volamos para que llegues más rápido",
-    images: [
-      {
-        url: "/favicon.ico",
-        width: 1200,
-        height: 630,
-        alt: "G.L.E. Grupo Logístico Especializado",
-      },
-    ],
+    images: "/favicon.ico",
   },
   twitter: {
     card: "summary",
@@ -50,7 +44,7 @@ export const metadata: Metadata = {
     creator: "@glecolombia",
     title: "G.L.E. Grupo Logístico Especializado",
     description: "Volamos para que llegues más rápido",
-    images: ["/favicon.ico"],
+    images: "/favicon.ico",
   },
 };
 

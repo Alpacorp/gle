@@ -1,5 +1,4 @@
-import { Package } from "./container/Package";
-
+import { Package } from "@servicios/servicios/paqueteo/container/Package";
 import { Locale } from "@/i18n.config";
 
 const PackagePage = async ({ params }: { params: { lang: Locale } }) => {

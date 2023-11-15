@@ -9,7 +9,7 @@ import {
   BulletPagination,
 } from "@inicio/sections/ImageSlider/innerSections/index";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 import { useImagesSliders } from "@inicio/sections/ImageSlider/hooks/useImagesSliders";
 

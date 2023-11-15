@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
+
 import { FlyFastImageProps } from "@inicio/sections/Services/interfaces/services";
 
 export const FlyFastImage: FC<FlyFastImageProps> = ({ volamos }) => {

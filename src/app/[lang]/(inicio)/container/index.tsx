@@ -8,7 +8,7 @@ import {
 
 import StickyTracking from "@ui/components/StickyTracking";
 
-import { HomePageProps } from "@inicio/container/interfaces/homePage";
+import { HomePageProps } from "@/src/app/[lang]/(inicio)/interfaces/homePage";
 
 const HomePage = ({ params: { lang } }: HomePageProps) => {
   return (

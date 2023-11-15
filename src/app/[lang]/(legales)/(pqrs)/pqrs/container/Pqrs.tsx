@@ -3,12 +3,12 @@ import { FC } from "react";
 import { HeroPages, ContainerContent } from "@ui/components/index";
 
 import StickyTracking from "@ui/components/StickyTracking";
-import { Address } from "@ui/components/Footer/Address";
+import { Address } from "@ui/components/Address";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
 import { getDictionary } from "@lib/dictionary";
 
-import data from "@ui/components/Footer/data/dataFooter.json";
+import dataAddress from "@ui/components/Address/data/dataAddress.json";
 
 export const Pqrs: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -34,17 +34,19 @@ export const Pqrs: FC<LangInterface> = async ({ lang }) => {
           <h3 className="font-poppins font-semibold uppercase">
             {pages.pqrs.locations}
           </h3>
-          {data.map((item) => (
-            <Address
-              key={item.id}
-              city={item.city}
-              phoneText={item.phoneText}
-              address={item.address}
-              phone={item.phone}
-              type={item.type}
-              maps={item.maps}
-            />
-          ))}
+          {dataAddress.map(
+            ({ id, city, phoneText, address, phone, type, maps }) => (
+              <Address
+                key={id}
+                city={city}
+                phoneText={phoneText}
+                address={address}
+                phone={phone}
+                type={type}
+                maps={maps}
+              />
+            )
+          )}
         </div>
       </ContainerContent>
       <StickyTracking lang={lang} />

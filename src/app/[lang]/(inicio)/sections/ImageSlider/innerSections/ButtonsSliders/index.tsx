@@ -1,5 +1,7 @@
-import { LeftArrow, RightArrow } from "@/src/app/ui/components";
 import { FC } from "react";
+
+import { LeftArrow, RightArrow } from "@ui/components";
+
 import { ButtonSlideProps } from "@inicio/sections/ImageSlider/interfaces/imageSlider";
 
 export const ButtonsSliders: FC<ButtonSlideProps> = ({

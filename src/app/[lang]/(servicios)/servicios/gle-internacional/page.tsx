@@ -1,5 +1,4 @@
-import { International } from "./container/International";
-
+import { International } from "@servicios/servicios/gle-internacional/container/International";
 import { Locale } from "@/i18n.config";
 
 const InternationalPage = async ({ params }: { params: { lang: Locale } }) => {

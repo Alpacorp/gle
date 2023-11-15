@@ -1,12 +1,6 @@
 import { gtmEvents } from "@/src/lib/gtm";
 
-export const useTracking = ({
-  lang,
-  origin,
-}: {
-  lang: string;
-  origin: string;
-}) => {
+export const useTracking = ({ lang }: { lang: string }) => {
   const handleTracking = ({
     trackingNumber,
     trackingType,
@@ -51,5 +45,5 @@ export const useTracking = ({
         );
   };
 
-  return [handleTracking] as const;
+  return { handleTracking } as const;
 };

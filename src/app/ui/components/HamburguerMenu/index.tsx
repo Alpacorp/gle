@@ -2,7 +2,7 @@
 
 import { FC, useContext, useRef } from "react";
 
-import { Context } from "@/src/app/context/Context";
+import { Context } from "@context/Context";
 
 export const HamburguerMenu: FC = () => {
   const { setShowMenu } = useContext(Context);

@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import "@globals/globals.css";
 
 export const metadata: Metadata = {
-  title: "G.L.E. - Nosotros | Misión, Visión y Valores",
+  title: "G.L.E. - Rastrea tus envíos | Rastreo de paquetes y mensajería",
   description:
-    "Conócenos y descubre nuestros valores. Ofrecemos logística innovadora y compromiso con la satisfacción del cliente.",
+    "Rastrea tus envíos de forma rápida y segura. Optimiza tu logística con nosotros.",
   keywords: "empresa logística, servicios logísticos, misión, visión, valores",
 };
 

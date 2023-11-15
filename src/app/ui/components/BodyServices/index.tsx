@@ -1,30 +1,29 @@
 import { FC } from "react";
 import Image, { StaticImageData } from "next/image";
 
-import { ArrowGLE } from "..";
-import { AttachedLinks } from "../AttachedLinks";
-import { ButtonQuote } from "../ButtonQuote";
+import { ArrowGLE } from "@icons/index";
+import { AttachedLinks, ButtonQuote } from "@ui/components/index";
 
 interface BodyServicesProps {
-  lang: string;
-  showRates?: boolean;
-  service: string;
+  additionDescription?: React.ReactNode | string;
   imageInfo: string;
   imageService: StaticImageData;
+  lang: string;
   mainDescription?: React.ReactNode;
-  additionDescription?: React.ReactNode | string;
+  service: string;
+  showRates?: boolean;
   sideTextTitle: string;
 }
 
 export const BodyServices: FC<BodyServicesProps> = ({
-  lang = "es",
+  additionDescription,
   imageInfo,
   imageService,
+  lang = "es",
   mainDescription,
-  additionDescription,
-  sideTextTitle,
   service,
   showRates = false,
+  sideTextTitle,
 }) => {
   return (
     <div className="relative z-20 mb-32">
@@ -32,13 +31,13 @@ export const BodyServices: FC<BodyServicesProps> = ({
         <div className="text-xl max-[400px]:text-lg">{mainDescription}</div>
         <div className="flex justify-center items-center w-full my-20 flex-wrap gap-12 max-[400px]:my-10">
           <Image
-            src={imageService}
             alt={imageInfo}
-            title={imageInfo}
-            width={411}
+            className="aspect-square rounded-2xl object-cover"
             height={390}
             priority
-            className="aspect-square rounded-2xl object-cover"
+            src={imageService}
+            title={imageInfo}
+            width={411}
           />
           <div className="max-w-[388px] w-full border-l-[3px] border-main-red pl-5 text-3xl font-semibold leading-8 max-[400px]:text-xl max-[400px]:leading-6">
             <h3>{sideTextTitle}</h3>

@@ -1,5 +1,16 @@
 import { FC } from "react";
-import { InputPropsInterface } from "@ui/components/Input/interfaces/inputPropsInterface";
+
+interface InputPropsInterface {
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  name: string;
+  placeholder: string;
+  type: string;
+  required?: boolean;
+  className?: string;
+  disabled?: boolean;
+  id: string;
+}
 
 export const Input: FC<InputPropsInterface> = ({
   handleInputChange,

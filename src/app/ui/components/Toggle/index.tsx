@@ -1,14 +1,14 @@
 "use client";
 
 import { FC, useState } from "react";
-import { MiddleWorld } from "..";
+import { MiddleWorld } from "@ui/components";
 
 interface ToggleProps {
   onChange: Function;
   lang: string;
 }
 
-const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
+export const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleToggleChange = () => {
@@ -33,6 +33,12 @@ const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
         className={`relative flex items-center rounded-full cursor-pointer border-2 border-main-red mx-4 w-[42px] h-[22px] transition-all duration-300 ${
           lang === "en" ? "bg-white" : "bg-main-red"
         }`}
+        onKeyDown={(event: React.KeyboardEvent<HTMLLabelElement>) => {
+          if (event.key === "Enter" || event.key === " ") {
+            handleToggleChange();
+          }
+        }}
+        tabIndex={0}
       >
         {lang === "en" ? (
           <span className="absolute left-0 ml-[3px] text-main-red text-xs font-medium font-poppins">
@@ -54,5 +60,3 @@ const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
     </div>
   );
 };
-
-export default Toggle;

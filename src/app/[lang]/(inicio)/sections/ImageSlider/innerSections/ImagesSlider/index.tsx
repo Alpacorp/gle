@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 
-import { TextBanner } from "@/src/app/ui/components";
+import { TextBanner } from "@ui/components";
 
 import {
   ImageData,

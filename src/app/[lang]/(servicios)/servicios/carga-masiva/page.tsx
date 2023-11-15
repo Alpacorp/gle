@@ -1,4 +1,4 @@
-import { BulkCargo } from "./container/BulkCargo";
+import { BulkCargo } from "@servicios/servicios/carga-masiva/container/BulkCargo";
 import { Locale } from "@/i18n.config";
 
 const BulkLoadPage = async ({ params }: { params: { lang: Locale } }) => {

@@ -6,7 +6,7 @@ import { iconsDifferent } from "@/src/app/[lang]/(inicio)/sections/Different/dat
 import { TrackingInfo } from "@inicio/sections/Different/innerSections/TrackingInfo";
 import { CardsInfo } from "@inicio/sections/Different/innerSections/CardsInfo";
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 import data from "@inicio/sections/Different/data/dataDifferent.json";
 

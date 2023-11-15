@@ -42,3 +42,5 @@ export * from "./Warning";
 export * from "./Download";
 export * from "./Play";
 export * from "./Location";
+export * from "./Contract";
+export * from "./Check";

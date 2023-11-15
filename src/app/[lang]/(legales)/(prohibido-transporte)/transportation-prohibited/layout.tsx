@@ -5,14 +5,14 @@ import "@globals/globals.css";
 export const metadata: Metadata = {
   title: "G.L.E. - Prohibited Transport Shipments",
   description:
-    "We are a company that provides logistics services, we have a team of professionals with extensive experience in the sector, we offer a personalized service, we are your best allies.",
-  keywords: "",
+    "Objects that, due to their nature or packaging, endanger postal services employees or the general public, or that may dirty or damage other postal objects, or the operator's equipment.",
+  keywords: "transport, cargo, logistics, air, land, sea, mass cargo",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }) {
   return <>{children}</>;
 }
