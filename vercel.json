@@ -1,6 +1,0 @@
-{
-  "rewrites":  [
-    {"source": "/es/nosotros/(.*)", "destination": "/es"},
-    {"source": "/en/about-us/(.*)", "destination": "/en"}
-  ]
-}
