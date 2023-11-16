@@ -48,26 +48,21 @@
   },
   {
     "id": 6,
-    "linkEs": "/compensacion",
-    "linkEn": "/compensation"
-  },
-  {
-    "id": 7,
     "linkEs": "/pqrs",
     "linkEn": "/claims"
   },
   {
-    "id": 8,
+    "id": 7,
     "linkEs": "/prohibido-transporte",
     "linkEn": "/transportation-prohibited"
   },
   {
-    "id": 9,
+    "id": 8,
     "linkEs": "/compensaciones",
     "linkEn": "/compensations"
   },
   {
-    "id": 10,
+    "id": 9,
     "linkEs": "/rastreo",
     "linkEn": "/tracking"
   }
