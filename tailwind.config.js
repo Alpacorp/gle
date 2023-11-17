@@ -44,7 +44,8 @@ module.exports = {
         "secondary-gray": "#313131",
         "third-gray": "#E6E6E6",
         "light-gray": "#F0F0F0",
-        "light-gray-2": "#D9D9D9",
+        "light-gray-second": "#D9D9D9",
+        "light-gray-third": "#BFBFBF",
       },
       keyframes: {
         "slide-top": {

@@ -11,11 +11,11 @@ import {
   ContactUsForm,
   Locations,
   OpeningHours,
-} from "@contacto/contacto/innerSections/index";
+} from "@contacto/contactanos/innerSections/index";
 import StickyTracking from "@ui/components/StickyTracking";
 
 import { useForm } from "@hooks/useForm";
-import { useSendInfo } from "@contacto/contacto/hooks/useSendInfo";
+import { useSendInfo } from "@contacto/contactanos/hooks/useSendInfo";
 
 export const Contact: FC<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);

@@ -26,7 +26,7 @@ export const Select: FC<SelectPropsInterface> = ({
       id={id}
       value={subject}
       onChange={handleInputChange}
-      className={`border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-2 placeholder:text-xs ${className}`}
+      className={`border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs ${className}`}
       placeholder={placeholder}
       required={required}
     >

@@ -1,4 +1,4 @@
-import { Contact } from "@contacto/contacto/container/Contact";
+import { Contact } from "@contacto/contactanos/container/Contact";
 import { Locale } from "@/i18n.config";
 
 const ContactPage = async ({ params }: { params: { lang: Locale } }) => {
