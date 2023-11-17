@@ -1,8 +1,8 @@
-export default function NotFound() {
-  return (
-    <div>
-      <h2>Not Found inner</h2>
-      <p>Could not find requested resource</p>
-    </div>
-  );
-}
+import { Locale } from "@/i18n.config";
+import { NotFound } from "./container/NotFound";
+
+const PqrsPage = async ({ params }: { params: { lang: Locale } }) => {
+  return <NotFound lang={params.lang} />;
+};
+
+export default PqrsPage;

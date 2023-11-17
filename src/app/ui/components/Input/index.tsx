@@ -1,27 +1,29 @@
 import { FC } from "react";
 
 interface InputPropsInterface {
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value: string;
-  name: string;
-  placeholder: string;
-  type: string;
-  required?: boolean;
   className?: string;
   disabled?: boolean;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   id: string;
+  name: string;
+  placeholder: string;
+  required?: boolean;
+  type: string;
+  value: string;
+  variant?: "red" | "gray";
 }
 
 export const Input: FC<InputPropsInterface> = ({
+  className,
+  disabled,
   handleInputChange,
-  value,
   id,
   name,
-  type,
-  required,
-  disabled,
-  className,
   placeholder,
+  required,
+  type,
+  value,
+  variant = "gray",
 }) => {
   return (
     <input
@@ -30,7 +32,11 @@ export const Input: FC<InputPropsInterface> = ({
       value={value}
       onChange={handleInputChange}
       type={type}
-      className={`border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-2 placeholder:text-xs ${className}`}
+      className={
+        variant === "gray"
+          ? `border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs ${className}`
+          : `border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray ${className}`
+      }
       placeholder={placeholder}
       required={required}
       disabled={disabled}

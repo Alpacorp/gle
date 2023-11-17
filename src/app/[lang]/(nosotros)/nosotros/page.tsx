@@ -1,4 +1,4 @@
-import { Ours } from "./container/Ours";
+import { Ours } from "@nosotros/nosotros/container/Ours";
 
 import { Locale } from "@/i18n.config";
 

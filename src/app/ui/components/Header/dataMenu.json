@@ -53,8 +53,8 @@
     "id": 3,
     "textEs": "Contáctanos",
     "textEn": "Contact Us",
-    "linkEs": "/contacto",
-    "linkEn": "/contact",
+    "linkEs": "/contactanos",
+    "linkEn": "/contact-us",
     "type": "link"
   }
 ]

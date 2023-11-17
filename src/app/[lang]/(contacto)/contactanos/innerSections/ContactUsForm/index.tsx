@@ -10,11 +10,11 @@ import {
   Option,
   Loading,
 } from "@ui/components";
-import { LegalForm } from "@contacto/contacto/innerSections/LegalForm";
+import { LegalForm } from "@contacto/contactanos/innerSections/LegalForm";
 
-import { ContactUsFormInterface } from "@contacto/contacto/interfaces/contactUsFormInterface";
+import { ContactUsFormInterface } from "@contacto/contactanos/interfaces/contactUsFormInterface";
 
-import dataSubject from "@contacto/contacto/innerSections/ContactUsForm/data/dataSubjectContact.json";
+import dataSubject from "@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json";
 
 export const ContactUsForm: FC<ContactUsFormInterface> = ({
   email,
@@ -126,7 +126,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                 name="message"
                 value={message}
                 onChange={handleInputChange}
-                className="border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-2 placeholder:text-xs w-full"
+                className="border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs w-full"
                 rows={8}
                 required
               />

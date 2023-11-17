@@ -1,5 +1,6 @@
 import { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "@ui/components/Header";
 import { Footer, Modal } from "@ui/components/";
@@ -27,6 +28,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.glecolombia.com/"),
   title: "G.L.E. Grupo Logístico Especializado",
+  alternates: {
+    canonical: "https://www.glecolombia.com/",
+  },
   description: "Volamos para que llegues más rápido",
   keywords: "transporte, carga, logística, aéreo, terrestre, marítimo",
   openGraph: {
@@ -77,6 +81,7 @@ export default function RootLayout({
           <Header lang={params.lang} />
           {children}
           <Footer lang={params.lang} />
+          <Analytics />
         </body>
       </ContextProvider>
     </html>
