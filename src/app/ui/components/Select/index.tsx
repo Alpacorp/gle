@@ -8,6 +8,7 @@ interface SelectPropsInterface {
   placeholder?: string;
   required?: boolean;
   children: ReactNode;
+  variant?: "red" | "gray";
 }
 
 export const Select: FC<SelectPropsInterface> = ({
@@ -19,6 +20,7 @@ export const Select: FC<SelectPropsInterface> = ({
   placeholder,
   required,
   children,
+  variant = "gray",
 }) => {
   return (
     <select
@@ -26,7 +28,11 @@ export const Select: FC<SelectPropsInterface> = ({
       id={id}
       value={subject}
       onChange={handleInputChange}
-      className={`border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs ${className}`}
+      className={
+        variant === "gray"
+          ? `border w-full border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:ring-main-gray focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs ${className}`
+          : `border w-full border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray ${className}`
+      }
       placeholder={placeholder}
       required={required}
     >

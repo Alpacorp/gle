@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "valueEs": "Selecciona",
+    "valueEn": "Select"
+  },
+  {
+    "id": 2,
+    "valueEs": "Operaciones",
+    "valueEn": "Operations"
+  },
+  {
+    "id": 3,
+    "valueEs": "Servicio al cliente",
+    "valueEn": "Customer service"
+  },
+  {
+    "id": 4,
+    "valueEs": "Comercial",
+    "valueEn": "Commercial"
+  },
+  {
+    "id": 5,
+    "valueEs": "RRHH y Calidad",
+    "valueEn": "HR and Quality"
+  },
+  {
+    "id": 6,
+    "valueEs": "Administrativo",
+    "valueEn": "Administrative"
+  }
+]

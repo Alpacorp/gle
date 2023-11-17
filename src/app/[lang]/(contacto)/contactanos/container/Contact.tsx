@@ -2,7 +2,6 @@
 
 import { FC, useState } from "react";
 
-import { LangInterface } from "@constans/interfaces/langInterface";
 import { HeroPages } from "@ui/components";
 import {
   AttentionLine,
@@ -15,7 +14,9 @@ import {
 import StickyTracking from "@ui/components/StickyTracking";
 
 import { useForm } from "@hooks/useForm";
-import { useSendInfo } from "@contacto/contactanos/hooks/useSendInfo";
+import { useSendInfoContact } from "@/src/app/[lang]/(contacto)/contactanos/hooks/useSendInfoContact";
+
+import { LangInterface } from "@constans/interfaces/langInterface";
 
 export const Contact: FC<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
@@ -30,7 +31,7 @@ export const Contact: FC<LangInterface> = ({ lang }) => {
 
   const { fullname, email, subject, message } = formValues;
 
-  const { handleSubmit } = useSendInfo({
+  const { handleSubmit } = useSendInfoContact({
     formValues,
     lang,
     reCaptchaToken,
