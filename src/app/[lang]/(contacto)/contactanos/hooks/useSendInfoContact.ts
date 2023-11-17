@@ -1,4 +1,4 @@
-export const useSendInfo = ({
+export const useSendInfoContact = ({
   formValues,
   lang,
   reCaptchaToken,

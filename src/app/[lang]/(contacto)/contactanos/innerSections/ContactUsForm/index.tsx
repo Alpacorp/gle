@@ -14,7 +14,7 @@ import { LegalForm } from "@contacto/contactanos/innerSections/LegalForm";
 
 import { ContactUsFormInterface } from "@contacto/contactanos/interfaces/contactUsFormInterface";
 
-import dataSubject from "@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json";
+import dataSubjectContact from "@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json";
 
 export const ContactUsForm: FC<ContactUsFormInterface> = ({
   email,
@@ -57,6 +57,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                   }
                   type="text"
                   required
+                  variant="gray"
                 />
               </div>
             </div>
@@ -80,6 +81,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                   required
                   type="email"
                   value={email}
+                  variant="gray"
                 />
               </div>
             </div>
@@ -100,7 +102,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                   subject={subject}
                   required
                 >
-                  {dataSubject.map(({ id, valueEn, valueEs }) => (
+                  {dataSubjectContact.map(({ id, valueEn, valueEs }) => (
                     <Option key={id} value={lang === "es" ? valueEs : valueEn}>
                       {lang === "es" ? valueEs : valueEn}
                     </Option>
