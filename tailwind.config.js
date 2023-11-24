@@ -37,15 +37,16 @@ module.exports = {
         "sticky-shadow": "0px 0px 10px 0px rgba(0, 0, 0, 0.75)",
       },
       colors: {
-        "main-red": "#D81730",
-        "secondary-red": "#AE0E22",
-        "third-red": "#fce5e8",
-        "main-gray": "#383838",
-        "secondary-gray": "#313131",
-        "third-gray": "#E6E6E6",
-        "light-gray": "#F0F0F0",
         "light-gray-second": "#D9D9D9",
         "light-gray-third": "#BFBFBF",
+        "light-gray": "#F0F0F0",
+        "main-gray": "#383838",
+        "main-red": "#D81730",
+        "main-green": "#39B54A",
+        "secondary-gray": "#313131",
+        "secondary-red": "#AE0E22",
+        "third-gray": "#E6E6E6",
+        "third-red": "#fce5e8",
       },
       keyframes: {
         "slide-top": {
@@ -134,6 +135,29 @@ module.exports = {
             transform: "rotate(360deg)",
           },
         },
+        "heartbeat-effect": {
+          from: {
+            transform: "scale(1)",
+            transformOrigin: "center center",
+            animationTimingFunction: "ease-out",
+          },
+          "10%": {
+            transform: "scale(0.91)",
+            animationTimingFunction: "ease-in",
+          },
+          "17%": {
+            transform: "scale(0.98)",
+            animationTimingFunction: "ease-out",
+          },
+          "33%": {
+            transform: "scale(0.87)",
+            animationTimingFunction: "ease-in",
+          },
+          "45%": {
+            transform: "scale(1)",
+            animationTimingFunction: "ease-out",
+          },
+        },
       },
       animation: {
         "slide-top":
@@ -149,6 +173,7 @@ module.exports = {
         "slide-on": "slide-on 0.3s linear forwards",
         "slide-off": "slide-off 0.3s linear forwards",
         "spinner-forward": "spinner-forward 2s linear infinite",
+        "heartbeat-effect": "heartbeat-effect 1.5s ease-in-out infinite both",
       },
     },
   },

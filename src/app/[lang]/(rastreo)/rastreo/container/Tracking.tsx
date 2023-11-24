@@ -1,40 +1,35 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { NextPage } from "next";
+
+import {
+  HeaderTracking,
+  MainData,
+  HistoryTracking,
+} from "@rastreo/rastreo/innerSections";
 
 import StickyTracking from "@ui/components/StickyTracking";
+import { HeroPages } from "@ui/components";
+import { ErrorLayout } from "@rastreo/rastreo/components/";
 
 import { LangInterface } from "@constans/interfaces/langInterface";
-import { HeroPages } from "@ui/components";
 
-export const Tracking: FC<LangInterface> = ({ lang }) => {
-  const searchParams = useSearchParams();
-  const trackingId = searchParams.get("tracking-id");
+import { formatDate } from "@utils/formatDate";
 
-  const [dataTracking, setDataTracking] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
+import { DataTracking } from "@rastreo/rastreo/interfaces/tracking";
 
-  const getTracking = async () => {
-    const trackingNumber = trackingId?.slice(0, 10);
-    const sendTracking = await fetch("/api/tracking", {
-      method: "POST",
-      body: JSON.stringify({
-        remesa: trackingNumber,
-      }),
-    });
+import { useTrackingResults } from "@rastreo/rastreo/hooks/useTrackingResults";
 
-    const response = await sendTracking.json();
-
-    if (response.code !== 200) {
-      setError(true);
-      return;
-    }
-
-    if (Array.isArray(response.data)) setDataTracking(response.data);
-    setLoading(false);
-  };
+export const Tracking: NextPage<LangInterface> = ({ lang }) => {
+  const {
+    dataTracking,
+    error,
+    getTracking,
+    loading,
+    statusTrackingNumber,
+    trackingId,
+  } = useTrackingResults();
 
   useEffect(() => {
     if (trackingId) {
@@ -43,76 +38,38 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackingId]);
 
+  if (error) {
+    return <ErrorLayout lang={lang} />;
+  }
+
   return (
     <section>
       <HeroPages
-        arrowDown
-        arrowColor="red"
         pageTitle={
           lang === "es" ? "Resultados del rastreo" : "Tracking results"
         }
         color="white"
         className="leading-none"
       />
-      {error && <p className="text-center">Error</p>}
       {loading ? (
         <p className="text-center">Cargando...</p>
       ) : (
-        <div className="flex justify-center mx-auto flex-col p-2 items-center gap-1 rounded-xl w-auto max-w-[730px]">
-          {dataTracking.map((item: any) => (
-            <div key={item.GUIA}>
-              <p>Número de órden: {item.ORDEN}</p>
-              <p>Fecha de despacho: {item.FECHA_DESPACHO}</p>
-              <p>Fecha estimada: {item.FECHAESTIMADA}</p>
-              <p>Factura: {item.FACTURA}</p>
-              <p>Código identificador: {item.CODIGOIDENTIFICADOR}</p>
-              <p>Número de Guía: {item.GUIA}</p>
-              <p>Nombre remitente: {item.REMITENTE}</p>
-              <p>Dirección remitente: {item.DIRREMITENTE}</p>
-              <p>Ciudad remitente: {item.CIUDADREMITENTE}</p>
-              <p>Cédula: {item.CEDULA}</p>
-              <p>Nombre destinatario: {item.DESTINATARIO}</p>
-              <p>Dirección destinatario: {item.DIRECCION}</p>
-              <p>Barrio: {item.BARRIO}</p>
-              <p>Ciudad: {item.CIUDAD}</p>
-              <p>Departamento: {item.DEPARTAMENTO}</p>
-              <p>Teléfono: {item.TELEFONO}</p>
-              <p>Observaciones: {item.OBSERVACIONES}</p>
-              <p>Producto: {item.PRODUCTO}</p>
-              <p>Cantidad: {item.CANTIDAD}</p>
-              <p>Zona: {item.ZONA}</p>
-              <p>Subzona: {item.SUBZONA}</p>
-              <p>Orden de cargue: {item.ORDEN_CARGUE}</p>
-              <p>Identificador de ruta: {item.IDRUTA}</p>
-              <p>Hora de ruta: {item.HORARUTA}</p>
-              <p>Peso: {item.PESO}</p>
-              <p>Volumen: {item.VOLUMEN}</p>
-              <p>Alto: {item.ALTO}</p>
-              <p>Ancho: {item.ANCHO}</p>
-              <p>Largo: {item.LARGO}</p>
-              <p>Valor: {item.VALOR}</p>
-              <p>Ventana: {item.VENTANAINI}</p>
-              <p>Código de estado: {item.CODESTADO}</p>
-              <p>Estado: {item.ESTADO}</p>
-              <p>Código de novedad: {item.CODNOVEDAD}</p>
-              <p>Novedad: {item.NOVEDAD}</p>
-              <p>Anotación: {item.ANOTACION}</p>
-              <p>Auxiliar: {item.AUXILIAR}</p>
-              <p>Camión: {item.TRUCK}</p>
-              <p>Fecha de asignación: {item.FECHA_ASIGNACION}</p>
-              <p>Planilla de cargue: {item.PLANILLACARGUE}</p>
-              <p>Fecha de operación: {item.FECHA_OPERACION}</p>
-              <p>Gps: {item.GPS}</p>
-              <p>Usuario: {item.USUARIO}</p>
-              <p>En Bodega: {item.ENBODEGA}</p>
-              <p>Fuera de Bodega: {item.OUTBODEGA}</p>
-              <p>En sistema: {item.EN_SISTEMA}</p>
-              <p>Guía de retorno: {item.RETORNOGUIA}</p>
-            </div>
-          ))}
-          <StickyTracking lang={lang} />
-        </div>
+        <section className="flex justify-center items-center font-poppins mt-12 mx-5">
+          <div>
+            <HeaderTracking dataTracking={dataTracking} />
+            <MainData
+              dataTracking={dataTracking}
+              statusTrackingNumber={statusTrackingNumber}
+            />
+            <HistoryTracking
+              dataTracking={dataTracking as DataTracking}
+              formatDate={formatDate}
+              statusTrackingNumber={statusTrackingNumber}
+            />
+          </div>
+        </section>
       )}
+      <StickyTracking lang={lang} samePage />
     </section>
   );
 };

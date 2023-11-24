@@ -30,6 +30,7 @@ export * from "./InternationalIcon";
 export * from "./Kpis";
 export * from "./LinkedIn";
 export * from "./Location";
+export * from "./LocationTracking";
 export * from "./MiddleWorld";
 export * from "./Models";
 export * from "./PaperMoney";

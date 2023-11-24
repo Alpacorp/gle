@@ -1,12 +1,18 @@
 import { FC } from "react";
+import { IconProps } from "./interfaces";
 
-export const Location: FC = () => {
+export const Location: FC<IconProps> = ({
+  width = 40,
+  height = 41,
+  fill = "#D81730",
+  ...props
+}) => {
   return (
     <svg
-      width="40"
-      height="41"
+      width={width}
+      height={height}
       viewBox="0 0 40 41"
-      fill="none"
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
@@ -15,7 +21,7 @@ export const Location: FC = () => {
         width="39.7769"
         height="39.7769"
         rx="5"
-        fill="#D81730"
+        fill={fill}
       />
       <path
         d="M29.0612 16.8182C29.0612 21.8323 19.9996 33.9346 19.9996 33.9346C19.9996 33.9346 10.938 21.8323 10.938 16.8182C10.938 14.4149 11.8927 12.1101 13.5921 10.4107C15.2914 8.71132 17.5963 7.75662 19.9996 7.75662C22.4029 7.75662 24.7077 8.71132 26.4071 10.4107C28.1065 12.1101 29.0612 14.4149 29.0612 16.8182Z"

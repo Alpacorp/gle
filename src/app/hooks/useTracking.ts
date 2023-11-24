@@ -1,6 +1,12 @@
 import { gtmEvents } from "@/src/lib/gtm";
 
-export const useTracking = ({ lang }: { lang: string }) => {
+export const useTracking = ({
+  lang,
+  sameWindow = false,
+}: {
+  lang: string;
+  sameWindow?: boolean;
+}) => {
   const handleTracking = ({
     trackingNumber,
     trackingType,
@@ -38,10 +44,13 @@ export const useTracking = ({ lang }: { lang: string }) => {
 
   const handleTrackingMessaging = (trackingNumber: string) => {
     lang === "es"
-      ? window.open(`/${lang}/rastreo?tracking-id=${trackingNumber}`, "_blank")
+      ? window.open(
+          `/${lang}/rastreo?tracking-id=${trackingNumber}`,
+          `${sameWindow ? "_self" : "_blank"}`
+        )
       : window.open(
           `/${lang}/tracking?tracking-id=${trackingNumber}`,
-          "_blank"
+          `${sameWindow ? "_self" : "_blank"}`
         );
   };
 

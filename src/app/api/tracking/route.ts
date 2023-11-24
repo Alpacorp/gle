@@ -4,14 +4,18 @@ export async function POST(request: Request) {
   const { remesa } = await request.json();
 
   try {
-    const res = await fetch("https://api.nmv.app/api/getUrbRemesa", {
+    const url = process.env.NEXT_PUBLIC_TRACKING_API_URL;
+
+    if (!url) {
+      throw new Error("Tracking API URL is not defined");
+    }
+
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        usuario: "api_gle",
-        clave: "gle001&.",
         remesa,
       }),
     });
