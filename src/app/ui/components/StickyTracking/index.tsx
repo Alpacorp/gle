@@ -9,11 +9,13 @@ import { useTracking, useForm } from "@/src/app/hooks/";
 interface StickyTrackingProps {
   observerActive?: boolean;
   lang: string;
+  samePage?: boolean;
 }
 
 const StickyTracking: FC<StickyTrackingProps> = ({
   observerActive = false,
   lang = "es",
+  samePage = false,
 }) => {
   const [showTrackingIcon, showTrackingForm, showTrackingFormHandler] =
     useObserverTracking(observerActive);
@@ -24,7 +26,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
   });
 
   const { trackingNumber, trackingType } = formValues;
-  const { handleTracking } = useTracking({ lang });
+  const { handleTracking } = useTracking({ lang, sameWindow: samePage });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
