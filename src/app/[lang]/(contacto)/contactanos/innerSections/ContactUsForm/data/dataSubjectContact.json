@@ -7,7 +7,7 @@
   {
     "id": 2,
     "valueEs": "Queja",
-    "valueEn": "Complaint"
+    "valueEn": "Service Complaint"
   },
   {
     "id": 3,
@@ -21,11 +21,16 @@
   },
   {
     "id": 5,
+    "valueEs": "Denuncias",
+    "valueEn": "Complaints"
+  },
+  {
+    "id": 6,
     "valueEs": "Felicitaciones",
     "valueEn": "Congratulations"
   },
   {
-    "id": 6,
+    "id": 7,
     "valueEs": "Asesoria Comercial",
     "valueEn": "Commercial Advice"
   }

@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useState } from "react";
+import { useState } from "react";
+import { NextPage } from "next";
 
 import { HeroPages } from "@ui/components";
 import {
@@ -18,7 +19,7 @@ import { useSendInfoContact } from "@/src/app/[lang]/(contacto)/contactanos/hook
 
 import { LangInterface } from "@constans/interfaces/langInterface";
 
-export const Contact: FC<LangInterface> = ({ lang }) => {
+export const Contact: NextPage<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
   const [reCaptchaToken, setReCaptchaToken] = useState("");
 

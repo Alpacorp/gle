@@ -1,5 +1,6 @@
 import { ArrowCta } from "@ui/components";
 import { FC } from "react";
+
 import { CardTrackingInfo } from "@rastreo/rastreo/components";
 
 interface HeaderTrackingProps {

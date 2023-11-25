@@ -85,30 +85,30 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                 />
               </div>
             </div>
-            <div>
-              <label htmlFor="subject" className="text-base font-poppins">
-                {lang === "es" ? "Asunto" : "Subject"}
-              </label>
-              <div className="mt-[2px]">
-                <Select
-                  handleInputChange={handleInputChange}
-                  id="subject"
-                  name="subject"
-                  placeholder={
-                    lang === "es"
-                      ? "Déjanos tu mensaje aquí"
-                      : "Leave us your message here"
-                  }
-                  subject={subject}
-                  required
-                >
-                  {dataSubjectContact.map(({ id, valueEn, valueEs }) => (
-                    <Option key={id} value={lang === "es" ? valueEs : valueEn}>
-                      {lang === "es" ? valueEs : valueEn}
-                    </Option>
-                  ))}
-                </Select>
-              </div>
+          </div>
+          <div className="w-full max-w-md mx-auto">
+            <label htmlFor="subject" className="text-base font-poppins">
+              {lang === "es" ? "Asunto" : "Subject"}
+            </label>
+            <div className="mt-[2px]">
+              <Select
+                handleInputChange={handleInputChange}
+                id="subject"
+                name="subject"
+                placeholder={
+                  lang === "es"
+                    ? "Déjanos tu mensaje aquí"
+                    : "Leave us your message here"
+                }
+                subject={subject}
+                required
+              >
+                {dataSubjectContact.map(({ id, valueEn, valueEs }) => (
+                  <Option key={id} value={lang === "es" ? valueEs : valueEn}>
+                    {lang === "es" ? valueEs : valueEn}
+                  </Option>
+                ))}
+              </Select>
             </div>
           </div>
         </div>
