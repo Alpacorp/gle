@@ -1,3 +1,5 @@
+import { NextPage } from "next";
+
 import {
   Certifications,
   Different,
@@ -10,7 +12,7 @@ import StickyTracking from "@ui/components/StickyTracking";
 
 import { HomePageProps } from "@/src/app/[lang]/(inicio)/interfaces/homePage";
 
-const HomePage = ({ params: { lang } }: HomePageProps) => {
+const HomePage: NextPage<HomePageProps> = ({ params: { lang } }) => {
   return (
     <>
       <ImageSlider lang={lang} />

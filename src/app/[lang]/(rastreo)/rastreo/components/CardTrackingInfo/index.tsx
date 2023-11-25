@@ -1,5 +1,6 @@
-import { LocationTracking } from "@ui/components";
 import { FC } from "react";
+
+import { LocationTracking } from "@ui/components";
 
 interface CardTrackingInfoProps {
   containerClass?: string;

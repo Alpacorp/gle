@@ -22,7 +22,7 @@ export const HistoryTracking: FC<HistoryTrackingProps> = ({
       {dataTracking?.StatusDelivery.map((status, index) => (
         <li
           className="relative flex flex-col justify-center items-center gap-1 pb-4 w-full"
-          key={index}
+          key={status.Code}
         >
           <span
             className={`absolute left-0 top-0 w-8 h-8 bg-white rounded-full z-10 border-2 border-black flex items-center justify-center hover:animate-heartbeat-effect`}

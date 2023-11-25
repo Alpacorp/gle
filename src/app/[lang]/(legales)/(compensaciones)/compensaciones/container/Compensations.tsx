@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { NextPage } from "next";
 import Link from "next/link";
 
 import { HeroPages, ContainerContent, Download } from "@ui/components/index";
@@ -8,7 +8,7 @@ import StickyTracking from "@ui/components/StickyTracking";
 import { LangInterface } from "@constans/interfaces/langInterface";
 import { getDictionary } from "@lib/dictionary";
 
-export const Compensations: FC<LangInterface> = async ({ lang }) => {
+export const Compensations: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (
