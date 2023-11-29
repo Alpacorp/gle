@@ -1,14 +1,14 @@
-import { FC } from "react";
-import Link from "next/link";
+import { FC } from 'react';
+import Link from 'next/link';
 
-import { Location } from "@ui/components";
-import { Address } from "@/src/app/ui/components/Address";
+import { Location } from '@ui/components';
+import { Address } from '@/src/app/ui/components/Address';
 
-import dataAddress from "@ui/components/Address/data/dataAddress.json";
+import dataAddress from '@ui/components/Address/data/dataAddress.json';
 
 export const Locations: FC = () => {
   return (
-    <div className="flex gap-5 flex-wrap items-center justify-center my-5">
+    <div className="flex gap-12 flex-wrap items-center justify-center my-5">
       {dataAddress.map(
         ({ id, city, phoneText, address, phone, type, maps }) => (
           <div className="flex flex-col items-center gap-4" key={id}>

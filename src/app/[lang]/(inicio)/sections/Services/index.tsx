@@ -1,25 +1,25 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from 'react';
+import Image from 'next/image';
 
 import {
   FlyFastImage,
   GleVideo,
   ReasonToBe,
-} from "@inicio/sections/Services/innerSections";
-import { Title } from "@ui/components/Title";
+} from '@inicio/sections/Services/innerSections';
+import { Title } from '@ui/components/Title';
 import {
   backMobile,
   backServices,
-} from "@public/assets/images/home/services/index";
-import { ServicesContainer } from "@ui/components/ServicesContainer";
-import volamos from "@public/assets/images/gle/volamos.svg";
+} from '@public/assets/images/home/services/index';
+import { ServicesContainer } from '@ui/components/ServicesContainer';
+import volamos from '@public/assets/images/gle/volamos.svg';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export const Services: FC<LangInterface> = ({ lang }) => {
   return (
     <>
-      <section className="relative">
+      <section className="relative max-[860px]:bg-main-red max-[380px]:bg-transparent">
         <div>
           <Image
             alt="background services"
@@ -41,14 +41,14 @@ export const Services: FC<LangInterface> = ({ lang }) => {
                 align="right"
                 className="text-4xl max-w-xs w-full"
                 color="white"
-                family={"poppins"}
+                family={'poppins'}
                 lineColor="white"
                 showLine
                 weight="semibold"
               >
-                {lang === "es"
-                  ? "Servicios Especializados"
-                  : "Specialized Services"}
+                {lang === 'es'
+                  ? 'Servicios Especializados'
+                  : 'Specialized Services'}
               </Title>
             </div>
             <div className="flex justify-evenly gap-6 items-center flex-wrap">

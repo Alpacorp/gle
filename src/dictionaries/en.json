@@ -29,7 +29,7 @@
       "button": "Track"
     },
     "prohibitedTransport": {
-      "title": "Prohibited Transportation Shipments",
+      "title": "Prohibited items for shipment",
       "description": "Objects that, due to their nature or packaging, endanger postal services employees or the general public, or that may dirty or damage other postal objects, or the operator's equipment.",
       "lastText": "AND OTHER ELEMENTS CONTEMPLATED IN THE LAW",
       "additionalDescription": "The above prohibitions will be applied in accordance with current Colombian regulations and with those regulated by the Universal Postal Union and in accordance with the exceptions proposed therein."
@@ -80,14 +80,24 @@
     },
     "services": {
       "title": "Specialized services",
-      "description": ["Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.", "We cover the entire national territory"],
-      "how-operate": ["We generate operating agreements that allow us to define the commitments between the parties.", "Collection of packages and merchandise from our clients' warehouses (both for packaging and dedicated vehicles).", "Distribution and delivery of our clients' products in different destinations nationally and internationally.", "Generation of guides and manifests according to logistical needs.", "Reverse Logistics.", "We have an aGILE integration system that allows our clients to have online information traceability."],
+      "description": [
+        "Collection, transportation, distribution and door-to-door delivery service of packages and merchandise by packaging unit.",
+        "Nationwide delivery."
+      ],
+      "how-operate": [
+        "We establish operational agreements that allow us to constitute the full and complete commitments between the parties.",
+        "Package and goods collection in our clients warehouses (for both parceling and according to specific type of transport vehicles).",
+        "Distribution and delivery of our client’s products throughout various destinations, both domestically and internationally.",
+        "Elaboration of guides and manifests according to logistical needs.",
+        "Reverse logistics.",
+        "We have an aGILE integration system that allows our clients to trace their information online."
+      ],
       "contract": "SEE CONTRACT FOR THE PROVISION OF SHIPPING TRANSPORTATION SERVICES",
       "packaging": {
         "title": "Packaging",
         "mainDescription": {
-          "1": "We have comprehensive packaging services, which include the collection, transportation, distribution, and door-to-door delivery of packages and goods by packaging unit.",
-          "2": "We cover the entire national territory."
+          "1": "we offer comprehensive packaging services, which include the collection, transportation, distribution, and door-to-door delivery of packages and goods per packaging unit.",
+          "2": "Nationwide delivery."
         },
         "sideTextTitle": "We have comprehensive packaging services",
         "imageInfo": "Logistics operator in warehouse",
@@ -103,7 +113,7 @@
           "2": "Dry cargo, full or empty container loads, machinery and equipment.",
           "3": "License from the Ministry of Transportation, resolution number 975 of 2018."
         },
-        "sideTextTitle": "We have vehicles dedicated for mobilization of goods",
+        "sideTextTitle": "We have different types of vehicles dedicated to transport all kinds of merchandise",
         "imageInfo": "Logistics operators coordinating cargo",
         "additionDescription": {}
       },
@@ -121,32 +131,29 @@
           "6": "Fulfillment.",
           "7": "We specialize in collecting documents and packages up to 5 kilos in physical or volumetric weight."
         },
-        "links": [
-          "See specialized messaging rates",
-          "See prohibited shipments"
-        ]
+        "links": ["See specialized messaging rates", "See prohibited shipments"]
       },
       "international": {
         "title": "G.L.E. International",
         "sideTextTitle": "We advise you throughout the international delivery process",
-        "imageInfo": "Logistics operator in warehouse",
+        "imageInfo": "G.L.E. International",
         "additionDescription": [
           {
             "title": "International E-commerce:",
-            "description1": "We provide logistics and transportation services for companies selling products globally through e-commerce platforms.",
-            "description2": "Additionally, we have a warehouse in the United States to centralize and consolidate urgent shipments, offer courier services, and manage regular imports and exports."
+            "description1": "We provide logistics and transportation services for companies that sell their products globally through e-commerce platforms",
+            "description2": "In addition, we have a warehouse in the United States from where we centralize and consolidate urgent shipments, offer courier services and manage regular imports and exports."
           },
           {
-            "title": "Delivery of printed materials and publications:",
-            "description1": "We deliver publications and documents internationally, with the best quality and compliance."
+            "title": "Delivery of leaflets and publications:",
+            "description1": "We offer you advice throughout the entire process of international deliveries."
           },
           {
             "title": "Courier Shipments:",
-            "description1": "Express delivery of documents and packages internationally. Our service is door-to-door to and from over 190 countries. It includes pickup, packaging, customs clearance, and fast and secure delivery."
+            "description1": "Worldwide express shipping of documents and packages. We offer you door-to-door service from and to over 190 countries. Pick-up, packaging, customs management and a quick and safe delivery is included."
           },
           {
-            "title": "Import and Export of Goods:",
-            "description1": "Comprehensive logistics and transportation services for your goods internationally. We take care of all necessary aspects, such as customs clearance, coordination of different modes of transportation (maritime, air, land), and safe and timely delivery of goods to their final destination."
+            "title": "Import and export of merchandise:",
+            "description1": "Comprehensive logistics and international transportation services for your goods. We are responsible for managing and considering all aspects, such as customs management, coordination of different modes of transport (sea, air, land), and safe and timely delivery of goods to their final destination."
           }
         ]
       }

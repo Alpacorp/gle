@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { IconProps } from "./interfaces";
+import { FC } from 'react';
+import { IconProps } from './interfaces';
 
 interface ArrowCtaProps {
-  stroke?: "#D81730" | "#313131" | "white";
+  stroke?: '#D81730' | '#313131' | 'white' | '#DF7A87';
 }
 
 export const ArrowCta: FC<IconProps & ArrowCtaProps> = ({
-  stroke = "#313131",
+  stroke = '#313131',
   className,
-  width = "65",
-  height = "39",
+  width = '65',
+  height = '39',
   title,
 }) => {
   return (

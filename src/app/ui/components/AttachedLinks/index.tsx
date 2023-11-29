@@ -1,5 +1,5 @@
-import { FC } from "react";
-import Link from "next/link";
+import { FC } from 'react';
+import Link from 'next/link';
 
 interface AttachedLinksProps {
   lang?: string;
@@ -19,22 +19,22 @@ export const AttachedLinks: FC<AttachedLinksProps> = ({
             target="_blank"
             className="underline underline-offset-8 hover:text-main-red"
           >
-            {lang === "es"
-              ? "Ver tárifas mensajería especializada"
-              : "See specialized messaging rates"}
+            {lang === 'es'
+              ? 'Ver tárifas mensajería especializada'
+              : 'See specialized messaging rates'}
           </Link>
         )}
         <Link
           href={
-            lang === "es"
+            lang === 'es'
               ? `/${lang}/prohibido-transporte`
               : `/${lang}/transportation-prohibited`
           }
           className="underline underline-offset-8 hover:text-main-red"
         >
-          {lang === "es"
-            ? "Ver envíos de prohibido transporte"
-            : "See prohibited transport shipments"}
+          {lang === 'es'
+            ? 'Ver envíos no permitidos'
+            : 'See prohibited items for shipment'}
         </Link>
       </div>
     </div>

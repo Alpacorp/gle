@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { IconProps } from "./interfaces";
+import { FC } from 'react';
+import { IconProps } from './interfaces';
 
 export const Close: FC<IconProps> = ({ title, className }) => {
   return (
     <svg
       width="15"
       height="15"
-      viewBox="0 0 15 15"
+      viewBox="-5 -5 25 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`w-5 h-5 p-1 flex justify-center items-center ${className}`}
+      className={`w-9 h-9 p-1 flex justify-center items-center ${className}`}
     >
       <title>{title}</title>
       <path

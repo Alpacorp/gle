@@ -1,13 +1,15 @@
-import { FC } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from 'react';
+import Image, { StaticImageData } from 'next/image';
 
-import { ArrowGLE } from "@icons/index";
-import { AttachedLinks, ButtonQuote } from "@ui/components/index";
+import { ArrowGLE } from '@icons/index';
+import { AttachedLinks, ButtonQuote } from '@ui/components/index';
+import { Container } from 'postcss';
 
 interface BodyServicesProps {
   additionDescription?: React.ReactNode | string;
+  containerImageInfoClass?: string;
   imageInfo: string;
-  imageService: StaticImageData;
+  imageService?: StaticImageData;
   lang: string;
   mainDescription?: React.ReactNode;
   service: string;
@@ -17,9 +19,10 @@ interface BodyServicesProps {
 
 export const BodyServices: FC<BodyServicesProps> = ({
   additionDescription,
+  containerImageInfoClass,
   imageInfo,
   imageService,
-  lang = "es",
+  lang = 'es',
   mainDescription,
   service,
   showRates = false,
@@ -29,13 +32,15 @@ export const BodyServices: FC<BodyServicesProps> = ({
     <div className="relative z-20 mb-32">
       <div className="flex flex-col mt-14 px-6 max-w-[896px] w-full m-auto justify-center font-poppins items-center max-[400px]:mt-5">
         <div className="text-xl max-[400px]:text-lg">{mainDescription}</div>
-        <div className="flex justify-center items-center w-full my-20 flex-wrap gap-12 max-[400px]:my-10">
+        <div
+          className={`flex justify-center items-center w-full my-20 flex-wrap gap-12 max-[400px]:my-10 ${containerImageInfoClass}`}
+        >
           <Image
             alt={imageInfo}
             className="aspect-square rounded-2xl object-cover"
             height={390}
             priority
-            src={imageService}
+            src={imageService as StaticImageData}
             title={imageInfo}
             width={411}
           />
