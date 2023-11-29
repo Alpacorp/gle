@@ -1,14 +1,14 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from 'react';
+import Image from 'next/image';
 
-import { Title } from "@ui/components/index";
+import { Title } from '@ui/components/index';
 
 import {
   berau,
   mintrans,
-} from "@public/assets/images/home/certifications/index";
+} from '@public/assets/images/home/certifications/index';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export const Certifications: FC<LangInterface> = ({ lang }) => {
   return (
@@ -23,7 +23,7 @@ export const Certifications: FC<LangInterface> = ({ lang }) => {
           showLine
           weight="semibold"
         >
-          {lang === "es" ? "Estamos certificados" : "We are certified"}
+          {lang === 'es' ? 'Estamos certificados' : 'We are certified'}
         </Title>
         <div className="flex justify-center gap-10 items-center flex-wrap mt-5 px-2">
           <Image
@@ -38,11 +38,11 @@ export const Certifications: FC<LangInterface> = ({ lang }) => {
           <Image
             alt="Certificación de Berau Veritas"
             className="w-auto"
-            height={108}
+            height={100}
             priority
             src={berau}
             title="Certificación de Berau Veritas"
-            width={213}
+            width={130}
           />
         </div>
       </div>

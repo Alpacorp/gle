@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 import {
   BodyServices,
@@ -6,18 +6,18 @@ import {
   HeroPages,
   ImportExportIcon,
   PapersIcon,
-} from "@ui/components/index";
+} from '@ui/components/index';
 import {
   bannerInternational,
   bannerInternationalMobile,
   internationalIcon,
   internationalImage,
-} from "@/public/assets/images/international";
+} from '@/public/assets/images/international';
 
-import StickyTracking from "@ui/components/StickyTracking";
+import StickyTracking from '@ui/components/StickyTracking';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import { getDictionary } from "@lib/dictionary";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import { getDictionary } from '@lib/dictionary';
 
 export const International: FC<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
@@ -34,6 +34,7 @@ export const International: FC<LangInterface> = async ({ lang }) => {
       <BodyServices
         lang={lang}
         imageService={internationalImage}
+        containerImageInfoClass="max-[500px]:hidden"
         imageInfo={pages.services.international.imageInfo}
         sideTextTitle={pages.services.international.sideTextTitle}
         additionDescription={
@@ -51,14 +52,14 @@ export const International: FC<LangInterface> = async ({ lang }) => {
                         .description1
                     }
                   </p>
+                  <br />
+                  <p>
+                    {
+                      pages.services.international.additionDescription[0]
+                        .description2
+                    }
+                  </p>
                 </div>
-                <br />
-                <p>
-                  {
-                    pages.services.international.additionDescription[0]
-                      .description2
-                  }
-                </p>
               </div>
             </div>
             <div className="flex flex-wrap justify-center gap-4 mt-10">

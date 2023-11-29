@@ -1,11 +1,11 @@
-import { FC } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { FC } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-import { ArrowCta, Input, Loading, Option, Select } from "@ui/components";
+import { ArrowCta, Input, Loading, Option, Select } from '@ui/components';
 
-import dataSubjectOurs from "@nosotros/nosotros/innerSections/OursForm/data/dataSubjectOurs.json";
+import dataSubjectOurs from '@nosotros/nosotros/innerSections/OursForm/data/dataSubjectOurs.json';
 
-import { OursFormInterface } from "@nosotros/nosotros/interfaces/oursFormInterface";
+import { OursFormInterface } from '@nosotros/nosotros/interfaces/oursFormInterface';
 
 export const OursForm: FC<OursFormInterface> = ({
   email,
@@ -21,14 +21,14 @@ export const OursForm: FC<OursFormInterface> = ({
   setReCaptchaToken,
   statusLoading,
 }) => {
-  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
   return (
     <div className="flex flex-col flex-wrap justify-center items-center">
       <h3 className="font-poppins">
-        {lang === "es"
-          ? "Únete a nuestra gran familia G.L.E."
-          : "Join our great G.L.E. family"}
+        {lang === 'es'
+          ? 'Únete a nuestra gran familia G.L.E.'
+          : 'Join our great G.L.E. family'}
       </h3>
       <form
         className="flex flex-col flex-wrap gap-4 mt-11"
@@ -41,7 +41,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="email"
                 className="text-base font-poppins text-secondary-gray leading-none"
               >
-                {lang === "es" ? "Correo:" : "Email:"}
+                {lang === 'es' ? 'Correo:' : 'Email:'}
               </label>
               <div className="mt-1">
                 <Input
@@ -60,7 +60,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="name"
                 className="text-base font-poppins text-secondary-gray"
               >
-                {lang === "es" ? "Nombre y Apellido:" : "First and Last Name:"}
+                {lang === 'es' ? 'Nombre y Apellido:' : 'First and Last Name:'}
               </label>
               <div className="mt-1">
                 <Input
@@ -79,7 +79,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="address"
                 className="text-base font-poppins text-secondary-gray"
               >
-                {lang === "es" ? "Dirección:" : "Address:"}
+                {lang === 'es' ? 'Dirección:' : 'Address:'}
               </label>
               <div className="mt-1">
                 <Input
@@ -100,7 +100,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="city"
                 className="text-base font-poppins text-secondary-gray leading-none"
               >
-                {lang === "es" ? "Ciudad:" : "City:"}
+                {lang === 'es' ? 'Ciudad:' : 'City:'}
               </label>
               <div className="mt-1">
                 <Input
@@ -119,7 +119,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="phone"
                 className="text-base font-poppins text-secondary-gray"
               >
-                {lang === "es" ? "Teléfono:" : "Phone:"}
+                {lang === 'es' ? 'Teléfono:' : 'Phone:'}
               </label>
               <div className="mt-1">
                 <Input
@@ -138,7 +138,7 @@ export const OursForm: FC<OursFormInterface> = ({
                 htmlFor="department"
                 className="text-base font-poppins text-secondary-gray"
               >
-                {lang === "es" ? "Proceso:" : "Department:"}
+                {lang === 'es' ? 'Proceso:' : 'Department:'}
               </label>
               <div className="mt-1">
                 <Select
@@ -150,8 +150,8 @@ export const OursForm: FC<OursFormInterface> = ({
                   required
                 >
                   {dataSubjectOurs.map(({ id, valueEn, valueEs }) => (
-                    <Option key={id} value={lang === "es" ? valueEs : valueEn}>
-                      {lang === "es" ? valueEs : valueEn}
+                    <Option key={id} value={lang === 'es' ? valueEs : valueEn}>
+                      {lang === 'es' ? valueEs : valueEn}
                     </Option>
                   ))}
                 </Select>
@@ -164,7 +164,7 @@ export const OursForm: FC<OursFormInterface> = ({
             htmlFor="cv"
             className="text-base font-poppins text-secondary-gray"
           >
-            {lang === "es" ? "Link de tu CV:" : "Link to your CV:"}
+            {lang === 'es' ? 'Link de tu CV:' : 'Link to your CV:'}
           </label>
           <div className="mt-1">
             <Input
@@ -182,22 +182,22 @@ export const OursForm: FC<OursFormInterface> = ({
         <div className="mx-auto h-[136px]">
           <ReCAPTCHA
             sitekey={RECAPTCHA_SITE_KEY}
-            onChange={(token: string | null) => setReCaptchaToken(token ?? "")}
+            onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
             size="compact"
           />
         </div>
         <div className="m-auto mt-5">
           <div className="m-auto mt-5">
             <button
-              className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-red-400 disabled:border disabled:hover:bg-slate-400"
+              className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-secondary-pink disabled:text-main-pink disabled:border disabled:hover:bg-slate-400"
               disabled={
-                email === "" ||
-                name === "" ||
-                address === "" ||
-                city === "" ||
-                phone === "" ||
-                department === "" ||
-                cv === ""
+                email === '' ||
+                name === '' ||
+                address === '' ||
+                city === '' ||
+                phone === '' ||
+                department === '' ||
+                cv === ''
               }
             >
               {statusLoading ? (
@@ -207,7 +207,7 @@ export const OursForm: FC<OursFormInterface> = ({
               ) : (
                 <>
                   <ArrowCta className="h-6 w-6 -rotate-90" stroke="white" />
-                  {lang === "es" ? "Enviar" : "Send"}{" "}
+                  {lang === 'es' ? 'Enviar' : 'Send'}{' '}
                 </>
               )}
             </button>

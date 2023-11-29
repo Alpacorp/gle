@@ -1,6 +1,6 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { default as ReCAPTCHA } from "react-google-recaptcha";
+import { default as ReCAPTCHA } from 'react-google-recaptcha';
 
 import {
   ArrowCta,
@@ -9,12 +9,12 @@ import {
   Select,
   Option,
   Loading,
-} from "@ui/components";
-import { LegalForm } from "@contacto/contactanos/innerSections/LegalForm";
+} from '@ui/components';
+import { LegalForm } from '@contacto/contactanos/innerSections/LegalForm';
 
-import { ContactUsFormInterface } from "@contacto/contactanos/interfaces/contactUsFormInterface";
+import { ContactUsFormInterface } from '@contacto/contactanos/interfaces/contactUsFormInterface';
 
-import dataSubjectContact from "@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json";
+import dataSubjectContact from '@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json';
 
 export const ContactUsForm: FC<ContactUsFormInterface> = ({
   email,
@@ -27,22 +27,22 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
   statusLoading,
   subject,
 }) => {
-  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+  const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
   return (
     <div className="relative mt-10 pt-40 text-white">
       <h3 className="text-2xl font-poppins font-semibold my-7">
-        {lang === "es" ? "Escríbenos" : "Write Us"}
+        {lang === 'es' ? 'Escríbenos' : 'Write Us'}
       </h3>
       <form
         className="flex flex-col flex-wrap gap-4 mt-11 px-5"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col flex-wrap gap-5">
-          <div className="flex flex-wrap gap-5 justify-center">
-            <div>
+        <div className="flex flex-col flex-wrap gap-5 max-w-[500px] mx-auto w-full">
+          <div className="flex flex-wrap gap-5 justify-center w-full">
+            <div className="w-full">
               <label htmlFor="fullname" className="text-base font-poppins">
-                {lang === "es" ? "Nombre completo" : "Full name"}
+                {lang === 'es' ? 'Nombre completo' : 'Full name'}
               </label>
               <div className="mt-1">
                 <Input
@@ -51,22 +51,23 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                   id="fullname"
                   name="fullname"
                   placeholder={
-                    lang === "es"
-                      ? "Ingresa tu nombre completo"
-                      : "Enter your full name"
+                    lang === 'es'
+                      ? 'Ingresa tu nombre completo'
+                      : 'Enter your full name'
                   }
                   type="text"
                   required
                   variant="gray"
+                  className="w-full"
                 />
               </div>
             </div>
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="email"
                 className="text-base font-poppins leading-none"
               >
-                {lang === "es" ? "Correo electrónico" : "Email"}
+                {lang === 'es' ? 'Correo electrónico' : 'Email'}
               </label>
               <div className="mt-1">
                 <Input
@@ -74,38 +75,40 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                   id="email"
                   name="email"
                   placeholder={
-                    lang === "es"
-                      ? "Ingresa tu correo electrónico"
-                      : "Enter your email"
+                    lang === 'es'
+                      ? 'Ingresa tu correo electrónico'
+                      : 'Enter your email'
                   }
                   required
                   type="email"
                   value={email}
                   variant="gray"
+                  className="w-full"
                 />
               </div>
             </div>
           </div>
-          <div className="w-full max-w-md mx-auto">
+          <div className="w-full">
             <label htmlFor="subject" className="text-base font-poppins">
-              {lang === "es" ? "Asunto" : "Subject"}
+              {lang === 'es' ? 'Asunto' : 'Subject'}
             </label>
-            <div className="mt-[2px]">
+            <div className="mt-[2px] w-full">
               <Select
                 handleInputChange={handleInputChange}
                 id="subject"
                 name="subject"
                 placeholder={
-                  lang === "es"
-                    ? "Déjanos tu mensaje aquí"
-                    : "Leave us your message here"
+                  lang === 'es'
+                    ? 'Déjanos tu mensaje aquí'
+                    : 'Leave us your message here'
                 }
                 subject={subject}
                 required
+                className="w-full"
               >
                 {dataSubjectContact.map(({ id, valueEn, valueEs }) => (
-                  <Option key={id} value={lang === "es" ? valueEs : valueEn}>
-                    {lang === "es" ? valueEs : valueEn}
+                  <Option key={id} value={lang === 'es' ? valueEs : valueEn}>
+                    {lang === 'es' ? valueEs : valueEn}
                   </Option>
                 ))}
               </Select>
@@ -118,9 +121,9 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
               htmlFor="message"
               className="text-base font-poppins leading-none"
             >
-              {lang === "es"
-                ? "Déjanos tu mensaje aquí"
-                : "Leave us your message here"}
+              {lang === 'es'
+                ? 'Déjanos tu mensaje aquí'
+                : 'Leave us your message here'}
             </label>
             <div className="mt-1">
               <textarea
@@ -139,18 +142,18 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
         <div className="mx-auto h-[136px]">
           <ReCAPTCHA
             sitekey={RECAPTCHA_SITE_KEY}
-            onChange={(token: string | null) => setReCaptchaToken(token ?? "")}
+            onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
             size="compact"
           />
         </div>
         <div className="m-auto mt-5">
           <button
-            className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-red-400 disabled:border disabled:hover:bg-slate-400"
+            className="bg-main-red flex border-2 border-secondary-gray w-full rounded-lg px-10 py-2 text-white hover:bg-slate-600 transition duration-300 ease-in-out disabled:cursor-not-allowed disabled:bg-secondary-pink disabled:text-main-pink disabled:border disabled:hover:bg-slate-400"
             disabled={
-              fullname === "" ||
-              email === "" ||
-              subject === "" ||
-              message === ""
+              fullname === '' ||
+              email === '' ||
+              subject === '' ||
+              message === ''
             }
           >
             {statusLoading ? (
@@ -160,7 +163,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
             ) : (
               <>
                 <ArrowCta className="h-6 w-6 -rotate-90" stroke="white" />
-                {lang === "es" ? "Enviar" : "Send"}{" "}
+                {lang === 'es' ? 'Enviar' : 'Send'}{' '}
               </>
             )}
           </button>

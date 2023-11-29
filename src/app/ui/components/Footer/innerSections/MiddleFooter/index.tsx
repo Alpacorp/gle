@@ -1,11 +1,11 @@
-import { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { FC } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { Mintic, Sic, SuperTransporte } from "@/public/assets/images/footer";
-import { TextInfo } from "@ui/components/index";
+import { Mintic, Sic, SuperTransporte } from '@/public/assets/images/footer';
+import { TextInfo } from '@ui/components/index';
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from '@/src/app/constans/interfaces/langInterface';
 
 export const MiddleFooter: FC<LangInterface> = ({ lang }) => {
   return (
@@ -13,57 +13,57 @@ export const MiddleFooter: FC<LangInterface> = ({ lang }) => {
       <div className="flex flex-wrap gap-3 flex-col">
         <Link
           href={
-            lang === "es"
+            lang === 'es'
               ? `/${lang}/proteccion-datos-personales`
               : `/${lang}/personal-data-protection`
           }
           className="hover:underline hover:underline-offset-8"
         >
-          {lang === "es"
-            ? "Protección de datos personales"
-            : "Personal data protection"}
+          {lang === 'es'
+            ? 'Protección de datos personales'
+            : 'Personal data protection'}
         </Link>
         <Link
           href={
-            lang === "es"
+            lang === 'es'
               ? `/${lang}/terminos-y-condiciones`
               : `/${lang}/terms-and-conditions`
           }
           className="hover:underline hover:underline-offset-8"
         >
-          {lang === "es"
-            ? "Términos y condiciones de servicio"
-            : "Terms of service"}
+          {lang === 'es'
+            ? 'Términos y condiciones de servicio'
+            : 'Terms of service'}
         </Link>
         <Link
           href={
-            lang === "es" ? `/${lang}/compensaciones` : `/${lang}/compensations`
+            lang === 'es' ? `/${lang}/compensaciones` : `/${lang}/compensations`
           }
           className="hover:underline hover:underline-offset-8"
         >
-          {lang === "es"
-            ? "Procedimiento de compensación"
-            : "Compensation procedure"}
+          {lang === 'es'
+            ? 'Procedimiento de compensación'
+            : 'Compensation procedure'}
         </Link>
         <Link
-          href={lang === "es" ? `/${lang}/pqrs` : `/${lang}/claims`}
+          href={lang === 'es' ? `/${lang}/pqrs` : `/${lang}/claims`}
           className="hover:underline hover:underline-offset-8"
         >
-          {lang === "es"
-            ? "Proceso PQR’S e Indemnizaciones"
-            : "PQR’S and Compensation process"}
+          {lang === 'es'
+            ? 'Proceso PQR’S e Indemnizaciones'
+            : 'PQR’S and Compensation process'}
         </Link>
         <Link
           href={
-            lang === "es"
+            lang === 'es'
               ? `/${lang}/prohibido-transporte`
               : `/${lang}/transportation-prohibited`
           }
           className="hover:underline hover:underline-offset-8"
         >
-          {lang === "es"
-            ? "Envíos de prohibido transporte"
-            : "Prohibited transport shipments"}
+          {lang === 'es'
+            ? 'Ver envíos no permitidos'
+            : 'Prohibited items for shipment'}
         </Link>
       </div>
       <div className="flex gap-3 flex-wrap max-[400px]:mt-4">

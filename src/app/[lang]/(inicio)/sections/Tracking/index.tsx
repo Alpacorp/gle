@@ -1,13 +1,13 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
-import { useForm, useTracking } from "@hooks/index";
+import { useForm, useTracking } from '@hooks/index';
 
 export const Tracking: FC<LangInterface> = ({ lang }) => {
   const [formValues, handleInputChange, reset] = useForm({
-    trackingNumber: "" as string,
-    trackingType: "",
+    trackingNumber: '' as string,
+    trackingType: '',
   });
 
   const { trackingNumber, trackingType } = formValues;
@@ -18,7 +18,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
     handleTracking({
       trackingNumber,
       trackingType,
-      origin: "tracking",
+      origin: 'tracking',
     });
     reset();
   };
@@ -32,11 +32,6 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
         onSubmit={handleSubmit}
         className="flex justify-center flex-col p-2 items-center gap-1 border-2 border-main-red mx-4 rounded-xl w-auto max-w-[730px]"
       >
-        <h1 className="text-sm text-center text-white font-inter max-[650px]:text-[10px]">
-          {lang === "es"
-            ? "Realiza aquí el seguimiento de tus envíos nacionales"
-            : "Track your national shipments here"}
-        </h1>
         <div className="flex justify-center gap-2">
           <div className="relative flex gap-2">
             <input
@@ -46,7 +41,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
               value={trackingNumber}
               onChange={handleInputChange}
               className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[280px] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:placeholder:text-xs max-[320px]:text-xs max-[320px]:max-w-[120px] max-[320px]:w-full"
-              placeholder={lang === "es" ? "Número de guía" : "Tracking number"}
+              placeholder={lang === 'es' ? 'Número de guía' : 'Tracking number'}
               maxLength={12}
               required
             />
@@ -59,13 +54,13 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
               required
             >
               <option value="">
-                {lang === "es" ? "Selecciona" : "Select"}
+                {lang === 'es' ? 'Selecciona' : 'Select'}
               </option>
               <option value="packaging">
-                {lang === "es" ? "Paquetería" : "Packaging"}
+                {lang === 'es' ? 'Paquetería' : 'Courier'}
               </option>
               <option value="messaging">
-                {lang === "es" ? "Mensajería" : "Messaging"}
+                {lang === 'es' ? 'Mensajería' : 'Messaging'}
               </option>
             </select>
           </div>
@@ -74,20 +69,25 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             type="submit"
             disabled={
               trackingNumber.length < 5 ||
-              trackingNumber === "" ||
-              trackingType === ""
+              trackingNumber === '' ||
+              trackingType === ''
             }
             title={
-              trackingNumber.length < 5 || trackingType === ""
-                ? lang === "es"
-                  ? "Complete los campos"
-                  : "Fill the fields"
-                : ""
+              trackingNumber.length < 5 || trackingType === ''
+                ? lang === 'es'
+                  ? 'Complete los campos'
+                  : 'Fill the fields'
+                : ''
             }
           >
-            {lang === "es" ? "Consultar" : "Track"}
+            {lang === 'es' ? 'Consultar' : 'Track'}
           </button>
         </div>
+        <h1 className="order-2 text-sm text-center text-white font-inter max-[650px]:text-xs">
+          {lang === 'es'
+            ? 'Realiza aquí el seguimiento de tus envíos nacionales'
+            : 'Track your national shipments here'}
+        </h1>
       </form>
     </section>
   );

@@ -95,7 +95,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                         {lang === "es" ? "Selecciona" : "Select"}
                       </option>
                       <option value="packaging">
-                        {lang === "es" ? "Paquetería" : "Packaging"}
+                        {lang === "es" ? "Paquetería" : "Courier"}
                       </option>
                       <option value="messaging">
                         {lang === "es" ? "Mensajería" : "Messaging"}

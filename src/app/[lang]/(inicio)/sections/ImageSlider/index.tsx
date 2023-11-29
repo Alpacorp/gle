@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { FC } from "react";
+import { FC } from 'react';
 
-import { Tracking } from "@inicio/sections/Tracking";
+import { Tracking } from '@inicio/sections/Tracking';
 import {
   ImagesSlider,
   ButtonsSliders,
   BulletPagination,
-} from "@inicio/sections/ImageSlider/innerSections/index";
+} from '@inicio/sections/ImageSlider/innerSections/index';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
-import { useImagesSliders } from "@inicio/sections/ImageSlider/hooks/useImagesSliders";
+import { useImagesSliders } from '@inicio/sections/ImageSlider/hooks/useImagesSliders';
 
-import images from "@inicio/sections/ImageSlider/data/dataSilders.json";
+import images from '@inicio/sections/ImageSlider/data/dataSilders.json';
 
 export const ImageSlider: FC<LangInterface> = ({ lang }) => {
   const {
