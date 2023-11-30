@@ -148,6 +148,7 @@ export const OursForm: FC<OursFormInterface> = ({
                   handleInputChange={handleInputChange}
                   variant="red"
                   required
+                  className="w-full"
                 >
                   {dataSubjectOurs.map(({ id, valueEn, valueEs }) => (
                     <Option key={id} value={lang === 'es' ? valueEs : valueEn}>

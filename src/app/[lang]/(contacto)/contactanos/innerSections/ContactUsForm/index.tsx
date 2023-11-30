@@ -97,17 +97,16 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
                 handleInputChange={handleInputChange}
                 id="subject"
                 name="subject"
-                placeholder={
-                  lang === 'es'
-                    ? 'Déjanos tu mensaje aquí'
-                    : 'Leave us your message here'
-                }
                 subject={subject}
                 required
-                className="w-full"
+                className="w-full text-white"
               >
                 {dataSubjectContact.map(({ id, valueEn, valueEs }) => (
-                  <Option key={id} value={lang === 'es' ? valueEs : valueEn}>
+                  <Option
+                    color="white"
+                    key={id}
+                    value={lang === 'es' ? valueEs : valueEn}
+                  >
                     {lang === 'es' ? valueEs : valueEn}
                   </Option>
                 ))}
