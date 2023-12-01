@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { NextPage } from "next";
+import { useState } from 'react';
+import { NextPage } from 'next';
 
-import { HeroPages } from "@ui/components";
+import { HeroPages } from '@ui/components';
 import {
   AttentionLine,
   CareChannels,
@@ -11,23 +11,23 @@ import {
   ContactUsForm,
   Locations,
   OpeningHours,
-} from "@contacto/contactanos/innerSections/index";
-import StickyTracking from "@ui/components/StickyTracking";
+} from '@contacto/contactanos/innerSections/index';
+import StickyTracking from '@ui/components/StickyTracking';
 
-import { useForm } from "@hooks/useForm";
-import { useSendInfoContact } from "@/src/app/[lang]/(contacto)/contactanos/hooks/useSendInfoContact";
+import { useForm } from '@hooks/useForm';
+import { useSendInfoContact } from '@/src/app/[lang]/(contacto)/contactanos/hooks/useSendInfoContact';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export const Contact: NextPage<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
-  const [reCaptchaToken, setReCaptchaToken] = useState("");
+  const [reCaptchaToken, setReCaptchaToken] = useState('');
 
   const [formValues, handleInputChange, reset] = useForm({
-    fullname: "",
-    email: "",
-    subject: "",
-    message: "",
+    fullname: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
   const { fullname, email, subject, message } = formValues;
@@ -45,17 +45,10 @@ export const Contact: NextPage<LangInterface> = ({ lang }) => {
       <HeroPages
         arrowDown
         arrowColor="red"
-        pageTitle={lang === "es" ? "Contáctanos" : "Contact us"}
+        pageTitle={lang === 'es' ? 'Contáctanos' : 'Contact us'}
         color="white"
         className="leading-none"
       />
-      <div>
-        <ChannelsTitle lang={lang} />
-        <AttentionLine lang={lang} />
-        <OpeningHours lang={lang} />
-        <CareChannels lang={lang} />
-        <Locations />
-      </div>
       <ContactUsForm
         lang={lang}
         handleSubmit={handleSubmit}
@@ -67,6 +60,13 @@ export const Contact: NextPage<LangInterface> = ({ lang }) => {
         setReCaptchaToken={setReCaptchaToken}
         statusLoading={statusLoading}
       />
+      <div className="mt-20">
+        <ChannelsTitle lang={lang} />
+        <AttentionLine lang={lang} />
+        <OpeningHours lang={lang} />
+        <CareChannels lang={lang} />
+        <Locations />
+      </div>
       <StickyTracking lang={lang} />
     </section>
   );

@@ -30,7 +30,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
   const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
   return (
-    <div className="relative mt-10 pt-40 text-white">
+    <div className="relative pt-40 text-white">
       <h3 className="text-2xl font-poppins font-semibold my-7">
         {lang === 'es' ? 'Escríbenos' : 'Write Us'}
       </h3>
