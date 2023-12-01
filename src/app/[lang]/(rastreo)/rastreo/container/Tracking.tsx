@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { NextPage } from "next";
+import { useEffect } from 'react';
+import { NextPage } from 'next';
 
 import {
   HeaderTracking,
   MainData,
   HistoryTracking,
-} from "@rastreo/rastreo/innerSections";
+} from '@rastreo/rastreo/innerSections';
 
-import StickyTracking from "@ui/components/StickyTracking";
-import { HeroPages } from "@ui/components";
-import { ErrorLayout } from "@rastreo/rastreo/components/";
+import StickyTracking from '@ui/components/StickyTracking';
+import { ArrowCta, HeroPages, LoadingTracking } from '@ui/components';
+import { ErrorLayout } from '@rastreo/rastreo/components/';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
-import { formatDate } from "@utils/formatDate";
+import { formatDate } from '@utils/formatDate';
 
-import { DataTracking } from "@rastreo/rastreo/interfaces/tracking";
+import { DataTracking } from '@rastreo/rastreo/interfaces/tracking';
 
-import { useTrackingResults } from "@rastreo/rastreo/hooks/useTrackingResults";
+import { useTrackingResults } from '@rastreo/rastreo/hooks/useTrackingResults';
 
 export const Tracking: NextPage<LangInterface> = ({ lang }) => {
   const {
@@ -46,21 +46,33 @@ export const Tracking: NextPage<LangInterface> = ({ lang }) => {
     <section>
       <HeroPages
         pageTitle={
-          lang === "es" ? "Resultados del rastreo" : "Tracking results"
+          lang === 'es' ? 'Resultados del rastreo' : 'Tracking results'
         }
         color="white"
         className="leading-none"
       />
       {loading ? (
-        <p className="text-center">Cargando...</p>
+        <LoadingTracking />
       ) : (
         <section className="flex justify-center items-center font-poppins mt-12 mx-5">
-          <div>
+          <div className="max-w-md w-full">
             <HeaderTracking dataTracking={dataTracking} />
             <MainData
               dataTracking={dataTracking}
               statusTrackingNumber={statusTrackingNumber}
+              lang={lang}
             />
+            <div className="flex flex-col justify-center items-center gap-3 text-2xl font-semibold my-5">
+              <h2>
+                {lang === 'es' ? 'Historial de rastreo' : 'Tracking history'}
+              </h2>
+              <ArrowCta
+                fill="#D81730"
+                color="#D81730"
+                height="20"
+                stroke="#D81730"
+              />
+            </div>
             <HistoryTracking
               dataTracking={dataTracking as DataTracking}
               formatDate={formatDate}
