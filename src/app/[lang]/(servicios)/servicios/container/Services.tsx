@@ -1,21 +1,21 @@
-import { FC } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { NextPage } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import {
   ArrowCta,
   ArrowGLE,
   HeroPages,
   ServicesContainer,
-} from "@ui/components";
-import { Check, Contract } from "@icons/index";
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
-import { operate } from "@/public/assets/images/services";
+} from '@ui/components';
+import { Check, Contract } from '@icons/index';
+import StickyTracking from '@/src/app/ui/components/StickyTracking';
+import { operate } from '@/public/assets/images/services';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import { getDictionary } from "@lib/dictionary";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import { getDictionary } from '@lib/dictionary';
 
-export const Services: FC<LangInterface> = async ({ lang }) => {
+export const Services: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (
@@ -35,8 +35,8 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
         <br />
         <p className="font-bold">{pages.services.description[1]}</p>
       </div>
-      <div className="flex gap-8 justify-center items-center px-[120px] mt-14 max-[1000px]:flex-wrap max-[550px]:px-5 max-[380px]:px-[24px]">
-        <div className="relative flex flex-1 justify-center max-w-[300px] w-full max-[720px]:flex-auto max-[720px]:flex-grow-0">
+      <div className="flex gap-8 justify-center items-center px-[7.5rem] mt-14 max-[1000px]:flex-wrap max-[550px]:px-5 max-[380px]:px-6">
+        <div className="relative flex flex-1 justify-center max-w-[18.75rem] w-full max-[720px]:flex-auto max-[720px]:flex-grow-0">
           <Image
             src={operate}
             alt="valores"
@@ -48,20 +48,20 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
           />
         </div>
         <div className="flex flex-wrap flex-1 gap-5 items-start justify-center px-5 max-[720px]:flex-auto max-[720px]:mt-5">
-          {pages.services["how-operate"].map((item: string) => (
+          {pages.services['how-operate'].map((item: string) => (
             <div
               key={item}
-              className="flex flex-col justify-center items-center max-w-[300px] w-full gap-2 px-4 py-2"
+              className="flex flex-col justify-center items-center max-w-[18.75rem] w-full gap-2 px-4 py-2"
             >
               <Check
                 fill={
-                  pages.services["how-operate"].indexOf(item) % 2 === 0
-                    ? "#D81730"
-                    : "#313131"
+                  pages.services['how-operate'].indexOf(item) % 2 === 0
+                    ? '#D81730'
+                    : '#313131'
                 }
                 className="w-9"
               />
-              <p className="text-base font-poppins font-normal max-w-[300px]">
+              <p className="text-base font-poppins font-normal max-w-[18.75rem]">
                 {item}
               </p>
             </div>
@@ -72,7 +72,7 @@ export const Services: FC<LangInterface> = async ({ lang }) => {
         <Link
           href="/assets/images/services/contrato-prestacion-servicios-postales.pdf"
           target="_blank"
-          className="flex text-sm justify-center items-center max-w-[650px] w-full text-white bg-main-gray rounded-xl hover:scale-105 duration-75 px-4 py-2 gap-2"
+          className="flex text-sm justify-center items-center max-w-[40.625rem] w-full text-white bg-main-gray rounded-xl hover:scale-105 duration-75 px-4 py-2 gap-2"
         >
           <Contract />
           <ArrowCta className="w-7 h-7 -rotate-90" stroke="#D81730" />

@@ -1,24 +1,24 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { Title } from "@ui/components/index";
-import { ArrowGLE } from "@icons/index";
-import { iconsWeAre } from "@/src/app/[lang]/(inicio)/sections/WeAreGLE/data/IconsWeAre";
+import { Title } from '@ui/components/index';
+import { ArrowGLE } from '@icons/index';
+import { iconsWeAre } from '@/src/app/[lang]/(inicio)/sections/WeAreGLE/data/IconsWeAre';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import data from "@inicio/sections/WeAreGLE/data/dataWeAre.json";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import data from '@inicio/sections/WeAreGLE/data/dataWeAre.json';
 
 export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
   const hightWords = [
-    "compañía",
-    "integradora",
-    "10",
-    "años",
-    "experiencia",
-    "modelos",
-    "operativos",
-    "innovadores",
-    "profesionales",
-    "compententes.",
+    'compañía',
+    'integradora',
+    '10',
+    'años',
+    'experiencia',
+    'modelos',
+    'operativos',
+    'innovadores',
+    'profesionales',
+    'compententes.',
   ];
 
   return (
@@ -27,12 +27,12 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
         <Title
           color="white"
           align="center"
-          family={"poppins"}
+          family={'poppins'}
           weight="semibold"
           showLine
           className="text-4xl"
         >
-          {lang === "es" ? "Somos G.L.E." : "We are G.L.E."}
+          {lang === 'es' ? 'Somos G.L.E.' : 'We are G.L.E.'}
         </Title>
         <div className="flex flex-wrap items-center my-10 justify-evenly gap-4">
           {data.map(({ id, descriptionEs, descriptionEn }) => (
@@ -41,22 +41,22 @@ export const WeAreGLE: FC<LangInterface> = ({ lang }) => {
               className="flex flex-col justify-center items-center gap-4"
             >
               {iconsWeAre.filter((icon) => icon.iconId === id)[0].iconComponent}
-              <p className="text-white text-center text-base font-poppins max-w-[300px] w-full">
-                {lang === "es"
-                  ? descriptionEs.split(" ").map((word: string) => (
+              <p className="text-white text-center text-base font-poppins max-w-[18.75rem] w-full">
+                {lang === 'es'
+                  ? descriptionEs.split(' ').map((word: string) => (
                       <span
                         key={`wordEs-${id}-${Math.random()}`}
-                        className={hightWords.includes(word) ? "font-bold" : ""}
+                        className={hightWords.includes(word) ? 'font-bold' : ''}
                       >
-                        {word}{" "}
+                        {word}{' '}
                       </span>
                     ))
-                  : descriptionEn.split(" ").map((word: string) => (
+                  : descriptionEn.split(' ').map((word: string) => (
                       <span
                         key={`wordEn-${id}-${Math.random()}`}
-                        className={hightWords.includes(word) ? "font-bold" : ""}
+                        className={hightWords.includes(word) ? 'font-bold' : ''}
                       >
-                        {word}{" "}
+                        {word}{' '}
                       </span>
                     ))}
               </p>

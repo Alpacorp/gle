@@ -1,16 +1,16 @@
-import { FC } from "react";
+import { NextPage } from 'next';
 
-import { HeroPages, ContainerContent } from "@ui/components/index";
+import { HeroPages, ContainerContent } from '@ui/components/index';
 
-import StickyTracking from "@ui/components/StickyTracking";
-import { Address } from "@ui/components/Address";
+import StickyTracking from '@ui/components/StickyTracking';
+import { Address } from '@ui/components/Address';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import { getDictionary } from "@lib/dictionary";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import { getDictionary } from '@lib/dictionary';
 
-import dataAddress from "@ui/components/Address/data/dataAddress.json";
+import dataAddress from '@ui/components/Address/data/dataAddress.json';
 
-export const Pqrs: FC<LangInterface> = async ({ lang }) => {
+export const Pqrs: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { FC } from "react";
-import Link from "next/link";
+import { FC } from 'react';
+import Link from 'next/link';
 
-import { GleLogo, AgileLogo } from "@icons/index";
-import { HamburguerMenu, MenuMobile, List, Toggle } from "@ui/components/";
+import { GleLogo, AgileLogo } from '@icons/index';
+import { HamburguerMenu, MenuMobile, List, Toggle } from '@ui/components/';
 
-import useChangeLanguageRoutes from "@hooks/useChangeLanguage";
+import useChangeLanguageRoutes from '@hooks/useChangeLanguage';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
-import dataMenu from "@ui/components/Header/dataMenu.json";
+import dataMenu from '@ui/components/Header/dataMenu.json';
 
 const Header: FC<LangInterface> = ({ lang }) => {
   const { changeLanguage } = useChangeLanguageRoutes({ lang });
@@ -21,7 +21,7 @@ const Header: FC<LangInterface> = ({ lang }) => {
       <HamburguerMenu />
       <div>
         <Link href={`/${lang}`}>
-          <GleLogo id="gle-logo" className="max-[500px]:w-[137px]" />
+          <GleLogo id="gle-logo" className="max-[500px]:w-[8.563rem]" />
         </Link>
       </div>
       <nav className="nav font-normal text-lg max-[768px]:hidden">
@@ -31,13 +31,13 @@ const Header: FC<LangInterface> = ({ lang }) => {
               key={id}
               lang={lang}
               itemKey={id}
-              text={lang === "es" ? textEs ?? "" : textEn ?? ""}
-              link={lang === "es" ? `/${lang}${linkEs}` : `/${lang}${linkEn}`}
+              text={lang === 'es' ? textEs ?? '' : textEn ?? ''}
+              link={lang === 'es' ? `/${lang}${linkEs}` : `/${lang}${linkEn}`}
               submenu={submenu?.map((item) => ({
                 idSub: item.idSub,
                 linkSub:
-                  lang === "es" ? `${item.linkSubEs}` : `${item.linkSubEn}`,
-                textSub: lang === "es" ? item.textSubEs : item.textSubEn,
+                  lang === 'es' ? `${item.linkSubEs}` : `${item.linkSubEn}`,
+                textSub: lang === 'es' ? item.textSubEs : item.textSubEn,
                 typeSub: item.typeSub.toString(),
               }))}
             />
@@ -50,7 +50,7 @@ const Header: FC<LangInterface> = ({ lang }) => {
           <AgileLogo
             id="agile-logo"
             title="Agile Platform"
-            className="hover:scale-105 transition-transform w-20 max-[500px]:w-[76px]"
+            className="hover:scale-105 transition-transform w-20 max-[500px]:w-[4.75rem]"
           />
         </Link>
       </div>

@@ -1,6 +1,8 @@
-"use client";
+'use client';
 
-import { FC, useState } from "react";
+import { NextPage } from 'next';
+
+import { useState } from 'react';
 
 import {
   Mission,
@@ -9,33 +11,33 @@ import {
   CorporateValues,
   WorkWithUsImage,
   OursForm,
-} from "@nosotros/nosotros/innerSections/";
+} from '@nosotros/nosotros/innerSections/';
 
 import {
   bannerOurs,
   bannerOursMobile,
-} from "@public/assets/images/about-us/index";
-import { HeroPages } from "@ui/components/index";
-import StickyTracking from "@ui/components/StickyTracking";
+} from '@public/assets/images/about-us/index';
+import { HeroPages } from '@ui/components/index';
+import StickyTracking from '@ui/components/StickyTracking';
 
-import { useForm } from "@hooks/useForm";
+import { useForm } from '@hooks/useForm';
 
-import { useSendInfoOurs } from "@nosotros/nosotros/hooks/useSendInfoOurs";
+import { useSendInfoOurs } from '@nosotros/nosotros/hooks/useSendInfoOurs';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
-export const Ours: FC<LangInterface> = ({ lang }) => {
+export const Ours: NextPage<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
-  const [reCaptchaToken, setReCaptchaToken] = useState("");
+  const [reCaptchaToken, setReCaptchaToken] = useState('');
 
   const [formValues, handleInputChange, reset] = useForm({
-    name: "",
-    email: "",
-    address: "",
-    city: "",
-    phone: "",
-    department: "",
-    cv: "",
+    name: '',
+    email: '',
+    address: '',
+    city: '',
+    phone: '',
+    department: '',
+    cv: '',
   });
 
   const { name, email, address, city, phone, department, cv } = formValues;
@@ -53,7 +55,7 @@ export const Ours: FC<LangInterface> = ({ lang }) => {
       <HeroPages
         imagePath={bannerOurs}
         imagePathMobile={bannerOursMobile}
-        pageTitle={lang === "es" ? "Nosotros" : "About us"}
+        pageTitle={lang === 'es' ? 'Nosotros' : 'About us'}
         arrowDown
         arrowColor="white"
       />

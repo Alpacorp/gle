@@ -180,7 +180,7 @@ export const OursForm: FC<OursFormInterface> = ({
             />
           </div>
         </div>
-        <div className="mx-auto h-[136px]">
+        <div className="mx-auto h-[8.5rem]">
           <ReCAPTCHA
             sitekey={RECAPTCHA_SITE_KEY}
             onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
@@ -202,7 +202,7 @@ export const OursForm: FC<OursFormInterface> = ({
               }
             >
               {statusLoading ? (
-                <div className="w-[67px] flex justify-center">
+                <div className="w-[4.188rem] flex justify-center">
                   <Loading open={statusLoading} />
                 </div>
               ) : (

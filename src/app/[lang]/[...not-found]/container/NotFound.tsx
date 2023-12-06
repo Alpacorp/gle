@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { NextPage } from 'next';
 
-import { Alert, ButtonBack } from "@ui/components";
+import { Alert, ButtonBack } from '@ui/components';
 
-import StickyTracking from "@/src/app/ui/components/StickyTracking";
+import StickyTracking from '@/src/app/ui/components/StickyTracking';
 
-import { LangInterface } from "@/src/app/constans/interfaces/langInterface";
+import { LangInterface } from '@/src/app/constans/interfaces/langInterface';
 
-export const NotFound: FC<LangInterface> = ({ lang }) => {
+export const NotFound: NextPage<LangInterface> = ({ lang }) => {
   return (
     <section>
       <div className="h-[100svh] flex flex-col gap-8 justify-center items-center">
@@ -15,13 +15,13 @@ export const NotFound: FC<LangInterface> = ({ lang }) => {
           404
         </h1>
         <h2 className="text-3xl font-semibold font-poppins">
-          {lang === "es"
-            ? "Lo sentimos, página no encontrada"
-            : "Sorry, page not found"}
+          {lang === 'es'
+            ? 'Lo sentimos, página no encontrada'
+            : 'Sorry, page not found'}
         </h2>
         <ButtonBack
           lang={lang}
-          text={lang === "es" ? "Volver al inicio" : "Back to home"}
+          text={lang === 'es' ? 'Volver al inicio' : 'Back to home'}
         />
       </div>
       <StickyTracking lang={lang} />

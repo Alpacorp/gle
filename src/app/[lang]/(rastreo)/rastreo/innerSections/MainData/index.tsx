@@ -22,10 +22,11 @@ export const MainData: FC<MainDataProps> = ({
         />
         <CardTrackingInfo
           title={lang === 'es' ? 'Estado Actual' : 'Current Status'}
-          detail={dataTracking?.StatusDelivery[0]?.Status || ''}
+          detail={dataTracking?.StatusDelivery?.[0]?.Status || ''}
           containerDetailClass={`flex items-center gap-3 w-fit py-1 px-2 rounded-md text-white font-poppins font-semibold ${statusTrackingNumber(
-            dataTracking?.StatusDelivery[dataTracking.StatusDelivery.length - 1]
-              .Code || 0
+            dataTracking?.StatusDelivery?.[
+              dataTracking?.StatusDelivery?.length - 1
+            ].Code || 0
           )}`}
         />
       </InfoContainer>

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { FC, useRef } from "react";
-import Link from "next/link";
+import React, { FC, useRef } from 'react';
+import Link from 'next/link';
 
 interface SubMenuProps {
   submenu: {
@@ -32,10 +32,10 @@ export const SubMenu: FC<SubMenuProps> = ({
   const submenuContainerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={`${isMobile ? "" : "relative"}`}>
+    <div className={`${isMobile ? '' : 'relative'}`}>
       <div
-        className={`animate-slide-top w-[218px] top-16 -right-[46px] px-4 py-6 ${
-          isMobile ? "mt-0" : "absolute mt-2 rounded-lg bg-white shadow"
+        className={`animate-slide-top w-[13.625rem] top-16 -right-[2.875rem] px-4 py-6 ${
+          isMobile ? 'mt-0' : 'absolute mt-2 rounded-lg bg-white shadow'
         }`}
         ref={submenuContainerRef}
         id="submenu"
@@ -44,7 +44,7 @@ export const SubMenu: FC<SubMenuProps> = ({
           <Link
             key={item.idSub}
             href={`/${lang}${item.linkSub}`}
-            className="leading-[22px] text-black font-normal hover:text-main-red duration-200 text-center"
+            className="leading-[1.375rem] text-black font-normal hover:text-main-red duration-200 text-center"
             onClick={() =>
               isMobile
                 ? setTimeout(() => {
@@ -55,7 +55,7 @@ export const SubMenu: FC<SubMenuProps> = ({
                   }, 500)
             }
             title={
-              lang === "es" ? `Ir a ${item.textSub}` : `Go to ${item.textSub}`
+              lang === 'es' ? `Ir a ${item.textSub}` : `Go to ${item.textSub}`
             }
           >
             <div className="flex items-center my-4">
@@ -65,10 +65,10 @@ export const SubMenu: FC<SubMenuProps> = ({
                     .iconComponent
                 }
               </div>
-              <div className="text-left ml-[10px]">{item.textSub}</div>
+              <div className="text-left ml-[0.625rem]">{item.textSub}</div>
             </div>
             {item.idSub === submenu.length ? (
-              ""
+              ''
             ) : (
               <hr className="border-gray-300 border" />
             )}

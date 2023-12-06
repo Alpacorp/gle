@@ -38,7 +38,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
         className="flex flex-col flex-wrap gap-4 mt-11 px-5"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col flex-wrap gap-5 max-w-[500px] mx-auto w-full">
+        <div className="flex flex-col flex-wrap gap-5 max-w-[31.25rem] mx-auto w-full">
           <div className="flex flex-wrap gap-5 justify-center w-full">
             <div className="w-full">
               <label htmlFor="fullname" className="text-base font-poppins">
@@ -92,7 +92,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
             <label htmlFor="subject" className="text-base font-poppins">
               {lang === 'es' ? 'Asunto' : 'Subject'}
             </label>
-            <div className="mt-[2px] w-full">
+            <div className="mt-[0.125rem] w-full">
               <Select
                 handleInputChange={handleInputChange}
                 id="subject"
@@ -114,7 +114,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
             </div>
           </div>
         </div>
-        <div className="w-full max-w-[500px] mx-auto">
+        <div className="w-full max-w-[31.25rem] mx-auto">
           <div>
             <label
               htmlFor="message"
@@ -138,7 +138,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
           </div>
         </div>
         <LegalForm lang={lang} />
-        <div className="mx-auto h-[136px]">
+        <div className="mx-auto h-[8.5rem]">
           <ReCAPTCHA
             sitekey={RECAPTCHA_SITE_KEY}
             onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
@@ -156,7 +156,7 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
             }
           >
             {statusLoading ? (
-              <div className="w-[67px] flex justify-center">
+              <div className="w-[4.188rem] flex justify-center">
                 <Loading open={statusLoading} />
               </div>
             ) : (

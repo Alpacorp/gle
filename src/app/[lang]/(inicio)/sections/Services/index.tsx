@@ -30,7 +30,7 @@ export const Services: FC<LangInterface> = ({ lang }) => {
           />
           <Image
             alt="background services mobile"
-            className="absolute h-[2850px] object-cover mt-[-380px] top-0 right-0 max-[380px]:block min-[381px]:hidden"
+            className="absolute h-[178.125rem] object-cover -mt-96 top-0 right-0 max-[380px]:block min-[381px]:hidden"
             height={1780}
             src={backMobile}
             width={880}
