@@ -11,6 +11,7 @@ export const CareChannels: FC<LangInterface> = ({ lang }) => {
       </h3>
       <Link
         href="https://www.glecolombia.com/"
+        target="_self"
         className="text-base font-medium font-inter border hover:scale-105 duration-100 border-third-gray rounded-md max-w-[18.75rem] w-full"
       >
         www.glecolombia.com
