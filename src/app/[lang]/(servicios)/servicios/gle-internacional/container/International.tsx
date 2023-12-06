@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { NextPage } from 'next';
 
 import {
   BodyServices,
@@ -19,7 +19,7 @@ import StickyTracking from '@ui/components/StickyTracking';
 import { LangInterface } from '@constans/interfaces/langInterface';
 import { getDictionary } from '@lib/dictionary';
 
-export const International: FC<LangInterface> = async ({ lang }) => {
+export const International: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (

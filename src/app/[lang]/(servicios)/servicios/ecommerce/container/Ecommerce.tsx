@@ -1,19 +1,19 @@
-import { FC } from "react";
+import { NextPage } from 'next';
 
-import { BodyServices, HeroPages } from "@ui/components/index";
+import { BodyServices, HeroPages } from '@ui/components/index';
 import {
   bannerEcommerce,
   bannerEcommerceMobile,
   ecommerceIcon,
   ecommerceImage,
-} from "@/public/assets/images/ecommerce";
+} from '@/public/assets/images/ecommerce';
 
-import StickyTracking from "@ui/components/StickyTracking";
+import StickyTracking from '@ui/components/StickyTracking';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import { getDictionary } from "@lib/dictionary";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import { getDictionary } from '@lib/dictionary';
 
-export const Ecommerce: FC<LangInterface> = async ({ lang }) => {
+export const Ecommerce: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (

@@ -1,18 +1,18 @@
-import { FC } from "react";
+import { NextPage } from 'next';
 
-import { BodyServices, HeroPages } from "@ui/components/index";
+import { BodyServices, HeroPages } from '@ui/components/index';
 import {
   bannerPackage,
   bannerPackageMobile,
   packageIcon,
   packageImage,
-} from "@/public/assets/images/package";
-import StickyTracking from "@ui/components/StickyTracking";
+} from '@/public/assets/images/package';
+import StickyTracking from '@ui/components/StickyTracking';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
-import { getDictionary } from "@lib/dictionary";
+import { LangInterface } from '@constans/interfaces/langInterface';
+import { getDictionary } from '@lib/dictionary';
 
-export const Package: FC<LangInterface> = async ({ lang }) => {
+export const Package: NextPage<LangInterface> = async ({ lang }) => {
   const { pages } = await getDictionary(lang);
 
   return (

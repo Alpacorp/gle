@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react';
 
 interface ContainerContentProps {
   children: ReactNode;
@@ -11,7 +11,7 @@ export const ContainerContent: FC<ContainerContentProps> = ({
 }) => {
   return (
     <section
-      className={`max-w-[890px] w-full mx-auto px-3 mt-6 max-[500px]:px-5 ${className}`}
+      className={`max-w-4xl w-full mx-auto px-3 mt-6 max-[500px]:px-5 ${className}`}
     >
       {children}
     </section>

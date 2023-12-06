@@ -17,8 +17,6 @@ import { LangInterface } from '@constans/interfaces/langInterface';
 
 import { formatDate } from '@utils/formatDate';
 
-import { DataTracking } from '@rastreo/rastreo/interfaces/tracking';
-
 import { useTrackingResults } from '@rastreo/rastreo/hooks/useTrackingResults';
 
 export const Tracking: NextPage<LangInterface> = ({ lang }) => {
@@ -56,9 +54,9 @@ export const Tracking: NextPage<LangInterface> = ({ lang }) => {
       ) : (
         <section className="flex justify-center items-center font-poppins mt-12 mx-5">
           <div className="max-w-md w-full">
-            <HeaderTracking dataTracking={dataTracking} />
+            <HeaderTracking dataTracking={dataTracking ?? ''} />
             <MainData
-              dataTracking={dataTracking}
+              dataTracking={dataTracking ?? ''}
               statusTrackingNumber={statusTrackingNumber}
               lang={lang}
             />
@@ -74,7 +72,7 @@ export const Tracking: NextPage<LangInterface> = ({ lang }) => {
               />
             </div>
             <HistoryTracking
-              dataTracking={dataTracking as DataTracking}
+              dataTracking={dataTracking ?? ''}
               formatDate={formatDate}
               statusTrackingNumber={statusTrackingNumber}
             />

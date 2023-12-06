@@ -1,10 +1,10 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from 'react';
+import Image from 'next/image';
 
-import { ArrowCta, Title } from "@ui/components";
-import { phone1, phone2 } from "@public/assets/images/home/different/index";
+import { ArrowCta, Title } from '@ui/components';
+import { phone1, phone2 } from '@public/assets/images/home/different/index';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export const TrackingInfo: FC<LangInterface> = ({ lang }) => {
   return (
@@ -13,17 +13,17 @@ export const TrackingInfo: FC<LangInterface> = ({ lang }) => {
         <div className="flex items-center max-[1065px]:flex-col">
           <Title
             align="center"
-            className="text-4xl max-w-[350px] w-full"
+            className="text-4xl max-w-[21.875rem] w-full"
             color="main-red"
             family="poppins"
             weight="semibold"
           >
-            {lang === "es"
-              ? "Rastrea tu envío desde tu celular"
-              : "Track your shipment from your smartphone"}
+            {lang === 'es'
+              ? 'Rastrea tu envío desde tu celular'
+              : 'Track your shipment from your smartphone'}
           </Title>
           <ArrowCta
-            className="-rotate-90 w-[33px] h-[56px] max-[1065px]:rotate-0"
+            className="-rotate-90 w-8 h-14 max-[1065px]:rotate-0"
             stroke="#D81730"
           />
         </div>

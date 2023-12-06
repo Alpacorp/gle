@@ -1,10 +1,10 @@
-import { FC } from "react";
-import Image from "next/image";
+import { FC } from 'react';
+import Image from 'next/image';
 
-import { team } from "@public/assets/images/about-us/index";
-import gleWhite from "@public/assets/images/gle/gle-white.png";
+import { team } from '@public/assets/images/about-us/index';
+import gleWhite from '@public/assets/images/gle/gle-white.png';
 
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export const WorkWithUsImage: FC<LangInterface> = ({ lang }) => {
   return (
@@ -21,7 +21,7 @@ export const WorkWithUsImage: FC<LangInterface> = ({ lang }) => {
         />
         <div className="bg-main-red py-6">
           <h2 className="text-4xl font-poppins font-semibold ml-3 text-white max-[550px]:text-xl">
-            {lang === "es" ? "Trabaja con Nosotros" : "Work with us"}
+            {lang === 'es' ? 'Trabaja con Nosotros' : 'Work with us'}
           </h2>
         </div>
         <Image
@@ -30,7 +30,7 @@ export const WorkWithUsImage: FC<LangInterface> = ({ lang }) => {
           width={340}
           height={100}
           priority
-          className="relative aspect-auto -top-60 right-0 left-0 m-auto w-auto max-[680px]:-top-40 max-[680px]:w-[200px] max-[380px]:-top-32 max-[380px]:w-[150px]"
+          className="relative aspect-auto -top-60 right-0 left-0 m-auto w-auto max-[680px]:-top-40 max-[680px]:w-[12.5rem] max-[380px]:-top-32 max-[380px]:w-[9.375rem]"
         />
       </div>
     </div>

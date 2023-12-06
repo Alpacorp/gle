@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { FC, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { FC, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { SubMenu, OpenSubMenu } from "@ui/components/";
-import { iconsServices } from "@ui/components/ServicesContainer/IconsServices";
+import { SubMenu, OpenSubMenu } from '@ui/components/';
+import { iconsServices } from '@ui/components/ServicesContainer/IconsServices';
 
-import useList from "@ui/components/List/hooks/useList";
+import useList from '@ui/components/List/hooks/useList';
 
-import { ListProps } from "@ui/components/List/interfaces/List";
+import { ListProps } from '@ui/components/List/interfaces/List';
 
 export const List: FC<ListProps> = ({
   itemKey,
@@ -27,8 +27,8 @@ export const List: FC<ListProps> = ({
   ) => {
     return (
       pathname === link ||
-      (pathname.includes("/servicios") && link.includes("/servicios")) ||
-      (pathname.includes("/services") && link.includes("/services"))
+      (pathname.includes('/servicios') && link.includes('/servicios')) ||
+      (pathname.includes('/services') && link.includes('/services'))
     );
   };
 
@@ -44,9 +44,9 @@ export const List: FC<ListProps> = ({
   } = useList();
 
   useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
     return () => {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
     };
   }, [handleOutsideClick]);
 
@@ -55,36 +55,36 @@ export const List: FC<ListProps> = ({
       key={itemKey}
       className={`${
         isMobile
-          ? "flex-col"
-          : "mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200"
+          ? 'flex-col'
+          : 'mx-1 w-full flex justify-evenly border-b-2 border-main-red border-opacity-0 cursor-pointer active font-medium hover:border-opacity-100 hover:text-main-red duration-200'
       } ${
         isMobile && isLinkActive
-          ? "border-l-2 border-main-red border-opacity-100 bg-white"
+          ? 'border-l-2 border-main-red border-opacity-100 bg-white'
           : isLinkActive &&
-            "border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10"
+            'border-opacity-100 text-main-red font-medium hover:border-opacity-100 bg-main-red bg-opacity-5 hover:bg-opacity-10'
       }`}
     >
       <div className="flex items-center px-2 max-[400px]:px-0">
         <Link
           className={`flex items-center ${
             isMobile
-              ? "justify-start text-[25px] leading-5 font-normal p-2 max-[800px]:w-full"
-              : "justify-center h-[75px] w-[116px] max-[800px]:w-[90px]"
+              ? 'justify-start text-[1.563rem] leading-5 font-normal p-2 max-[800px]:w-full'
+              : 'justify-center h-[4.688rem] w-[7.25rem] max-[800px]:w-[5.625rem]'
           }`}
           href={`${link}`}
-          title={lang === "es" ? `Ir a ${text}` : `Go to ${text}`}
+          title={lang === 'es' ? `Ir a ${text}` : `Go to ${text}`}
           onClick={isMobile ? handleClickMenuMobile : () => {}}
         >
           {text}
         </Link>
         {!isOpen && !submenu?.length ? (
-          ""
+          ''
         ) : (
           <OpenSubMenu
             isMobile={!!isMobile}
             isOpen={isOpen}
             text={text}
-            lang={lang ?? "es"}
+            lang={lang ?? 'es'}
             toggleMenu={toggleMenu as () => void}
           />
         )}
@@ -94,7 +94,7 @@ export const List: FC<ListProps> = ({
           submenu={
             submenu ? submenu.map((sub, index) => ({ ...sub, key: index })) : []
           }
-          lang={lang ?? "es"}
+          lang={lang ?? 'es'}
           isMobile={!!isMobile}
           setShowMenu={setShowMenu}
           setIsOpen={setIsOpen}
