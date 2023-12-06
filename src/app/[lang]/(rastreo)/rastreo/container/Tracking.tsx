@@ -19,6 +19,8 @@ import { formatDate } from '@utils/formatDate';
 
 import { useTrackingResults } from '@rastreo/rastreo/hooks/useTrackingResults';
 
+import { DataTracking } from '@/src/app/[lang]/(rastreo)/rastreo/interfaces/tracking';
+
 export const Tracking: NextPage<LangInterface> = ({ lang }) => {
   const {
     dataTracking,
@@ -72,7 +74,7 @@ export const Tracking: NextPage<LangInterface> = ({ lang }) => {
               />
             </div>
             <HistoryTracking
-              dataTracking={dataTracking ?? ''}
+              dataTracking={dataTracking as DataTracking}
               formatDate={formatDate}
               statusTrackingNumber={statusTrackingNumber}
             />
