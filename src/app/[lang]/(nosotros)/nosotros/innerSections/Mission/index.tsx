@@ -15,7 +15,7 @@ export const Mission: FC<LangInterface> = ({ lang }) => {
             </h2>
           </div>
           <div className="border border-white rounded-2xl">
-            <p className="p-5 font-poppins text-white">
+            <p className="p-5 font-poppins text-white text-justify">
               {lang === 'es'
                 ? 'Somos una empresa dedicada a la comercialización de servicios logísticos, que orienta sus esfuerzos a cumplir los acuerdos comerciales, satisfaciendo los requisitos y expectativas de nuestros clientes y partes interesadas, con talento humano competente y diligente enfocado en la gestión del riesgo, la innovación y el mejoramiento continuo de nuestros procesos.'
                 : 'We are a company committed to the marketing of high-quality logistical services, directing our efforts to fulfill commercial agreements, meeting the requirements and expectations of our clients and stakeholders, relying on our team of skillful and diligent  professionals which focus on risk management, innovation, and continuous improvement of our processes.'}

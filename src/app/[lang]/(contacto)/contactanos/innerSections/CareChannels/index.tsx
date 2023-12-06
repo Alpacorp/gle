@@ -20,10 +20,10 @@ export const CareChannels: FC<LangInterface> = ({ lang }) => {
         {lang === 'es' ? 'Correo electrónico' : 'Email'}
       </h3>
       <Link
-        href="mailto:contactenos@glecolombia.com"
+        href="mailto:contacto@glecolombia.com"
         className="text-base font-medium font-inter border hover:scale-105 duration-100 border-third-gray rounded-md max-w-[18.75rem] w-full"
       >
-        contactenos@glecolombia.com
+        contacto@glecolombia.com
       </Link>
       <h3 className="text-lg font-normal text-main-red uppercase mt-2">
         {lang === 'es' ? 'Nuestras Sedes' : 'Locations'}
