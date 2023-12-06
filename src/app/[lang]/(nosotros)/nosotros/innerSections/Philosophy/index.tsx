@@ -31,7 +31,7 @@ export const Philosophy: FC<LangInterface> = ({ lang }) => {
             </h2>
           </div>
           <div>
-            <p className="p-5 font-poppins text-white rounded-2xl bg-secondary-gray">
+            <p className="p-5 font-poppins text-white rounded-2xl bg-secondary-gray text-justify">
               {lang === 'es'
                 ? 'Hacer negocios serios, en donde todas las partes interesadas salgan beneficiadas, con un enfoque de alto nivel de satisfacción de nuestros clientes y por supuesto siempre con negocios transparentes.'
                 : 'To build trustworthy and prosperous businesses where all stakeholders can benefit from, focusing on high levels of customer satisfaction and, of course, conducting all deals in the most transparent manner.'}
@@ -45,7 +45,7 @@ export const Philosophy: FC<LangInterface> = ({ lang }) => {
             </h2>
           </div>
           <div>
-            <p className="p-5 font-poppins text-black rounded-2xl bg-red-200">
+            <p className="p-5 font-poppins text-black rounded-2xl bg-red-200 text-justify">
               {lang === 'es'
                 ? 'En GLE COLOMBIA nos comprometemos a prestar servicios logísticos innovadores, personalizados, oportunos y confiables, que satisfagan los requisitos y expectativas de nuestras partes interesadas.'
                 : 'At GLE COLOMBIA, we are committed to providing innovative, personalized, timely, and reliable logistical services that meet the requirements and expectations of our stakeholders.'}
