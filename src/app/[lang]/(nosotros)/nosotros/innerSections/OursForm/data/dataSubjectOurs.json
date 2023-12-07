@@ -28,5 +28,30 @@
     "id": 6,
     "valueEs": "Administrativo",
     "valueEn": "Administrative"
+  },
+  {
+    "id": 7,
+    "valueEs": "Tecnología",
+    "valueEn": "Technology"
+  },
+  {
+    "id": 8,
+    "valueEs": "Masivos",
+    "valueEn": "Massive"
+  },
+  {
+    "id": 9,
+    "valueEs": "Internacional",
+    "valueEn": "International"
+  },
+  {
+    "id": 10,
+    "valueEs": "Ecommerce",
+    "valueEn": "Ecommerce"
+  },
+  {
+    "id": 11,
+    "valueEs": "Financiero",
+    "valueEn": "Financial"
   }
 ]

@@ -1,21 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { FC } from "react";
+import { FC } from 'react';
 
 interface ContactEmailProps {
   city?: string;
   phone?: string;
   department?: string;
   cv?: string;
-  address?: string;
+  position?: string;
   lang?: string;
   name?: string;
   email?: string;
 }
 
-import "./styles.css";
+import './styles.css';
 
 export const OursEmail: FC<ContactEmailProps> = ({
-  address,
+  position,
   city,
   phone,
   department,
@@ -35,35 +35,36 @@ export const OursEmail: FC<ContactEmailProps> = ({
           alt="G.L.E. Grupo Logístico Especializado"
         />
         <h1>
-          {lang === "es" ? "Correo de notificación" : "Notification email"}
+          {lang === 'es' ? 'Correo de notificación' : 'Notification email'}
         </h1>
         <div>
           <p>
-            {lang === "es"
-              ? "A continuación se relacionan los datos ingresados por un usuario a través del formulario de registro en la página de Nosotros, sección Formulario de Vacantes:"
-              : "Below are the data entered by a user through the registration form on the About Us page, Vacancies Form section"}
+            {lang === 'es'
+              ? 'A continuación se relacionan los datos ingresados por un usuario a través del formulario de registro en la página de Nosotros, sección Formulario de Vacantes:'
+              : 'Below are the data entered by a user through the registration form on the About Us page, Vacancies Form section'}
           </p>
           <ul className="list">
             <li>
-              {lang === "es" ? "Nombre completo" : "Full name"}: {name}
+              {lang === 'es' ? 'Nombre completo' : 'Full name'}: {name}
             </li>
             <li>
-              {lang === "es" ? "Correo electrónico" : "Email address"}: {email}
+              {lang === 'es' ? 'Correo electrónico' : 'Email address'}: {email}
             </li>
             <li>
-              {lang === "es" ? "Departamento" : "Department"}: {department}
+              {lang === 'es' ? 'Departamento' : 'Department'}: {department}
             </li>
             <li>
-              {lang === "es" ? "Ciudad" : "City"}: {city}
+              {lang === 'es' ? 'Ciudad' : 'City'}: {city}
             </li>
             <li>
-              {lang === "es" ? "Dirección" : "Address"}: {address}
+              {lang === 'es' ? 'Cargo al que aplica' : 'Position applied for'}:{' '}
+              {position}
             </li>
             <li>
-              {lang === "es" ? "Teléfono" : "Phone"}: {phone}
+              {lang === 'es' ? 'Teléfono' : 'Phone'}: {phone}
             </li>
             <li>
-              {lang === "es" ? "Hoja de vida" : "CV"}: {cv}
+              {lang === 'es' ? 'Hoja de vida' : 'CV'}: {cv}
             </li>
           </ul>
         </div>

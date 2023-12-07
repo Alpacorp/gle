@@ -1,11 +1,11 @@
-import { ContactEmail } from "@/src/emails/ContactEmail";
-import { OursEmail } from "@/src/emails/OursEmail";
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
-import { CreateEmailOptions } from "resend/build/src/emails/interfaces";
+import { ContactEmail } from '@/src/emails/ContactEmail';
+import { OursEmail } from '@/src/emails/OursEmail';
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+import { CreateEmailOptions } from 'resend/build/src/emails/interfaces';
 
 const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? "";
+const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? '';
 
 export async function POST(request: Request) {
   const {
@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     destination,
     name,
     email,
-    address,
+    position,
     city,
     phone,
     department,
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
   } = await request.json();
 
   const validateDestination = () => {
-    if (destination === "admin") {
+    if (destination === 'admin') {
       return adminEmail;
     } else {
       return [adminEmail, email];
@@ -34,14 +34,14 @@ export async function POST(request: Request) {
 
   try {
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: 'onboarding@resend.dev',
       to: validateDestination(),
       subject:
-        (lang === "es"
-          ? "Correo de notificación de registro | Motivo: "
-          : "Notification email from registration | Reason: ") + subject,
+        (lang === 'es'
+          ? 'Correo de notificación de registro | Motivo: '
+          : 'Notification email from registration | Reason: ') + subject,
       react:
-        origin === "contact"
+        origin === 'contact'
           ? ContactEmail({
               fullname,
               destination,
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
           : OursEmail({
               name,
               email,
-              address,
+              position,
               city,
               phone,
               department,

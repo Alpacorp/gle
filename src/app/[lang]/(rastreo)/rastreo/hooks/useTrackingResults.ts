@@ -8,14 +8,23 @@ export const useTrackingResults = () => {
 
   const [dataTracking, setDataTracking] = useState<DataTracking>();
   const [error, setError] = useState(false);
+  const [empty, setEmpty] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const getTracking = async () => {
-    if (!trackingId) {
-      setError(true);
-      return;
+  const verifyTrackingId = () => {
+    if (
+      !trackingId ||
+      trackingId.length < 1 ||
+      trackingId.length === 0 ||
+      trackingId === ''
+    ) {
+      setEmpty(true);
     }
-    const trackingNumber = trackingId?.slice(0, 10);
+  };
+
+  const getTracking = async () => {
+    verifyTrackingId();
+    const trackingNumber = trackingId;
     const sendTracking = await fetch('/api/tracking', {
       method: 'POST',
       body: JSON.stringify({
@@ -59,11 +68,13 @@ export const useTrackingResults = () => {
 
   return {
     dataTracking,
+    empty,
     error,
     getTracking,
     loading,
     statusTracking,
     statusTrackingNumber,
     trackingId,
+    verifyTrackingId,
   };
 };

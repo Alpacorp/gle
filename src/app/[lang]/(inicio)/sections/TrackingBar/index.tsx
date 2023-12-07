@@ -4,14 +4,25 @@ import { LangInterface } from '@constans/interfaces/langInterface';
 
 import { useForm, useTracking } from '@hooks/index';
 
-export const Tracking: FC<LangInterface> = ({ lang }) => {
+interface TrackingBarProps extends LangInterface {
+  showText?: boolean;
+  sameWindow?: boolean;
+  position?: 'absolute' | 'relative';
+}
+
+export const TrackingBar: FC<TrackingBarProps> = ({
+  lang,
+  showText = true,
+  sameWindow = false,
+  position = 'absolute',
+}) => {
   const [formValues, handleInputChange, reset] = useForm({
     trackingNumber: '' as string,
     trackingType: '',
   });
 
   const { trackingNumber, trackingType } = formValues;
-  const { handleTracking } = useTracking({ lang });
+  const { handleTracking } = useTracking({ lang, sameWindow });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,7 +37,7 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
   return (
     <section
       id="tracking"
-      className="flex justify-center border-0 absolute bottom-1 right-0 left-0"
+      className={`${position} flex justify-center border-0 bottom-1 right-0 left-0`}
     >
       <form
         onSubmit={handleSubmit}
@@ -83,11 +94,13 @@ export const Tracking: FC<LangInterface> = ({ lang }) => {
             {lang === 'es' ? 'Consultar' : 'Track'}
           </button>
         </div>
-        <h1 className="order-2 text-sm text-center text-white font-inter max-[650px]:text-xs">
-          {lang === 'es'
-            ? 'Realiza aquí el seguimiento de tus envíos nacionales'
-            : 'Track your national shipments here'}
-        </h1>
+        {showText && (
+          <h1 className="order-2 text-sm text-center text-white font-inter max-[650px]:text-xs">
+            {lang === 'es'
+              ? 'Realiza aquí el seguimiento de tus envíos nacionales'
+              : 'Track your national shipments here'}
+          </h1>
+        )}
       </form>
     </section>
   );

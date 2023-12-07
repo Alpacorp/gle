@@ -10,7 +10,7 @@ import { OursFormInterface } from '@nosotros/nosotros/interfaces/oursFormInterfa
 export const OursForm: FC<OursFormInterface> = ({
   email,
   name,
-  address,
+  position,
   city,
   phone,
   department,
@@ -76,19 +76,21 @@ export const OursForm: FC<OursFormInterface> = ({
             </div>
             <div className="flex flex-col">
               <label
-                htmlFor="address"
+                htmlFor="position"
                 className="text-base font-poppins text-secondary-gray"
               >
-                {lang === 'es' ? 'Dirección:' : 'Address:'}
+                {lang === 'es'
+                  ? 'Cargo al que aplica:'
+                  : 'Position applied for:'}
               </label>
               <div className="mt-1">
                 <Input
                   handleInputChange={handleInputChange}
-                  id="address"
-                  name="address"
+                  id="position"
+                  name="position"
                   required
                   type="text"
-                  value={address}
+                  value={position}
                   variant="red"
                 />
               </div>
@@ -185,6 +187,7 @@ export const OursForm: FC<OursFormInterface> = ({
             sitekey={RECAPTCHA_SITE_KEY}
             onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
             size="compact"
+            onExpired={() => setReCaptchaToken('')}
           />
         </div>
         <div className="m-auto mt-5">
@@ -194,7 +197,7 @@ export const OursForm: FC<OursFormInterface> = ({
               disabled={
                 email === '' ||
                 name === '' ||
-                address === '' ||
+                position === '' ||
                 city === '' ||
                 phone === '' ||
                 department === '' ||
