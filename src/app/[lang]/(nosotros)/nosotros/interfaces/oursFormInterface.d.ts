@@ -1,7 +1,7 @@
 export interface OursFormInterface {
   email: string;
   name: string;
-  address: string;
+  position: string;
   city: string;
   phone: string;
   department: string;

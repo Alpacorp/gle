@@ -3,15 +3,8 @@
 import { useEffect } from 'react';
 import { NextPage } from 'next';
 
-import {
-  HeaderTracking,
-  MainData,
-  HistoryTracking,
-} from '@rastreo/rastreo/innerSections';
-
 import StickyTracking from '@ui/components/StickyTracking';
-import { ArrowCta, HeroPages, LoadingTracking } from '@ui/components';
-import { ErrorLayout } from '@rastreo/rastreo/components/';
+import { HeroPages, LoadingTracking } from '@ui/components';
 
 import { LangInterface } from '@constans/interfaces/langInterface';
 
@@ -21,14 +14,22 @@ import { useTrackingResults } from '@rastreo/rastreo/hooks/useTrackingResults';
 
 import { DataTracking } from '@/src/app/[lang]/(rastreo)/rastreo/interfaces/tracking';
 
+import {
+  Empty,
+  Failed,
+  Success,
+} from '@/src/app/[lang]/(rastreo)/rastreo/innerSections/';
+
 export const Tracking: NextPage<LangInterface> = ({ lang }) => {
   const {
     dataTracking,
+    empty,
     error,
     getTracking,
     loading,
     statusTrackingNumber,
     trackingId,
+    verifyTrackingId,
   } = useTrackingResults();
 
   useEffect(() => {
@@ -38,50 +39,45 @@ export const Tracking: NextPage<LangInterface> = ({ lang }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackingId]);
 
-  if (error) {
-    return <ErrorLayout lang={lang} />;
-  }
+  useEffect(() => {
+    verifyTrackingId();
+  }, [verifyTrackingId]);
+
+  const returnComponent = () => {
+    if (empty) {
+      return <Empty lang={lang} />;
+    }
+    if (error) {
+      return <Failed lang={lang} trackingId={trackingId ?? ''} />;
+    }
+    if (loading) {
+      return <LoadingTracking />;
+    }
+    return (
+      <Success
+        dataTracking={dataTracking as DataTracking}
+        formatDate={formatDate}
+        statusTrackingNumber={statusTrackingNumber}
+        lang={lang}
+      />
+    );
+  };
 
   return (
     <section>
       <HeroPages
         pageTitle={
-          lang === 'es' ? 'Resultados del rastreo' : 'Tracking results'
+          empty
+            ? lang === 'es'
+              ? 'Rastrea tu envío'
+              : 'Track your shipment'
+            : `${lang === 'es' ? 'Resultados del rastreo' : 'Tracking results'}`
         }
         color="white"
         className="leading-none"
       />
-      {loading ? (
-        <LoadingTracking />
-      ) : (
-        <section className="flex justify-center items-center font-poppins mt-12 mx-5">
-          <div className="max-w-md w-full">
-            <HeaderTracking dataTracking={dataTracking ?? ''} />
-            <MainData
-              dataTracking={dataTracking ?? ''}
-              statusTrackingNumber={statusTrackingNumber}
-              lang={lang}
-            />
-            <div className="flex flex-col justify-center items-center gap-3 text-2xl font-semibold my-5">
-              <h2>
-                {lang === 'es' ? 'Historial de rastreo' : 'Tracking history'}
-              </h2>
-              <ArrowCta
-                fill="#D81730"
-                color="#D81730"
-                height="20"
-                stroke="#D81730"
-              />
-            </div>
-            <HistoryTracking
-              dataTracking={dataTracking as DataTracking}
-              formatDate={formatDate}
-              statusTrackingNumber={statusTrackingNumber}
-            />
-          </div>
-        </section>
-      )}
-      <StickyTracking lang={lang} samePage />
+      {returnComponent()}
+      <StickyTracking lang={lang} samePage observerActive={true} />
     </section>
   );
 };

@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 
-import { Tracking } from '@inicio/sections/Tracking';
+import { TrackingBar } from '@/src/app/[lang]/(inicio)/sections/TrackingBar';
 import {
   ImagesSlider,
   ButtonsSliders,
@@ -61,7 +61,7 @@ export const ImageSlider: FC<LangInterface> = ({ lang }) => {
         setCurrentIndex={setCurrentIndex}
         handleSlideTextAnimation={handleSlideTextAnimation}
       />
-      <Tracking lang={lang} />
+      <TrackingBar lang={lang} />
     </section>
   );
 };

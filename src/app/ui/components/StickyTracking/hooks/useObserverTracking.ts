@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useObserverTracking = (observerActive: boolean) => {
   const [showTrackingIcon, setShowTrackingIcon] = useState(observerActive);
@@ -13,12 +13,13 @@ const useObserverTracking = (observerActive: boolean) => {
       (entries) => {
         const [entry] = entries;
         setShowTrackingIcon(entry.isIntersecting);
+        console.log('entry.isIntersecting', entry.isIntersecting);
       },
       {
         threshold: 1,
       }
     );
-    const trackingElement = document.querySelector("#tracking");
+    const trackingElement = document.querySelector('#tracking');
 
     if (trackingElement) {
       observer.observe(trackingElement);

@@ -33,14 +33,14 @@ export const Ours: NextPage<LangInterface> = ({ lang }) => {
   const [formValues, handleInputChange, reset] = useForm({
     name: '',
     email: '',
-    address: '',
+    position: '',
     city: '',
     phone: '',
     department: '',
     cv: '',
   });
 
-  const { name, email, address, city, phone, department, cv } = formValues;
+  const { name, email, position, city, phone, department, cv } = formValues;
 
   const { handleSubmit } = useSendInfoOurs({
     formValues,
@@ -71,7 +71,7 @@ export const Ours: NextPage<LangInterface> = ({ lang }) => {
           name={name}
           handleInputChange={handleInputChange}
           email={email}
-          address={address}
+          position={position}
           city={city}
           phone={phone}
           department={department}

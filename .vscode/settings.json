@@ -1,8 +1,8 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.format": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.format": "explicit"
   },
   "prettier.singleQuote": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
@@ -29,7 +29,7 @@
     "editor.formatOnSave": false,
     "editor.formatOnPaste": false,
     "editor.codeActionsOnSave": {
-      "source.fixAll.format": false
+      "source.fixAll.format": "never"
     }
   },
   "editor.suggest.paths": true,
