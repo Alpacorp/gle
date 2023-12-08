@@ -40,7 +40,14 @@ export const metadata: Metadata = {
     siteName: 'G.L.E. Grupo Logístico Especializado',
     title: 'G.L.E. Grupo Logístico Especializado',
     description: 'Volamos para que llegues más rápido',
-    images: '/favicon.ico',
+    images: [
+      {
+        url: '/og.png',
+        width: 500,
+        height: 500,
+        alt: 'G.L.E. Grupo Logístico Especializado',
+      },
+    ],
   },
   twitter: {
     card: 'summary',
@@ -48,7 +55,7 @@ export const metadata: Metadata = {
     creator: '@glecolombia',
     title: 'G.L.E. Grupo Logístico Especializado',
     description: 'Volamos para que llegues más rápido',
-    images: '/favicon.ico',
+    images: ['/og.png'],
   },
 };
 
