@@ -31,8 +31,6 @@ export const Services: NextPage<LangInterface> = async ({ lang }) => {
         <ServicesContainer lang={lang} />
       </div>
       <div className="max-w-xl mx-auto my-20 px-5 text-center text-xl font-poppins font-normal">
-        <p>{pages.services.description[0]}</p>
-        <br />
         <p className="font-bold">{pages.services.description[1]}</p>
       </div>
       <div className="flex gap-8 justify-center items-center px-[7.5rem] mt-14 max-[1000px]:flex-wrap max-[550px]:px-5 max-[380px]:px-6">
