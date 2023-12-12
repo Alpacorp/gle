@@ -109,7 +109,7 @@
       "bulkCargo": {
         "title": "Bulk Cargo",
         "mainDescription": {
-          "1": "Different vehicle types assigned according to your cargo needs, such as turbo, simple, multiple-axle trucks, scooter and tractor-trailer with full point-to-point quotas.",
+          "1": "Different vehicle types assigned according to your cargo needs, such as turbo, simple, NHR, scooter and tractor-trailer with full point-to-point quotas.",
           "2": "Dry cargo, full or empty container loads, machinery and equipment.",
           "3": "License from the Ministry of Transportation, resolution number 975 of 2018."
         },
