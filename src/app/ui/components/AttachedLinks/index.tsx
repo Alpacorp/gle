@@ -22,8 +22,8 @@ export const AttachedLinks: FC<AttachedLinksProps> = ({
             className="underline underline-offset-8 hover:text-main-red"
           >
             {lang === 'es'
-              ? 'Ver contrato de prestación de servicios de transporte de envíos'
-              : 'See contract for the provision of transport services for shipments'}
+              ? 'Ver contrato de prestación de servicios de transporte de mensajería expresa'
+              : 'See specialized messaging service provision contract'}
           </Link>
         )}
         {showRates && (
