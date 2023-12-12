@@ -1,13 +1,13 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
-import "@globals/globals.css";
+import '@globals/globals.css';
 
 export const metadata: Metadata = {
-  title: "G.L.E. - Carga Masiva",
+  title: 'G.L.E. - Carga Masiva',
   description:
-    "Movilización de vehículos dedicados tipo turbo, sencillo, doble troque, patineta y tractomula punto a punto.",
+    'Movilización de vehículos dedicados tipo turbo, sencillo, NHR, patineta y tractomula punto a punto.',
   keywords:
-    "transporte, carga, logística, aéreo, terrestre, marítimo, carga masiva",
+    'transporte, carga, logística, aéreo, terrestre, marítimo, carga masiva',
 };
 
 export default function RootLayout({
