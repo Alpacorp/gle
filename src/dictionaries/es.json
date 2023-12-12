@@ -72,14 +72,15 @@
       "text": "Documento de proceso de compensaciones"
     },
     "pqrs": {
-      "title": "PQRS",
+      "title": "PQRS E INDEMNIZACIONES",
       "locations": "Sedes",
       "content": [
-        "GRUPO LOGISTICO ESPECIALIZADO S.A.S tiene a disposición de sus clientes el proceso de servicio al cliente que dispone de todos los medios requeridos para atender en forma integral sus peticiones, quejas, reclamos, recursos y solicitudes de indemnización.",
-        "Para tramitar una queja o reclamo el cliente debe suministrar los siguientes datos: el número de la guía, la fecha de imposición, la calidad de usuario (remitente o destinatario), el número del documento de identificación, la dirección y número telefónico y la descripción de los hechos.",
-        "A partir de la fecha de radicación GLE cuenta con 15 días hábiles para dar la respuesta, la cual será enviada a la dirección o mail suministrados por el cliente.",
+        "GRUPO LOGISTICO ESPECIALIZADO S.A.S tiene a disposición de sus clientes el proceso de servicio al cliente que cuenta con todos los medios requeridos para atender en forma integral sus peticiones, quejas, reclamos, recursos y solicitudes de indemnización.",
+        "Para tramitar una queja o reclamo el cliente debe suministrar los siguientes datos: el número de la guía, la fecha de imposición, la calidad de usuario (remitente o destinatario), el número del documento de identificación, la dirección, correo electrónico y número telefónico y la descripción de los hechos.",
+        "De conformidad con el Código Contencioso Administrativo y la Resolución 3038 del 2011 de la CRC, GLE, A partir de la fecha de radicación GLE dispondrá de quince (15) días hábiles para enviar la respuesta a la dirección de notificación o a través de correo electrónico, sobre la cual proceden los recursos de reposición y apelación.",
         "Cuando su requerimiento no pueda ser atendido en forma definitiva por nuestro servicio al cliente, dentro de los 15 días hábiles, este término podrá ampliarse cuando se requieran pruebas adicionales, lo cual le será comunicado por escrito, indicándole la nueva fecha en que se dará respuesta.",
-        "De conformidad con el Código Contencioso Administrativo y la Resolución 3038/10 de la CRC, Servientrega S.A., dispondrá de quince (15) días hábiles para notificar personalmente la respuesta, sobre la cual proceden los recursos de reposición y apelación."
+        "Si desea presentar una queja o reclamo, puede hacerlo a través del formulario de contacto ubicado ",
+        "aquí."
       ]
     },
     "services": {
@@ -96,7 +97,6 @@
         "Logística Inversa.",
         "Contamos con un sistema de integración aGILE que le permite a nuestros clientes tener  trazabilidad de la información en línea."
       ],
-      "contract": "VER CONTRATO DE PRESTACIÓN DE SERVICIOS DE TRANSPORTE DE ENVÍOS",
       "packaging": {
         "title": "Paqueteo",
         "mainDescription": {

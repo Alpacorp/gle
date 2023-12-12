@@ -3,7 +3,6 @@ import Image, { StaticImageData } from 'next/image';
 
 import { ArrowGLE } from '@icons/index';
 import { AttachedLinks, ButtonQuote } from '@ui/components/index';
-import { Container } from 'postcss';
 
 interface BodyServicesProps {
   additionDescription?: React.ReactNode | string;
@@ -13,6 +12,7 @@ interface BodyServicesProps {
   lang: string;
   mainDescription?: React.ReactNode;
   service: string;
+  showContract?: boolean;
   showRates?: boolean;
   sideTextTitle: string;
 }
@@ -25,6 +25,7 @@ export const BodyServices: FC<BodyServicesProps> = ({
   lang = 'es',
   mainDescription,
   service,
+  showContract = false,
   showRates = false,
   sideTextTitle,
 }) => {
@@ -53,7 +54,11 @@ export const BodyServices: FC<BodyServicesProps> = ({
           <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
         </div>
         <ButtonQuote service={service} lang={lang} />
-        <AttachedLinks lang={lang} showRates={showRates} />
+        <AttachedLinks
+          lang={lang}
+          showRates={showRates}
+          showContract={showContract}
+        />
       </div>
       <div className="absolute bottom-0 back-clip-path-inverse-bottom bg-third-red h-full z-[-1] left-0 right-0" />
     </div>
