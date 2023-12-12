@@ -66,17 +66,6 @@ export const Services: NextPage<LangInterface> = async ({ lang }) => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center text-center font-poppins my-20 px-5">
-        <Link
-          href="/assets/images/services/contrato-prestacion-servicios-postales.pdf"
-          target="_blank"
-          className="flex text-sm justify-center items-center max-w-[40.625rem] w-full text-white bg-main-gray rounded-xl hover:scale-105 duration-75 px-4 py-2 gap-2"
-        >
-          <Contract />
-          <ArrowCta className="w-7 h-7 -rotate-90" stroke="#D81730" />
-          {pages.services.contract}
-        </Link>
-      </div>
       <div className="absolute z-auto top-1/2 left-0 max-[600px]:hidden">
         <ArrowGLE className="h-full w-32 max-[480px]:h-44" />
       </div>

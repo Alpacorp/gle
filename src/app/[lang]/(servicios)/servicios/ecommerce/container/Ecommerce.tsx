@@ -47,6 +47,7 @@ export const Ecommerce: NextPage<LangInterface> = async ({ lang }) => {
           <p>{pages.services.ecommerce.additionDescription[7]}</p>
         }
         showRates
+        showContract
         service={pages.services.ecommerce.title}
       />
       <StickyTracking lang={lang} />

@@ -68,14 +68,15 @@
       "text": "Compensation Process Document"
     },
     "pqrs": {
-      "title": "PQRS - Claims",
+      "title": "PQRS AND COMPENSATION",
       "locations": "Locations",
       "content": [
         "GRUPO LOGISTICO ESPECIALIZADO S.A.S has a customer service process available to its clients that has all the means required to comprehensively address their requests, complaints, claims, resources and requests for compensation.",
         "To process a complaint or claim, the client must provide the following information: the guide number, the date of imposition, the status of user (sender or recipient), the identification document number, the address and telephone number and the description of the facts.",
         "From the date of filing, GLE has 15 business days to provide the response, which will be sent to the address or email provided by the client.",
         "When your request cannot be definitively addressed by our customer service, within 15 business days, this term may be extended when additional evidence is required, which will be communicated to you in writing, indicating the new date on which a response will be given.",
-        "In accordance with the Contentious Administrative Code and Resolution 3038/10 of the CRC, Servientrega S.A. will have fifteen (15) business days to personally notify the response, on which the resources for reconsideration and appeal proceed."
+        "If you wish to file a complaint or claim, you can do so through the contact form located ",
+        "here."
       ]
     },
     "services": {
@@ -92,7 +93,6 @@
         "Reverse logistics.",
         "We have an aGILE integration system that allows our clients to trace their information online."
       ],
-      "contract": "SEE CONTRACT FOR THE PROVISION OF SHIPPING TRANSPORTATION SERVICES",
       "packaging": {
         "title": "Packaging",
         "mainDescription": {
