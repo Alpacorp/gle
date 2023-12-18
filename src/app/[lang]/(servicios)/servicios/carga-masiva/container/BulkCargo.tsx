@@ -34,6 +34,10 @@ export const BulkCargo: NextPage<LangInterface> = async ({ lang }) => {
             <p>{pages.services.bulkCargo.mainDescription[2]}</p>
             <br />
             <p>{pages.services.bulkCargo.mainDescription[3]}</p>
+            <br />
+            <p>{pages.services.bulkCargo.mainDescription[4]}</p>
+            <br />
+            <p>{pages.services.bulkCargo.mainDescription[5]}</p>
           </>
         }
         imageService={bulkCargoImage}
