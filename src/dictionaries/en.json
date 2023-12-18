@@ -111,7 +111,9 @@
         "mainDescription": {
           "1": "Different vehicle types assigned according to your cargo needs, such as turbo, simple, NHR, scooter and tractor-trailer with full point-to-point quotas.",
           "2": "Dry cargo, full or empty container loads, machinery and equipment.",
-          "3": "License from the Ministry of Transportation, resolution number 975 of 2018."
+          "3": "License from the Ministry of Transportation, resolution number 975 of 2018.",
+          "4": "Transportation service in the ITR modality: Deconsolidation of merchandise, classification, loading and return of container to port.",
+          "5": "Transport of containerized goods and loose cargo from the ports of Buenaventura and Barranquilla and Cartagena."
         },
         "sideTextTitle": "We have different types of vehicles dedicated to transport all kinds of merchandise",
         "imageInfo": "Logistics operators coordinating cargo",
