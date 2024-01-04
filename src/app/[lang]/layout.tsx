@@ -30,7 +30,12 @@ export const metadata: Metadata = {
   title: 'G.L.E. Grupo Logístico Especializado',
   alternates: {
     canonical: 'https://www.glecolombia.com/',
+    languages: {
+      'es-CO': 'https://www.glecolombia.com/es',
+      'en-US': 'https://www.glecolombia.com/en',
+    },
   },
+  robots: 'index, follow',
   description: 'Volamos para que llegues más rápido',
   keywords: 'transporte, carga, logística, aéreo, terrestre, marítimo',
   openGraph: {
