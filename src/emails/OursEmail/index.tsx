@@ -30,7 +30,7 @@ export const OursEmail: FC<ContactEmailProps> = ({
       <br />
       <div className="containerBody">
         <img
-          src="/assets/images/mails/gle-logo.png"
+          src="https://www.glecolombia.com/assets/images/mails/gle-logo.png"
           width={200}
           alt="G.L.E. Grupo Logístico Especializado"
         />

@@ -13,7 +13,6 @@ const useObserverTracking = (observerActive: boolean) => {
       (entries) => {
         const [entry] = entries;
         setShowTrackingIcon(entry.isIntersecting);
-        console.log('entry.isIntersecting', entry.isIntersecting);
       },
       {
         threshold: 1,
