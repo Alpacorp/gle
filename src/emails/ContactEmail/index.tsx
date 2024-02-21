@@ -26,7 +26,7 @@ export const ContactEmail: FC<ContactEmailProps> = ({
       <br />
       <div className="containerBody">
         <img
-          src="https://upaledigital.com/GLE/gle-logo.png"
+          src="/assets/images/mails/gle-logo.png"
           width={200}
           alt="G.L.E. Grupo Logístico Especializado"
         />

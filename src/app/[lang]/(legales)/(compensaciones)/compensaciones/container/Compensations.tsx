@@ -22,13 +22,14 @@ export const Compensations: NextPage<LangInterface> = async ({ lang }) => {
       <ContainerContent>
         <video controls className="rounded-md w-full aspect-video">
           <source
-            src="https://upaledigital.com/GLE/proceso-compensaciones-gle.mp4"
+            src="/assets/videos/compensations/proceso-compensaciones-gle.mp4"
             type="video/mp4"
           />
+          <track kind="captions" src="captions.vtt" label="English" />
         </video>
         <div className="flex justify-center text-center font-poppins my-10">
           <Link
-            href="/assets/images/compensations/proceso-de-compensaciones-Gle-Colombia.pdf"
+            href="/assets/documents/compensations/proceso-de-compensaciones-Gle-Colombia.pdf"
             target="_blank"
             className="flex justify-center items-center max-w-[25rem] w-full text-white bg-main-gray rounded-xl px-4 py-2 gap-2"
           >
