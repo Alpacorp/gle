@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, KeyboardEventHandler } from 'react';
 
 export const useModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -10,9 +10,15 @@ export const useModal = () => {
   };
 
   const handleBackdropClick = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDialogElement, MouseEvent>
   ) => {
     if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
+
+  const handleKeyDown: KeyboardEventHandler<HTMLDialogElement> = (event) => {
+    if (event.key === 'Escape') {
       closeModal();
     }
   };
@@ -32,11 +38,11 @@ export const useModal = () => {
   };
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
+    const hasVisited = localStorage.getItem('hasVisited');
 
     if (!hasVisited) {
       setShowModal(true);
-      localStorage.setItem("hasVisited", "true");
+      localStorage.setItem('hasVisited', 'true');
     }
   }, []);
 
@@ -44,6 +50,7 @@ export const useModal = () => {
     showModal,
     closeModal,
     handleBackdropClick,
+    handleKeyDown,
     playVideo,
     setShowModal,
     pauseVideo,

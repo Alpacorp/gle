@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, KeyboardEventHandler } from 'react';
+import { FC } from 'react';
 import { ArrowCta, Play } from '@icons/index';
 
 import { LangInterface } from '@constans/interfaces/langInterface';
@@ -10,6 +10,7 @@ export const Modal: FC<LangInterface> = ({ lang }) => {
   const {
     closeModal,
     handleBackdropClick,
+    handleKeyDown,
     isVideoPlaying,
     pauseVideo,
     playVideo,
@@ -17,20 +18,14 @@ export const Modal: FC<LangInterface> = ({ lang }) => {
     videoRef,
   } = useModal();
 
-  const handleKeyDown: KeyboardEventHandler<HTMLDivElement> = (event) => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  };
-
   return (
     <>
       {showModal && (
-        <div
+        <dialog
           className="fixed top-0 left-0 w-full h-full flex items-center cursor-crosshair justify-center bg-gray-200 bg-opacity-90 z-50"
           onClick={handleBackdropClick}
           onKeyDown={handleKeyDown}
-          tabIndex={0}
+          aria-modal="true"
         >
           <div className="cursor-auto">
             <h2 className="text-3xl font-semibold !leading-7 mb-2 text-center font-poppins max-[480px]:text-2xl">
@@ -79,7 +74,7 @@ export const Modal: FC<LangInterface> = ({ lang }) => {
               </button>
             </div>
           </div>
-        </div>
+        </dialog>
       )}
     </>
   );
