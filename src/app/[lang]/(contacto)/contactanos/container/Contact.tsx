@@ -16,8 +16,10 @@ import StickyTracking from '@ui/components/StickyTracking';
 
 import { useForm } from '@hooks/useForm';
 import { useSendInfoContact } from '@/src/app/[lang]/(contacto)/contactanos/hooks/useSendInfoContact';
+import { ShippingTitle } from '@/src/app/[lang]/(contacto)/contactanos/innerSections/ShippingTitle';
 
 import { LangInterface } from '@constans/interfaces/langInterface';
+import { ShippingLine } from '@/src/app/[lang]/(contacto)/contactanos/innerSections/ShippingLine';
 
 export const Contact: NextPage<LangInterface> = ({ lang }) => {
   const [statusLoading, setStatusLoading] = useState(false);
@@ -61,6 +63,8 @@ export const Contact: NextPage<LangInterface> = ({ lang }) => {
         statusLoading={statusLoading}
       />
       <div className="mt-20">
+        <ShippingTitle lang={lang} />
+        <ShippingLine lang={lang} />
         <ChannelsTitle lang={lang} />
         <AttentionLine lang={lang} />
         <OpeningHours lang={lang} />
