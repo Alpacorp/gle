@@ -42,13 +42,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
     <>
       {!showTrackingIcon && (
         <section
-          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 max-[400px]:bg-white max-[400px]:h-12 max-[400px]:m-0 max-[400px]:rounded-none max-[400px]:w-full max-[400px]:text-center max-[400px]:flex max-[400px]:justify-center ${
+          className={`animate-slide-in-blurred-bottom duration-0 fixed flex items-center m-3 rounded-full shadow-sticky-shadow bottom-0 right-0 left-auto z-40 max-[430px]:bg-white max-[430px]:h-12 max-[430px]:m-0 max-[430px]:rounded-none max-[430px]:w-full max-[430px]:text-center max-[430px]:flex max-[430px]:justify-center ${
             showTrackingForm && 'bg-white rounded-l-none rounded-r-full pr-1'
           }`}
         >
           {!showTrackingForm ? (
             <button
-              className="flex items-center justify-center gap-3 min-[401px]:hidden font-poppins font-medium w-full h-12"
+              className="flex items-center justify-center gap-3 min-[431px]:hidden font-poppins font-medium w-full h-12"
               onClick={showTrackingFormHandler}
             >
               <ArrowCta
@@ -60,13 +60,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
           ) : (
             <button
               onClick={showTrackingFormHandler}
-              className="ml-2 min-[401px]:hidden"
+              className="ml-2 min-[431px]:hidden"
             >
               <Close className="w-6 h-6 bg-main-red" />
             </button>
           )}
           {showTrackingForm && (
-            <div className="animate-fade-in-right flex justify-evenly flex-wrap items-center gap-1 mx-2 py-2 max-w-[45.625rem] w-full max-[640px]:p-2 max-[400px]:m-0 max-[380px]:p-2">
+            <div className="animate-fade-in-right flex justify-evenly flex-wrap items-center gap-1 mx-2 py-2 max-w-[45.625rem] w-full max-[640px]:p-2 max-[430px]:m-0 max-[380px]:p-2">
               <form onSubmit={handleSubmit}>
                 <div className="flex justify-center gap-2">
                   <div className="relative flex gap-2">
@@ -127,13 +127,13 @@ const StickyTracking: FC<StickyTrackingProps> = ({
           {lang === 'es' ? (
             <StickyTrackEs
               onClick={showTrackingFormHandler}
-              className="max-[400px]:hidden"
+              className="max-[430px]:hidden"
               title="Realiza aquí el seguimiento de tus envíos nacionales"
             />
           ) : (
             <StickyTrackEn
               onClick={showTrackingFormHandler}
-              className="max-[400px]:hidden"
+              className="max-[430px]:hidden"
               title="Track your national shipments here"
             />
           )}

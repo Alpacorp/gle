@@ -30,7 +30,7 @@ export const Toggle: FC<ToggleProps> = ({ onChange, lang }) => {
       </div>
       <label
         htmlFor="language"
-        className={`relative flex items-center rounded-full cursor-pointer border-2 border-main-red mx-4 w-[2.625rem] h-[1.375rem] transition-all duration-300 ${
+        className={`relative flex items-center rounded-full cursor-pointer border-2 border-main-red mx-4 w-[2.625rem] h-[1.375rem] transition-all duration-300 max-[850px]:mx-1 ${
           lang === 'en' ? 'bg-white' : 'bg-main-red'
         }`}
         onKeyDown={(event: React.KeyboardEvent<HTMLLabelElement>) => {
