@@ -69,7 +69,7 @@ export const List: FC<ListProps> = ({
           className={`flex items-center ${
             isMobile
               ? 'justify-start text-[1.563rem] leading-5 font-normal p-2 max-[800px]:w-full'
-              : 'justify-center h-[4.688rem] w-[7.25rem] max-[800px]:w-[5.625rem]'
+              : 'justify-center h-[4.688rem] w-full'
           }`}
           href={`${link}`}
           title={lang === 'es' ? `Ir a ${text}` : `Go to ${text}`}
