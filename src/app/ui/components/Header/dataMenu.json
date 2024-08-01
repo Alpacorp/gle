@@ -2,7 +2,7 @@
   {
     "id": 1,
     "textEs": "Nosotros",
-    "textEn": "About Us",
+    "textEn": "GLE",
     "linkEs": "/nosotros",
     "linkEn": "/about-us",
     "type": "link"
@@ -52,7 +52,7 @@
   {
     "id": 3,
     "textEs": "Contáctanos",
-    "textEn": "Contact Us",
+    "textEn": "Contact",
     "linkEs": "/contactanos",
     "linkEn": "/contact-us",
     "type": "link"
