@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   const { remesa } = await request.json();
@@ -7,18 +7,21 @@ export async function POST(request: Request) {
     const url = process.env.NEXT_PUBLIC_TRACKING_API_URL;
 
     if (!url) {
-      throw new Error("Tracking API URL is not defined");
+      throw new Error('Tracking API URL is not defined');
     }
 
     const res = await fetch(url, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        usuario: 'portalws@gleclombia.com',
+        clave: 'l70EyIq3Re',
         remesa,
       }),
     });
+
     const data = await res.json();
 
     return NextResponse.json(data);

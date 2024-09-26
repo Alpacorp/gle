@@ -1,0 +1,33 @@
+{
+  "DeliveryNumber": "T240925-806005329",
+  "ShipFromCity": "Bogotá",
+  "ShipToCity": "Bogotá, D.C.",
+  "ShipToAddress": "Carrera 108 #19-33 Apartamento 305",
+  "ShipToNeighborhood": "San Mateo",
+  "ShipToName": "Laura Milena Ramos",
+  "ShipToPhoneNumber": "3223824261",
+  "WeightKg": "1",
+  "StatusDelivery": [
+    {
+      "Code": 1,
+      "Status": "En gestión",
+      "StatusDate": "2024-09-26 13:24:56",
+      "Description": "El paquete está en proceso de gestión en el sistema",
+      "type": "Sistemas"
+    },
+    {
+      "Code": 2,
+      "Status": "En bodega destino",
+      "StatusDate": "2024-09-25 17:30:00",
+      "Description": "El paquete llegó a la bodega de destino",
+      "type": "Logística"
+    },
+    {
+      "Code": 3,
+      "Status": "Guía en reparto",
+      "StatusDate": "2024-09-26 08:00:00",
+      "Description": "El paquete está en reparto final",
+      "type": "Entrega"
+    }
+  ]
+}
