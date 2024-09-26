@@ -1,6 +1,9 @@
-import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+
 import { DataTracking } from '@rastreo/rastreo/interfaces/tracking';
+
+import dataTest from '@rastreo/rastreo/dataTest/data.json';
 
 export const useTrackingResults = () => {
   const searchParams = useSearchParams();
@@ -10,6 +13,8 @@ export const useTrackingResults = () => {
   const [error, setError] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  console.log('dataTracking', dataTracking);
 
   const verifyTrackingId = () => {
     if (
@@ -32,12 +37,13 @@ export const useTrackingResults = () => {
       }),
     });
 
-    const response = await sendTracking.json();
+    // const response = await sendTracking.json();
+    const response = dataTest;
 
-    if (response.code === 404 && response.status === 'fail') {
-      setError(true);
-      return;
-    }
+    // if (response.code === 404 && response.status === 'fail') {
+    //   setError(true);
+    //   return;
+    // }
 
     if (response) setDataTracking(response);
     setLoading(false);
