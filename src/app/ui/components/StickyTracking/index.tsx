@@ -17,6 +17,8 @@ const StickyTracking: FC<StickyTrackingProps> = ({
   lang = 'es',
   samePage = false,
 }) => {
+  const enableTracking = process.env.NEXT_PUBLIC_ENABLED_MESSAGING_TRACKING;
+
   const [showTrackingIcon, showTrackingForm, showTrackingFormHandler] =
     useObserverTracking(observerActive);
 
@@ -97,9 +99,11 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                       <option value="packaging">
                         {lang === 'es' ? 'Paquetería' : 'Courier'}
                       </option>
-                      <option value="messaging">
-                        {lang === 'es' ? 'Mensajería' : 'Messaging'}
-                      </option>
+                      {enableTracking === 'true' && (
+                        <option value="messaging">
+                          {lang === 'es' ? 'Mensajería' : 'Messaging'}
+                        </option>
+                      )}
                     </select>
                   </div>
                   <button
