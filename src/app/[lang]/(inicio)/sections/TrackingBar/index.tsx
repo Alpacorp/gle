@@ -16,6 +16,8 @@ export const TrackingBar: FC<TrackingBarProps> = ({
   sameWindow = false,
   position = 'absolute',
 }) => {
+  const enableTracking = process.env.NEXT_PUBLIC_ENABLED_MESSAGING_TRACKING;
+
   const [formValues, handleInputChange, reset] = useForm({
     trackingNumber: '' as string,
     trackingType: '',
@@ -70,9 +72,11 @@ export const TrackingBar: FC<TrackingBarProps> = ({
               <option value="packaging">
                 {lang === 'es' ? 'Paquetería' : 'Courier'}
               </option>
-              <option value="messaging">
-                {lang === 'es' ? 'Mensajería' : 'Messaging'}
-              </option>
+              {enableTracking === 'true' && (
+                <option value="messaging">
+                  {lang === 'es' ? 'Mensajería' : 'Messaging'}
+                </option>
+              )}
             </select>
           </div>
           <button
