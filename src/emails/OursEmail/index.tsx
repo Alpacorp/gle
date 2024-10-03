@@ -10,6 +10,8 @@ interface ContactEmailProps {
   lang?: string;
   name?: string;
   email?: string;
+  typeDoc?: string;
+  idNumber?: string | number;
 }
 
 import './styles.css';
@@ -18,6 +20,8 @@ export const OursEmail: FC<ContactEmailProps> = ({
   position,
   city,
   phone,
+  typeDoc,
+  idNumber,
   department,
   cv,
   lang,
@@ -46,6 +50,13 @@ export const OursEmail: FC<ContactEmailProps> = ({
           <ul className="list">
             <li>
               {lang === 'es' ? 'Nombre completo' : 'Full name'}: {name}
+            </li>
+            <li>
+              {lang === 'es' ? 'Tipo de identificación' : 'ID Type'}: {typeDoc}
+            </li>
+            <li>
+              {lang === 'es' ? 'Número de identificación' : 'ID number'}:{' '}
+              {idNumber}
             </li>
             <li>
               {lang === 'es' ? 'Correo electrónico' : 'Email address'}: {email}

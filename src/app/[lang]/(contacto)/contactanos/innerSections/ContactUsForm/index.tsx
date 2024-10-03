@@ -15,17 +15,20 @@ import { LegalForm } from '@contacto/contactanos/innerSections/LegalForm';
 import { ContactUsFormInterface } from '@contacto/contactanos/interfaces/contactUsFormInterface';
 
 import dataSubjectContact from '@contacto/contactanos/innerSections/ContactUsForm/data/dataSubjectContact.json';
+import dataDocumentType from '@contacto/contactanos/innerSections/ContactUsForm/data/dataDocumentType.json';
 
 export const ContactUsForm: FC<ContactUsFormInterface> = ({
   email,
   fullname,
   handleInputChange,
   handleSubmit,
+  idNumber,
   lang,
   message,
   setReCaptchaToken,
   statusLoading,
   subject,
+  typeDoc,
 }) => {
   const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? '';
 
@@ -113,6 +116,54 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
               </Select>
             </div>
           </div>
+          <div className="w-full">
+            <label htmlFor="typeDoc" className="text-base font-poppins">
+              {lang === 'es' ? 'Tipo de Identificación' : 'Type of ID'}
+            </label>
+            <div className="mt-[0.125rem] w-full">
+              <Select
+                handleInputChange={handleInputChange}
+                id="typeDoc"
+                name="typeDoc"
+                subject={typeDoc}
+                required
+                className="w-full text-white"
+              >
+                {dataDocumentType.map(({ id, valueEn, valueEs }) => (
+                  <Option
+                    color="white"
+                    key={id}
+                    value={lang === 'es' ? valueEs : valueEn}
+                  >
+                    {lang === 'es' ? valueEs : valueEn}
+                  </Option>
+                ))}
+              </Select>
+            </div>
+          </div>
+          <div className="w-full">
+            <label htmlFor="idNumber" className="text-base font-poppins">
+              {lang === 'es' ? 'Número de Identificación' : 'ID Number'}
+            </label>
+            <div className="mt-1">
+              <Input
+                handleInputChange={handleInputChange}
+                id="idNumber"
+                name="idNumber"
+                placeholder={
+                  lang === 'es'
+                    ? 'Ingresa el número de identificación'
+                    : 'Enter the ID number'
+                }
+                required
+                type="number"
+                inputMode="numeric"
+                value={idNumber}
+                variant="gray"
+                className="w-full"
+              />
+            </div>
+          </div>
         </div>
         <div className="w-full max-w-[31.25rem] mx-auto">
           <div>
@@ -152,7 +203,13 @@ export const ContactUsForm: FC<ContactUsFormInterface> = ({
               fullname === '' ||
               email === '' ||
               subject === '' ||
-              message === ''
+              subject === 'Select' ||
+              subject === 'Seleccionar' ||
+              message === '' ||
+              typeDoc === '' ||
+              typeDoc === 'Select' ||
+              typeDoc === 'Seleccionar' ||
+              idNumber === 0
             }
           >
             {statusLoading ? (

@@ -1,4 +1,4 @@
-import { LangInterface } from "@constans/interfaces/langInterface";
+import { LangInterface } from '@constans/interfaces/langInterface';
 
 export interface ContactUsFormInterface extends LangInterface {
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
@@ -8,9 +8,11 @@ export interface ContactUsFormInterface extends LangInterface {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => void;
+  idNumber: number;
   email: string;
   subject: string;
   message: string;
   setReCaptchaToken: (token: string) => void;
   statusLoading: boolean;
+  typeDoc: string;
 }

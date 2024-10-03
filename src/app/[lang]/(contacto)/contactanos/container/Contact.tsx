@@ -30,9 +30,11 @@ export const Contact: NextPage<LangInterface> = ({ lang }) => {
     email: '',
     subject: '',
     message: '',
+    typeDoc: '',
+    idNumber: '',
   });
 
-  const { fullname, email, subject, message } = formValues;
+  const { fullname, idNumber, email, subject, message, typeDoc } = formValues;
 
   const { handleSubmit } = useSendInfoContact({
     formValues,
@@ -52,15 +54,17 @@ export const Contact: NextPage<LangInterface> = ({ lang }) => {
         className="leading-none"
       />
       <ContactUsForm
-        lang={lang}
-        handleSubmit={handleSubmit}
+        email={email}
         fullname={fullname}
         handleInputChange={handleInputChange}
-        email={email}
-        subject={subject}
+        handleSubmit={handleSubmit}
+        idNumber={idNumber}
+        lang={lang}
         message={message}
         setReCaptchaToken={setReCaptchaToken}
         statusLoading={statusLoading}
+        subject={subject}
+        typeDoc={typeDoc}
       />
       <div className="mt-20">
         <ShippingTitle lang={lang} />

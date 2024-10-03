@@ -15,6 +15,8 @@ export async function POST(request: Request) {
     lang,
     destination,
     name,
+    idNumber,
+    typeDoc,
     email,
     position,
     city,
@@ -45,6 +47,8 @@ export async function POST(request: Request) {
           ? ContactEmail({
               fullname,
               destination,
+              idNumber,
+              typeDoc,
               email,
               subject,
               message,
@@ -53,6 +57,8 @@ export async function POST(request: Request) {
           : OursEmail({
               name,
               email,
+              idNumber,
+              typeDoc,
               position,
               city,
               phone,
