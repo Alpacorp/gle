@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "valueEs": "Selecciona",
+    "valueEn": "Select"
+  },
+  {
+    "id": 2,
+    "valueEs": "CC",
+    "valueEn": "CC"
+  },
+  {
+    "id": 3,
+    "valueEs": "CE",
+    "valueEn": "CE"
+  },
+  {
+    "id": 4,
+    "valueEs": "TI",
+    "valueEn": "TI"
+  },
+  {
+    "id": 5,
+    "valueEs": "OTRO",
+    "valueEn": "OTHER"
+  }
+]

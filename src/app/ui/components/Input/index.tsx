@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ComponentProps } from 'react';
 
 interface InputPropsInterface {
   className?: string;
@@ -9,11 +9,14 @@ interface InputPropsInterface {
   placeholder?: string;
   required?: boolean;
   type: string;
-  value: string;
-  variant?: "red" | "gray";
+  value: string | number;
+  variant?: 'red' | 'gray';
 }
 
-export const Input: FC<InputPropsInterface> = ({
+type InputProps = Omit<ComponentProps<'input'>, 'onChange'> &
+  InputPropsInterface;
+
+export const Input: FC<InputProps> = ({
   className,
   disabled,
   handleInputChange,
@@ -23,7 +26,7 @@ export const Input: FC<InputPropsInterface> = ({
   required,
   type,
   value,
-  variant = "gray",
+  variant = 'gray',
 }) => {
   return (
     <input
@@ -33,7 +36,7 @@ export const Input: FC<InputPropsInterface> = ({
       onChange={handleInputChange}
       type={type}
       className={
-        variant === "gray"
+        variant === 'gray'
           ? `border border-white bg-transparent rounded-md focus:outline-main-gray focus:ring-2 focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray-second placeholder:text-xs ${className}`
           : `border border-main-red focus:outline-main-red focus:ring-2 focus:ring-main-red focus:border-transparent p-2 placeholder:font-poppins placeholder-light-gray ${className}`
       }

@@ -5,6 +5,8 @@ interface ContactEmailProps {
   lang: string;
   destination: string;
   fullname?: string;
+  idNumber?: number | string;
+  typeDoc?: string;
   email?: string;
   subject?: string;
   message?: string;
@@ -16,6 +18,8 @@ export const ContactEmail: FC<ContactEmailProps> = ({
   lang,
   destination,
   fullname,
+  idNumber,
+  typeDoc,
   email,
   subject,
   message,
@@ -45,6 +49,14 @@ export const ContactEmail: FC<ContactEmailProps> = ({
                 {lang === 'es' ? 'Nombre completo' : 'Full name'}: {fullname}
               </li>
               <li>
+                {lang === 'es' ? 'Tipo de identificación' : 'ID Type'}:{' '}
+                {typeDoc}
+              </li>
+              <li>
+                {lang === 'es' ? 'Número de identificación' : 'ID number'}:{' '}
+                {idNumber}
+              </li>
+              <li>
                 {lang === 'es' ? 'Correo electrónico' : 'Email address'}:{' '}
                 {email}
               </li>
@@ -72,6 +84,14 @@ export const ContactEmail: FC<ContactEmailProps> = ({
             <ul className="list">
               <li>
                 {lang === 'es' ? 'Nombre completo' : 'Full name'}: {fullname}
+              </li>
+              <li>
+                {lang === 'es' ? 'Tipo de identificación' : 'ID Type'}:{' '}
+                {typeDoc}
+              </li>
+              <li>
+                {lang === 'es' ? 'Número de identificación' : 'ID number'}:{' '}
+                {idNumber}
               </li>
               <li>
                 {lang === 'es' ? 'Correo electrónico' : 'Email address'}:{' '}
