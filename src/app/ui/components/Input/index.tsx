@@ -1,20 +1,12 @@
 import { FC, ComponentProps } from 'react';
 
-interface InputPropsInterface {
-  className?: string;
-  disabled?: boolean;
+interface InputCustomPropsInterface {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  id: string;
-  name: string;
-  placeholder?: string;
-  required?: boolean;
-  type: string;
-  value: string | number;
   variant?: 'red' | 'gray';
 }
 
 type InputProps = Omit<ComponentProps<'input'>, 'onChange'> &
-  InputPropsInterface;
+  InputCustomPropsInterface;
 
 export const Input: FC<InputProps> = ({
   className,
@@ -27,6 +19,7 @@ export const Input: FC<InputProps> = ({
   type,
   value,
   variant = 'gray',
+  ...rest
 }) => {
   return (
     <input
@@ -43,6 +36,7 @@ export const Input: FC<InputProps> = ({
       placeholder={placeholder}
       required={required}
       disabled={disabled}
+      {...rest}
     />
   );
 };

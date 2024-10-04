@@ -8,16 +8,16 @@ import dataSubjectOurs from '@nosotros/nosotros/innerSections/OursForm/data/data
 import { OursFormInterface } from '@nosotros/nosotros/interfaces/oursFormInterface';
 
 export const OursForm: FC<OursFormInterface> = ({
-  email,
-  name,
-  position,
   city,
-  phone,
-  department,
   cv,
+  department,
+  email,
   handleInputChange,
   handleSubmit,
   lang,
+  name,
+  phone,
+  position,
   setReCaptchaToken,
   statusLoading,
 }) => {
@@ -184,10 +184,10 @@ export const OursForm: FC<OursFormInterface> = ({
         </div>
         <div className="mx-auto h-[8.5rem]">
           <ReCAPTCHA
-            sitekey={RECAPTCHA_SITE_KEY}
             onChange={(token: string | null) => setReCaptchaToken(token ?? '')}
-            size="compact"
             onExpired={() => setReCaptchaToken('')}
+            sitekey={RECAPTCHA_SITE_KEY}
+            size="compact"
           />
         </div>
         <div className="m-auto mt-5">
