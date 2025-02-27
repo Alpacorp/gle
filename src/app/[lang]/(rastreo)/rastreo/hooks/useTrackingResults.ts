@@ -14,8 +14,6 @@ export const useTrackingResults = () => {
   const [empty, setEmpty] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  console.log('dataTracking', dataTracking);
-
   const verifyTrackingId = () => {
     if (
       !trackingId ||

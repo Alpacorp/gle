@@ -48,19 +48,25 @@
     "terms-&-conditions": {
       "title": "Terms & Conditions",
       "content": [
-        "By accessing this site, the user agrees to the following terms and use policies.",
-        "Regarding the content.",
-        "GLE COLOMBIA is not responsible for the use, understanding, and interpretation that users make of the content presented on www.glecolombia.com The content of these sites is developed by GLE COLOMBIA, or by an authorized third party, without compromising the thoughts or opinions of its advertisers or linked sites. GLE COLOMBIA reserves the right to modify the content, presentation, configuration, and/or services offered by itself or by an authorized third party, without prior notification to the user.",
-        "Liability Limit",
-        "The user assumes that no third party is responsible for any damages arising directly or indirectly from the existence, use, access, inability to use and/or to access this page or any of its links or connections.",
-        "GLE COLOMBIA and/or its suppliers do not warrant the accuracy or integrity of the information, software, products, and services presented on this site.",
-        "Consequently, the user agrees that they are solely responsible for the decisions made based on the information or materials found on this page or its links or connections.",
-        "GLE COLOMBIA assumes no responsibility for any damages that may arise from the use of its services and content, nor those that may arise from the lack of truthfulness, validity, thoroughness and/or authenticity of the information that the user provides about themselves.",
-        "Particularly, but not exclusively, GLE COLOMBIA is not responsible for any damages caused by an user involved in third-party impersonation, in any type of communication made through this website.",
-        "Similarly, damages caused by the presence of computer viruses and other harmful elements found in services provided by third parties and, in general, any negative consequence that may be caused by the provision of such services through this website are not the responsibility of GLE COLOMBIA.",
-        "Links to other sites on the Internet",
-        "The inclusion of links to other sites through www.glecolombia.com does not imply any relationship other than the 'link' itself. All transactions made on such links are the exclusive responsibility of the user and the related entity. Industrial or commercial property right: The user acknowledges that the content (text, software, music, photographs, video, graphics, or other material) that is part of the communications made by advertisers, or the information that is commercially produced and electronically distributed and presented to the user by GLE COLOMBIA, is protected by copyrights, trademarks, patents, and, in general, by various forms of property rights. The user may produce a copy of this content for personal use only, as long as all copyright notices are kept intact as well as the respective source is cited.",
-        "The user may not modify, copy, reproduce, upload, display, transmit, or distribute the content available through GLE COLOMBIA and its linked sites, including the source code and software, under penalty of incurring in civil and criminal liability, according to current regulations."
+        "G.L.E. COLOMBIA SAS is dedicated to providing innovative, personalized, timely and reliable logistics services.  To guarantee this development, an Integrated Management System (GIS) has been established and commitments have been defined that constitute a reference framework for defining the objectives.",
+        "The commitments established by the company listed below are aimed at meeting the needs, expectations and requirements of the interested parties involved in the supply chain and the integrated management system:",
+        "1. Comply with legal, regulatory and other requirements applicable to the company.",
+        "2. Implement control and risk management activities to maintain the integrity of the processes and prevent becoming involved in illicit activities, such as: smuggling, bribery, corruption, money laundering, financing of terrorism, among others.",
+        "3. Constantly review and evaluate the different components of the Integrated Management System (GIS) to guarantee its maintenance and continuous improvement.",
+        "4. Promote security in the use of information technology.",
+        "5. Strengthen the development of the skills and abilities of our human talent, ensuring their competence to fulfill their tasks, functions and responsibilities.",
+        "The aforementioned commitments will be mandatory for all interested parties involved, and will allow us to guarantee safe and reliable operations."
+      ]
+    },
+    "quality-policy": {
+      "title": "Quality Policy",
+      "content": [
+        "GRUPO LOGÍSTICO ESPECIALIZADO S.A.S. is a company dedicated to the provision of comprehensive logistics services, which include the collection, transportation, distribution, and door-to-door delivery of packages and goods per packaging unit.",
+        "We are committed to providing our clients with a service that meets their expectations, through the continuous improvement of our processes, the training of our staff, and the use of technology.",
+        "We are committed to complying with the legal requirements applicable to our activity, as well as with the requirements of our clients, and to the continuous improvement of our quality management system.",
+        "We are committed to the prevention of pollution and the rational use of natural resources, as well as to the prevention of occupational risks and the promotion of a culture of prevention.",
+        "We are committed to the continuous improvement of our quality management system, which is based on the requirements of the ISO 9001:2015 standard.",
+        "We are committed to the continuous improvement of our quality management system, which is based on the requirements of the ISO 9001:2015 standard."
       ]
     },
     "compensations": {

@@ -1,3 +1,4 @@
+import React from "react";
 import { Metadata, Viewport } from 'next';
 import { Poppins, Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
