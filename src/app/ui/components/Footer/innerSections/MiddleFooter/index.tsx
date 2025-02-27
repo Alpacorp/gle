@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Mintic, Sic, SuperTransporte } from '@/public/assets/images/footer';
-import { TextInfo } from '@ui/components/index';
+import { TextInfo } from '@ui/components';
 
 import { LangInterface } from '@/src/app/constans/interfaces/langInterface';
 
@@ -34,6 +34,18 @@ export const MiddleFooter: FC<LangInterface> = ({ lang }) => {
           {lang === 'es'
             ? 'Términos y condiciones de servicio'
             : 'Terms of service'}
+        </Link>
+        <Link
+          href={
+            lang === 'es'
+              ? `/${lang}/politica-de-calidad`
+              : `/${lang}/quality-policy`
+          }
+          className="hover:underline hover:underline-offset-8"
+        >
+          {lang === 'es'
+            ? 'Política de calidad'
+            : 'Quality policy'}
         </Link>
         <Link
           href={
