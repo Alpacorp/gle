@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import { ArrowGLE } from '@icons/index';
-import { AttachedLinks, ButtonQuote } from '@ui/components/index';
+import { AttachedLinks, ButtonQuote } from '@ui/components';
 
 interface BodyServicesProps {
   additionDescription?: React.ReactNode | string;
