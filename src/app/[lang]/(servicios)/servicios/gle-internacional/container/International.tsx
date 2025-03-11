@@ -6,7 +6,7 @@ import {
   HeroPages,
   ImportExportIcon,
   PapersIcon,
-} from '@ui/components/index';
+} from '@ui/components';
 import {
   bannerInternational,
   bannerInternationalMobile,

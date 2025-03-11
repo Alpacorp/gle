@@ -27,14 +27,14 @@ export const BacklogShipments: NextPage<LangInterface> = async ({ lang }) => {
           <Link
             href="/assets/documents/backlog-shipments/1822.pdf"
             target="_blank"
-            className="underline underline-offset-8 hover:text-red-500"
+            className="underline underline-offset-8 hover:text-main-red"
           >
             {pages['backlog-shipments'].content[3]}
           </Link>
           <Link
             href="/assets/documents/backlog-shipments/acta-gle.pdf"
             target="_blank"
-            className="underline underline-offset-8 hover:text-red-500"
+            className="underline underline-offset-8 hover:text-main-red"
           >
             {pages['backlog-shipments'].content[4]}
           </Link>
