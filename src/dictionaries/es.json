@@ -80,6 +80,16 @@
         "Los compromisos antes relacionados serán de obligatorio cumplimiento para todas las partes interesadas involucradas, y nos permitirá garantizar operaciones seguras y confiables."
       ]
     },
+    "backlog-shipments": {
+      "title": "Envíos en Rezago",
+      "content": [
+        "Grupo Logistico Especializado, dando cumplimiento a la resolución número 0001822 del 4 de julio de 2018 del ministerio de tecnologías de la información y las comunicaciones y la ley 1369 del 2009 invita a toda la ciudadania a consultar los envíos postales declarados en rezago y a recuperar las piezas relacionadas según relación adjunta; siempre y cuando usted sea el usuario remitente o destinatario para aquellos envíos que agotaron los intentos de entrega.",
+        "Transcurridos tres (3) meses a partir de la publicación del mencionado aviso en la página web del operador, el comité de rezagos se reunirá y dispondrá de las piezas postales que no hayan sido reclamadas.",
+        "Con el fin de recuperar su envío se puede comunicar con el área de servicio al cliente Bogotá al teléfono 601 6953631 o al correo electrónico compensaciones@glecolombia.com.co.",
+        "Resolución 1822 de 4 de julio de 2018",
+        "Relación envíos en rezago"
+      ]
+    },
     "compensations": {
       "title": "Procedimiento de Compensaciones",
       "text": "Documento de proceso de compensaciones"

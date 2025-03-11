@@ -66,6 +66,14 @@ export const MiddleFooter: FC<LangInterface> = ({ lang }) => {
             : 'PQR’S and Compensation process'}
         </Link>
         <Link
+          href={lang === 'es' ? `/${lang}/envios-en-rezago` : `/${lang}/backlog-shipments`}
+          className="hover:underline hover:underline-offset-8"
+        >
+          {lang === 'es'
+            ? 'Envíos en rezago G.L.E.'
+            : 'Backlog shipments G.L.E.'}
+        </Link>
+        <Link
           href={
             lang === 'es'
               ? `/${lang}/prohibido-transporte`
