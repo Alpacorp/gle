@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import {useState} from 'react';
+import {useSearchParams} from 'next/navigation';
 
-import { DataTracking } from '@rastreo/rastreo/interfaces/tracking';
-
-import dataTest from '@rastreo/rastreo/dataTest/data.json';
+import {DataTracking} from '@rastreo/rastreo/interfaces/tracking';
 
 export const useTrackingResults = () => {
   const searchParams = useSearchParams();
@@ -27,21 +25,20 @@ export const useTrackingResults = () => {
 
   const getTracking = async () => {
     verifyTrackingId();
-    const trackingNumber = trackingId;
     const sendTracking = await fetch('/api/tracking', {
       method: 'POST',
       body: JSON.stringify({
-        remesa: trackingNumber,
+        remesa: trackingId,
       }),
     });
 
-    // const response = await sendTracking.json();
-    const response = dataTest;
+    const response = await sendTracking.json();
+    // const response = dataTest;
 
-    // if (response.code === 404 && response.status === 'fail') {
-    //   setError(true);
-    //   return;
-    // }
+    if (response.code === 404 && response.status === 'fail') {
+      setError(true);
+      return;
+    }
 
     if (response) setDataTracking(response);
     setLoading(false);

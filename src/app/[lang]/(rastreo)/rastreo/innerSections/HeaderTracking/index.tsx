@@ -4,15 +4,20 @@ import { FC } from "react";
 import { CardTrackingInfo } from "@rastreo/rastreo/components";
 
 interface HeaderTrackingProps {
-  dataTracking: any;
+  dataTracking: { GUIA: string };
+  lang: string;
 }
 
-export const HeaderTracking: FC<HeaderTrackingProps> = ({ dataTracking }) => {
+export const HeaderTracking: FC<HeaderTrackingProps> = ({ dataTracking, lang }) => {
   return (
     <div className="flex items-center justify-around">
       <div className="flex flex-1 items-center justify-center">
         <h1 className="text-3xl font-semibold text-main-red max-[480px]:text-2xl">
-          Consulta
+          {
+            lang === "es"
+              ? "Consulta"
+              : "Tracking"
+          }
         </h1>
         <ArrowCta
           stroke="#D81730"
@@ -23,9 +28,9 @@ export const HeaderTracking: FC<HeaderTrackingProps> = ({ dataTracking }) => {
       </div>
       <CardTrackingInfo
         containerClass="text-center"
-        detail={dataTracking?.DeliveryNumber || ""}
+        detail={dataTracking?.GUIA || ""}
         containerDetailClass="text-xl font-semibold justify-center"
-        title="Número de guía"
+        title={lang === "es" ? "Número de guía:" : "Tracking Number:"}
         titleClass="!font-normal"
       />
     </div>

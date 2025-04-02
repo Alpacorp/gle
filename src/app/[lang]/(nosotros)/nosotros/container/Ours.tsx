@@ -17,7 +17,7 @@ import {
   bannerOurs,
   bannerOursMobile,
 } from '@public/assets/images/about-us/index';
-import { HeroPages } from '@ui/components/index';
+import { HeroPages } from '@ui/components';
 import StickyTracking from '@ui/components/StickyTracking';
 
 import { useForm } from '@hooks/useForm';

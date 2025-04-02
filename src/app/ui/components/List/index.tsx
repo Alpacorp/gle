@@ -71,7 +71,7 @@ export const List: FC<ListProps> = ({
               ? 'justify-start text-[1.563rem] leading-5 font-normal p-2 max-[800px]:w-full'
               : 'justify-center h-[4.688rem] w-full'
           }`}
-          href={`${link}`}
+          href={link}
           title={lang === 'es' ? `Ir a ${text}` : `Go to ${text}`}
           onClick={isMobile ? handleClickMenuMobile : () => {}}
         >
