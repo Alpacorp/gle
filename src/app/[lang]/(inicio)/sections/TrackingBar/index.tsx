@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { LangInterface } from '@constans/interfaces/langInterface';
 
@@ -20,7 +20,7 @@ export const TrackingBar: FC<TrackingBarProps> = ({
 
   const [formValues, handleInputChange, reset] = useForm({
     trackingNumber: '' as string,
-    trackingType: '',
+    trackingType: '' as string,
   });
 
   const { trackingNumber, trackingType } = formValues;

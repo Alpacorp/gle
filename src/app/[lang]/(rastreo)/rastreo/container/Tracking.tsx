@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { NextPage } from 'next';
 
 import StickyTracking from '@ui/components/StickyTracking';
@@ -10,8 +9,6 @@ import { LangInterface } from '@constans/interfaces/langInterface';
 
 import { formatDate } from '@utils/formatDate';
 
-import { useTrackingResults } from '@rastreo/rastreo/hooks/useTrackingResults';
-
 import { DataTracking } from '@/src/app/[lang]/(rastreo)/rastreo/interfaces/tracking';
 
 import {
@@ -20,58 +17,45 @@ import {
   Success,
 } from '@/src/app/[lang]/(rastreo)/rastreo/innerSections/';
 
-export const Tracking: NextPage<LangInterface> = ({ lang }) => {
-  const {
-    dataTracking,
-    empty,
-    error,
-    getTracking,
-    loading,
-    statusTrackingNumber,
-    trackingId,
-    verifyTrackingId,
-  } = useTrackingResults();
+interface Props extends LangInterface {
+  dataTracking?: DataTracking;
+  trackingId?: string;
+  status: 'empty' | 'error' | 'success';
+}
 
-  useEffect(() => {
-    if (trackingId) {
-      getTracking();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [trackingId]);
-
-  useEffect(() => {
-    verifyTrackingId();
-  }, [verifyTrackingId]);
+export const Tracking: NextPage<Props> = ({ lang, dataTracking, status, trackingId }) => {
 
   const returnComponent = () => {
-    if (empty) {
-      return <Empty lang={lang} />;
+    if (status === 'empty') return <Empty lang={lang} />;
+    if (status === 'error') return <Failed lang={lang} trackingId={trackingId ?? ''} />;
+    if (status === 'success' && dataTracking) {
+      return (
+        <Success
+          dataTracking={dataTracking}
+          formatDate={formatDate}
+          statusTrackingNumber={(status: number) => {
+            if (status % 2 === 0) return 'bg-gray-500';
+            if (status === 1) return 'bg-main-green';
+            return 'bg-red-500';
+          }}
+          lang={lang}
+        />
+      );
     }
-    if (error) {
-      return <Failed lang={lang} trackingId={trackingId ?? ''} />;
-    }
-    if (loading) {
-      return <LoadingTracking />;
-    }
-    return (
-      <Success
-        dataTracking={dataTracking as DataTracking}
-        formatDate={formatDate}
-        statusTrackingNumber={statusTrackingNumber}
-        lang={lang}
-      />
-    );
+    return <LoadingTracking />;
   };
 
   return (
     <section>
       <HeroPages
         pageTitle={
-          empty
+          status === 'empty'
             ? lang === 'es'
               ? 'Rastrea tu envío'
               : 'Track your shipment'
-            : `${lang === 'es' ? 'Resultados del rastreo' : 'Tracking results'}`
+            : lang === 'es'
+              ? 'Resultados del rastreo'
+              : 'Tracking results'
         }
         color="white"
         className="leading-none"

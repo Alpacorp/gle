@@ -24,9 +24,9 @@ export const Success: FC<SuccessProps> = ({
   return (
     <section className="flex justify-center items-center font-poppins mt-12 mx-5">
       <div className="max-w-md w-full">
-        <HeaderTracking dataTracking={dataTracking ?? ''} />
+        <HeaderTracking dataTracking={dataTracking as DataTracking} lang={lang} />
         <MainData
-          dataTracking={dataTracking ?? ''}
+          dataTracking={dataTracking as DataTracking}
           statusTrackingNumber={statusTrackingNumber}
           lang={lang}
         />
