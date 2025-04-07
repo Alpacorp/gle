@@ -82,7 +82,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                       id="trackingNumber"
                       value={trackingNumber}
                       onChange={handleInputChange}
-                      maxLength={12}
+                      maxLength={20}
                       required
                     />
                     <select
