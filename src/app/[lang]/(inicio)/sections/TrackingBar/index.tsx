@@ -55,7 +55,7 @@ export const TrackingBar: FC<TrackingBarProps> = ({
               onChange={handleInputChange}
               className="p-2 text-xl text-center font-semibold font-poppins bg-white border-2 border-main-red rounded-sm placeholder:text-base placeholder:font-normal max-[460px]:max-w-[17.5rem] max-[460px]:w-full max-[460px]:text-sm max-[470px]:placeholder:text-sm max-[400px]:text-xs max-[400px]:placeholder:text-xs max-[320px]:text-xs max-[320px]:max-w-[7.5rem] max-[320px]:w-full"
               placeholder={lang === 'es' ? 'Número de guía' : 'Tracking number'}
-              maxLength={12}
+              maxLength={20}
               required
             />
             <select
