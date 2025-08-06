@@ -38,6 +38,20 @@ export const BacklogShipments: NextPage<LangInterface> = async ({ lang }) => {
           >
             {pages['backlog-shipments'].content[4]}
           </Link>
+          <Link
+            href="/assets/documents/backlog-shipments/acta-rezagos-pt-2025.pdf"
+            target="_blank"
+            className="underline underline-offset-8 hover:text-main-red"
+          >
+            {pages['backlog-shipments'].content[5]}
+          </Link>
+          <Link
+            href="/assets/documents/backlog-shipments/acta-rezagos-st-2025.pdf"
+            target="_blank"
+            className="underline underline-offset-8 hover:text-main-red"
+          >
+            {pages['backlog-shipments'].content[6]}
+          </Link>
         </div>
       </ContainerContent>
       <StickyTracking lang={lang} />
