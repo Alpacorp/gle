@@ -1,7 +1,9 @@
 import { NextPage } from "next";
+import { redirect } from 'next/navigation';
 import { Locale } from "@/i18n.config";
 
 import { config } from '@src/lib/config/env';
+import { flags } from '@src/lib/config/flags';
 
 import { Tracking } from '@rastreo/rastreo/container/Tracking';
 import { ApiResponse, DataTracking } from '@rastreo/rastreo/interfaces/tracking';
@@ -12,6 +14,9 @@ interface TrackingPageProps {
 }
 
 const TrackingPage: NextPage<TrackingPageProps> = async ({ params, searchParams }) => {
+  if (!flags.trackingEnabled) {
+    return redirect(`/${params.lang}`);
+  }
   const trackingId = searchParams['tracking-id'];
 
   if (!trackingId || typeof trackingId !== 'string' || trackingId.trim() === '') {

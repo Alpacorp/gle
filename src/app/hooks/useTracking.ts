@@ -1,4 +1,5 @@
 import { gtmEvents } from "@/src/lib/gtm";
+import { flags } from "@src/lib/config/flags";
 
 export const useTracking = ({
   lang,
@@ -16,23 +17,32 @@ export const useTracking = ({
     trackingType: string;
     origin: string;
   }) => {
+    if (!flags.trackingEnabled) return;
+
+    let didAction = false;
     switch (trackingType) {
       case "packaging":
         handleTrackingPackaging(trackingNumber);
+        didAction = true;
         break;
       case "messaging":
-        handleTrackingMessaging(trackingNumber);
+        if (flags.messagingTrackingEnabled) {
+          handleTrackingMessaging(trackingNumber);
+          didAction = true;
+        }
         break;
       default:
         break;
     }
 
-    gtmEvents({
-      event: `clic_rastreo_${origin}`,
-      action: "clic-event",
-      category: "clic",
-      label: "rastreo",
-    });
+    if (didAction) {
+      gtmEvents({
+        event: `clic_rastreo_${origin}`,
+        action: "clic-event",
+        category: "clic",
+        label: "rastreo",
+      });
+    }
   };
 
   const handleTrackingPackaging = (trackingNumber: string) => {

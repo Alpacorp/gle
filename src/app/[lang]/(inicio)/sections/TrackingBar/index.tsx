@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { LangInterface } from '@constans/interfaces/langInterface';
 
 import { useForm, useTracking } from '@hooks/index';
+import { flags } from '@src/lib/config/flags';
 
 interface TrackingBarProps extends LangInterface {
   showText?: boolean;
@@ -10,14 +11,12 @@ interface TrackingBarProps extends LangInterface {
   position?: 'absolute' | 'relative';
 }
 
-export const TrackingBar: FC<TrackingBarProps> = ({
+const TrackingBarInner: FC<TrackingBarProps> = ({
   lang,
   showText = true,
   sameWindow = false,
   position = 'absolute',
 }) => {
-  const enableTracking = process.env.NEXT_PUBLIC_ENABLED_MESSAGING_TRACKING;
-
   const [formValues, handleInputChange, reset] = useForm({
     trackingNumber: '' as string,
     trackingType: '' as string,
@@ -72,7 +71,7 @@ export const TrackingBar: FC<TrackingBarProps> = ({
               <option value="packaging">
                 {lang === 'es' ? 'Paquetería' : 'Courier'}
               </option>
-              {enableTracking === 'true' && (
+              {flags.messagingTrackingEnabled && (
                 <option value="messaging">
                   {lang === 'es' ? 'Mensajería' : 'Messaging'}
                 </option>
@@ -108,4 +107,10 @@ export const TrackingBar: FC<TrackingBarProps> = ({
       </form>
     </section>
   );
+};
+
+export const TrackingBar: FC<TrackingBarProps> = (props) => {
+  // Gate rendering without using hooks to satisfy react-hooks/rules-of-hooks
+  if (!flags.trackingEnabled) return null;
+  return <TrackingBarInner {...props} />;
 };
