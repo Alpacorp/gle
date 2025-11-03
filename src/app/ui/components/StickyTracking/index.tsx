@@ -5,6 +5,7 @@ import { Close, StickyTrackEs, StickyTrackEn, ArrowCta } from '@icons/index';
 
 import useObserverTracking from '@ui/components/StickyTracking/hooks/useObserverTracking';
 import { useTracking, useForm } from '@/src/app/hooks/';
+import { flags } from '@src/lib/config/flags';
 
 interface StickyTrackingProps {
   observerActive?: boolean;
@@ -12,13 +13,11 @@ interface StickyTrackingProps {
   samePage?: boolean;
 }
 
-const StickyTracking: FC<StickyTrackingProps> = ({
+const StickyTrackingInner: FC<StickyTrackingProps> = ({
   observerActive = false,
   lang = 'es',
   samePage = false,
 }) => {
-  const enableTracking = process.env.NEXT_PUBLIC_ENABLED_MESSAGING_TRACKING;
-
   const [showTrackingIcon, showTrackingForm, showTrackingFormHandler] =
     useObserverTracking(observerActive);
 
@@ -99,7 +98,7 @@ const StickyTracking: FC<StickyTrackingProps> = ({
                       <option value="packaging">
                         {lang === 'es' ? 'Paquetería' : 'Courier'}
                       </option>
-                      {enableTracking === 'true' && (
+                      {flags.messagingTrackingEnabled && (
                         <option value="messaging">
                           {lang === 'es' ? 'Mensajería' : 'Messaging'}
                         </option>
@@ -145,6 +144,12 @@ const StickyTracking: FC<StickyTrackingProps> = ({
       )}
     </>
   );
+};
+
+const StickyTracking: FC<StickyTrackingProps> = (props) => {
+  // Gate rendering without using hooks to satisfy react-hooks/rules-of-hooks
+  if (!flags.trackingEnabled) return null;
+  return <StickyTrackingInner {...props} />;
 };
 
 export default StickyTracking;
